@@ -15,74 +15,74 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const logo = "/logo/logo-light.png";
+const logo = "/logo/wmedic-logo.svg";
 
 const footerSections = [
   {
     title: "Como Funciona",
     links: [
-      { label: "O que é a WOW+", href: "/institucional" },
-      { label: "Como funciona a assinatura", href: "/para-você" },
-      { label: "O que está incluso no plano", href: "/para-você" },
-      { label: "Diferença: não é plano de saúde", href: "/para-você" },
-      { label: "Como usar os serviços", href: "/serviços" },
-    ],
-  },
-  {
-    title: "Planos e Assinatura",
-    links: [
-      { label: "Individual", href: "/para-você" },
-      { label: "Famíliar", href: "/para-você" },
-      { label: "Empresarial", href: "/para-empresas#plano" },
-      { label: "Preços e benefícios", href: "/para-você" },
-      { label: "Como contratar", href: "/para-você" },
-      { label: "Formas de pagamento", href: "/para-você" },
+      { label: "O que é a WMedic", href: "/sobre" },
+      { label: "O que fazemos", href: "/o-que-fazemos" },
+      { label: "Nossas frentes de atuação", href: "/frentes-de-atuacao" },
+      { label: "Como cuidamos de você", href: "/o-que-fazemos" },
+      { label: "Como usar os serviços", href: "/o-que-fazemos" },
     ],
   },
   {
     title: "Nossos Serviços",
     links: [
-      { label: "WOW+ Med (Saúde)", href: "/serviços#med" },
+      { label: "Gestão médica", href: "/o-que-fazemos" },
+      { label: "Rede qualificada", href: "/o-que-fazemos" },
+      { label: "Saúde e bem-estar", href: "/o-que-fazemos" },
+      { label: "Soluções para empresas", href: "/frentes-de-atuacao" },
+      { label: "Cuidado personalizado", href: "/o-que-fazemos" },
+      { label: "Como contratar", href: "/contato" },
     ],
   },
   {
-    title: "Ganhe com a WOW+",
+    title: "Frentes de Atuação",
     links: [
-      { label: "Seja um consultor", href: "/consultor" },
-      { label: "Renda recorrente", href: "/consultor" },
-      { label: "Plano de carreira", href: "/consultor" },
-      { label: "Treinamentos (10 Passos WOW+)", href: "/consultor" },
-      { label: "Área do consultor", href: "https://app.wowmais.com.br/register?ref=negócioswowbrasil" },
+      { label: "WMedic Med (Saúde)", href: "/frentes-de-atuacao" },
+    ],
+  },
+  {
+    title: "A WMedic",
+    links: [
+      { label: "Quem somos", href: "/sobre" },
+      { label: "Nossa missão", href: "/sobre" },
+      { label: "Nossos valores", href: "/sobre" },
+      { label: "Inovação em saúde", href: "/sobre" },
+      { label: "Fale conosco", href: "/contato" },
     ],
   },
   {
     title: "Atendimento e Suporte",
     links: [
-      { label: "Fale com um consultor", href: "https://api.whatsapp.com/send/?phone=5511978369030" },
-      { label: "Central de atendimento 24h", href: "https://api.whatsapp.com/send/?phone=5511978369030" },
-      { label: "WhatsApp", href: "https://api.whatsapp.com/send/?phone=5511978369030" },
-      { label: "Área do cliente", href: "https://app.wowmais.com.br/consumer?ref=negócioswowbrasil" },
-      { label: "Abrir chamado", href: "https://api.whatsapp.com/send/?phone=5511978369030" },
+      { label: "Fale com a WMedic", href: "/contato" },
+      { label: "Central de atendimento", href: "/contato" },
+      { label: "WhatsApp", href: "/contato" },
+      { label: "Área do cliente", href: "/contato" },
+      { label: "Abrir chamado", href: "/contato" },
     ],
   },
   {
     title: "Conteúdo & Educação",
     links: [
-      { label: "Blog WOW+", href: "/blog" },
+      { label: "Blog WMedic", href: "/blog" },
       { label: "Dicas de saúde", href: "/blog" },
       { label: "Qualidade de vida", href: "/blog" },
-      { label: "Educação financeira", href: "/blog" },
-      { label: "NR-1 e saúde mental", href: "/nr1" },
+      { label: "Educação em saúde", href: "/blog" },
+      { label: "Saúde mental", href: "/frentes-de-atuacao" },
     ],
   },
   {
     title: "Institucional",
     links: [
-      { label: "Sobre a WOW+", href: "/institucional" },
-      { label: "Nossa missão", href: "/institucional" },
-      { label: "Tecnologia & inovação", href: "/institucional" },
-      { label: "Onde estamos", href: "/institucional" },
-      { label: "Parceiros e rede", href: "/institucional" },
+      { label: "Sobre a WMedic", href: "/sobre" },
+      { label: "Nossa missão", href: "/sobre" },
+      { label: "Tecnologia & inovação", href: "/sobre" },
+      { label: "Onde estamos", href: "/sobre" },
+      { label: "Parceiros e rede", href: "/sobre" },
     ],
   },
   {
@@ -91,7 +91,6 @@ const footerSections = [
       { label: "Termos de uso", href: "/legal" },
       { label: "Política de privacidade (LGPD)", href: "/legal" },
       { label: "Contrato do cliente", href: "/legal" },
-      { label: "Contrato do consultor", href: "/legal" },
       { label: "Código de conduta", href: "/legal" },
       { label: "Segurança de dados", href: "/legal" },
     ],
@@ -99,24 +98,24 @@ const footerSections = [
   {
     title: "Empresas & Parcerias",
     links: [
-      { label: "Soluções para empresas", href: "/para-empresas" },
-      { label: "Benefício corporativo", href: "/para-empresas" },
-      { label: "Para Entidades (50% OFF)", href: "/para-entidades" },
-      { label: "NR-1 — Adequação", href: "/nr1" },
-      { label: "Seja parceiro WOW+", href: "/para-empresas" },
+      { label: "Soluções para empresas", href: "/frentes-de-atuacao" },
+      { label: "Benefício corporativo", href: "/frentes-de-atuacao" },
+      { label: "Parcerias", href: "/sobre" },
+      { label: "Seja parceiro WMedic", href: "/contato" },
       { label: "Indique empresas", href: "/contato" },
     ],
   },
 ];
 
 const quickLinks = [
-  { label: "Login", href: "https://app.wowmais.com.br/" },
-  { label: "Ativar plano", href: "https://app.wowmais.com.br/consumer?ref=negócioswowbrasil" },
-  { label: "Baixar app", href: "https://app.wowmais.com.br/" },
-  { label: "Segunda via boleto", href: "https://app.wowmais.com.br/" },
-  { label: "Atualizar cadastro", href: "https://app.wowmais.com.br/" },
+  { label: "Home", href: "/" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "O que fazemos", href: "/o-que-fazemos" },
+  { label: "Blog", href: "/blog" },
+  { label: "Contato", href: "/contato" },
 ];
 
+// TODO cliente: social media URLs
 const socialLinks = [
   { Icon: Instagram, href: "#", label: "Instagram" },
   { Icon: Facebook, href: "#", label: "Facebook" },
@@ -166,13 +165,13 @@ const Footer = () => {
             <div className="lg:col-span-4">
               <img
                 src={logo}
-                alt="WOW Mais"
+                alt="WMedic"
                 className="w-[200px] mb-6"
               />
               <p className="font-sans text-sm text-white/50 leading-relaxed max-w-sm mb-8">
-                A WOW+ é uma plataforma de serviços e benefícios em saúde que
-                democratiza o acesso à cuidados médicos, assistência e
-                vantagens exclusivas para toda a família.
+                Cuidar de pessoas. Transformar vidas. Gerar saúde e bem-estar.
+                A WMedic é gestão médica com uma rede qualificada em todo o
+                Brasil, cuidado que gera confiança e resultados.
               </p>
               {/* Social */}
               <div className="flex gap-3">
@@ -191,24 +190,25 @@ const Footer = () => {
 
             {/* Contact Cards */}
             <div className="lg:col-span-8 grid sm:grid-cols-3 gap-4">
+              {/* TODO cliente */}
               {[
                 {
                   icon: MessageCircle,
                   title: "WhatsApp",
-                  info: "+55 11 97836-9030",
-                  sub: "Seg a Sex, 8h às 20h",
+                  info: "+55 00 00000-0000",
+                  sub: "Horário de atendimento",
                 },
                 {
-                  icon: Headset,
-                  title: "Suporte 24h",
-                  info: "WhatsApp",
-                  sub: "Atendimento imediato",
+                  icon: Mail,
+                  title: "E-mail",
+                  info: "contato@wmedic.com.br",
+                  sub: "Atendimento",
                 },
                 {
                   icon: MapPin,
                   title: "Localização",
-                  info: "Osasco, SP",
-                  sub: "Brasil",
+                  info: "Brasil",
+                  sub: "Rede em todo o país",
                 },
               ].map((card) => (
                 <div
@@ -329,18 +329,18 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center gap-6">
             {/* Disclaimer */}
             <p className="font-sans text-[11px] text-white/25 leading-relaxed max-w-3xl text-center lg:text-left">
-              A WOW+ é uma plataforma de serviços e benefícios em saúde, que
-              oferece acesso à telemedicina, descontos em consultas, exames e
-              medicamentos por meio de parceiros e rede credenciada.{" "}
+              A WMedic é gestão médica que conecta pessoas e empresas a uma
+              rede qualificada de saúde em todo o Brasil, gerando cuidado,
+              confiança e resultados.{" "}
               <strong className="text-white/40">
-                A WOW+ não é plano de saúde.
+                WMedic. Gestão que cuida. Cuidado que transforma.
               </strong>
             </p>
 
             {/* Copyright */}
             <div className="flex flex-col items-center lg:items-end gap-1 shrink-0">
               <p className="font-sans text-xs text-white/30 flex items-center gap-1.5">
-                © {new Date().getFullYear()} WOW Mais. Todos os direitos
+                © {new Date().getFullYear()} WMedic. Todos os direitos
                 reservados.
               </p>
               <p className="font-sans text-[11px] text-white/20 flex items-center gap-1">
