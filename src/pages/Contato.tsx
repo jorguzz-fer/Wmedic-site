@@ -8,39 +8,41 @@ import {
   Clock,
   PaperPlaneRight,
 } from "@phosphor-icons/react";
+import { toast } from "sonner";
 import PageLayout from "@/components/layout/PageLayout";
 
+// TODO cliente: dados de contato reais (telefone/WhatsApp)
 const contactCards = [
   {
     icon: WhatsappLogo,
     title: "WhatsApp",
     info: "Fale agora",
     description: "Atendimento rápido e direto",
-    link: "https://api.whatsapp.com/send/?phone=5511978369030",
+    link: "https://api.whatsapp.com/send/?phone=5500000000000", // TODO cliente
     cta: "Iniciar conversa",
   },
   {
     icon: WhatsappLogo,
     title: "WhatsApp",
-    info: "+55 11 97836-9030",
-    description: "Seg a Sex, 8h as 20h",
-    link: "https://api.whatsapp.com/send/?phone=5511978369030",
+    info: "+55 00 00000-0000", // TODO cliente
+    description: "Seg a Sex, horário comercial",
+    link: "https://api.whatsapp.com/send/?phone=5500000000000", // TODO cliente
     cta: "Chamar no WhatsApp",
   },
   {
     icon: Headset,
-    title: "Central 24h",
-    info: "Suporte tecnico",
-    description: "Disponível 24 horas",
+    title: "Central de atendimento",
+    info: "Suporte técnico",
+    description: "Atendimento à operação assistencial",
     link: "#",
     cta: "Acessar suporte",
   },
   {
     icon: EnvelopeSimple,
     title: "E-mail",
-    info: "contato@wowmais.com.br",
+    info: "contato@wmedic.com.br",
     description: "Resposta em até 24h",
-    link: "mailto:contato@wowmais.com.br",
+    link: "mailto:contato@wmedic.com.br",
     cta: "Enviar e-mail",
   },
 ];
@@ -56,8 +58,15 @@ const Contato = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    // TODO cliente: integrar backend
+    toast.success("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      subject: "Dúvida geral",
+      message: "",
+    });
   };
 
   return (
@@ -75,11 +84,11 @@ const Contato = () => {
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-secondary-foreground mt-4 leading-tight">
               Fale com a{" "}
-              <span className="text-gradient">WOW+</span>
+              <span className="text-gradient">WMedic</span>
             </h1>
             <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-2xl mx-auto">
-              Estamos prontos para ajudar você. Escolha o canal que preferir e
-              entre em contato com nossa equipe.
+              Gestão médica com excelência, segurança e humanização. Conte pra
+              gente como podemos ajudar.
             </p>
           </motion.div>
         </div>
@@ -203,10 +212,9 @@ const Contato = () => {
                       className="w-full px-4 py-3 rounded-xl border border-border bg-card font-sans text-sm text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
                     >
                       <option>Dúvida geral</option>
-                      <option>Quero assinar</option>
-                      <option>Suporte tecnico</option>
-                      <option>Ser consultor</option>
-                      <option>Parceria empresarial</option>
+                      <option>Gestão assistencial</option>
+                      <option>Suporte técnico</option>
+                      <option>Parceria institucional</option>
                       <option>Outros</option>
                     </select>
                   </div>
@@ -256,10 +264,11 @@ const Contato = () => {
                     </div>
                     <div>
                       <p className="font-sans text-sm font-semibold text-foreground">
-                        Endereco
+                        Endereço
                       </p>
+                      {/* TODO cliente */}
                       <p className="font-sans text-sm text-muted-foreground">
-                        Osasco, SP - Brasil
+                        Brasil
                       </p>
                     </div>
                   </li>
@@ -271,13 +280,14 @@ const Contato = () => {
                       <p className="font-sans text-sm font-semibold text-foreground">
                         WhatsApp
                       </p>
+                      {/* TODO cliente */}
                       <a
-                        href="https://api.whatsapp.com/send/?phone=5511978369030"
+                        href="https://api.whatsapp.com/send/?phone=5500000000000"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +55 11 97836-9030
+                        +55 00 00000-0000
                       </a>
                     </div>
                   </li>
@@ -289,8 +299,9 @@ const Contato = () => {
                       <p className="font-sans text-sm font-semibold text-foreground">
                         E-mail
                       </p>
+                      {/* TODO cliente */}
                       <p className="font-sans text-sm text-muted-foreground">
-                        contato@wowmais.com.br
+                        contato@wmedic.com.br
                       </p>
                     </div>
                   </li>
@@ -302,8 +313,9 @@ const Contato = () => {
                       <p className="font-sans text-sm font-semibold text-foreground">
                         Horário de atendimento
                       </p>
+                      {/* TODO cliente */}
                       <p className="font-sans text-sm text-muted-foreground">
-                        Seg a Sex: 8h as 20h | Suporte 24h via app
+                        Seg a Sex: horário comercial
                       </p>
                     </div>
                   </li>
@@ -320,7 +332,7 @@ const Contato = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Localização WOW+"
+                  title="Localização WMedic"
                 />
               </div>
             </motion.div>
@@ -345,10 +357,11 @@ const Contato = () => {
               Prefere resolver agora?
             </h2>
             <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-xl mx-auto">
-              Fale diretamente com um consultor pelo WhatsApp.
+              Fale diretamente com nossa equipe pelo WhatsApp.
             </p>
+            {/* TODO cliente */}
             <a
-              href="https://api.whatsapp.com/send/?phone=5511978369030"
+              href="https://api.whatsapp.com/send/?phone=5500000000000"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"

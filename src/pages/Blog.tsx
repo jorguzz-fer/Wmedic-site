@@ -11,66 +11,47 @@ import PageLayout from "@/components/layout/PageLayout";
 
 const categories = [
   "Todos",
-  "Saúde",
-  "Qualidade de Vida",
-  "Educação Financeira",
-  "Novidades WOW+",
+  "Gestão",
+  "Qualidade",
+  "Tecnologia",
+  "Novidades WMedic",
 ];
 
 const posts = [
   {
-    slug: "telemedicina-transformando-cuidado-saude",
-    title: "Como a telemedicina pode transformar o cuidado com a sua saúde",
+    slug: "gestao-assistencial",
+    title: "Gestão assistencial: o que é e por que importa",
     excerpt:
-      "Descubra como consultas online 24h estão revolucionando o acesso à saúde no Brasil e como a WOW+ torna isso acessível para todas as famílias.",
-    category: "Saúde",
+      "Como a gestão da operação assistencial melhora qualidade, segurança e resultados em saúde.",
+    category: "Gestão",
     date: "02 Abr 2026",
     readTime: "5 min",
+    author: "Equipe WMedic",
     image: "/images/5.webp",
     featured: true,
   },
   {
-    slug: "habitos-melhorar-qualidade-vida",
-    title: "5 hábitos simples para melhorar sua qualidade de vida",
+    slug: "qualidade-seguranca-paciente",
+    title: "Qualidade e segurança do paciente na prática",
     excerpt:
-      "Pequenas mudanças na rotina podem trazer grandes resultados para sua saúde física e mental. Confira nossas dicas práticas.",
-    category: "Qualidade de Vida",
+      "Protocolos clínicos, indicadores e melhoria contínua no cuidado ao paciente.",
+    category: "Qualidade",
     date: "28 Mar 2026",
     readTime: "4 min",
+    author: "Equipe WMedic",
     image: "/images/7.jpg",
     featured: false,
   },
   {
-    slug: "renda-extra-wow-mais",
-    title: "Renda extra: como a WOW+ pode ajudar você a ganhar mais",
+    slug: "tecnologia-dados-gestao",
+    title: "Tecnologia e dados na gestão médica",
     excerpt:
-      "Conheça o programa de consultores WOW+ e descubra como gerar renda recorrente ajudando outras pessoas a cuidarem da saúde.",
-    category: "Educação Financeira",
+      "Como indicadores e governança tornam a operação assistencial mais inteligente.",
+    category: "Tecnologia",
     date: "25 Mar 2026",
     readTime: "6 min",
+    author: "Equipe WMedic",
     image: "/images/4.jpg",
-    featured: false,
-  },
-  {
-    slug: "nr1-saude-mental-empresas",
-    title: "NR-1 e saúde mental: o que muda para as empresas em 2026",
-    excerpt:
-      "Entenda as novas exigencias da NR-1 sobre saúde mental no trabalho e como a WOW+ ajuda empresas a se adequarem.",
-    category: "Saúde",
-    date: "20 Mar 2026",
-    readTime: "7 min",
-    image: "/images/12.jpg",
-    featured: false,
-  },
-  {
-    slug: "desconto-medicamentos-economizar",
-    title: "Desconto em medicamentos: como economizar até 90%",
-    excerpt:
-      "Saiba como usar a rede de farmácias credenciadas WOW+ para pagar muito menos nos seus medicamentos do dia a dia.",
-    category: "Saúde",
-    date: "15 Mar 2026",
-    readTime: "3 min",
-    image: "/images/14.jpg",
     featured: false,
   },
 ];
@@ -97,15 +78,15 @@ const Blog = () => {
             animate={{ opacity: 1, y: 0 }}
           >
             <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-              Blog WOW+
+              Blog WMedic
             </span>
             <h1 className="font-display text-4xl md:text-6xl font-bold text-secondary-foreground mt-4 leading-tight">
-              Conteúdo que cuida de{" "}
-              <span className="text-gradient">você</span>
+              Conteúdo sobre{" "}
+              <span className="text-gradient">gestão médica</span>
             </h1>
             <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-2xl mx-auto">
-              Dicas de saúde, qualidade de vida, educação financeira e tudo sobre
-              o universo WOW+.
+              Gestão assistencial, qualidade, segurança do paciente e tecnologia
+              na operação médica.
             </p>
           </motion.div>
         </div>

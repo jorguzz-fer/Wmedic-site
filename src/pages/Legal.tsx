@@ -16,15 +16,15 @@ const sections = [
     id: "termos",
     Icon: FileText,
     title: "Termos de Uso",
-    summary: "Condições de acesso e uso da plataforma WOW+.",
+    summary: "Condições de acesso e uso da plataforma WMedic.",
     content: [
       {
         heading: "1. Aceitação dos Termos",
-        text: "Ao acessar e utilizar a plataforma WOW+, você concorda com os presentes Termos de Uso. Caso não concorde com alguma das condições aqui estabelecidas, recomendamos que não utilize nossos serviços.",
+        text: "Ao acessar e utilizar a plataforma WMedic, você concorda com os presentes Termos de Uso. Caso não concorde com alguma das condições aqui estabelecidas, recomendamos que não utilize nossos serviços.",
       },
       {
         heading: "2. Descrição dos Serviços",
-        text: "A WOW+ é uma plataforma de serviços e benefícios em saúde que oferece acesso à telemedicina, descontos em consultas, exames e medicamentos por meio de parceiros e rede credenciada. A WOW+ não é plano de saúde e não substitui a contratação de um.",
+        text: "A WMedic é uma plataforma de serviços e benefícios em saúde que oferece acesso à telemedicina, descontos em consultas, exames e medicamentos por meio de parceiros e rede credenciada. A WMedic não é plano de saúde e não substitui a contratação de um.",
       },
       {
         heading: "3. Cadastro e Conta",
@@ -36,7 +36,7 @@ const sections = [
       },
       {
         heading: "5. Limitação de Responsabilidade",
-        text: "A WOW+ atua como intermediadora entre os usuários e os profissionais/estabelecimentos parceiros. Não nos responsabilizamos diretamente pelos serviços prestados por terceiros, embora trabalhemos para garantir a qualidade de nossa rede credenciada.",
+        text: "A WMedic atua como intermediadora entre os usuários e os profissionais/estabelecimentos parceiros. Não nos responsabilizamos diretamente pelos serviços prestados por terceiros, embora trabalhemos para garantir a qualidade de nossa rede credenciada.",
       },
       {
         heading: "6. Alterações nos Termos",
@@ -60,7 +60,7 @@ const sections = [
       },
       {
         heading: "3. Base Legal",
-        text: "O tratamento de dados pessoais pela WOW+ está fundamentado nas bases legais previstas na Lei Geral de Proteção de Dados (Lei 13.709/2018), incluindo consentimento, execução de contrato e legítimo interesse.",
+        text: "O tratamento de dados pessoais pela WMedic está fundamentado nas bases legais previstas na Lei Geral de Proteção de Dados (Lei 13.709/2018), incluindo consentimento, execução de contrato e legítimo interesse.",
       },
       {
         heading: "4. Compartilhamento de Dados",
@@ -80,11 +80,11 @@ const sections = [
     id: "contrato-cliente",
     Icon: UserCircle,
     title: "Contrato do Cliente",
-    summary: "Direitos e obrigações do assinante WOW+.",
+    summary: "Direitos e obrigações do assinante WMedic.",
     content: [
       {
         heading: "1. Objeto",
-        text: "O presente contrato tem por objeto a prestação de serviços de acesso à plataforma WOW+ e seus benefícios, conforme o plano contratado pelo cliente.",
+        text: "O presente contrato tem por objeto a prestação de serviços de acesso à plataforma WMedic e seus benefícios, conforme o plano contratado pelo cliente.",
       },
       {
         heading: "2. Vigência",
@@ -95,8 +95,8 @@ const sections = [
         text: "O cliente se compromete a fornecer informações verdadeiras no cadastro, utilizar os serviços de forma adequada e manter seus dados de pagamento atualizados na plataforma.",
       },
       {
-        heading: "4. Obrigações da WOW+",
-        text: "A WOW+ se compromete a disponibilizar os serviços contratados, manter a plataforma em funcionamento, prestar suporte ao cliente e garantir a segurança dos dados conforme a LGPD.",
+        heading: "4. Obrigações da WMedic",
+        text: "A WMedic se compromete a disponibilizar os serviços contratados, manter a plataforma em funcionamento, prestar suporte ao cliente e garantir a segurança dos dados conforme a LGPD.",
       },
       {
         heading: "5. Cancelamento",
@@ -108,19 +108,19 @@ const sections = [
     id: "contrato-consultor",
     Icon: HandshakeIcon,
     title: "Contrato do Consultor",
-    summary: "Relação entre a WOW+ e consultores independentes.",
+    summary: "Relação entre a WMedic e consultores independentes.",
     content: [
       {
         heading: "1. Objeto",
-        text: "Este contrato regula a relação entre a WOW+ e seus consultores independentes, que atuam na divulgação e venda dos planos da plataforma.",
+        text: "Este contrato regula a relação entre a WMedic e seus consultores independentes, que atuam na divulgação e venda dos planos da plataforma.",
       },
       {
         heading: "2. Natureza da Relação",
-        text: "O consultor atua de forma autônoma e independente, sem vínculo empregatício com a WOW+. A remuneração é baseada em comissões sobre as vendas realizadas e a recorrência da carteira de clientes.",
+        text: "O consultor atua de forma autônoma e independente, sem vínculo empregatício com a WMedic. A remuneração é baseada em comissões sobre as vendas realizadas e a recorrência da carteira de clientes.",
       },
       {
         heading: "3. Obrigações do Consultor",
-        text: "O consultor deve seguir o código de conduta da WOW+, utilizar apenas materiais oficiais de divulgação e prestar informações verdadeiras aos potenciais clientes sobre os serviços oferecidos.",
+        text: "O consultor deve seguir o código de conduta da WMedic, utilizar apenas materiais oficiais de divulgação e prestar informações verdadeiras aos potenciais clientes sobre os serviços oferecidos.",
       },
       {
         heading: "4. Remuneração",
@@ -132,11 +132,11 @@ const sections = [
     id: "conduta",
     Icon: Medal,
     title: "Código de Conduta",
-    summary: "Princípios éticos que guiam todos na WOW+.",
+    summary: "Princípios éticos que guiam todos na WMedic.",
     content: [
       {
         heading: "1. Princípios Gerais",
-        text: "Todos os colaboradores, consultores e parceiros da WOW+ devem pautar suas ações pela ética, transparência, respeito e compromisso com o bem-estar dos clientes e da comunidade.",
+        text: "Todos os colaboradores, consultores e parceiros da WMedic devem pautar suas ações pela ética, transparência, respeito e compromisso com o bem-estar dos clientes e da comunidade.",
       },
       {
         heading: "2. Relacionamento com Clientes",
@@ -148,7 +148,7 @@ const sections = [
       },
       {
         heading: "4. Canais de Denúncia",
-        text: "A WOW+ disponibiliza canais de denúncia para relatar condutas inadequadas. Todas as denúncias são tratadas com sigilo e seriedade, garantindo a proteção do denunciante.",
+        text: "A WMedic disponibiliza canais de denúncia para relatar condutas inadequadas. Todas as denúncias são tratadas com sigilo e seriedade, garantindo a proteção do denunciante.",
       },
     ],
   },
@@ -176,7 +176,7 @@ const sections = [
       },
       {
         heading: "5. Conformidade",
-        text: "A WOW+ está em conformidade com a Lei Geral de Proteção de Dados (LGPD) e adota as melhores práticas de segurança da informação para proteger os dados de nossos usuários.",
+        text: "A WMedic está em conformidade com a Lei Geral de Proteção de Dados (LGPD) e adota as melhores práticas de segurança da informação para proteger os dados de nossos usuários.",
       },
     ],
   },
@@ -201,7 +201,7 @@ const Legal = () => {
               <span className="text-gradient">Segurança</span>
             </h1>
             <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-2xl mx-auto">
-              Transparência e segurança são pilares fundamentais da WOW+.
+              Transparência e segurança são pilares fundamentais da WMedic.
               Consulte nossos documentos legais e saiba como protegemos seus dados.
             </p>
           </motion.div>
@@ -296,8 +296,9 @@ const Legal = () => {
               <p className="font-sans text-sm text-muted-foreground">
                 Última atualização: Maio de 2026
               </p>
+              {/* TODO cliente */}
               <a
-                href="https://api.whatsapp.com/send/?phone=5511978369030"
+                href="/contato"
                 className="inline-flex items-center gap-2 font-sans text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
               >
                 Dúvidas? Fale conosco →

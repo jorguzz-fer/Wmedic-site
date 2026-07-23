@@ -15,281 +15,144 @@ import {
 } from "@phosphor-icons/react";
 import PageLayout from "@/components/layout/PageLayout";
 
-// Dados dos artigos (futuramente viria dé um CMS/API)
+// Dados dos artigos (futuramente viria de um CMS/API)
 const allPosts = [
   {
-    slug: "telemedicina-transformando-cuidado-saude",
-    title: "Como a telemedicina pode transformar o cuidado com a sua saúde",
+    slug: "gestao-assistencial",
+    title: "Gestão assistencial: o que é e por que importa",
     excerpt:
-      "Descubra como consultas online 24h estão revolucionando o acesso à saúde no Brasil e como a WOW+ torna isso acessível para todas as famílias.",
-    category: "Saúde",
+      "Como a gestão da operação assistencial melhora qualidade, segurança e resultados em saúde.",
+    category: "Gestão",
     date: "02 Abr 2026",
     readTime: "5 min",
-    author: "Equipe WOW+",
+    author: "Equipe WMedic",
     image: "/images/5.webp",
     content: [
       {
         type: "paragraph",
-        text: "A telemedicina deixou de ser uma tendência para se tornar uma realidade consolidada no Brasil. Com o avanço da tecnologia e a mudança de comportamento dos pacientes, consultar um médico pelo celular já é tão natural quanto pedir comida por aplicativo.",
+        text: "A gestão assistencial é a disciplina que organiza e coordena toda a operação de cuidado ao paciente. Ela conecta protocolos clínicos, equipes, processos e indicadores para que a assistência seja prestada com qualidade, segurança e eficiência.",
       },
       {
         type: "heading",
-        text: "O que é telemedicina?",
+        text: "O que é gestão assistencial",
       },
       {
         type: "paragraph",
-        text: "Telemedicina é a prática de oferecer serviços médicos à distância, utilizando tecnologias de comúnicação como videochamadas, chats e plataformas digitais. No Brasil, a prática foi regulamentada e ganhou força especialmente após 2020.",
-      },
-      {
-        type: "paragraph",
-        text: "Com a WOW+, você tem acesso à médicos 24 horas por dia, 7 dias por semana, diretamente do seu celular. Sem filas, sem deslocamento, sem burocracia.",
+        text: "Trata-se de estruturar a operação médica de ponta a ponta: definir fluxos de atendimento, padronizar condutas, acompanhar a jornada do paciente e monitorar resultados clínicos. O objetivo é garantir que o cuidado certo aconteça no momento certo, com previsibilidade e consistência.",
       },
       {
         type: "heading",
-        text: "Benefícios da telemedicina",
+        text: "Por que importa",
       },
       {
         type: "list",
         items: [
-          "Acesso imediato a profissionais de saúde qualificados",
-          "Economia de tempo e dinheiro com deslocamento",
-          "Atendimento disponível 24h, inclusive em feriados",
-          "Receitas e atestados médicos digitais com validade legal",
-          "Mais de 15 especialidades disponíveis online",
-          "Ideal para acompanhamento de condições crônicas",
+          "Padronização de protocolos e condutas clínicas",
+          "Redução de variabilidade e de eventos adversos",
+          "Melhoria contínua a partir de indicadores assistenciais",
+          "Coordenação entre equipes e serviços de apoio",
+          "Uso mais eficiente dos recursos da operação",
         ],
       },
       {
-        type: "heading",
-        text: "Como a WOW+ democratiza o acesso",
-      },
-      {
-        type: "paragraph",
-        text: "A WOW+ nasceu com o propósito de democratizar o acesso à saúde. Por apenas R$ 49,90/mês, você e toda sua família têm acesso à consultas médicas ilimitadas, descontos em exames e medicamentos, e muito mais.",
-      },
-      {
         type: "quote",
-        text: "Saúde de qualidade não deveria ser privilégio. Com a WOW+, qualquer família brasileira pode ter acesso à cuidados médicos de excelência.",
+        text: "Gestão assistencial bem feita é o que transforma boas intenções clínicas em resultados consistentes para o paciente.",
       },
       {
         type: "paragraph",
-        text: "Nossa plataforma conecta você a uma rede completa de médicos, especialistas, clínicas e laboratórios em todo o Brasil. Tudo isso na palma da sua mão, com a praticidade que sua rotina exige.",
-      },
-      {
-        type: "heading",
-        text: "Comece agora",
-      },
-      {
-        type: "paragraph",
-        text: "Não espere ficar doente para cuidar da saúde. Assine a WOW+ hoje e tenha a tranquilidade de saber que você e sua família estão protegidos. Consultas médicas 24h, descontos em medicamentos e muito mais — tudo em uma única assinatura acessível.",
+        text: "A WMedic atua na gestão da operação médica e assistencial do grupo WFSP, unindo governança clínica, indicadores e melhoria contínua para elevar a qualidade e a segurança do cuidado.",
       },
     ],
   },
   {
-    slug: "habitos-melhorar-qualidade-vida",
-    title: "5 hábitos simples para melhorar sua qualidade de vida",
+    slug: "qualidade-seguranca-paciente",
+    title: "Qualidade e segurança do paciente na prática",
     excerpt:
-      "Pequenas mudanças na rotina podem trazer grandes resultados para sua saúde física e mental. Confira nossas dicas práticas.",
-    category: "Qualidade de Vida",
+      "Protocolos clínicos, indicadores e melhoria contínua no cuidado ao paciente.",
+    category: "Qualidade",
     date: "28 Mar 2026",
     readTime: "4 min",
-    author: "Equipe WOW+",
+    author: "Equipe WMedic",
     image: "/images/7.jpg",
     content: [
       {
         type: "paragraph",
-        text: "Melhorar a qualidade de vida não exige mudanças radicais. Muitas vezes, são os pequenos hábitos diários que fazem a maior diferença na nossa saúde física e mental.",
+        text: "Segurança do paciente é o compromisso de reduzir ao máximo os riscos evitáveis do cuidado. Na prática, isso se traduz em processos claros, protocolos baseados em evidência e uma cultura que aprende com cada ocorrência.",
       },
       {
         type: "heading",
-        text: "1. Hidrate-se adequadamente",
+        text: "Protocolos e boas práticas",
       },
       {
         type: "paragraph",
-        text: "Beber pelo menos 2 litros de água por dia é fundamental para o funcionamento do corpo. A hidratação adequada melhora a disposição, a pele, a digestão e até o humor.",
+        text: "Padronizar condutas clínicas garante que pacientes em situações semelhantes recebam o mesmo cuidado de qualidade, independentemente da equipe de plantão. Protocolos bem desenhados diminuem a variabilidade e tornam a assistência mais previsível.",
       },
       {
         type: "heading",
-        text: "2. Durma bem",
+        text: "Indicadores que orientam o cuidado",
       },
       {
-        type: "paragraph",
-        text: "O sono de qualidade é um dos pilares da saúde. Procure dormir de 7 a 8 horas por noite, mantenha horários regulares e evite telas antes de dormir.",
-      },
-      {
-        type: "heading",
-        text: "3. Movimente-se",
-      },
-      {
-        type: "paragraph",
-        text: "Não precisa ser atleta. Caminhadas de 30 minutos, alongamentos e exercícios leves já trazem benefícios enormês para o corpo e a mente.",
-      },
-      {
-        type: "heading",
-        text: "4. Cuide da saúde mental",
-      },
-      {
-        type: "paragraph",
-        text: "Reserve momentos para atividades que te fazem bem. Meditar, ler, conversar com amigos — tudo isso contribui para o equilíbrio emocional.",
-      },
-      {
-        type: "heading",
-        text: "5. Faça check-ups regulares",
-      },
-      {
-        type: "paragraph",
-        text: "Prevenir é sempre melhor que remediar. Com a WOW+, você tem acesso à consultas médicas e exames com descontos, facilitando o acompanhamento regular da sua saúde.",
+        type: "list",
+        items: [
+          "Monitoramento de eventos adversos e incidentes",
+          "Acompanhamento de desfechos clínicos",
+          "Auditorias e ciclos de melhoria contínua",
+          "Metas de qualidade acompanhadas por equipe",
+        ],
       },
       {
         type: "quote",
-        text: "Cuidar da saúde é um investimento diário. Comece hoje com pequenos passos e colha grandes resultados.",
+        text: "Segurança do paciente não é um projeto pontual: é uma cultura sustentada por processos, dados e melhoria contínua.",
+      },
+      {
+        type: "paragraph",
+        text: "A WMedic apoia a operação assistencial com governança clínica e indicadores que sustentam a qualidade e a segurança do cuidado em cada etapa da jornada do paciente.",
       },
     ],
   },
   {
-    slug: "renda-extra-wow-mais",
-    title: "Renda extra: como a WOW+ pode ajudar você a ganhar mais",
+    slug: "tecnologia-dados-gestao",
+    title: "Tecnologia e dados na gestão médica",
     excerpt:
-      "Conheça o programa de consultores WOW+ e descubra como gerar renda recorrente ajudando outras pessoas.",
-    category: "Educação Financeira",
+      "Como indicadores e governança tornam a operação assistencial mais inteligente.",
+    category: "Tecnologia",
     date: "25 Mar 2026",
     readTime: "6 min",
-    author: "Equipe WOW+",
+    author: "Equipe WMedic",
     image: "/images/4.jpg",
     content: [
       {
         type: "paragraph",
-        text: "Buscar uma renda extra é uma realidade de milhões de brasileiros. E se você pudesse ganhar dinheiro ajudando pessoas a terem acesso à saúde de qualidade?",
+        text: "Dados são hoje um dos principais ativos da gestão médica. Quando bem organizados e analisados, eles revelam gargalos, apoiam decisões clínicas e ajudam a operação a evoluir de forma contínua.",
       },
       {
         type: "heading",
-        text: "O programa de consultores WOW+",
+        text: "Da informação à decisão",
       },
       {
         type: "paragraph",
-        text: "A WOW+ oferecé um programa de consultores onde você pode gerar renda recorrente a cada assinatura ativa que indicar. Sem investimento inicial, sem estoque, sem complicação.",
+        text: "Reunir informações assistenciais em indicadores confiáveis permite enxergar a operação como um todo. Painéis e relatórios transformam registros do dia a dia em conhecimento útil para gestores e equipes clínicas.",
+      },
+      {
+        type: "heading",
+        text: "Governança de dados",
       },
       {
         type: "list",
         items: [
-          "Comissões recorrentes mensais",
-          "Plano de carreira estruturado",
-          "Treinamentos exclusivos gratuitos",
-          "Materiais de marketing prontos",
-          "Suporte dedicado da equipe",
-        ],
-      },
-      {
-        type: "heading",
-        text: "Como funciona a renda recorrente",
-      },
-      {
-        type: "paragraph",
-        text: "Diferente de vendas tradicionais, na WOW+ sua renda é recorrente. Isso significa que você ganha todos os meses enquanto seus clientes permanecerem ativos. Quanto mais clientes, maior sua renda — e ela não para de crescer.",
-      },
-      {
-        type: "quote",
-        text: "Imagine ganhar uma renda que cresce mês a mês, mesmo enquanto você dorme. Essa é a proposta do programa de consultores WOW+.",
-      },
-      {
-        type: "heading",
-        text: "Comece agora",
-      },
-      {
-        type: "paragraph",
-        text: "Cadastre-se como consultor, acesse nossos treinamentos e comece a construir sua rede. O primeiro passo para a sua independência financeira está a um clique de distância.",
-      },
-    ],
-  },
-  {
-    slug: "nr1-saude-mental-empresas",
-    title: "NR-1 e saúde mental: o que muda para as empresas em 2026",
-    excerpt:
-      "Entenda as novas exigências da NR-1 sobre saúde mental no trabalho e como a WOW+ ajuda empresas a se adequarem.",
-    category: "Saúde",
-    date: "20 Mar 2026",
-    readTime: "7 min",
-    author: "Equipe WOW+",
-    image: "/images/12.jpg",
-    content: [
-      {
-        type: "paragraph",
-        text: "A atualização da NR-1 trouxe mudanças significativas para empresas de todos os portes. Agora, a gestão de riscos psicossociais — como estrêsse, assédio e burnout — é obrigatória no Programa de Gerenciamento de Riscos (PGR).",
-      },
-      {
-        type: "heading",
-        text: "O que mudou na NR-1",
-      },
-      {
-        type: "list",
-        items: [
-          "Inclusão obrigatória de riscos psicossociais no PGR",
-          "Responsabilidade do empregador pela saúde mental dos colaboradores",
-          "Necessidade de documentação e evidências de ações preventivas",
-          "Fiscalização intensificada pelo MTE a partir de 2026",
-        ],
-      },
-      {
-        type: "heading",
-        text: "Impacto para as empresas",
-      },
-      {
-        type: "paragraph",
-        text: "Empresas que não se adequarem às novas exigências estão sujeitas a autuações, multas e até interdições. Além dos riscos legais, a falta de cuidado com a saúde mental dos colaboradores impacta diretamente na produtividade, no turnover e no clima organizacional.",
-      },
-      {
-        type: "quote",
-        text: "Cuidar da saúde mental dos colaboradores não é mais opcional — é uma exigência legal é uma responsabilidade corporativa.",
-      },
-      {
-        type: "heading",
-        text: "Como a WOW+ pode ajudar",
-      },
-      {
-        type: "paragraph",
-        text: "A WOW+ oferece soluções completas para empresas se adequarem à NR-1: telemedicina com suporte psicológico 24h, programas de bem-estar, relatórios para RH e documentação de conformidade. Tudo integrado em uma plataforma digital acessível.",
-      },
-    ],
-  },
-  {
-    slug: "desconto-medicamentos-economizar",
-    title: "Desconto em medicamentos: como economizar até 90%",
-    excerpt:
-      "Saiba como usar a rede de farmácias credenciadas WOW+ para pagar muito menos nos seus medicamentos.",
-    category: "Saúde",
-    date: "15 Mar 2026",
-    readTime: "3 min",
-    author: "Equipe WOW+",
-    image: "/images/14.jpg",
-    content: [
-      {
-        type: "paragraph",
-        text: "O gasto com medicamentos é uma das maiores preocupações das famílias brasileiras. Mas e se você pudesse economizar até 90% nos seus remédios do dia a dia?",
-      },
-      {
-        type: "heading",
-        text: "A rede de farmácias WOW+",
-      },
-      {
-        type: "paragraph",
-        text: "Com mais de 19 mil farmácias credenciadas em todo o Brasil, a WOW+ oferece descontos exclusivos em medicamentos genéricos e de marca. E o melhor: a economia é imediata, direto no caixa da farmácia.",
-      },
-      {
-        type: "heading",
-        text: "Como funciona",
-      },
-      {
-        type: "list",
-        items: [
-          "Acesse o app WOW+ e localize a farmácia mais próxima",
-          "Apresente seu cartão digital no caixa",
-          "O desconto é aplicado automaticamente",
-          "Economia de até 90% em medicamentos selecionados",
+          "Indicadores assistenciais padronizados e confiáveis",
+          "Governança e segurança das informações de saúde",
+          "Visão integrada da jornada do paciente",
+          "Suporte a decisões clínicas e gerenciais",
         ],
       },
       {
         type: "quote",
-        text: "Mais de 80 mil farmácias parceiras em todo o Brasil. Onde você estiver, tem uma farmácia WOW+ por perto.",
+        text: "Tecnologia não substitui o cuidado humano: ela dá às equipes a informação certa para cuidar melhor.",
+      },
+      {
+        type: "paragraph",
+        text: "A WMedic usa indicadores e governança para tornar a operação assistencial mais inteligente, apoiando a tomada de decisão com dados e mantendo o cuidado ao paciente no centro.",
       },
     ],
   },
@@ -327,7 +190,8 @@ const BlogPost = () => {
     .filter((p) => p.slug !== slug)
     .slice(0, 3);
 
-  const shareUrl = `https://wow.tudomudou.com.br/blog/${slug}`;
+  // TODO cliente: domínio final do site
+  const shareUrl = `https://wmedic.com.br/blog/${slug}`;
 
   const copyLink = () => {
     navigator.clipboard.writeText(shareUrl);
@@ -513,19 +377,19 @@ const BlogPost = () => {
           {/* CTA inline */}
           <div className="mt-12 bg-gradient-orange rounded-2xl p-8 md:p-10 text-center">
             <h3 className="font-display text-2xl md:text-3xl font-bold text-white mb-3">
-              Cuide da sua saúde com a WOW+
+              Gestão médica com a WMedic
             </h3>
             <p className="font-sans text-white/80 text-base mb-6 max-w-lg mx-auto">
-              Médicos 24h, descontos em medicamentos e muito mais por apenas
-              R$ 49,90/mês.
+              Excelência, segurança e humanização na gestão da operação
+              assistencial. Fale com a nossa equipe.
             </p>
-            <a
-              href="https://app.wowmais.com.br/consumer?ref=negócioswowbrasil"
+            <Link
+              to="/contato"
               className="inline-flex items-center gap-2 bg-white text-orange-dark px-8 py-3.5 rounded-full font-sans font-bold text-base hover:bg-white/90 transition-colors shadow-lg"
             >
-              Assinar Agora
+              Fale com a WMedic
               <ArrowUpRight size={18} />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
