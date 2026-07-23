@@ -1,3 +1,4 @@
+{/* TODO cliente: logos */}
 const partners = Array.from({ length: 19 }, (_, i) => ({
   src: `/images/parceiros/${i + 1}.jpg`,
   alt: `Parceiro ${i + 1}`,

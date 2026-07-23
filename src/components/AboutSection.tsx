@@ -6,6 +6,7 @@ const stats = [
   { value: "24h", label: "Clínicos disponíveis" },
   { value: "Nacional", label: "Rede credenciada" },
   { value: "100%", label: "Foco no paciente" },
+  { value: "WFSP", label: "Grupo integrado" },
 ];
 
 const AboutSection = () => {

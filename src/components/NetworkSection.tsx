@@ -8,10 +8,10 @@ import {
 } from "@phosphor-icons/react";
 
 const networkItems = [
-  { Icon: Laptop, text: "Atendimento online imediato" },
-  { Icon: Hospital, text: "Consultas presenciais com desconto" },
-  { Icon: Flask, text: "Exames em clínicas parceiras" },
-  { Icon: Pill, text: "Compra de medicamentos com economia" },
+  { Icon: Laptop, text: "Atendimento clínico coordenado" },
+  { Icon: Hospital, text: "Consultas presenciais na rede credenciada" },
+  { Icon: Flask, text: "Exames em clínicas e laboratórios parceiros" },
+  { Icon: Pill, text: "Cobertura distribuída em todo o Brasil" },
 ];
 
 const NetworkSection = () => {
@@ -28,7 +28,7 @@ const NetworkSection = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-card-hover">
               <img
                 src="/images/3.webp"
-                alt="Ampla Rede de Saúde WOW+"
+                alt="Rede credenciada WMedic"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 to-transparent" />
@@ -41,8 +41,9 @@ const NetworkSection = () => {
                transition={{ delay: 0.2 }}
                className="absolute -bottom-8 -right-8 bg-card border border-border p-6 rounded-2xl shadow-card max-w-[280px]"
             >
-              <div className="font-display text-orange font-bold text-2xl mb-1">+320 Clínicas</div>
-              <p className="font-sans text-sm text-muted-foreground">4.000 farmácias parceiras. Presente em 20+ estados do Brasil.</p>
+              {/* TODO cliente: números reais */}
+              <div className="font-display text-orange font-bold text-2xl mb-1">Rede credenciada</div>
+              <p className="font-sans text-sm text-muted-foreground">Qualificada e distribuída em todo o território nacional.</p>
             </motion.div>
           </motion.div>
 
@@ -53,14 +54,14 @@ const NetworkSection = () => {
             className="order-1 lg:order-2"
           >
             <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-              Rede Médica
+              Nossa rede
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 leading-tight mb-6">
-              Uma rede de saúde <span className="text-gradient">cada vez maior.</span>
+              Rede credenciada <span className="text-gradient">em todo o Brasil.</span>
             </h2>
             <p className="text-muted-foreground font-sans text-lg mb-8 leading-relaxed">
-              A WOW+ conecta você a médicos, especialistas, clínicas e laboratórios em diversas regiões do Brasil.
-              Assim você pode escolher entre:
+              A WMedic conecta pacientes a médicos, especialistas, clínicas e laboratórios em diversas regiões do Brasil,
+              com uma rede credenciada qualificada. Assim você conta com:
             </p>
 
             <ul className="space-y-4 mb-8">
@@ -81,7 +82,7 @@ const NetworkSection = () => {
 
             <div className="bg-muted p-6 rounded-xl border-l-4 border-orange">
               <p className="font-sans text-lg font-semibold text-foreground/90">
-                Mais acesso. Mais conveniência. Mais cuidado para sua família.
+                Mais acesso. Mais qualidade. Mais cuidado para cada paciente.
               </p>
             </div>
           </motion.div>

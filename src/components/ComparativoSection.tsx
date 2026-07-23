@@ -1,65 +1,44 @@
 import { motion } from "framer-motion";
 import { X, Check, ArrowUpRight } from "lucide-react";
 import {
-  Wallet,
   ArrowsClockwise,
-  CurrencyDollar,
-  Percent,
+  ChartBar,
+  Heart,
   Buildings,
-  Clock,
-  Package,
-  Warning,
+  CalendarCheck,
   Rocket,
 } from "@phosphor-icons/react";
 
 const rows = [
   {
-    Icon: Wallet,
-    criterio: "Investimento Inicial",
-    outros: "R$10k – 500k",
-    wow: "R$120 – 497",
-  },
-  {
     Icon: ArrowsClockwise,
-    criterio: "Retorno",
-    outros: "2 – 5 anos",
-    wow: "Imediato (1ª venda)",
+    criterio: "Processos",
+    outros: "Processos manuais",
+    wow: "Processos padronizados",
   },
   {
-    Icon: CurrencyDollar,
-    criterio: "Renda",
-    outros: "Ganha só uma vez",
-    wow: "Ganha todo mês (recorrência)",
+    Icon: ChartBar,
+    criterio: "Gestão",
+    outros: "Sem indicadores",
+    wow: "Dados e governança",
   },
   {
-    Icon: Percent,
-    criterio: "Comissão",
-    outros: "5% – 10%",
-    wow: "Até 100% + 25% recorrente",
+    Icon: Heart,
+    criterio: "Atendimento",
+    outros: "Atendimento fragmentado",
+    wow: "Jornada humanizada",
   },
   {
     Icon: Buildings,
-    criterio: "Estrutura",
-    outros: "Precisa estrutura física",
-    wow: "100% digital",
+    criterio: "Rede",
+    outros: "Rede sem curadoria",
+    wow: "Rede credenciada qualificada",
   },
   {
-    Icon: Clock,
-    criterio: "Horário",
-    outros: "Horário fixo",
-    wow: "Seu horário",
-  },
-  {
-    Icon: Package,
-    criterio: "Estoque",
-    outros: "Dinheiro parado",
-    wow: "Sem estoque",
-  },
-  {
-    Icon: Warning,
-    criterio: "Risco",
-    outros: "Alto",
-    wow: "Baixíssimo",
+    Icon: CalendarCheck,
+    criterio: "Escalas",
+    outros: "Escalas descoordenadas",
+    wow: "Gestão de escalas e atendimento",
   },
 ];
 
@@ -74,14 +53,14 @@ const ComparativoSection = () => {
           className="text-center mb-14"
         >
           <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-            Oportunidade de negócio
+            Comparativo
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-secondary-foreground mt-3 leading-tight max-w-3xl mx-auto">
-            Por que a WOW+ é{" "}
-            <span className="text-gradient">diferente de qualquer outro negócio?</span>
+            Gestão tradicional{" "}
+            <span className="text-gradient">× Gestão WMedic</span>
           </h2>
           <p className="text-secondary-foreground/60 font-sans text-base mt-4">
-            Escolhas de hoje, liberdade para sempre.
+            A diferença entre operar no improviso e operar com gestão.
           </p>
         </motion.div>
 
@@ -98,10 +77,10 @@ const ComparativoSection = () => {
               Critério
             </div>
             <div className="px-5 py-4 font-display text-xs font-bold uppercase tracking-widest text-red-400 flex items-center gap-2">
-              <X className="w-4 h-4" /> Outros Negócios
+              <X className="w-4 h-4" /> Gestão tradicional
             </div>
             <div className="px-5 py-4 font-display text-xs font-bold uppercase tracking-widest text-primary flex items-center gap-2">
-              <Check className="w-4 h-4" /> WOW+
+              <Check className="w-4 h-4" /> Gestão WMedic
             </div>
           </div>
 
@@ -150,21 +129,21 @@ const ComparativoSection = () => {
         >
           <div>
             <p className="font-sans text-sm text-white/80 mb-1">
-              Você pode investir alto e esperar anos...
+              Sua operação assistencial pode funcionar melhor...
             </p>
             <p className="font-display text-2xl md:text-3xl font-bold text-white leading-tight">
-              OU começar hoje e{" "}
+              Conheça a gestão médica{" "}
               <span className="underline decoration-white/40">
-                ganhar todos os meses.
+                da WMedic.
               </span>
             </p>
           </div>
           <a
-            href="/consultor"
+            href="/contato"
             className="inline-flex items-center gap-2 bg-white text-orange-dark px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-white/90 transition-colors whitespace-nowrap shadow-lg flex-shrink-0"
           >
             <Rocket size={20} weight="fill" />
-            Comece Agora
+            Fale Conosco
             <ArrowUpRight className="w-5 h-5" />
           </a>
         </motion.div>

@@ -8,19 +8,29 @@ import {
 
 const faqs = [
   {
-    question: "Como funciona a telemedicina do WOW+Saúde?",
+    question: "O que é a WMedic?",
     answer:
-      "Nosso serviço de telemedicina está disponível 24 horas por dia, 7 dias por semana. Você pode acessar consultas médicas online diretamente pelo app, com profissionais qualificados prontos para atender você e sua família.",
+      "A WMedic é a gestora da operação assistencial do grupo WFSP, responsável por corpo clínico, rede credenciada, qualidade assistencial e experiência do paciente.",
   },
   {
-    question: "Posso incluir minha família nos planos?",
+    question: "Quais frentes de atuação a WMedic cobre?",
     answer:
-      "Sim! Todos os nossos planos permitem a inclusão de dependentes. Você pode adicionar cônjuge, filhos e outros famíliares para que todos tenham acesso àos benefícios.",
+      "Médicos clínicos 24h, especialidades médicas, psicologia, nutrição, pediatria, programas de saúde, gestão de escalas e suporte e qualidade.",
   },
   {
-    question: "Como faço para contratar um plano?",
+    question: "Como a WMedic garante qualidade?",
     answer:
-      "A contratação é 100% digital. Basta acessar nosso app ou site, escolher o plano ideal e fazer seu cadastro. Em poucos minutos você já estará protegido.",
+      "Com protocolos clínicos, segurança do paciente, processos padronizados e melhoria contínua alinhada às melhores práticas.",
+  },
+  {
+    question: "A WMedic atende em todo o Brasil?",
+    answer:
+      "Sim — a rede credenciada é qualificada e distribuída em todo o território nacional.",
+  },
+  {
+    question: "Como falar com a WMedic?",
+    answer:
+      "Pela página de Contato ou pelos canais informados no rodapé.",
   },
 ];
 

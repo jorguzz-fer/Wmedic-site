@@ -18,16 +18,16 @@ const CTASection = () => {
               <Heart size={32} weight="duotone" className="text-primary" />
             </div>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-secondary-foreground max-w-3xl mx-auto leading-tight">
-            Comece a cuidar do que mais importa hoje mesmo
+            Vamos cuidar da sua operação assistencial?
           </h2>
           <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-xl mx-auto">
-            Cadastre-se e tenha acesso imediato a todos os benefícios WOW Mais.
+            Fale com a WMedic e conheça nossa gestão médica.
           </p>
           <a
-            href="https://app.wowmais.com.br/consumer?ref=negócioswowbrasil"
+            href="/contato"
             className="inline-block mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
           >
-            Começar Agora
+            Fale Conosco
           </a>
         </motion.div>
       </div>
