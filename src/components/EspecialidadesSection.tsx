@@ -24,14 +24,16 @@ const EspecialidadesSection = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-              Nossas frentes de atuação
+              Cobertura clínica completa
             </span>
             <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mt-3 leading-tight">
-              Frentes de <span className="text-gradient">atuação</span>
+              Do atendimento 24h à{" "}
+              <span className="text-gradient">gestão de escalas</span>
             </h2>
             <p className="text-muted-foreground font-sans text-lg mt-5 leading-relaxed max-w-md">
-              Cobertura clínica completa, do atendimento 24h aos programas de
-              saúde e à gestão de escalas.
+              A WMedic reúne clínicos, especialistas e programas de saúde sob uma
+              gestão única — com qualidade assistencial, segurança do paciente e
+              governança de ponta a ponta.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -39,12 +41,11 @@ const EspecialidadesSection = () => {
                 <UsersThree size={28} weight="duotone" className="text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-sans font-semibold text-foreground text-sm">
-                    Para toda a família
+                    Clínicos 24h e especialidades médicas
                   </p>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Consultas avulsas com qualquer especialidade a partir de{" "}
-                    <strong className="text-primary">R$29,90</strong> — titular
-                    ou dependentes.
+                    Psicologia, nutrição e pediatria sob uma gestão
+                    assistencial única.
                   </p>
                 </div>
               </div>
@@ -52,26 +53,26 @@ const EspecialidadesSection = () => {
                 <Lightning size={28} weight="duotone" className="text-primary flex-shrink-0 mt-0.5" />
                 <div>
                   <p className="font-sans font-semibold text-foreground text-sm">
-                    Atendimento rápido
+                    Programas de saúde e suporte contínuo
                   </p>
                   <p className="font-sans text-sm text-muted-foreground">
-                    Sem fila, sem espera. 80% dos casos resolvidos online, na
-                    hora.
+                    Governança, qualidade e segurança do paciente de ponta a
+                    ponta.
                   </p>
                 </div>
               </div>
             </div>
 
             <p className="font-sans text-sm font-medium text-primary italic mt-8">
-              Sua saúde, quando e onde precisar.{" "}
-              <strong>Acessível para toda a família.</strong>
+              Gestão que cuida.{" "}
+              <strong>Cuidado que transforma.</strong>
             </p>
 
             <a
               href="/contato"
               className="inline-block mt-6 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
             >
-              Fale conosco
+              Fale com a WMedic
             </a>
           </motion.div>
 
@@ -112,11 +113,12 @@ const EspecialidadesSection = () => {
             </div>
 
             {/* Bottom stats */}
+            {/* TODO cliente: números reais */}
             <div className="grid grid-cols-3 gap-3 mt-5">
               {[
-                { value: "24h", label: "Atendimento" },
-                { value: "100%", label: "Online e seguro" },
-                { value: "NPS 96,5%", label: "Satisfação" },
+                { value: "24h", label: "Clínicos" },
+                { value: "Nacional", label: "Rede credenciada" },
+                { value: "100%", label: "Foco no paciente" },
               ].map((s) => (
                 <div
                   key={s.label}

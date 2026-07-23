@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 const aboutImage = "/images/5.webp";
 
+{/* TODO cliente: números reais */}
 const stats = [
-  { value: "50k+", label: "Atendimentos Realizados" },
-  { value: "NPS 96,5%", label: "Satisfação dos Pacientes" },
-  { value: "20+", label: "Estados Atendidos" },
-  { value: "+20", label: "Especialidades Disponíveis" },
+  { value: "24h", label: "Clínicos disponíveis" },
+  { value: "Nacional", label: "Rede credenciada" },
+  { value: "100%", label: "Foco no paciente" },
 ];
 
 const AboutSection = () => {
