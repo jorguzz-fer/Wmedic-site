@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const reasons = [
-  "Atendimento médico 24h",
-  "Rede nacional de clínicas",
-  "Descontos em exames e medicamentos",
-  "Benefícios para toda a família",
-  "Sem burocracia"
+  "Equipe médica qualificada e avaliada",
+  "Processos padronizados e melhores práticas",
+  "Tecnologia integrada para segurança e eficiência",
+  "Foco em resultado e satisfação",
+  "Rede credenciada em todo o Brasil",
 ];
 
 const FeaturesSection = () => {
@@ -17,13 +17,13 @@ const FeaturesSection = () => {
       <div className="container relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-orange font-sans text-sm font-semibold uppercase tracking-widest">
-            Diferencial
+            Por que somos diferenciais
           </span>
           <h2 className="font-display text-4xl md:text-5xl font-bold mt-3 leading-tight">
-            Por que escolher a WOW+?
+            Diferenciais que geram resultado
           </h2>
           <p className="text-secondary-foreground/70 font-sans text-lg mt-4 max-w-2xl mx-auto">
-            Ter saúde de qualidade nunca foi tão simples, rápido e econômico.
+            Gestão médica com governança, qualidade e foco em quem mais importa: o paciente.
           </p>
         </div>
 

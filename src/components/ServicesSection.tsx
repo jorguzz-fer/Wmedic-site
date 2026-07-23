@@ -1,41 +1,13 @@
 import { motion } from "framer-motion";
-import { Heart, Activity, Pill } from "lucide-react";
+import { Stethoscope, ShieldCheck, HeartPulse, Users, LineChart, Headphones } from "lucide-react";
 
 const services = [
-  {
-    icon: Heart,
-    title: "WOW+ Saúde",
-    description: "Atendimento médico rápido, digital e presencial.",
-    features: [
-      "Clínico geral e pediatria 24h",
-      "Especialistas online",
-      "Consultas presenciais com desconto",
-      "Rede de clínicas parceiras"
-    ],
-    link: "https://app.wowmais.com.br/consumer?ref=negócioswowbrasil",
-  },
-  {
-    icon: Activity,
-    title: "WOW+ Exames",
-    description: "Economize em exames laboratoriais e diagnósticos.",
-    features: [
-      "Laboratórios parceiros",
-      "Preços reduzidos",
-      "Atendimento em diversas cidades"
-    ],
-    link: "https://app.wowmais.com.br/consumer?ref=negócioswowbrasil",
-  },
-  {
-    icon: Pill,
-    title: "WOW+ Farmácia",
-    description: "Descontos em milhares de medicamentos.",
-    features: [
-      "Até 90% de economia",
-      "Rede nacional de farmácias",
-      "Compra simples e rápida"
-    ],
-    link: "https://app.wowmais.com.br/consumer?ref=negócioswowbrasil",
-  },
+  { icon: Users, title: "Corpo Clínico", description: "Gestão e coordenação de médicos e especialistas.", features: ["Seleção e avaliação contínua", "Coordenação de equipes", "Escalas e cobertura"], link: "/o-que-fazemos" },
+  { icon: ShieldCheck, title: "Credenciamento e Rede", description: "Seleção criteriosa de profissionais e prestadores em todo o Brasil.", features: ["Rede qualificada", "Cobertura nacional", "Gestão de prestadores"], link: "/o-que-fazemos" },
+  { icon: HeartPulse, title: "Qualidade Assistencial", description: "Protocolos clínicos, segurança do paciente e melhoria contínua dos processos.", features: ["Protocolos clínicos", "Segurança do paciente", "Melhoria contínua"], link: "/o-que-fazemos" },
+  { icon: Stethoscope, title: "Experiência do Paciente", description: "Atendimento humanizado, eficiente e resolutivo em todas as jornadas de cuidado.", features: ["Atendimento humanizado", "Jornada de cuidado", "Resolutividade"], link: "/o-que-fazemos" },
+  { icon: LineChart, title: "Gestão e Inteligência", description: "Dados, indicadores e governança para uma operação de alta performance.", features: ["Indicadores e dados", "Governança assistencial", "Alta performance"], link: "/o-que-fazemos" },
+  { icon: Headphones, title: "Suporte Clínico", description: "Apoio contínuo aos pacientes e à equipe médica.", features: ["Apoio à equipe médica", "Suporte ao paciente", "Disponibilidade contínua"], link: "/o-que-fazemos" },
 ];
 
 const ServicesSection = () => {
@@ -49,13 +21,13 @@ const ServicesSection = () => {
           className="text-center mb-16"
         >
           <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-            Nossos Serviços
+            O que fazemos
           </span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3">
-            O seu Super App de <span className="text-gradient">Saúde e Benefícios</span>
+            Gestão médica <span className="text-gradient">de ponta a ponta</span>
           </h2>
           <p className="text-muted-foreground font-sans text-lg mt-4 max-w-2xl mx-auto">
-            A WOW+ conecta você a serviços essenciais com qualidade superior e preço acessível.
+            A WMedic cuida de toda a operação assistencial com excelência, segurança e humanização.
           </p>
         </motion.div>
 
@@ -64,8 +36,6 @@ const ServicesSection = () => {
             <motion.a
               key={service.title}
               href={service.link}
-              target="_blank"
-              rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -91,7 +61,7 @@ const ServicesSection = () => {
               </ul>
 
               <span className="inline-block text-primary font-sans text-sm font-semibold group-hover:translate-x-1 transition-transform">
-                Assinar Plano →
+                Saiba mais →
               </span>
             </motion.a>
           ))}

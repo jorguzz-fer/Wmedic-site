@@ -19,34 +19,44 @@ const AboutSection = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-              Como funciona
+              Sobre a WMedic
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 leading-tight">
-              Saúde acessível <span className="text-gradient">de verdade.</span>
+              Gestão da operação assistencial do grupo{" "}
+              <span className="text-gradient">WFSP</span>
             </h2>
             <p className="text-muted-foreground font-sans text-lg mt-6 leading-relaxed">
-              Com a WOW+ você tem acesso à uma rede completa de saúde e benefícios. 
-              Tudo funciona de forma simples:
+              A WMedic é responsável por garantir excelência, qualidade e acesso à
+              saúde de forma humanizada, segura e eficiente — coordenando corpo
+              clínico, rede credenciada, qualidade assistencial e a experiência de
+              cada paciente.
             </p>
-            
+
             <ul className="mt-8 space-y-4 font-sans text-foreground/80 font-medium text-lg">
               <li className="flex items-center gap-4 border-l-2 border-orange pl-4 bg-muted/40 py-2 rounded-r-lg">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-orange text-white flex items-center justify-center font-bold text-sm">1</span>
-                Ative sua assinatura
+                Corpo clínico gerido e coordenado
               </li>
               <li className="flex items-center gap-4 border-l-2 border-orange pl-4 bg-muted/40 py-2 rounded-r-lg">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-orange text-white flex items-center justify-center font-bold text-sm">2</span>
-                Escolha o atendimento que precisa
+                Rede credenciada em todo o Brasil
               </li>
               <li className="flex items-center gap-4 border-l-2 border-orange pl-4 bg-muted/40 py-2 rounded-r-lg">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-orange text-white flex items-center justify-center font-bold text-sm">3</span>
-                Use quando quiser — online ou presencial
+                Protocolos clínicos e segurança do paciente
+              </li>
+              <li className="flex items-center gap-4 border-l-2 border-orange pl-4 bg-muted/40 py-2 rounded-r-lg">
+                <span className="flex-shrink-0 w-8 h-8 rounded-full bg-orange text-white flex items-center justify-center font-bold text-sm">4</span>
+                Governança de alta performance
               </li>
             </ul>
 
-            <p className="font-sans text-lg mt-8 leading-relaxed font-semibold text-foreground">
-              Sem burocracia, sem filas e com preços acessíveis.
-            </p>
+            <a
+              href="/sobre"
+              className="inline-block mt-8 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-semibold text-base hover:bg-orange-dark transition-colors shadow-orange"
+            >
+              Saiba mais
+            </a>
           </motion.div>
 
           <motion.div
@@ -58,7 +68,7 @@ const AboutSection = () => {
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover">
               <img
                 src={aboutImage}
-                alt="Equipe WOW Mais"
+                alt="WMedic — Gestão Médica"
                 className="w-full aspect-square object-cover object-top"
               />
             </div>

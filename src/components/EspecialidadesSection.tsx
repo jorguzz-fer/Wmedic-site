@@ -2,26 +2,14 @@ import { motion } from "framer-motion";
 import { UsersThree, Lightning, Sparkle } from "@phosphor-icons/react";
 
 const especialidades = [
-  "Pediatria",
-  "Ginecologia",
-  "Cardiologia",
-  "Cirurgia Geral",
-  "Endocrinologia",
-  "Dermatologia",
-  "Geriatria",
-  "Nutrologia",
-  "Ortopedia",
-  "Oftalmologia",
-  "Urologia",
-  "Neurologia",
-  "Neurocirurgia",
+  "Médicos Clínicos 24h",
+  "Especialidades Médicas",
   "Psicologia",
-  "Clínico Geral",
   "Nutrição",
-  "Psiquiatria",
-  "Gastroenterologia",
-  "Oncologia",
-  "Anestesiologia",
+  "Pediatria",
+  "Programas de Saúde",
+  "Gestão de Escalas e Atendimento",
+  "Suporte e Qualidade",
 ];
 
 const EspecialidadesSection = () => {
@@ -36,18 +24,14 @@ const EspecialidadesSection = () => {
             viewport={{ once: true }}
           >
             <span className="text-primary font-sans text-sm font-semibold uppercase tracking-widest">
-              Cuidado completo
+              Nossas frentes de atuação
             </span>
             <h2 className="font-display text-4xl md:text-6xl font-bold text-foreground mt-3 leading-tight">
-              <span className="text-gradient">+20</span>
-              <br />
-              especialidades
-              <br />
-              disponíveis
+              Frentes de <span className="text-gradient">atuação</span>
             </h2>
             <p className="text-muted-foreground font-sans text-lg mt-5 leading-relaxed max-w-md">
-              Consultas com especialistas de forma simples e acessível. Tudo
-              100% online, seguro e prático.
+              Cobertura clínica completa, do atendimento 24h aos programas de
+              saúde e à gestão de escalas.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -84,10 +68,10 @@ const EspecialidadesSection = () => {
             </p>
 
             <a
-              href="https://app.wowmais.com.br/consumer?ref=negócioswowbrasil"
+              href="/contato"
               className="inline-block mt-6 bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-bold text-base hover:bg-orange-dark transition-colors shadow-orange"
             >
-              Ver planos e assinar
+              Fale conosco
             </a>
           </motion.div>
 

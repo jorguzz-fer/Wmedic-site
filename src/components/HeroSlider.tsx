@@ -2,16 +2,15 @@ import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Clock,
-  CurrencyDollar,
   UserCircle,
   Hospital,
   Stethoscope,
   TrendUp,
-  CalendarX,
   Warning,
   Heart,
 } from "@phosphor-icons/react";
 
+// TODO cliente: trocar por imagens médicas
 const bgImages = ["/images/slide1-novo.jpg", "/images/7.jpg", "/images/4.jpg"];
 
 type SlidePoint = {
@@ -37,52 +36,50 @@ type ProblemSlide = {
 
 const problemSlides: ProblemSlide[] = [
   {
-    badge:
-      "Se você ou sua família precisassem dé um médico neste exato momento...",
-    headline: "E se fosse",
-    headlineOrange: "agora?",
+    badge: "O que nos move",
+    headline: "Excelência",
+    headlineOrange: "em cada detalhe",
     points: [
-      { Icon: Clock, prefix: "Quanto ", bold: "tempo", suffix: " levaria?" },
-      { Icon: CurrencyDollar, prefix: "Quanto ", bold: "custaria", suffix: "?" },
-      { Icon: UserCircle, prefix: "Você seria ", bold: "atendido", suffix: " na hora?" },
+      { Icon: Stethoscope, prefix: "Equipe médica ", bold: "qualificada", suffix: " e constantemente avaliada" },
+      { Icon: Heart, prefix: "Cuidado ", bold: "humanizado", suffix: " em cada atendimento" },
+      { Icon: TrendUp, prefix: "Foco em ", bold: "resultados", suffix: " que geram valor" },
     ],
-    alert: "A dor não espera — e a saúde não pode ser luxo",
+    alert: "Cuidar de pessoas. Transformar vidas.",
     AlertIcon: Heart,
-    cta: { label: "Conheça a WOW+", href: "#pricing" },
+    cta: { label: "Conheça a WMedic →", href: "/sobre" },
   },
   {
-    badge: "Hoje, milhões de brasileiros têm apenas duas opções:",
-    headlineLarge: "PAGAR CARO...",
-    headlineLargeWhite: "OU NÃO TER ATENDIMENTO",
+    badge: "Segurança em cada processo",
+    headlineLarge: "PROCESSOS",
+    headlineLargeWhite: "PADRONIZADOS",
     points: [],
-    alert: "Saúde virou luxo.",
+    alert: "Alinhados às melhores práticas.",
     AlertIcon: Warning,
-    cta: { label: "Existé uma terceira opção →", href: "#pricing" },
+    cta: { label: "O que fazemos →", href: "/o-que-fazemos" },
   },
   {
-    headline: "O sistema público está",
-    headlineOrange: "sobrecarregado",
+    headline: "Tecnologia",
+    headlineOrange: "integrada",
     points: [
-      { Icon: Clock, prefix: "Meses de espera ", bold: "", suffix: "por atendimento" },
-      { Icon: Hospital, prefix: "Hospitais sempre ", bold: "lotados", suffix: "" },
-      { Icon: Stethoscope, prefix: "Falta de ", bold: "especialistas", suffix: "" },
+      { Icon: TrendUp, prefix: "Dados e ", bold: "indicadores", suffix: " para decisão" },
+      { Icon: Hospital, prefix: "Governança ", bold: "assistencial", suffix: " de alta performance" },
+      { Icon: Clock, prefix: "Gestão de ", bold: "escalas e atendimento", suffix: "" },
     ],
-    alert: "Urgência virou espera.",
-    AlertIcon: Warning,
-    cta: { label: "Conheça a alternativa →", href: "#pricing" },
+    alert: "Para uma saúde mais inteligente.",
+    AlertIcon: TrendUp,
+    cta: { label: "Frentes de atuação →", href: "/frentes-de-atuacao" },
   },
   {
-    headline: "E pagar caro",
-    headlineOrange: "não resolve",
+    headline: "Humanização",
+    headlineOrange: "em cada atendimento",
     points: [
-      { Icon: TrendUp, prefix: "Mensalidades cada vez ", bold: "mais altas", suffix: "" },
-      { Icon: CalendarX, prefix: "Demora para ", bold: "consultas e exames", suffix: "" },
-      { Icon: CurrencyDollar, prefix: "Cobranças ", bold: "extras", suffix: " o tempo todo" },
+      { Icon: UserCircle, prefix: "Experiência do ", bold: "paciente", suffix: " em toda a jornada" },
+      { Icon: Stethoscope, prefix: "Suporte ", bold: "clínico", suffix: " contínuo" },
+      { Icon: Heart, prefix: "Qualidade ", bold: "assistencial", suffix: " e melhoria contínua" },
     ],
-    alert: "Você paga... e ainda espera",
-    AlertIcon: Warning,
-    alertSub: "O problema não é você. É um sistema que não funciona.",
-    cta: { label: "A WOW+ é diferente →", href: "#pricing" },
+    alert: "Gestão que cuida. Cuidado que transforma.",
+    AlertIcon: Heart,
+    cta: { label: "Fale conosco →", href: "/contato" },
   },
 ];
 
@@ -134,7 +131,7 @@ const HeroSlider = () => {
             <div
               className="absolute inset-0 opacity-[0.04]"
               style={{
-                backgroundImage: "radial-gradient(circle, #fd8311 1px, transparent 1px)",
+                backgroundImage: "radial-gradient(circle, #7cc63f 1px, transparent 1px)",
                 backgroundSize: "44px 44px",
               }}
             />
@@ -156,22 +153,23 @@ const HeroSlider = () => {
               className="max-w-4xl"
             >
               <span className="inline-block font-sans text-xs font-medium uppercase tracking-[0.35em] text-orange mb-6 bg-orange/10 px-3 py-1 rounded-full">
-                Saúde acessível, humana e inteligente
+                Gestão médica com excelência, segurança e humanização
               </span>
               <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-extralight text-secondary-foreground leading-[1.05] mb-6">
-                Cuidar da sua saúde e da sua família{" "}
-                <span className="font-bold">ficou mais simples.</span>
+                Cuidado que transforma.{" "}
+                <span className="font-bold">Gestão que gera resultados.</span>
               </h1>
               <p className="text-secondary-foreground/70 font-sans text-base md:text-lg max-w-xl mb-8 font-light leading-relaxed">
-                A WOW+ conecta você a médicos, clínicas, exames, medicamentos e
-                benefícios em uma única assinatura. 80% dos casos resolvidos online.
+                A WMedic é responsável pela gestão da operação assistencial do grupo
+                WFSP, garantindo excelência, qualidade e acesso à saúde de forma
+                humanizada, segura e eficiente.
               </p>
               <ul className="mb-10 space-y-3 font-sans text-secondary-foreground/90 font-medium">
                 {[
-                  "+20 especialidades médicas online",
-                  "Psicologia e Nutrição inclusas",
-                  "Rede em 20+ estados — online e presencial",
-                  "Medicamentos até 90% mais baratos",
+                  "Médicos clínicos 24h",
+                  "Especialidades médicas, psicologia e nutrição",
+                  "Rede credenciada qualificada em todo o Brasil",
+                  "Gestão, inteligência e suporte clínico",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3">
                     <Heart size={16} weight="fill" className="text-orange flex-shrink-0" />
@@ -180,10 +178,10 @@ const HeroSlider = () => {
                 ))}
               </ul>
               <a
-                href="https://app.wowmais.com.br/consumer?ref=negócioswowbrasil"
+                href="/contato"
                 className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full font-sans font-semibold text-base hover:bg-orange-dark transition-colors shadow-orange"
               >
-                Assinar Agora
+                Fale com a WMedic
               </a>
             </motion.div>
           )}
