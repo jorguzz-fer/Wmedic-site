@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-const logoDark = "/logo/logo-dark.png";
-const logoLight = "/logo/logo-light.png";
+const logo = "/logo/wmedic-logo.svg";
 
 type NavItem = {
   label: string;
@@ -13,18 +12,11 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  {
-    label: "Para Empresa",
-    href: "/para-empresas",
-    dropdown: [
-      { label: "Planos empresariais", href: "/para-empresas" },
-      { label: "NR-1 — Saúde Mental", href: "/nr1" },
-    ],
-  },
-  { label: "Para Você", href: "/para-você" },
-  { label: "Para Entidades", href: "/para-entidades" },
-  { label: "Contato", href: "/contato" },
+  { label: "Sobre", href: "/sobre" },
+  { label: "O que Fazemos", href: "/o-que-fazemos" },
+  { label: "Frentes de Atuação", href: "/frentes-de-atuacao" },
   { label: "Blog", href: "/blog" },
+  { label: "Contato", href: "/contato" },
 ];
 
 const Header = () => {
@@ -47,7 +39,7 @@ const Header = () => {
       >
         <div className="container flex justify-center items-center">
           <span className="flex items-center gap-2">
-            <span className="text-orange">❤</span> O que mais Importa?
+            <span className="text-orange">❤</span> Gestão que cuida. Cuidado que transforma.
           </span>
         </div>
       </div>
@@ -75,8 +67,8 @@ const Header = () => {
             {/* Logo */}
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img
-                src={scrolled ? logoLight : logoDark}
-                alt="WOW Mais"
+                src={logo}
+                alt="WMedic — Gestão Médica"
                 className={`transition-all duration-300 ${
                   scrolled ? "w-[150px] lg:w-[180px]" : "w-[180px] lg:w-[250px]"
                 }`}
@@ -129,10 +121,10 @@ const Header = () => {
             {/* CTA */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="https://app.wowmais.com.br/"
+                href="/contato"
                 className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-sans text-sm font-semibold hover:bg-orange-dark transition-colors shadow-orange"
               >
-                Entrar
+                Fale Conosco
               </a>
             </div>
 
@@ -200,10 +192,10 @@ const Header = () => {
                   </div>
                 ))}
                 <a
-                  href="https://app.wowmais.com.br/"
+                  href="/contato"
                   className="bg-primary text-primary-foreground px-6 py-3 rounded-full font-sans text-sm font-semibold text-center mt-4"
                 >
-                  Entrar
+                  Fale Conosco
                 </a>
               </nav>
             </motion.div>
