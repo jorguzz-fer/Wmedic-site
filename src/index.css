@@ -6,54 +6,60 @@
 
 @layer base {
   :root {
-    /* WOW Mais Brand Colors */
+    /* WMedic Brand Colors — verde institucional */
     --background: 0 0% 100%;
-    --foreground: 220 25% 10%;
+    --foreground: 156 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 156 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
+    --popover-foreground: 156 20% 12%;
 
-    /* Orange brand */
-    --primary: 29 98% 53%;
+    /* Verde-marca (era "orange") */
+    --primary: 146 55% 26%;
     --primary-foreground: 0 0% 100%;
 
-    /* Dark purple (from WOW Mais) */
-    --secondary: 320 85% 11%;
+    /* Verde-escuro institucional (era "navy/purple") */
+    --secondary: 152 58% 12%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 150 15% 95%;
+    --muted-foreground: 156 8% 40%;
 
-    --accent: 29 98% 53%;
+    --accent: 146 55% 26%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 90%;
-    --ring: 29 98% 53%;
+    --border: 150 15% 90%;
+    --input: 150 15% 90%;
+    --ring: 146 55% 26%;
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --navy: 320 85% 11%;
-    --navy-light: 320 85% 18%;
-    --navy-dark: 320 85% 8%;
-    --orange: 29 98% 53%;
-    --orange-light: 29 98% 63%;
-    --orange-dark: 29 98% 43%;
-    --warm-gray: 30 5% 96%;
-    --warm-gray-dark: 30 5% 88%;
+    /* Custom tokens — "navy" = verde-escuro, "orange" = verde-marca */
+    --navy: 152 58% 12%;
+    --navy-light: 150 40% 18%;
+    --navy-dark: 156 60% 8%;
+    --orange: 146 55% 26%;
+    --orange-light: 140 45% 34%;
+    --orange-dark: 148 58% 20%;
+    --warm-gray: 150 20% 96%;
+    --warm-gray-dark: 150 12% 88%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(320 85% 11%) 0%, hsl(320 85% 8%) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(29 98% 53%) 0%, hsl(29 98% 43%) 100%);
-    --shadow-card: 0 4px 24px -4px hsl(320 85% 11% / 0.08);
-    --shadow-card-hover: 0 12px 40px -8px hsl(320 85% 11% / 0.15);
-    --shadow-orange: 0 8px 24px -4px hsl(29 98% 53% / 0.35);
+    /* Verde-limão de destaque (novo) */
+    --lime: 92 55% 52%;
+    --lime-light: 92 60% 62%;
+    --lime-dark: 95 50% 42%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(152 58% 12%) 0%, hsl(156 60% 8%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(146 55% 26%) 0%, hsl(92 55% 52%) 100%);
+    --gradient-lime: linear-gradient(135deg, hsl(92 55% 52%) 0%, hsl(146 55% 26%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(152 58% 12% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(152 58% 12% / 0.15);
+    --shadow-orange: 0 8px 24px -4px hsl(146 55% 26% / 0.35);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -129,5 +135,22 @@
 
   .shadow-orange {
     box-shadow: var(--shadow-orange);
+  }
+
+  .text-lime {
+    color: hsl(var(--lime));
+  }
+
+  .bg-lime {
+    background-color: hsl(var(--lime));
+  }
+
+  .bg-gradient-lime {
+    background: var(--gradient-lime);
+  }
+
+  .text-gradient-lime {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-lime);
   }
 }
