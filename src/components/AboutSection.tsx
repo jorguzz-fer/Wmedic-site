@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-const aboutImage = "/images/5.webp";
+const aboutImage = "/images/home-2.jpg";
 
 {/* TODO cliente: números reais */}
 const stats = [

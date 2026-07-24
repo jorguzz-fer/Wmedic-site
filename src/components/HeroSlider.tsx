@@ -10,7 +10,7 @@ import {
   Heart,
 } from "@phosphor-icons/react";
 
-const bgImages = ["/images/1-v2.jpg", "/images/2-v2.jpg", "/images/3-v2.jpg"];
+const bgImages = ["/images/hero-1.jpg"];
 
 type SlidePoint = {
   Icon: React.ElementType;

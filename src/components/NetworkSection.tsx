@@ -27,7 +27,7 @@ const NetworkSection = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-card-hover">
               <img
-                src="/images/3.webp"
+                src="/images/home-3.jpg"
                 alt="Rede credenciada WMedic"
                 className="w-full h-full object-cover"
               />
