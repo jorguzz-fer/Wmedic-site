@@ -10,8 +10,7 @@ import {
   Heart,
 } from "@phosphor-icons/react";
 
-// TODO cliente: trocar por imagens médicas
-const bgImages = ["/images/slide1-novo.jpg", "/images/7.jpg", "/images/4.jpg"];
+const bgImages = ["/images/1-v2.jpg", "/images/2-v2.jpg", "/images/3-v2.jpg"];
 
 type SlidePoint = {
   Icon: React.ElementType;
