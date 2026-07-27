@@ -6,69 +6,141 @@
 
 @layer base {
   :root {
-    /* WMedic Brand Colors — verde institucional */
-    --background: 0 0% 100%;
-    --foreground: 156 20% 12%;
+    /* WMedic Brand Colors — tema roxo (claro) */
+    --background: 0 0% 98%;            /* #fafafa */
+    --foreground: 220 26% 14%;         /* #1a202c */
 
-    --card: 0 0% 100%;
-    --card-foreground: 156 20% 12%;
+    --card: 0 0% 100%;                 /* #ffffff */
+    --card-foreground: 220 26% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 156 20% 12%;
+    --popover-foreground: 220 26% 14%;
 
-    /* Verde-marca (era "orange") */
-    --primary: 146 55% 26%;
+    /* Roxo principal (era "orange") */
+    --primary: 258 50% 52%;            /* #6b46c1 */
     --primary-foreground: 0 0% 100%;
 
-    /* Verde-escuro institucional (era "navy/purple") */
-    --secondary: 152 58% 12%;
+    /* Verde-menta secundária (era verde-escuro) */
+    --secondary: 177 52% 46%;          /* #38b2ac */
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 150 15% 95%;
-    --muted-foreground: 156 8% 40%;
+    --muted: 260 79% 96%;              /* #f3eefd lilás */
+    --muted-foreground: 218 17% 35%;   /* #4a5568 texto secundário */
 
-    --accent: 146 55% 26%;
+    --accent: 258 50% 52%;             /* #6b46c1 */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 88% 68%;          /* #f56565 erro coral */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 15% 90%;
-    --input: 150 15% 90%;
-    --ring: 146 55% 26%;
+    /* Estados */
+    --success: 177 52% 46%;            /* #38b2ac menta */
+    --success-foreground: 0 0% 100%;
+    --warning: 27 84% 57%;             /* #ed8936 laranja */
+    --warning-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;             /* #e2e8f0 */
+    --input: 214 32% 91%;
+    --ring: 258 50% 52%;               /* #6b46c1 anel de foco */
 
     --radius: 0.5rem;
 
-    /* Custom tokens — "navy" = verde-escuro, "orange" = verde-marca */
-    --navy: 152 58% 12%;
-    --navy-light: 150 40% 18%;
-    --navy-dark: 156 60% 8%;
-    --orange: 146 55% 26%;
-    --orange-light: 140 45% 34%;
-    --orange-dark: 148 58% 20%;
-    --warm-gray: 150 20% 96%;
-    --warm-gray-dark: 150 12% 88%;
+    /* Custom tokens — "navy" = roxo profundo, "orange" = roxo principal */
+    --navy: 258 42% 20%;
+    --navy-light: 258 40% 30%;
+    --navy-dark: 260 50% 12%;
+    --orange: 258 50% 52%;             /* #6b46c1 roxo principal */
+    --orange-light: 258 73% 70%;       /* #9f7aea roxo claro */
+    --orange-dark: 260 51% 36%;        /* #4c2d8c roxo escuro (hover) */
+    --warm-gray: 260 79% 96%;          /* #f3eefd lilás */
+    --warm-gray-dark: 260 30% 90%;
 
-    /* Verde-limão de destaque (novo) */
-    --lime: 92 55% 52%;
-    --lime-light: 92 60% 62%;
-    --lime-dark: 95 50% 42%;
+    /* Roxo claro de destaque (realces/chips) */
+    --lime: 258 73% 70%;               /* #9f7aea */
+    --lime-light: 262 81% 77%;         /* #b794f4 */
+    --lime-dark: 258 50% 52%;          /* #6b46c1 */
 
-    --gradient-hero: linear-gradient(135deg, hsl(152 58% 12%) 0%, hsl(156 60% 8%) 100%);
-    --gradient-orange: linear-gradient(135deg, hsl(146 55% 26%) 0%, hsl(92 55% 52%) 100%);
-    --gradient-lime: linear-gradient(135deg, hsl(92 55% 52%) 0%, hsl(146 55% 26%) 100%);
-    --shadow-card: 0 4px 24px -4px hsl(152 58% 12% / 0.08);
-    --shadow-card-hover: 0 12px 40px -8px hsl(152 58% 12% / 0.15);
-    --shadow-orange: 0 8px 24px -4px hsl(146 55% 26% / 0.35);
+    --gradient-hero: linear-gradient(135deg, hsl(258 42% 20%) 0%, hsl(260 50% 12%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(258 50% 52%) 0%, hsl(258 73% 70%) 100%);
+    --gradient-lime: linear-gradient(135deg, hsl(258 73% 70%) 0%, hsl(258 50% 52%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(258 42% 20% / 0.08);
+    --shadow-card-hover: 0 12px 40px -8px hsl(258 42% 20% / 0.15);
+    --shadow-orange: 0 8px 24px -4px hsl(258 50% 52% / 0.35);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 28 100% 50%;
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 26% 14%;
+    --sidebar-primary: 258 50% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 260 79% 96%;
+    --sidebar-accent-foreground: 258 50% 52%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 258 50% 52%;
+  }
+
+  .dark {
+    /* WMedic Brand Colors — tema roxo (escuro, roxo clareia p/ contraste) */
+    --background: 228 22% 9%;          /* #12141c */
+    --foreground: 214 32% 91%;         /* #e2e8f0 */
+
+    --card: 220 26% 14%;               /* #1a202c */
+    --card-foreground: 214 32% 91%;
+
+    --popover: 220 26% 14%;
+    --popover-foreground: 214 32% 91%;
+
+    /* Roxo principal clareia */
+    --primary: 258 73% 70%;            /* #9f7aea */
+    --primary-foreground: 228 22% 9%;
+
+    --secondary: 177 45% 42%;          /* menta */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 255 29% 19%;              /* #2a2340 lilás de fundo */
+    --muted-foreground: 214 20% 72%;
+
+    --accent: 262 81% 77%;             /* #b794f4 roxo ênfase */
+    --accent-foreground: 228 22% 9%;
+
+    --destructive: 0 88% 68%;          /* #f56565 */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 177 52% 50%;
+    --success-foreground: 228 22% 9%;
+    --warning: 27 84% 60%;
+    --warning-foreground: 228 22% 9%;
+
+    --border: 230 18% 24%;
+    --input: 230 18% 24%;
+    --ring: 258 73% 70%;               /* #9f7aea */
+
+    --navy: 230 24% 13%;
+    --navy-light: 255 29% 19%;
+    --navy-dark: 228 22% 9%;
+    --orange: 258 73% 70%;             /* #9f7aea */
+    --orange-light: 262 81% 77%;       /* #b794f4 */
+    --orange-dark: 258 50% 52%;        /* #6b46c1 */
+    --warm-gray: 255 29% 19%;          /* #2a2340 */
+    --warm-gray-dark: 230 18% 24%;
+
+    --lime: 262 81% 77%;               /* #b794f4 */
+    --lime-light: 258 73% 70%;         /* #9f7aea */
+    --lime-dark: 258 50% 52%;          /* #6b46c1 */
+
+    --gradient-hero: linear-gradient(135deg, hsl(230 24% 13%) 0%, hsl(228 22% 9%) 100%);
+    --gradient-orange: linear-gradient(135deg, hsl(258 73% 70%) 0%, hsl(262 81% 77%) 100%);
+    --gradient-lime: linear-gradient(135deg, hsl(262 81% 77%) 0%, hsl(258 73% 70%) 100%);
+    --shadow-card: 0 4px 24px -4px hsl(228 40% 4% / 0.5);
+    --shadow-card-hover: 0 12px 40px -8px hsl(228 40% 4% / 0.6);
+    --shadow-orange: 0 8px 24px -4px hsl(258 73% 70% / 0.35);
+
+    --sidebar-background: 230 21% 11%; /* #171923 */
+    --sidebar-foreground: 214 32% 91%;
+    --sidebar-primary: 258 73% 70%;
+    --sidebar-primary-foreground: 228 22% 9%;
+    --sidebar-accent: 255 29% 19%;
+    --sidebar-accent-foreground: 214 32% 91%;
+    --sidebar-border: 230 18% 22%;
+    --sidebar-ring: 258 73% 70%;
   }
 }
 
