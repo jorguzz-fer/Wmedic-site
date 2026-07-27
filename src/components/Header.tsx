@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-const logo = "/logo/logo-wmedic.png";
+const logo = "/brand/logo-full.png";
 
 type NavItem = {
   label: string;
