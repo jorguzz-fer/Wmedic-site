@@ -11,6 +11,7 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import Contato from "./pages/Contato.tsx";
 import Legal from "./pages/Legal.tsx";
+import AplicacaoMarca from "./pages/AplicacaoMarca.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,8 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/legal" element={<Legal />} />
+          {/* Página interna de aplicação de marca — não exposta no menu (consulta das equipes) */}
+          <Route path="/aplicacao-marca" element={<AplicacaoMarca />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

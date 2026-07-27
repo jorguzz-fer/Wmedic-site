@@ -1,0 +1,16 @@
+WMedic - Pacote de marca
+
+logo-full.png       Logo principal colorido (fundo claro)
+logo-white.png      Logo negativo 100% branco (fundo escuro/colorido)
+logo-mono.png       Logo monocromatico grafite #1E1B2E
+symbol.png          Simbolo isolado colorido
+symbol-white.png    Simbolo isolado branco
+symbol-mono.png     Simbolo isolado grafite
+
+Cores: #8C52FF / #6C47C2 / #A98CF0 / #1E1B2E / #6E6A7C / #F6F3FB
+Tipografia: Aristotelica Pro Semi Negrito (substituta web: Poppins)
+Tamanho minimo: logo 120px ou 30mm | simbolo 24px ou 8mm
+Area de respiro: 1x = diametro do circulo do W
+
+Para producao grafica, solicite as versoes vetoriais (SVG/EPS).
+comunicacao@wmedic.com.br
