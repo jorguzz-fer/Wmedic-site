@@ -15,7 +15,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-const logo = "/logo/logo-wmedic.png";
+const logo = "/brand/logo-white.png";
 
 const footerSections = [
   {
