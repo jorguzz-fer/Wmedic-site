@@ -22,45 +22,57 @@ import Footer from "@/components/Footer";
 const logoVersions = [
   {
     src: "/brand/logo-full.png",
+    svg: "/logo/wmedic-logo.svg",
     nome: "Logo principal",
     desc: "Colorido — uso preferencial em fundos claros.",
     bg: "bg-white",
     file: "logo-full.png",
+    svgFile: "wmedic-logo.svg",
   },
   {
     src: "/brand/logo-white.png",
+    svg: "/logo/wmedic-logo-branco.svg",
     nome: "Logo negativo",
     desc: "100% branco — fundos escuros ou coloridos.",
     bg: "bg-navy",
     file: "logo-white.png",
+    svgFile: "wmedic-logo-branco.svg",
   },
   {
     src: "/brand/logo-mono.png",
+    svg: "/logo/wmedic-logo-mono.svg",
     nome: "Logo monocromático",
     desc: "Grafite #1E1B2E — impressão em uma cor.",
     bg: "bg-warm-gray",
     file: "logo-mono.png",
+    svgFile: "wmedic-logo-mono.svg",
   },
 ];
 
 const symbolVersions = [
   {
     src: "/brand/symbol.png",
+    svg: "/logo/wmedic-simbolo.svg",
     nome: "Símbolo colorido",
     bg: "bg-white",
     file: "symbol.png",
+    svgFile: "wmedic-simbolo.svg",
   },
   {
     src: "/brand/symbol-white.png",
+    svg: "/logo/wmedic-simbolo-branco.svg",
     nome: "Símbolo branco",
     bg: "bg-navy",
     file: "symbol-white.png",
+    svgFile: "wmedic-simbolo-branco.svg",
   },
   {
     src: "/brand/symbol-mono.png",
+    svg: "/logo/wmedic-simbolo-mono.svg",
     nome: "Símbolo grafite",
     bg: "bg-warm-gray",
     file: "symbol-mono.png",
+    svgFile: "wmedic-simbolo-mono.svg",
   },
 ];
 
@@ -130,8 +142,10 @@ const AplicacaoMarca = () => {
         <div className="container max-w-5xl py-4 flex items-start gap-3">
           <ShieldAlert className="w-5 h-5 text-primary shrink-0 mt-0.5" />
           <p className="font-sans text-sm text-muted-foreground">
-            Esta página é de <strong className="text-foreground">consulta interna</strong>. Para
-            produção gráfica, solicite sempre as versões vetoriais (SVG/EPS) pelo e-mail de comunicação.
+            Esta página é de <strong className="text-foreground">consulta interna</strong>. Os arquivos
+            estão disponíveis em <strong className="text-foreground">PNG</strong> e{" "}
+            <strong className="text-foreground">SVG (vetor)</strong>. Para versões em EPS ou grandes
+            formatos, fale com o time de comunicação.
           </p>
         </div>
       </div>
@@ -164,13 +178,26 @@ const AplicacaoMarca = () => {
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="font-display text-lg font-bold text-foreground">{v.nome}</h3>
                   <p className="text-sm text-muted-foreground font-sans mt-1 flex-1">{v.desc}</p>
-                  <a
-                    href={v.src}
-                    download={v.file}
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
-                  >
-                    <Download className="w-4 h-4" /> Baixar PNG
-                  </a>
+                  <div className="mt-5 flex items-center gap-3">
+                    <a
+                      href={v.src}
+                      download={v.file}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
+                    >
+                      <Download className="w-4 h-4" /> PNG
+                    </a>
+                    <span className="w-px h-4 bg-border" />
+                    <a
+                      href={v.svg}
+                      download={v.svgFile}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
+                    >
+                      <Download className="w-4 h-4" /> SVG
+                      <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground bg-muted rounded px-1.5 py-0.5">
+                        vetor
+                      </span>
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
@@ -205,14 +232,25 @@ const AplicacaoMarca = () => {
                 </div>
                 <div className="p-6 flex items-center justify-between">
                   <h3 className="font-display text-base font-bold text-foreground">{v.nome}</h3>
-                  <a
-                    href={v.src}
-                    download={v.file}
-                    aria-label={`Baixar ${v.nome}`}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
-                  >
-                    <Download className="w-4 h-4" /> PNG
-                  </a>
+                  <div className="flex items-center gap-3">
+                    <a
+                      href={v.src}
+                      download={v.file}
+                      aria-label={`Baixar PNG — ${v.nome}`}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
+                    >
+                      <Download className="w-4 h-4" /> PNG
+                    </a>
+                    <span className="w-px h-4 bg-border" />
+                    <a
+                      href={v.svg}
+                      download={v.svgFile}
+                      aria-label={`Baixar SVG vetorial — ${v.nome}`}
+                      className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-orange-dark transition-colors"
+                    >
+                      <Download className="w-4 h-4" /> SVG
+                    </a>
+                  </div>
                 </div>
               </div>
             ))}
