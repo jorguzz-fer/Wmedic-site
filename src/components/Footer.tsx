@@ -48,10 +48,10 @@ const footerSections = [
   {
     title: "A WMedic",
     links: [
-      { label: "Quem somos", href: "/sobre" },
-      { label: "Nossa missão", href: "/sobre" },
-      { label: "Nossos valores", href: "/sobre" },
-      { label: "Inovação em saúde", href: "/sobre" },
+      { label: "Quem somos", href: "/quem-somos" },
+      { label: "Nossa missão", href: "/nossa-missao" },
+      { label: "Nossos valores", href: "/nossos-valores" },
+      { label: "Inovação em saúde", href: "/inovacao-em-saude" },
       { label: "Fale conosco", href: "/contato" },
     ],
   },
@@ -79,10 +79,10 @@ const footerSections = [
     title: "Institucional",
     links: [
       { label: "Sobre a WMedic", href: "/sobre" },
-      { label: "Nossa missão", href: "/sobre" },
-      { label: "Tecnologia & inovação", href: "/sobre" },
-      { label: "Onde estamos", href: "/sobre" },
-      { label: "Parceiros e rede", href: "/sobre" },
+      { label: "Nossa missão", href: "/nossa-missao" },
+      { label: "Tecnologia & inovação", href: "/inovacao-em-saude" },
+      { label: "Onde estamos", href: "/onde-estamos" },
+      { label: "Parceiros e rede", href: "/parceiros" },
     ],
   },
   {
@@ -98,9 +98,9 @@ const footerSections = [
   {
     title: "Empresas & Parcerias",
     links: [
-      { label: "Soluções para empresas", href: "/frentes-de-atuacao" },
-      { label: "Benefício corporativo", href: "/frentes-de-atuacao" },
-      { label: "Parcerias", href: "/sobre" },
+      { label: "Soluções para empresas", href: "/para-empresas" },
+      { label: "Benefício corporativo", href: "/para-empresas" },
+      { label: "Parcerias", href: "/parceiros" },
       { label: "Seja parceiro WMedic", href: "/contato" },
       { label: "Indique empresas", href: "/contato" },
     ],

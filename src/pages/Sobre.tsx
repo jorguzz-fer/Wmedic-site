@@ -19,7 +19,7 @@ const Sobre = () => (
         <span className="text-lime font-sans text-sm font-semibold uppercase tracking-widest">Sobre a WMedic</span>
         <h1 className="font-display text-4xl md:text-6xl font-bold mt-4 leading-tight">Gestão que cuida. Cuidado que transforma.</h1>
         <p className="text-secondary-foreground/70 font-sans text-lg mt-6 leading-relaxed">
-          A WMedic é responsável pela gestão da operação assistencial do grupo WFSP, garantindo excelência, qualidade e acesso à saúde de forma humanizada, segura e eficiente.
+          A WMedic é responsável pela gestão da operação assistencial do grupo Wow+, garantindo excelência, qualidade e acesso à saúde de forma humanizada, segura e eficiente.
         </p>
       </div>
     </section>

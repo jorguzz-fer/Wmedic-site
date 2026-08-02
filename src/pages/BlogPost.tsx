@@ -60,7 +60,7 @@ const allPosts = [
       },
       {
         type: "paragraph",
-        text: "A WMedic atua na gestão da operação médica e assistencial do grupo WFSP, unindo governança clínica, indicadores e melhoria contínua para elevar a qualidade e a segurança do cuidado.",
+        text: "A WMedic atua na gestão da operação médica e assistencial do grupo Wow+, unindo governança clínica, indicadores e melhoria contínua para elevar a qualidade e a segurança do cuidado.",
       },
     ],
   },
