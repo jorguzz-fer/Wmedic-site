@@ -10,7 +10,7 @@ const faqs = [
   {
     question: "O que é a WMedic?",
     answer:
-      "A WMedic é a gestora da operação assistencial do grupo WFSP, responsável por corpo clínico, rede credenciada, qualidade assistencial e experiência do paciente.",
+      "A WMedic é a gestora da operação assistencial do grupo Wow+, responsável por corpo clínico, rede credenciada, qualidade assistencial e experiência do paciente.",
   },
   {
     question: "Quais frentes de atuação a WMedic cobre?",

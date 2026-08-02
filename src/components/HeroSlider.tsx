@@ -160,7 +160,7 @@ const HeroSlider = () => {
               </h1>
               <p className="text-secondary-foreground/70 font-sans text-base md:text-lg max-w-xl mb-8 font-light leading-relaxed">
                 A WMedic é responsável pela gestão da operação assistencial do grupo
-                WFSP, garantindo excelência, qualidade e acesso à saúde de forma
+                Wow+, garantindo excelência, qualidade e acesso à saúde de forma
                 humanizada, segura e eficiente.
               </p>
               <ul className="mb-10 space-y-3 font-sans text-secondary-foreground/90 font-medium">

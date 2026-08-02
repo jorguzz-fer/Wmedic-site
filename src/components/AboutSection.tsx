@@ -6,7 +6,7 @@ const stats = [
   { value: "24h", label: "Clínicos disponíveis" },
   { value: "Nacional", label: "Rede credenciada" },
   { value: "100%", label: "Foco no paciente" },
-  { value: "WFSP", label: "Grupo integrado" },
+  { value: "Wow+", label: "Grupo integrado" },
 ];
 
 const AboutSection = () => {
@@ -24,7 +24,7 @@ const AboutSection = () => {
             </span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mt-3 leading-tight">
               Gestão da operação assistencial do grupo{" "}
-              <span className="text-gradient">WFSP</span>
+              <span className="text-gradient">Wow+</span>
             </h2>
             <p className="text-muted-foreground font-sans text-lg mt-6 leading-relaxed">
               A WMedic é responsável por garantir excelência, qualidade e acesso à
