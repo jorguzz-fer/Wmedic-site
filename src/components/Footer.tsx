@@ -190,13 +190,12 @@ const Footer = () => {
 
             {/* Contact Cards */}
             <div className="lg:col-span-8 grid sm:grid-cols-3 gap-4">
-              {/* TODO cliente */}
               {[
                 {
                   icon: MessageCircle,
                   title: "WhatsApp",
-                  info: "+55 00 00000-0000",
-                  sub: "Horário de atendimento",
+                  info: "+55 11 97026-7810",
+                  sub: "Samuel Messias",
                 },
                 {
                   icon: Mail,
