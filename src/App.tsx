@@ -11,6 +11,7 @@ import Blog from "./pages/Blog.tsx";
 import BlogPost from "./pages/BlogPost.tsx";
 import Contato from "./pages/Contato.tsx";
 import Legal from "./pages/Legal.tsx";
+import LegalDoc from "./pages/LegalDoc.tsx";
 import AplicacaoMarca from "./pages/AplicacaoMarca.tsx";
 import QuemSomos from "./pages/QuemSomos.tsx";
 import NossaMissao from "./pages/NossaMissao.tsx";
@@ -38,6 +39,12 @@ const App = () => (
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/contato" element={<Contato />} />
           <Route path="/legal" element={<Legal />} />
+          {/* Páginas legais individuais (conteúdo compartilhado com /legal) */}
+          <Route path="/termos-de-uso" element={<LegalDoc slug="termos-de-uso" />} />
+          <Route path="/politica-de-privacidade" element={<LegalDoc slug="politica-de-privacidade" />} />
+          <Route path="/contrato-do-cliente" element={<LegalDoc slug="contrato-do-cliente" />} />
+          <Route path="/codigo-de-conduta" element={<LegalDoc slug="codigo-de-conduta" />} />
+          <Route path="/seguranca-de-dados" element={<LegalDoc slug="seguranca-de-dados" />} />
           {/* Páginas institucionais (base Wow+) */}
           <Route path="/quem-somos" element={<QuemSomos />} />
           <Route path="/nossa-missao" element={<NossaMissao />} />
