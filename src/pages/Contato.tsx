@@ -11,24 +11,11 @@ import {
 import { toast } from "sonner";
 import PageLayout from "@/components/layout/PageLayout";
 
-// TODO cliente: dados de contato reais (telefone/WhatsApp)
+// Contato de WhatsApp oficial
+const WHATSAPP_NUMERO = "+55 11 97026-7810 — Samuel Messias";
+const WHATSAPP_LINK = "https://api.whatsapp.com/send/?phone=5511970267810";
+
 const contactCards = [
-  {
-    icon: WhatsappLogo,
-    title: "WhatsApp",
-    info: "Fale agora",
-    description: "Atendimento rápido e direto",
-    link: "https://api.whatsapp.com/send/?phone=5500000000000", // TODO cliente
-    cta: "Iniciar conversa",
-  },
-  {
-    icon: WhatsappLogo,
-    title: "WhatsApp",
-    info: "+55 00 00000-0000", // TODO cliente
-    description: "Seg a Sex, horário comercial",
-    link: "https://api.whatsapp.com/send/?phone=5500000000000", // TODO cliente
-    cta: "Chamar no WhatsApp",
-  },
   {
     icon: Headset,
     title: "Central de atendimento",
@@ -97,7 +84,7 @@ const Contato = () => {
       {/* Contact Cards */}
       <section className="py-16">
         <div className="container">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {contactCards.map((card, i) => (
               <motion.a
                 key={card.title}
@@ -266,9 +253,8 @@ const Contato = () => {
                       <p className="font-sans text-sm font-semibold text-foreground">
                         Endereço
                       </p>
-                      {/* TODO cliente */}
                       <p className="font-sans text-sm text-muted-foreground">
-                        Brasil
+                        Av. Santo Antonio, 1453
                       </p>
                     </div>
                   </li>
@@ -280,14 +266,13 @@ const Contato = () => {
                       <p className="font-sans text-sm font-semibold text-foreground">
                         WhatsApp
                       </p>
-                      {/* TODO cliente */}
                       <a
-                        href="https://api.whatsapp.com/send/?phone=5500000000000"
+                        href={WHATSAPP_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        +55 00 00000-0000
+                        {WHATSAPP_NUMERO}
                       </a>
                     </div>
                   </li>
@@ -359,9 +344,8 @@ const Contato = () => {
             <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-xl mx-auto">
               Fale diretamente com nossa equipe pelo WhatsApp.
             </p>
-            {/* TODO cliente */}
             <a
-              href="https://api.whatsapp.com/send/?phone=5500000000000"
+              href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
