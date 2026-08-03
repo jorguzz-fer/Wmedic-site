@@ -88,11 +88,11 @@ const footerSections = [
   {
     title: "Legal & Segurança",
     links: [
-      { label: "Termos de uso", href: "/legal" },
-      { label: "Política de privacidade (LGPD)", href: "/legal" },
-      { label: "Contrato do cliente", href: "/legal" },
-      { label: "Código de conduta", href: "/legal" },
-      { label: "Segurança de dados", href: "/legal" },
+      { label: "Termos de uso", href: "/termos-de-uso" },
+      { label: "Política de privacidade (LGPD)", href: "/politica-de-privacidade" },
+      { label: "Contrato do cliente", href: "/contrato-do-cliente" },
+      { label: "Código de conduta", href: "/codigo-de-conduta" },
+      { label: "Segurança de dados", href: "/seguranca-de-dados" },
     ],
   },
   {
