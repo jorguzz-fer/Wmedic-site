@@ -12,7 +12,6 @@ import {
   MapPin,
   ArrowUpRight,
   Headset,
-  MessageCircle,
 } from "lucide-react";
 
 const logo = "/brand/logo-white.png";
@@ -189,14 +188,8 @@ const Footer = () => {
             </div>
 
             {/* Contact Cards */}
-            <div className="lg:col-span-8 grid sm:grid-cols-3 gap-4">
+            <div className="lg:col-span-8 grid sm:grid-cols-2 gap-4">
               {[
-                {
-                  icon: MessageCircle,
-                  title: "WhatsApp",
-                  info: "+55 11 97026-7810",
-                  sub: "Samuel Messias",
-                },
                 {
                   icon: Mail,
                   title: "E-mail",
