@@ -11,8 +11,8 @@ import {
 import { toast } from "sonner";
 import PageLayout from "@/components/layout/PageLayout";
 
-// Contato de WhatsApp oficial
-const WHATSAPP_NUMERO = "+55 11 97026-7810 — Samuel Messias";
+// Contato de WhatsApp oficial (Atendimento Comercial — Samuel Messias)
+const WHATSAPP_LABEL = "Atendimento Comercial";
 const WHATSAPP_LINK = "https://api.whatsapp.com/send/?phone=5511970267810";
 
 const contactCards = [
@@ -272,7 +272,7 @@ const Contato = () => {
                         rel="noopener noreferrer"
                         className="font-sans text-sm text-muted-foreground hover:text-primary transition-colors"
                       >
-                        {WHATSAPP_NUMERO}
+                        {WHATSAPP_LABEL}
                       </a>
                     </div>
                   </li>
