@@ -324,38 +324,6 @@ const Contato = () => {
           </div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-gradient-hero relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-72 h-72 bg-primary rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary rounded-full blur-3xl" />
-        </div>
-        <div className="container relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="text-primary text-4xl mb-6">&#10084;</div>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-secondary-foreground max-w-3xl mx-auto leading-tight">
-              Prefere resolver agora?
-            </h2>
-            <p className="text-secondary-foreground/70 font-sans text-lg mt-6 max-w-xl mx-auto">
-              Fale diretamente com nossa equipe pelo WhatsApp.
-            </p>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-8 bg-primary text-primary-foreground px-10 py-4 rounded-full font-sans font-bold text-lg hover:bg-orange-dark transition-colors shadow-orange"
-            >
-              <WhatsappLogo size={24} weight="fill" />
-              Chamar no WhatsApp
-            </a>
-          </motion.div>
-        </div>
-      </section>
     </PageLayout>
   );
 };
