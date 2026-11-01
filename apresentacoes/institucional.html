@@ -200,22 +200,23 @@
 </section>
 
 <!-- 10 · REVISÃO -->
-<section class="slide full" id="s10" data-name="Revisão e contato">
+<section class="slide full" id="s10" data-name="Perguntas antes de fechar" data-obj>
   <div class="endgrid">
     <div class="copy">
-      <div class="eyebrow">Revisão</div>
-      <h2>Pergunte à turma</h2>
-      <p class="lead" style="font-size:17px">Leia a pergunta, espere as respostas e clique no cartão para revelar.</p>
+      <div class="eyebrow">Antes de fechar</div>
+      <h2>As perguntas que <em>todo cliente faz</em></h2>
+      <p class="lead" style="font-size:17px">Escolha o perfil de quem está na sala. Leia a pergunta, ouça a dúvida e clique no cartão para revelar a resposta.</p>
+      <div class="chips obj-chips" role="group" aria-label="Perfil do cliente"></div>
+      <p class="note obj-sub"></p>
       <dl class="contact" style="margin-top:auto">
-        <dt>Site</dt><dd>wmedic.com.br</dd>
-        <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
         <dt>Comercial</dt><dd>WhatsApp (11) 97026-7810</dd>
-        <dt>Marca</dt><dd>comunicacao@wmedic.com.br</dd>
+        <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
+        <dt>Site</dt><dd>wmedic.com.br</dd>
         <dt>Endereço</dt><dd>Av. Santo Antonio, 1453</dd>
       </dl>
       <p class="credit">Fotos e textos: site wmedic.com.br. Esquemas e animações construídos para esta apresentação, com fluxos ilustrativos.</p>
     </div>
-    <div class="bench"><div class="quiz" id="quiz"></div></div>
+    <div class="bench"><div class="quiz obj-cards"></div></div>
   </div>
 </section>
 
@@ -232,6 +233,7 @@
 </div>
 </div>
 
+<script src="objecoes.js"></script>
 <script src="deck.js"></script>
 
 <!-- 2 · ecossistema -->
@@ -475,17 +477,4 @@ draw();
 })();
 </script>
 
-<!-- 10 · revisão -->
-<script>
-(function(){
-const qs=[
- ['Qual é o papel da WMedic dentro do grupo Wow+?','Gerir a operação assistencial: corpo clínico, rede credenciada, qualidade assistencial e experiência do paciente, com excelência, segurança e humanização.'],
- ['Quais são os quatro valores da WMedic?','Excelência em cada detalhe, segurança em cada processo, humanização em cada atendimento e resultados que geram valor.'],
- ['Cite três das seis frentes do “O que fazemos”.','Corpo clínico, credenciamento e rede, qualidade assistencial, experiência do paciente, gestão e inteligência, suporte clínico.'],
- ['Como a WMedic sustenta a qualidade ao longo do tempo?','Com protocolos padronizados, indicadores medidos em cada etapa da jornada e ciclos de melhoria contínua.']
-];
-const q=document.getElementById('quiz');
-qs.forEach(([t,a],i)=>{const b=document.createElement('button');b.className='q'+(DECK.printing?' open':'');b.innerHTML=`<span class="qn">PERGUNTA ${i+1}</span><span class="qt">${t}</span><span class="qa">${a}</span><span class="qh">clique para revelar a resposta</span>`;b.onclick=()=>b.classList.toggle('open');q.appendChild(b)});
-})();
-</script>
 </body></html><!--local-->

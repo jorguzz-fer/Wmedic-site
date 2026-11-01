@@ -290,12 +290,14 @@
 </section>
 
 <!-- 11 · PRÓXIMOS PASSOS -->
-<section class="slide full" id="s11" data-name="Próximos passos">
+<section class="slide full" id="s11" data-name="Perguntas antes de fechar" data-obj>
   <div class="endgrid">
     <div class="copy">
-      <div class="eyebrow">Próximos passos</div>
-      <h2>Vamos desenhar <em>a sua solução</em></h2>
-      <p class="lead" style="font-size:17px">Quatro perguntas para começar. Clique em cada uma para ver por que ela importa.</p>
+      <div class="eyebrow">Antes de fechar</div>
+      <h2>As perguntas que <em>todo cliente faz</em></h2>
+      <p class="lead" style="font-size:17px">Escolha o perfil de quem está na sala. Leia a pergunta, ouça a dúvida e clique no cartão para revelar a resposta.</p>
+      <div class="chips obj-chips" role="group" aria-label="Perfil do cliente"></div>
+      <p class="note obj-sub"></p>
       <dl class="contact" style="margin-top:auto">
         <dt>Comercial</dt><dd>WhatsApp (11) 97026-7810</dd>
         <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
@@ -304,7 +306,7 @@
       </dl>
       <p class="credit">Simulações com valores de exemplo. Telas do aplicativo são ilustrativas.</p>
     </div>
-    <div class="bench"><div class="quiz" id="quiz"></div></div>
+    <div class="bench"><div class="quiz obj-cards"></div></div>
   </div>
 </section>
 
@@ -321,6 +323,7 @@
 </div>
 </div>
 
+<script src="objecoes.js"></script>
 <script src="deck.js"></script>
 
 <!-- modalidades (compartilhado entre slides 2, 5 e 6) -->
@@ -593,17 +596,4 @@ set(0);
 })();
 </script>
 
-<!-- 11 · perguntas de descoberta -->
-<script>
-(function(){
-const qs=[
- ['Quem vai usar e quantas vidas são?','Define a modalidade, o dimensionamento do corpo clínico e se dependentes entram no pacote.'],
- ['Vocês já têm médicos ou rede própria?','Se sim, a plataforma whitelabel aproveita a equipe atual. Se não, as consultas online da WMedic resolvem sem montar estrutura.'],
- ['O serviço deve levar a sua marca?','Se a saúde é parte do seu produto, o modelo combinado coloca a sua marca no app e a operação médica conosco.'],
- ['Como vocês vão medir o sucesso?','Uso, resolutividade, encaminhamentos e satisfação. Combinamos os indicadores e a frequência dos relatórios desde o início.']
-];
-const q=document.getElementById('quiz');
-qs.forEach(([t,a],i)=>{const b=document.createElement('button');b.className='q'+(DECK.printing?' open':'');b.innerHTML=`<span class="qn">PERGUNTA ${i+1}</span><span class="qt">${t}</span><span class="qa">${a}</span><span class="qh">clique para ver por que perguntamos</span>`;b.onclick=()=>b.classList.toggle('open');q.appendChild(b)});
-})();
-</script>
 </body></html><!--local-->

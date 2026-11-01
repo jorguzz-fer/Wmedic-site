@@ -10,6 +10,7 @@ Esta pasta não faz parte do build do site.
 | `guia-comercial.html` | Guia do time comercial (A4, 9 páginas) |
 | `pdf/` | PDFs gerados das três peças |
 | `deck.css`, `deck.js` | Estilo e navegação compartilhados das apresentações |
+| `objecoes.js` | Último slide das duas apresentações: perguntas de objeção e respostas por perfil (investidor ou empresa B2B) |
 | `gerar-pdfs.cjs` | Gera os PDFs de novo |
 
 ## Como apresentar
