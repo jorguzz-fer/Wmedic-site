@@ -1,0 +1,480 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><!--local-->
+<title>WMedic Institucional</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+<style>
+/* peças desta apresentação */
+.eco .node{cursor:pointer}
+.eco .node circle.ring{fill:var(--surface);stroke:var(--line2);stroke-width:1.5;transition:stroke .25s,fill .25s}
+.eco .node:hover circle.ring{stroke:var(--ink2)}
+.eco .node.sel circle.ring{stroke:var(--accent);stroke-width:3;fill:var(--accent-soft)}
+.eco .node text{font-family:var(--f-body);font-size:19px;font-weight:600;fill:var(--ink)}
+.eco .node text.sub{font-size:14px;font-weight:400;fill:var(--muted)}
+.eco .link{stroke:var(--line2);stroke-width:2;fill:none}
+.eco .flow{stroke:var(--accent);stroke-width:3;fill:none;stroke-dasharray:6 22;animation:dash 1.6s linear infinite;opacity:.35}
+.eco .flow.sel{opacity:1}
+@keyframes dash{to{stroke-dashoffset:-28}}
+@media (prefers-reduced-motion: reduce){.eco .flow{animation:none}}
+.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:72px 56px 56px 48px;height:100%;align-content:center}
+.mvv .card{min-height:430px;justify-content:flex-start}
+.mvv .card .big{font-size:21px;line-height:1.5;color:var(--ink);font-weight:500;margin:0}
+.mvv .card:not(.focus) .big{color:var(--ink2)}
+.layers{position:absolute;inset:0}
+.layers img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s ease}
+.layers img.off{opacity:0}
+.vcap{position:absolute;right:40px;bottom:40px;width:440px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;display:flex;flex-direction:column;gap:10px;z-index:2}
+.vcap .tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+.vcap b{font-size:22px;font-weight:600}
+.vcap ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15.5px;line-height:1.45;color:var(--ink2)}
+.vcap li{display:flex;gap:10px}
+.vcap li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:7px}
+.wheel .seg{cursor:pointer}
+.wheel .seg path{fill:var(--surface);stroke:var(--bg);stroke-width:6;transition:fill .25s}
+.wheel .seg:hover path{fill:var(--bg2)}
+.wheel .seg.sel path{fill:var(--accent-deep)}
+.wheel .seg text{font-family:var(--f-body);font-size:17px;font-weight:600;fill:var(--ink);pointer-events:none}
+.wheel .seg.sel text{fill:#fff}
+.wheel .seg .gi{color:var(--accent-ink)}
+.wheel .seg.sel .gi{color:#fff}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:56px 56px 48px 48px;height:100%;align-content:center}
+.tile{border:1px solid var(--line);border-radius:var(--r-card);padding:20px;background:var(--surface);display:flex;flex-direction:column;gap:10px;cursor:pointer;text-align:left;color:var(--ink);transition:border-color .25s,transform .25s;min-height:150px}
+.tile:hover{border-color:var(--line2);transform:translateY(-2px)}
+.tile.focus{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.tile b{font-size:18px;font-weight:600;line-height:1.25}
+.tile p{margin:0;font-size:14px;line-height:1.5;color:var(--ink2)}
+.tile.more{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff;justify-content:center;cursor:default}
+.tile.more p{color:#fff}
+.logos{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;padding:0 48px 0 48px}
+.logos div{background:#fff;border-radius:12px;height:84px;display:grid;place-items:center;padding:8px 12px;border:1px solid var(--line)}
+.logos img{max-width:100%;max-height:62px;object-fit:contain}
+.net{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.net li{display:flex;gap:14px;align-items:center;font-size:17px;color:var(--ink)}
+.net .ico{width:40px;height:40px}
+.pdca .ph{cursor:pointer}
+.pdca .ph path.arc{fill:none;stroke:var(--line2);stroke-width:34;transition:stroke .3s}
+.pdca .ph.sel path.arc{stroke:var(--accent)}
+.pdca .ph:hover path.arc{stroke:var(--ink2)}
+.pdca .ph.sel:hover path.arc{stroke:var(--accent)}
+.pdca .ph text{font-family:var(--f-body);font-size:20px;font-weight:600;fill:var(--ink)}
+.pdca .ph text.n{font-family:var(--f-mono);font-size:14px;font-weight:500;fill:var(--accent-ink)}
+.endgrid{display:grid;grid-template-columns:540px 1fr;height:100%}
+</style>
+</head><body><!--local-->
+
+<div id="viewport">
+<div id="deck" role="application" aria-label="Apresentação institucional WMedic">
+
+<!-- 1 · CAPA -->
+<section class="slide cover" id="s1" data-name="Capa">
+  <div class="copy">
+    <img class="brandlogo logo-d" src="img/logo-white.png" alt="WMedic">
+    <img class="brandlogo logo-l" src="img/logo-full.png" alt="WMedic">
+    <div class="eyebrow">Apresentação institucional</div>
+    <h1>Gestão que cuida. <em>Cuidado que transforma.</em></h1>
+    <p class="lead">A WMedic é responsável pela gestão da operação assistencial do grupo Wow+, garantindo excelência, qualidade e acesso à saúde de forma <strong>humanizada, segura e eficiente</strong>.</p>
+    <p class="note noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia. Em cada slide há algo para clicar.</p>
+  </div>
+  <div class="bench" style="border:0">
+    <div class="photo"><img src="img/equipe.jpg" alt="Equipe médica WMedic"></div>
+    <div class="badges">
+      <div class="badge"><b>24h</b><span>clínicos disponíveis</span></div>
+      <div class="badge"><b>Nacional</b><span>rede credenciada</span></div>
+      <div class="badge"><b>Wow+</b><span>grupo integrado</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · QUEM SOMOS (ecossistema) -->
+<section class="slide" id="s2" data-name="Quem somos">
+  <div class="copy">
+    <div class="eyebrow">Quem somos</div>
+    <h2>A área que estrutura e <em>opera o cuidado</em></h2>
+    <p class="lead">Do corpo clínico à rede credenciada, da qualidade assistencial à experiência de cada paciente. Unimos <strong>governança clínica, tecnologia e pessoas</strong>.</p>
+    <p class="note">Clique em cada ponto para ver o que a WMedic entrega a ele.</p>
+    <div class="detail" id="ecoDetail"></div>
+  </div>
+  <div class="bench"><svg class="eco" id="eco" viewBox="0 0 1060 836" style="position:absolute;inset:0;width:100%;height:100%"></svg></div>
+</section>
+
+<!-- 3 · MISSÃO, VISÃO, PROPÓSITO -->
+<section class="slide" id="s3" data-name="Missão, visão e propósito">
+  <div class="copy">
+    <div class="eyebrow">Nossa missão</div>
+    <h2>Por que existimos</h2>
+    <p class="lead">Existimos para cuidar de pessoas e transformar a gestão em saúde em <strong>cuidado real, seguro e humano</strong> dentro do grupo Wow+.</p>
+    <p class="note">Clique num cartão para destacá-lo durante a fala.</p>
+    <p class="lead" style="margin-top:auto;font-weight:600;color:var(--ink);font-size:22px">“Gestão que cuida. Cuidado que transforma.”</p>
+    <p class="note" style="margin-top:-12px">O compromisso que orienta cada decisão da WMedic.</p>
+  </div>
+  <div class="bench"><div class="mvv" id="mvv"></div></div>
+</section>
+
+<!-- 4 · VALORES -->
+<section class="slide" id="s4" data-name="Valores">
+  <div class="copy">
+    <div class="eyebrow">Nossos valores</div>
+    <h2>Quatro princípios, <em>um padrão de cuidado</em></h2>
+    <p class="lead">Os princípios que guiam como cuidamos, decidimos e nos relacionamos.</p>
+    <div class="chips" id="valChips" role="group" aria-label="Valor"></div>
+    <p class="note">Cada valor aparece no dia a dia da operação. Troque o valor para ver como.</p>
+  </div>
+  <div class="bench" style="overflow:hidden">
+    <div class="layers" id="valLayers"></div>
+    <div class="vcap" id="valCap"></div>
+  </div>
+</section>
+
+<!-- 5 · O QUE FAZEMOS (6 frentes) -->
+<section class="slide" id="s5" data-name="O que fazemos">
+  <div class="copy">
+    <div class="eyebrow">O que fazemos</div>
+    <h2>Gestão médica <em>de ponta a ponta</em></h2>
+    <p class="lead" style="font-size:17px">Seis frentes trabalham juntas em volta de quem mais importa: o paciente.</p>
+    <div class="detail" id="wheelDetail"></div>
+  </div>
+  <div class="bench"><svg class="wheel" id="wheel" viewBox="0 0 1060 836" style="position:absolute;inset:0;width:100%;height:100%"></svg></div>
+</section>
+
+<!-- 6 · JORNADA DO CUIDADO (simulação) -->
+<section class="slide" id="s6" data-name="Jornada do cuidado">
+  <div class="copy" style="gap:16px">
+    <div class="eyebrow">Experiência do paciente</div>
+    <h2>A jornada <em>do cuidado</em></h2>
+    <p class="lead" style="font-size:17px">Cada ponto é um paciente. Uns resolvem no primeiro atendimento; outros seguem para especialistas ou exames. Todos são acompanhados.</p>
+    <div class="chips" id="jStages" role="group" aria-label="Etapa"></div>
+    <div class="ctrl">
+      <div class="ctrl-row"><label for="jSpeed">Velocidade da animação <output id="jSpeedOut">1,0×</output></label><input type="range" id="jSpeed" min="20" max="200" value="100"></div>
+      <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center">
+        <label class="toggle"><input type="checkbox" id="jInd" checked> Mostrar indicadores</label>
+        <button class="chip" id="jPlay" aria-pressed="false">Pausar</button>
+      </div>
+      <div class="readout">
+        <div><span>Etapa</span><b class="txt" id="jStage">—</b></div>
+        <div><span>Frentes WMedic</span><b class="txt" id="jFront">—</b></div>
+      </div>
+    </div>
+    <p class="note" style="font-size:13px">Fluxo ilustrativo, sem proporções reais.</p>
+  </div>
+  <div class="bench"><canvas id="journey" style="position:absolute;inset:0;width:100%;height:100%"></canvas></div>
+</section>
+
+<!-- 7 · FRENTES DE ATUAÇÃO -->
+<section class="slide" id="s7" data-name="Frentes de atuação">
+  <div class="copy">
+    <div class="eyebrow">Frentes de atuação</div>
+    <h2>Do atendimento 24h à <em>gestão de escalas</em></h2>
+    <p class="lead">Clínicos, especialistas e programas de saúde sob uma <strong>gestão assistencial única</strong>, com qualidade e segurança do paciente de ponta a ponta.</p>
+    <div class="detail" id="tileDetail"></div>
+  </div>
+  <div class="bench"><div class="tiles" id="tiles"></div></div>
+</section>
+
+<!-- 8 · REDE -->
+<section class="slide" id="s8" data-name="Rede e parceiros">
+  <div class="copy">
+    <div class="eyebrow">Nossa rede</div>
+    <h2>Rede credenciada <em>em todo o Brasil</em></h2>
+    <p class="lead">Conectamos pacientes a médicos, especialistas, clínicas e laboratórios, com <strong>curadoria e acompanhamento contínuo</strong> de cada prestador.</p>
+    <ul class="net" id="net"></ul>
+    <p class="lead" style="font-size:17px;margin-top:auto">Mais acesso. Mais qualidade. <strong>Mais cuidado para cada paciente.</strong></p>
+  </div>
+  <div class="bench" style="display:flex;flex-direction:column;justify-content:center;gap:22px">
+    <div class="eyebrow" style="padding-left:48px">Parceiros e rede credenciada</div>
+    <div class="logos" id="logos"></div>
+  </div>
+</section>
+
+<!-- 9 · INOVAÇÃO E MELHORIA CONTÍNUA -->
+<section class="slide" id="s9" data-name="Inovação e melhoria contínua">
+  <div class="copy">
+    <div class="eyebrow">Inovação em saúde</div>
+    <h2>Tecnologia, dados e <em>melhoria contínua</em></h2>
+    <p class="lead" style="font-size:17px">A qualidade não é um projeto pontual: é um ciclo que se repete. Clique numa fase ou use o botão para girar o ciclo.</p>
+    <div class="chips"><button class="chip" id="pdcaNext">Próxima fase →</button><button class="chip" id="pdcaAuto" aria-pressed="false">Girar sozinho</button></div>
+    <div class="detail" id="pdcaDetail"></div>
+  </div>
+  <div class="bench"><svg class="pdca" id="pdca" viewBox="0 0 1060 836" style="position:absolute;inset:0;width:100%;height:100%"></svg></div>
+</section>
+
+<!-- 10 · REVISÃO -->
+<section class="slide full" id="s10" data-name="Perguntas antes de fechar" data-obj>
+  <div class="endgrid">
+    <div class="copy">
+      <div class="eyebrow">Antes de fechar</div>
+      <h2>As perguntas que <em>todo cliente faz</em></h2>
+      <p class="lead" style="font-size:17px">Escolha o perfil de quem está na sala. Leia a pergunta, ouça a dúvida e clique no cartão para revelar a resposta.</p>
+      <div class="chips obj-chips" role="group" aria-label="Perfil do cliente"></div>
+      <p class="note obj-sub"></p>
+      <dl class="contact" style="margin-top:auto">
+        <dt>Comercial</dt><dd>WhatsApp (11) 97026-7810</dd>
+        <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
+        <dt>Site</dt><dd>wmedic.com.br</dd>
+        <dt>Endereço</dt><dd>Av. Santo Antonio, 1453</dd>
+      </dl>
+      <p class="credit">Fotos e textos: site wmedic.com.br. Esquemas e animações construídos para esta apresentação, com fluxos ilustrativos.</p>
+    </div>
+    <div class="bench"><div class="quiz obj-cards"></div></div>
+  </div>
+</section>
+
+<nav id="nav" aria-label="Navegação dos slides">
+  <img class="mark" src="img/symbol.png" alt="WMedic">
+  <span class="title">Apresentação institucional</span>
+  <button class="iconbtn" id="prev" aria-label="Slide anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <div id="ticks"></div>
+  <button class="iconbtn" id="next" aria-label="Próximo slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <span id="counter">01 / 10</span>
+  <button class="iconbtn" id="themeBtn" aria-label="Alternar tema claro/escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+  <button class="iconbtn" id="fsBtn" aria-label="Tela cheia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+</div>
+</div>
+
+<script src="objecoes.js"></script>
+<script src="deck.js"></script>
+
+<!-- 2 · ecossistema -->
+<script>
+(function(){
+const svg=document.getElementById('eco'),det=document.getElementById('ecoDetail');
+const C=[530,418];
+const nodes=[
+ {k:'wow',n:'Grupo Wow+',s:'saúde por assinatura',a:-90,ic:'heart',t:'A WMedic é a gestora da operação assistencial do grupo Wow+.',l:['Opera o cuidado prometido a quem assina','Garante excelência, qualidade e acesso','Integra todas as frentes sob uma gestão única']},
+ {k:'pac',n:'Pacientes',s:'centro de cada decisão',a:-30,ic:'users',t:'Experiência acolhedora do primeiro contato à alta, centrada na pessoa.',l:['Atendimento humanizado e resolutivo','Jornada de cuidado acompanhada','Suporte clínico contínuo']},
+ {k:'cli',n:'Corpo clínico',s:'médicos e especialistas',a:30,ic:'steth',t:'Gestão e coordenação de médicos e especialistas.',l:['Seleção e avaliação contínua','Coordenação de equipes','Escalas e cobertura 24h']},
+ {k:'rede',n:'Rede credenciada',s:'clínicas e laboratórios',a:90,ic:'pin',t:'Seleção criteriosa de profissionais e prestadores em todo o Brasil.',l:['Curadoria de prestadores','Cobertura nacional','Acompanhamento contínuo']},
+ {k:'emp',n:'Empresas e clientes',s:'saúde como benefício',a:150,ic:'building',t:'Saúde como benefício estratégico, com resultado visível.',l:['Soluções desenhadas para cada empresa','Indicadores do cuidado na operação','Suporte dedicado']},
+ {k:'par',n:'Parceiros',s:'relação de confiança',a:210,ic:'handshake',t:'Parcerias estratégicas que ampliam o acesso e a qualidade do cuidado.',l:['Transparência e governança','Resultados para todos os envolvidos','Rede que cresce com qualidade']}
+];
+const R=300;let sel=1;
+function pos(a){const r=a*Math.PI/180;return[C[0]+Math.cos(r)*R*1.18,C[1]+Math.sin(r)*R]}
+function draw(){
+  let s='';
+  nodes.forEach((d,i)=>{const[x,y]=pos(d.a);s+=`<line class="link" x1="${C[0]}" y1="${C[1]}" x2="${x}" y2="${y}"/><line class="flow${i===sel?' sel':''}" x1="${C[0]}" y1="${C[1]}" x2="${x}" y2="${y}"/>`});
+  s+=`<circle cx="${C[0]}" cy="${C[1]}" r="104" fill="var(--surface)" stroke="var(--accent)" stroke-width="3"/>
+  <image href="img/symbol.png" x="${C[0]-62}" y="${C[1]-70}" width="124" height="77"/>
+  <text x="${C[0]}" y="${C[1]+44}" text-anchor="middle" style="font:600 22px var(--f-body);fill:var(--ink)">WMedic</text>
+  <text x="${C[0]}" y="${C[1]+66}" text-anchor="middle" style="font:400 13px var(--f-mono);fill:var(--muted);letter-spacing:.08em">GESTÃO MÉDICA</text>`;
+  nodes.forEach((d,i)=>{const[x,y]=pos(d.a);const below=y>C[1]+40,above=y<C[1]-40;
+    const tx=above||below?x:(x>C[0]?x+60:x-60),anchor=above||below?'middle':(x>C[0]?'start':'end');
+    const ty=above?y-78:below?y+90:y-6;
+    s+=`<g class="node${i===sel?' sel':''}" data-i="${i}" tabindex="0" role="button" aria-label="${d.n}">
+      <circle class="ring" cx="${x}" cy="${y}" r="44"/>
+      <g transform="translate(${x-16} ${y-16}) scale(1.333)" style="color:var(--accent-ink)">${icon(d.ic).replace('<svg','<svg width="24" height="24"')}</g>
+      <text x="${tx}" y="${ty}" text-anchor="${anchor}">${d.n}</text>
+      <text class="sub" x="${tx}" y="${ty+22}" text-anchor="${anchor}">${d.s}</text></g>`});
+  svg.innerHTML=s;
+  svg.querySelectorAll('.node').forEach(g=>{const f=()=>{sel=+g.dataset.i;draw()};g.onclick=f;g.onkeydown=e=>{if(e.key==='Enter')f()}});
+  const d=nodes[sel];det.innerHTML=`<b>${d.n}</b><p>${d.t}</p><ul>${d.l.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+draw();
+})();
+</script>
+
+<!-- 3 · missão / visão / propósito -->
+<script>
+(function(){
+const el=document.getElementById('mvv');
+const d=[
+ ['target','Missão','Gerir a operação assistencial do grupo Wow+ com excelência, garantindo acesso à saúde de forma humanizada, segura e eficiente.'],
+ ['eye','Visão','Ser referência em gestão médica no Brasil, reconhecida pela qualidade do cuidado, pela governança clínica e pelos resultados que gera.'],
+ ['compass','Propósito','Cuidar de pessoas e transformar vidas, colocando o paciente no centro de cada decisão e de cada processo.']
+];
+d.forEach(([ic,t,p],i)=>{const b=document.createElement('button');b.className='card'+(i===0?' focus':'');
+  b.innerHTML=`<span class="ico">${icon(ic)}</span><span class="tag">0${i+1}</span><h3>${t}</h3><p class="big">${p}</p>`;
+  b.onclick=()=>{el.querySelectorAll('.card').forEach(c=>c.classList.remove('focus'));b.classList.add('focus')};el.appendChild(b)});
+})();
+</script>
+
+<!-- 4 · valores -->
+<script>
+(function(){
+const vals=[
+ {n:'Excelência',s:'em cada detalhe',img:'medicos-2.jpg',l:['Equipe médica qualificada e constantemente avaliada','Protocolos clínicos baseados em evidência','Busca pelo melhor padrão de cuidado']},
+ {n:'Segurança',s:'em cada processo',img:'corredor.jpg',l:['Processos padronizados e alinhados às melhores práticas','Monitoramento de eventos adversos e incidentes','Proteção de dados de saúde conforme a LGPD']},
+ {n:'Humanização',s:'em cada atendimento',img:'paciente-fone.jpg',l:['Atendimento acolhedor do primeiro contato à alta','Jornada de cuidado centrada na pessoa','Empatia e respeito em cada conversa']},
+ {n:'Resultados',s:'que geram valor',img:'equipe-2.jpg',l:['Indicadores assistenciais e governança','Melhoria contínua a partir dos dados','Valor real para pacientes, clientes e rede']}
+];
+const chips=document.getElementById('valChips'),lay=document.getElementById('valLayers'),cap=document.getElementById('valCap');
+vals.forEach((v,i)=>{const im=new Image();im.src='img/'+v.img;im.alt=v.n;im.className=i?'off':'';lay.appendChild(im);
+  const b=document.createElement('button');b.className='chip';b.textContent=v.n;b.onclick=()=>show(i);chips.appendChild(b)});
+function show(i){[...lay.children].forEach((im,k)=>im.classList.toggle('off',k!==i));[...chips.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===i));
+  const v=vals[i];cap.innerHTML=`<span class="tag">Como aparece no dia a dia</span><b>${v.n} <span style="font-weight:400;color:var(--ink2)">${v.s}</span></b><ul>${v.l.map(x=>`<li>${x}</li>`).join('')}</ul>`}
+show(0);
+})();
+</script>
+
+<!-- 5 · roda das 6 frentes -->
+<script>
+(function(){
+const svg=document.getElementById('wheel'),det=document.getElementById('wheelDetail');
+const F=[
+ ['users','Corpo clínico','Gestão e coordenação de médicos e especialistas.',['Seleção e avaliação contínua','Coordenação de equipes','Escalas e cobertura']],
+ ['shield','Credenciamento e rede','Seleção criteriosa de profissionais e prestadores em todo o Brasil.',['Rede qualificada','Cobertura nacional','Gestão de prestadores']],
+ ['pulse','Qualidade assistencial','Protocolos clínicos, segurança do paciente e melhoria contínua dos processos.',['Protocolos clínicos','Segurança do paciente','Melhoria contínua']],
+ ['heart','Experiência do paciente','Atendimento humanizado, eficiente e resolutivo em todas as jornadas de cuidado.',['Atendimento humanizado','Jornada de cuidado','Resolutividade']],
+ ['chart','Gestão e inteligência','Dados, indicadores e governança para uma operação de alta performance.',['Indicadores e dados','Governança assistencial','Alta performance']],
+ ['headset','Suporte clínico','Apoio contínuo aos pacientes e à equipe médica.',['Apoio à equipe médica','Suporte ao paciente','Disponibilidade contínua']]
+];
+const cx=530,cy=418,R1=165,R2=360;let sel=0;
+const P=(a,r)=>[cx+Math.cos(a)*r,cy+Math.sin(a)*r];
+function arc(a0,a1){const[x0,y0]=P(a0,R2),[x1,y1]=P(a1,R2),[x2,y2]=P(a1,R1),[x3,y3]=P(a0,R1);
+  return `M${x0} ${y0}A${R2} ${R2} 0 0 1 ${x1} ${y1}L${x2} ${y2}A${R1} ${R1} 0 0 0 ${x3} ${y3}Z`}
+function draw(){
+  let s='';const step=Math.PI*2/6;
+  F.forEach((f,i)=>{const a0=-Math.PI/2-step/2+i*step,a1=a0+step,am=(a0+a1)/2;const[tx,ty]=P(am,(R1+R2)/2);
+    const words=f[1].split(' ');let l1=f[1],l2='';if(f[1].length>14){const h=Math.ceil(words.length/2);l1=words.slice(0,h).join(' ');l2=words.slice(h).join(' ')}
+    s+=`<g class="seg${i===sel?' sel':''}" data-i="${i}" tabindex="0" role="button" aria-label="${f[1]}"><path d="${arc(a0,a1)}"/>
+    <g class="gi" transform="translate(${tx-15} ${ty-52}) scale(1.25)">${icon(f[0]).replace('<svg','<svg width="24" height="24"')}</g>
+    <text x="${tx}" y="${ty+8}" text-anchor="middle">${l1}</text>${l2?`<text x="${tx}" y="${ty+30}" text-anchor="middle">${l2}</text>`:''}</g>`});
+  s+=`<circle cx="${cx}" cy="${cy}" r="${R1-14}" fill="var(--bg)" stroke="var(--line2)"/>
+  <text x="${cx}" y="${cy-8}" text-anchor="middle" style="font:600 24px var(--f-body);fill:var(--ink)">Paciente</text>
+  <text x="${cx}" y="${cy+22}" text-anchor="middle" style="font:600 24px var(--f-body);fill:var(--accent-ink)">no centro</text>`;
+  svg.innerHTML=s;
+  svg.querySelectorAll('.seg').forEach(g=>{const f=()=>{sel=+g.dataset.i;draw()};g.onclick=f;g.onkeydown=e=>{if(e.key==='Enter')f()}});
+  const f=F[sel];det.innerHTML=`<b>${f[1]}</b><p>${f[2]}</p><ul>${f[3].map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+draw();
+})();
+</script>
+
+<!-- 6 · simulação da jornada -->
+<script>
+(function(){
+const cv=document.getElementById('journey'),ctx=cv.getContext('2d');
+const VW=1060,VH=836;
+const N={A:[120,430],B:[330,430],C:[560,270],D:[560,600],E:[780,430],F:[950,430]};
+const ST=[
+ {k:'A',n:'Acolhimento',f:'Experiência do paciente · Suporte clínico',ind:'tempo de espera'},
+ {k:'B',n:'Clínico 24h',f:'Corpo clínico · Qualidade assistencial',ind:'resolutividade'},
+ {k:'C',n:'Especialidades, psicologia e nutrição',f:'Corpo clínico · Credenciamento e rede',ind:'encaminhamentos'},
+ {k:'D',n:'Exames na rede',f:'Credenciamento e rede',ind:'prazo de exames'},
+ {k:'E',n:'Acompanhamento',f:'Gestão e inteligência · Qualidade assistencial',ind:'adesão aos programas'},
+ {k:'F',n:'Cuidado contínuo',f:'Todas as frentes',ind:'satisfação'}
+];
+const routes=[{p:'ABEF',w:.45},{p:'ABCEF',w:.25},{p:'ABDEF',w:.2},{p:'ABCDEF',w:.1}].map(r=>{const pts=[...r.p].map(k=>N[k]);let L=[0];for(let i=1;i<pts.length;i++)L.push(L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));return{...r,pts,L,len:L[L.length-1]}});
+function at(r,d){for(let i=1;i<r.pts.length;i++){if(d<=r.L[i]){const t=(d-r.L[i-1])/(r.L[i]-r.L[i-1]);const a=r.pts[i-1],b=r.pts[i];return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]}}return r.pts[r.pts.length-1]}
+let seed=7;const rnd=()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646};
+function pick(){let x=rnd(),acc=0;for(const r of routes){acc+=r.w;if(x<=acc)return r}return routes[0]}
+const parts=[];for(let i=0;i<46;i++){const r=pick();parts.push({r,d:rnd()*r.len,j:(rnd()-.5)*14})}
+let running=true,sel=1,speed=1,last=performance.now(),col={};
+const chips=document.getElementById('jStages');
+ST.forEach((s,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=s.n.split(',')[0];b.onclick=()=>{sel=i;upd()};chips.appendChild(b)});
+function upd(){[...chips.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===sel));document.getElementById('jStage').textContent=ST[sel].n;document.getElementById('jFront').textContent=ST[sel].f;if(!running)draw()}
+function readCols(){['--ink','--ink2','--muted','--line','--line2','--accent','--accent-ink','--bg','--surface','--mint'].forEach(k=>col[k]=cssVar(k))}
+readCols();DECK.onChange(k=>{if(k==='theme'){readCols();draw()}if(k==='scale')size()});
+function size(){const r=cv.getBoundingClientRect();const dpr=(window.devicePixelRatio||1);const w=Math.max(1,Math.round(r.width/(DECK.printing?1:DECK.scale||1)*dpr)),h=Math.max(1,Math.round(r.height/(DECK.printing?1:DECK.scale||1)*dpr));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}draw()}
+new ResizeObserver(size).observe(cv);
+function draw(){
+  const w=cv.width,h=cv.height,k=Math.min(w/VW,h/VH),ox=(w-VW*k)/2,oy=(h-VH*k)/2;
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,w,h);ctx.setTransform(k,0,0,k,ox,oy);
+  // trilhas
+  ctx.lineCap='round';ctx.lineJoin='round';
+  routes.forEach(r=>{ctx.beginPath();r.pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=col['--line'];ctx.lineWidth=26;ctx.stroke()});
+  routes.forEach(r=>{ctx.beginPath();r.pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=col['--line2'];ctx.lineWidth=1.5;ctx.setLineDash([4,8]);ctx.stroke();ctx.setLineDash([])});
+  // pacientes
+  parts.forEach(p=>{const[x,y]=at(p.r,p.d);const[x2,y2]=at(p.r,Math.max(0,p.d-26));
+    const g=ctx.createLinearGradient(x2,y2,x,y);g.addColorStop(0,'rgba(140,82,255,0)');g.addColorStop(1,col['--accent']);
+    ctx.strokeStyle=g;ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x2,y2+p.j*.3);ctx.lineTo(x,y+p.j*.3);ctx.stroke();
+    ctx.fillStyle=col['--accent-ink'];ctx.beginPath();ctx.arc(x,y+p.j*.3,5.5,0,7);ctx.fill()});
+  // etapas
+  ST.forEach((s,i)=>{const[x,y]=N[s.k];const on=i===sel;
+    ctx.fillStyle=col['--surface'];ctx.strokeStyle=on?col['--accent']:col['--line2'];ctx.lineWidth=on?5:2;
+    ctx.beginPath();ctx.arc(x,y,on?40:34,0,7);ctx.fill();ctx.stroke();
+    ctx.fillStyle=on?col['--accent-ink']:col['--ink2'];ctx.font='500 17px "IBM Plex Mono",monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),x,y+1);
+    const lines=s.n.length>18?[s.n.split(',')[0]+',',s.n.split(',').slice(1).join(',').trim()]:[s.n];
+    ctx.font=(on?'600 ':'500 ')+'18px Poppins,sans-serif';ctx.fillStyle=on?col['--ink']:col['--ink2'];
+    const ly=s.k==='D'?y+66:y-62-(lines.length-1)*22;
+    lines.forEach((t,j)=>ctx.fillText(t,x,ly+j*22));
+    if(document.getElementById('jInd').checked){const ty=s.k==='D'?y+66+lines.length*22+8:y+64;
+      ctx.font='400 14px "IBM Plex Mono",monospace';const tw=ctx.measureText(s.ind).width+20;
+      ctx.fillStyle=col['--bg'];ctx.strokeStyle=col['--mint'];ctx.lineWidth=1.2;roundRect(x-tw/2,ty-13,tw,26,6);ctx.fill();ctx.stroke();
+      ctx.fillStyle=col['--mint'];ctx.fillText(s.ind,x,ty+1)}
+  });
+  ctx.textAlign='left';ctx.font='400 14px "IBM Plex Mono",monospace';ctx.fillStyle=col['--muted'];
+  ctx.fillText(document.getElementById('jInd').checked?'indicadores medidos em cada etapa → Gestão e inteligência':'cada ponto representa um paciente',60,790);
+}
+function roundRect(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function loop(t){const dt=Math.min(.05,(t-last)/1000);last=t;
+  if(running&&!DECK.printing&&document.getElementById('s6').classList.contains('active')){
+    parts.forEach(p=>{p.d+=dt*110*speed;if(p.d>p.r.len){const r=pick();p.r=r;p.d=rnd()*20;p.j=(rnd()-.5)*14}});draw()}
+  requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+const sp=document.getElementById('jSpeed');sp.addEventListener('input',()=>{speed=sp.value/100;document.getElementById('jSpeedOut').textContent=speed.toFixed(1).replace('.',',')+'×'});
+document.getElementById('jInd').addEventListener('change',draw);
+const pl=document.getElementById('jPlay');pl.onclick=()=>{running=!running;pl.textContent=running?'Pausar':'Continuar';pl.setAttribute('aria-pressed',!running)};
+window.__sim={set:p=>{parts.forEach((q,i)=>q.d=((i*97+p*q.r.len)%q.r.len));draw()}};
+upd();
+})();
+</script>
+
+<!-- 7 · frentes de atuação -->
+<script>
+(function(){
+const T=[
+ ['clock','Médicos clínicos 24h','Atendimento clínico disponível a qualquer hora, com equipe coordenada pela WMedic.'],
+ ['steth','Especialidades médicas','Acesso a especialistas para continuar o cuidado quando o caso pede.'],
+ ['brain','Psicologia','Cuidado com a saúde mental integrado à jornada do paciente.'],
+ ['apple','Nutrição','Orientação nutricional como parte do cuidado e da prevenção.'],
+ ['baby','Pediatria','Cuidado de crianças sob a mesma gestão assistencial.'],
+ ['heart','Programas de saúde','Programas de acompanhamento e promoção da saúde.'],
+ ['calendar','Gestão de escalas e atendimento','Escalas organizadas para manter a cobertura e o tempo de resposta.'],
+ ['shield','Suporte e qualidade','Protocolos, segurança do paciente e suporte clínico contínuo.']
+];
+const el=document.getElementById('tiles'),det=document.getElementById('tileDetail');
+function show(i){el.querySelectorAll('.tile:not(.more)').forEach((t,k)=>t.classList.toggle('focus',k===i));det.innerHTML=`<b>${T[i][1]}</b><p>${T[i][2]}</p>`}
+T.forEach(([ic,n,p],i)=>{const b=document.createElement('button');b.className='tile';b.innerHTML=`<span class="ico">${icon(ic)}</span><b>${n}</b>`;b.onclick=()=>show(i);el.appendChild(b)});
+const m=document.createElement('div');m.className='tile more';m.innerHTML='<b>E muito mais</b><p>Tudo sob uma gestão assistencial única.</p>';el.appendChild(m);
+show(0);
+})();
+</script>
+
+<!-- 8 · rede -->
+<script>
+(function(){
+document.getElementById('net').innerHTML=[['steth','Atendimento clínico coordenado'],['building','Consultas presenciais na rede credenciada'],['flask','Exames em clínicas e laboratórios parceiros'],['globe','Cobertura distribuída em todo o Brasil']].map(([i,t])=>`<li><span class="ico">${icon(i)}</span>${t}</li>`).join('');
+let s='';for(let i=1;i<=19;i++)s+=`<div><img src="img/parceiros/${i}.jpg" alt="Parceiro ${i}" loading="lazy"></div>`;
+document.getElementById('logos').innerHTML=s;
+})();
+</script>
+
+<!-- 9 · ciclo de melhoria contínua -->
+<script>
+(function(){
+const svg=document.getElementById('pdca'),det=document.getElementById('pdcaDetail');
+const PH=[
+ {n:'Planejar',ic:'doc',t:'Protocolos clínicos e processos padronizados definem o cuidado certo, no momento certo.',l:['Processos padronizados','Protocolos baseados em evidência']},
+ {n:'Executar',ic:'video',t:'Tecnologia integrada e telemedicina levam o cuidado aonde o paciente estiver.',l:['Tecnologia integrada','Telemedicina','Segurança da informação (LGPD)']},
+ {n:'Medir',ic:'chart',t:'Dados e indicadores transformam o dia a dia da operação em informação para decidir.',l:['Indicadores assistenciais','Governança de dados']},
+ {n:'Melhorar',ic:'cycle',t:'Auditorias e ciclos de melhoria elevam a qualidade e a experiência a cada volta.',l:['Melhoria contínua','Metas de qualidade por equipe']}
+];
+const cx=530,cy=418,R=250;let sel=0,auto=null;
+function arcPath(a0,a1,r){const p=a=>[cx+Math.cos(a)*r,cy+Math.sin(a)*r];const[x0,y0]=p(a0),[x1,y1]=p(a1);return`M${x0} ${y0}A${r} ${r} 0 0 1 ${x1} ${y1}`}
+function draw(){let s='';
+  PH.forEach((ph,i)=>{const a0=-Math.PI/2+i*Math.PI/2+.05,a1=a0+Math.PI/2-.26,am=(a0+a1)/2;
+    const lx=cx+Math.cos(am)*(R+92),ly=cy+Math.sin(am)*(R+92);
+    const tip=[cx+Math.cos(a1)*R,cy+Math.sin(a1)*R],tn=[-Math.sin(a1),Math.cos(a1)];
+    s+=`<g class="ph${i===sel?' sel':''}" data-i="${i}" tabindex="0" role="button" aria-label="${ph.n}">
+    <path class="arc" d="${arcPath(a0,a1,R)}"/>
+    <path d="M${tip[0]-Math.cos(a1)*30} ${tip[1]-Math.sin(a1)*30}L${tip[0]+Math.cos(a1)*30} ${tip[1]+Math.sin(a1)*30}L${tip[0]+tn[0]*34} ${tip[1]+tn[1]*34}Z" fill="${i===sel?'var(--accent)':'var(--line2)'}"/>
+    <text class="n" x="${lx}" y="${ly-14}" text-anchor="middle">0${i+1}</text>
+    <text x="${lx}" y="${ly+12}" text-anchor="middle">${ph.n}</text></g>`});
+  const ph=PH[sel];
+  s+=`<circle cx="${cx}" cy="${cy}" r="${R-60}" fill="var(--surface)" stroke="var(--line)"/>
+  <g transform="translate(${cx-30} ${cy-86}) scale(2.5)" style="color:var(--accent-ink)">${icon(ph.ic).replace('<svg','<svg width="24" height="24"')}</g>
+  <text x="${cx}" y="${cy+16}" text-anchor="middle" style="font:600 30px var(--f-body);fill:var(--ink)">${ph.n}</text>
+  <text x="${cx}" y="${cy+50}" text-anchor="middle" style="font:400 15px var(--f-mono);fill:var(--muted);letter-spacing:.08em">MELHORIA CONTÍNUA</text>`;
+  svg.innerHTML=s;
+  svg.querySelectorAll('.ph').forEach(g=>{const f=()=>{sel=+g.dataset.i;draw()};g.onclick=f;g.onkeydown=e=>{if(e.key==='Enter')f()}});
+  det.innerHTML=`<b>${ph.n}</b><p>${ph.t}</p><ul>${ph.l.map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+document.getElementById('pdcaNext').onclick=()=>{sel=(sel+1)%4;draw()};
+const ab=document.getElementById('pdcaAuto');ab.onclick=()=>{if(auto){clearInterval(auto);auto=null}else auto=setInterval(()=>{if(document.getElementById('s9').classList.contains('active')){sel=(sel+1)%4;draw()}},2600);ab.setAttribute('aria-pressed',!!auto)};
+draw();
+})();
+</script>
+
+</body></html><!--local-->

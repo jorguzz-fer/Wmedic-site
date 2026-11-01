@@ -1,0 +1,599 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><!--local-->
+<title>WMedic Telemedicina</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+<style>
+/* peças desta apresentação */
+.who{--you:var(--mint);--wm:var(--accent-ink)}
+.stack{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:40px 64px 40px 56px}
+.lay{display:grid;grid-template-columns:300px 1fr;align-items:center;gap:20px;border:1px solid var(--line);border-radius:var(--r-card);padding:18px 22px;background:var(--surface)}
+.lay .ln{display:flex;gap:14px;align-items:center;font-size:17px;font-weight:600;color:var(--ink)}
+.lay .ln small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
+.own{display:flex;align-items:center;gap:12px;border-radius:12px;padding:12px 16px;border:1.5px solid currentColor;transition:color .35s,background .35s;font-size:16px;font-weight:500}
+.own .who-l{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:5px;background:currentColor;flex:none}
+.own .who-l span{color:var(--bg)}
+.own.you{color:var(--mint);background:var(--mint-soft)}
+.own.wm{color:var(--accent-ink);background:var(--accent-soft)}
+.own .txt{color:var(--ink)}
+.legend2{display:flex;gap:18px;font-size:14px;color:var(--ink2);align-items:center}
+.legend2 i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
+/* celular */
+.phones{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:56px}
+.phone{width:330px;height:680px;border-radius:44px;background:#0d0b14;padding:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);border:1px solid var(--line2);flex:none}
+.scr{width:100%;height:100%;border-radius:34px;overflow:hidden;background:#f7f6fb;display:flex;flex-direction:column;color:#1e1b2e;font-family:var(--f-body)}
+.ph-top{padding:34px 20px 22px;color:var(--bfg);background:var(--brand);display:flex;flex-direction:column;gap:12px;transition:background .3s}
+.ph-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px}
+.ph-brand i{width:34px;height:34px;border-radius:10px;background:var(--bfg);color:var(--brand);display:grid;place-items:center;font-style:normal;font-weight:700;font-size:17px}
+.ph-hi{font-size:15px;opacity:.9}
+.ph-body{padding:16px;display:flex;flex-direction:column;gap:10px;flex:1}
+.ph-cta{background:var(--brand);color:var(--bfg);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:4px;transition:background .3s}
+.ph-cta b{font-size:17px}
+.ph-cta span{font-size:13px;opacity:.9}
+.ph-item{background:#fff;border:1px solid #e6e1f0;border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px;font-size:14px;font-weight:500}
+.ph-item i{width:32px;height:32px;border-radius:9px;background:var(--brand-soft);color:var(--brand-ink);display:grid;place-items:center;flex:none}
+.ph-item i svg{width:18px;height:18px}
+.ph-item small{display:block;font-weight:400;color:#6e6a7c;font-size:12px}
+.ph-foot{font-size:10.5px;color:#6e6a7c;text-align:center;padding:8px 0 14px}
+.vid{flex:1;background:linear-gradient(160deg,#3a3550,#16131f);position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
+.vid .self{position:absolute;right:14px;top:44px;width:86px;height:120px;border-radius:12px;overflow:hidden;border:2px solid #fff}
+.vid .self img{opacity:1}
+.vid .bar{position:relative;display:flex;justify-content:center;gap:14px;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.6))}
+.vid .bar span{width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff}
+.vid .bar span.end{background:#d93b3b}
+.vid .bar svg{width:20px;height:20px}
+.vid .tagv{position:absolute;left:14px;top:44px;background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:6px 10px;border-radius:8px}
+.swatches{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.sw{width:34px;height:34px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line2);cursor:pointer;padding:0}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 3px var(--ink)}
+.field{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--ink2)}
+.field input[type=text],.field input[type=number],.field select{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:10px 12px;font-size:16px;color:var(--ink)}
+.field input[type=color]{width:34px;height:34px;border:0;padding:0;background:none;cursor:pointer}
+/* segmentos */
+.segs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:56px 56px 48px 48px;height:100%;align-content:center}
+.segs .card{min-height:200px}
+.segs .card h3{font-size:20px}
+.pill{display:inline-flex;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;padding:4px 10px;border-radius:999px;border:1px solid var(--accent-ink);color:var(--accent-ink);align-self:flex-start}
+/* proposta */
+.prop{position:absolute;inset:36px 56px 32px 48px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:34px 40px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.prop header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px}
+.prop header h3{margin:0;font-size:28px;font-weight:600}
+.prop header p{margin:4px 0 0;color:var(--muted);font-size:14px}
+.prop .meta{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.prop .meta div{display:flex;flex-direction:column;gap:2px}
+.prop .meta span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.prop .meta b{font-size:18px;font-weight:600}
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.svc div{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.4;color:var(--ink2)}
+.svc div b{display:block;color:var(--ink);font-weight:600;font-size:16px}
+.svc .ico{width:38px;height:38px;border-radius:10px}
+.svc .ico svg{width:20px;height:20px}
+.always{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto}
+.always span{font-size:13.5px;padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--ink)}
+.chk{display:flex;flex-wrap:wrap;gap:8px}
+.chk label{display:flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:999px;padding:6px 14px 6px 10px;font-size:14px;color:var(--ink2);cursor:pointer}
+.chk input{accent-color:var(--accent);width:16px;height:16px}
+.chk label:has(input:checked){border-color:var(--accent-deep);background:var(--accent-soft);color:var(--ink)}
+/* comparativo */
+.cmp{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:40px 56px 40px 48px;gap:8px}
+.cmp .row{display:grid;grid-template-columns:200px 1fr 1fr;gap:14px;align-items:stretch;cursor:pointer}
+.cmp .row>div{padding:15px 18px;border-radius:12px;font-size:16px;line-height:1.4;display:flex;align-items:center;gap:10px}
+.cmp .head>div{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-block:6px}
+.cmp .crit{font-weight:600;color:var(--ink)}
+.cmp .bad{background:var(--surface);color:var(--ink2);border:1px solid var(--line)}
+.cmp .good{background:var(--accent-soft);color:var(--ink);border:1px solid var(--accent);transition:filter .4s,opacity .4s}
+.cmp .row:not(.open) .good{filter:blur(6px);opacity:.45}
+.cmp .x{color:var(--crit);font-family:var(--f-mono);font-weight:500}
+.cmp .v{color:var(--ok);font-family:var(--f-mono);font-weight:500}
+/* conformidade */
+.law{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:64px 56px 56px 48px;align-content:center}
+.law .card{min-height:250px;opacity:.35;transition:opacity .4s,border-color .4s}
+.law .card.on{opacity:1}
+.law .card.cur{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.law .ref{font-family:var(--f-mono);font-size:13px;color:var(--accent-ink);letter-spacing:.04em}
+/* implantação */
+.tl{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:28px;padding:40px 64px 40px 56px}
+.tl-track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
+.tl-track::before{content:"";position:absolute;left:10%;right:10%;top:27px;height:3px;background:var(--line2)}
+.tl-fill{position:absolute;left:10%;top:27px;height:3px;background:var(--accent);transition:width .4s}
+.tl-step{display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;background:none;border:0;padding:0;color:var(--ink2);position:relative;z-index:1}
+.tl-step .dot{width:56px;height:56px;border-radius:50%;background:var(--surface);border:2px solid var(--line2);display:grid;place-items:center;font-family:var(--f-mono);font-size:18px;transition:all .3s}
+.tl-step.done .dot{border-color:var(--accent);color:var(--accent-ink)}
+.tl-step.cur .dot{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.tl-step b{font-size:16px;font-weight:600;text-align:center;color:var(--ink);max-width:16ch}
+.tl-card{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tl-card>div{border:1px solid var(--line);border-radius:var(--r-card);padding:22px 24px;background:var(--surface);display:flex;flex-direction:column;gap:10px}
+.tl-card .tag{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.tl-card ul{margin:0;padding-left:18px;font-size:16px;line-height:1.6;color:var(--ink2)}
+.tl-card .you .tag{color:var(--mint)}
+.tl-card .wm .tag{color:var(--accent-ink)}
+/* funil */
+.funnel text{font-family:var(--f-body)}
+.endgrid{display:grid;grid-template-columns:540px 1fr;height:100%}
+</style>
+</head><body><!--local-->
+
+<div id="viewport">
+<div id="deck" role="application" aria-label="Apresentação comercial WMedic: telemedicina">
+
+<!-- 1 · CAPA -->
+<section class="slide cover" id="s1" data-name="Capa">
+  <div class="copy">
+    <img class="brandlogo logo-d" src="img/logo-white.png" alt="WMedic">
+    <img class="brandlogo logo-l" src="img/logo-full.png" alt="WMedic">
+    <div class="eyebrow">Apresentação comercial</div>
+    <h1>Telemedicina com a sua marca. <em>Médicos da WMedic.</em></h1>
+    <p class="lead">Duas formas de levar consulta médica online ao seu público: a <strong>plataforma whitelabel</strong> e o <strong>atendimento médico por consultas online</strong>. Ou as duas juntas.</p>
+    <p class="note noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia.</p>
+  </div>
+  <div class="bench" style="border:0">
+    <div class="photo"><img src="img/paciente-fone.jpg" alt="Paciente em consulta online pelo celular" style="object-position:50% 30%"></div>
+    <div class="badges">
+      <div class="badge"><b>24h</b><span>clínico por vídeo</span></div>
+      <div class="badge"><b>Sua marca</b><span>no app e no site</span></div>
+      <div class="badge"><b>Gestão médica</b><span>do grupo Wow+</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · DUAS OFERTAS -->
+<section class="slide" id="s2" data-name="Duas formas de contratar">
+  <div class="copy">
+    <div class="eyebrow">O que oferecemos</div>
+    <h2>Duas formas de <em>contratar</em></h2>
+    <div class="chips" id="modeChips" role="group" aria-label="Modalidade"></div>
+    <div class="detail" id="modeDetail"></div>
+    <div class="legend2"><span><i style="background:var(--mint)"></i>Sua empresa</span><span><i style="background:var(--accent-ink)"></i>WMedic</span></div>
+    <p class="note" style="margin-top:auto">Arranjo de referência. Cada proposta é ajustada ao cliente.</p>
+  </div>
+  <div class="bench who"><div class="stack" id="stack"></div></div>
+</section>
+
+<!-- 3 · WHITELABEL NA PRÁTICA -->
+<section class="slide" id="s3" data-name="Whitelabel na prática">
+  <div class="copy" style="gap:16px">
+    <div class="eyebrow">Plataforma whitelabel</div>
+    <h2>Sua marca, <em>nossa tecnologia</em></h2>
+    <p class="lead" style="font-size:17px">O usuário vê o seu nome e as suas cores. Digite a marca do cliente e escolha a cor para mostrar ao vivo.</p>
+    <label class="field" for="wlName">Nome da marca<input type="text" id="wlName" value="Viva Saúde" maxlength="22" autocomplete="off"></label>
+    <div class="field"><span>Cor principal</span><div class="swatches" id="wlSw"></div></div>
+    <div class="chk" id="wlSvc"></div>
+    <p class="note" style="font-size:13px;margin-top:auto">Ilustração. As telas reais seguem a plataforma e a identidade de cada cliente.</p>
+  </div>
+  <div class="bench" id="wlBench">
+    <div class="phones">
+      <div class="phone"><div class="scr">
+        <div class="ph-top"><div class="ph-brand"><i id="wlInit">V</i><span id="wlBrand">Viva Saúde</span></div><div class="ph-hi">Olá, Ana. Como podemos ajudar hoje?</div></div>
+        <div class="ph-body" id="wlBody"></div>
+        <div class="ph-foot">tecnologia e atendimento médico WMedic</div>
+      </div></div>
+      <div class="phone"><div class="scr">
+        <div class="vid">
+          <img src="img/medicos-2.jpg" alt="" style="object-position:70% 20%">
+          <div class="tagv" id="wlTag">Viva Saúde · consulta em andamento</div>
+          <div class="self"><img src="img/paciente-fone.jpg" alt="" style="object-position:50% 25%"></div>
+          <div class="bar"><span>${''}</span><span class="end"></span><span></span></div>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · PARA QUEM -->
+<section class="slide" id="s4" data-name="Para quem">
+  <div class="copy">
+    <div class="eyebrow">Perfis de cliente</div>
+    <h2>Para quem <em>faz sentido</em></h2>
+    <p class="lead" style="font-size:17px">Clique no perfil do cliente à sua frente para ver a dor, o modelo indicado e o argumento principal.</p>
+    <div class="detail" id="segDetail"></div>
+  </div>
+  <div class="bench"><div class="segs" id="segs"></div></div>
+</section>
+
+<!-- 5 · JORNADA DA CONSULTA (simulação) -->
+<section class="slide" id="s5" data-name="Jornada da consulta online">
+  <div class="copy" style="gap:15px">
+    <div class="eyebrow">Como funciona</div>
+    <h2>A jornada da <em>consulta online</em></h2>
+    <p class="lead" style="font-size:16.5px">Cada ponto é um usuário. A maioria resolve na teleconsulta; quem precisa segue para especialista ou rede presencial.</p>
+    <div class="chips" id="jMode" role="group" aria-label="Modalidade"></div>
+    <div class="ctrl">
+      <div class="ctrl-row"><label for="jSpeed">Velocidade da animação <output id="jSpeedOut">1,0×</output></label><input type="range" id="jSpeed" min="20" max="200" value="100"></div>
+      <button class="chip" id="jPlay" aria-pressed="false" style="align-self:flex-start">Pausar</button>
+      <div class="readout">
+        <div><span>Etapa</span><b class="txt" id="jStage">—</b></div>
+        <div><span>Quem faz</span><b class="txt" id="jWho">—</b></div>
+      </div>
+    </div>
+    <p class="note" style="font-size:13px">Clique numa etapa no desenho. Fluxo ilustrativo, sem proporções reais.</p>
+  </div>
+  <div class="bench"><canvas id="journey" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer"></canvas></div>
+</section>
+
+<!-- 6 · MONTE O PACOTE -->
+<section class="slide" id="s6" data-name="Monte o pacote">
+  <div class="copy" style="gap:15px">
+    <div class="eyebrow">Cobertura clínica</div>
+    <h2>Monte o pacote <em>com o cliente</em></h2>
+    <label class="field" for="pkName">Cliente<input type="text" id="pkName" value="Empresa exemplo" maxlength="40" autocomplete="off"></label>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <label class="field" for="pkLives">Vidas<input type="number" id="pkLives" value="5000" min="100" step="100"></label>
+      <label class="field" for="pkPub">Público<select id="pkPub"><option value="Só titulares">Só titulares</option><option value="Titulares e dependentes" selected>Com dependentes</option></select></label>
+    </div>
+    <div class="chips" id="pkMode" role="group" aria-label="Modalidade"></div>
+    <div class="chk" id="pkSvc"></div>
+  </div>
+  <div class="bench"><div class="prop" id="prop"></div></div>
+</section>
+
+<!-- 7 · SIMULADOR DE VALOR -->
+<section class="slide" id="s7" data-name="Simulador de valor">
+  <div class="copy" style="gap:12px;padding-top:48px">
+    <div class="eyebrow">Simulador</div>
+    <h2 style="font-size:42px">Quanto a teleconsulta <em>pode evitar</em></h2>
+    <span class="tag-ex" style="align-self:flex-start">Valores de exemplo · troque pelos do cliente</span>
+    <div class="ctrl">
+      <div class="ctrl-row"><label for="vLives">Vidas na carteira <output id="vLivesOut"></output></label><input type="range" id="vLives" min="1000" max="100000" step="1000" value="10000"></div>
+      <div class="ctrl-row"><label for="vUse">Uso mensal (vidas que consultam) <output id="vUseOut"></output></label><input type="range" id="vUse" min="1" max="10" step="0.5" value="3"></div>
+      <div class="ctrl-row"><label for="vRes">Resolvidas na teleconsulta <output id="vResOut"></output></label><input type="range" id="vRes" min="50" max="95" step="1" value="80"></div>
+      <div class="ctrl-row"><label for="vPS">Teriam ido ao pronto-socorro <output id="vPSOut"></output></label><input type="range" id="vPS" min="5" max="60" step="1" value="30"></div>
+      <div class="ctrl-row"><label for="vCost">Custo médio de uma ida ao PS <output id="vCostOut"></output></label><input type="range" id="vCost" min="150" max="1200" step="10" value="400"></div>
+    </div>
+    <p class="note" style="font-size:12.5px">Estimativa ilustrativa: consultas × resolvidas × teriam ido ao PS × custo. Não é promessa de resultado.</p>
+  </div>
+  <div class="bench" style="display:flex;flex-direction:column;justify-content:center;padding:40px 64px 32px 56px;gap:24px">
+    <svg class="funnel" id="funnel" viewBox="0 0 900 430" style="width:100%;height:auto"></svg>
+    <div class="readout" style="grid-template-columns:repeat(3,1fr)">
+      <div><span>Teleconsultas / mês</span><b id="rCons">—</b></div>
+      <div><span>Idas ao PS evitadas / mês</span><b id="rPS">—</b></div>
+      <div><span>Custo evitado / ano</span><b id="rYear">—</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · DIFERENCIAL -->
+<section class="slide" id="s8" data-name="Diferencial WMedic">
+  <div class="copy">
+    <div class="eyebrow">Diferencial</div>
+    <h2>Teleconsulta com <em>gestão médica</em> por trás</h2>
+    <p class="lead">Vídeo qualquer plataforma tem. O que muda o resultado é <strong>quem atende, como atende e o que acontece depois</strong>.</p>
+    <div class="chips"><button class="chip" id="cmpAll">Revelar tudo</button><button class="chip" id="cmpReset">Esconder</button></div>
+    <p class="note">Clique em cada linha para revelar o lado WMedic.</p>
+  </div>
+  <div class="bench"><div class="cmp" id="cmp"></div></div>
+</section>
+
+<!-- 9 · SEGURANÇA E CONFORMIDADE -->
+<section class="slide" id="s9" data-name="Segurança e conformidade">
+  <div class="copy">
+    <div class="eyebrow">Segurança e conformidade</div>
+    <h2>Dentro da lei, <em>do primeiro ao último clique</em></h2>
+    <p class="lead" style="font-size:17px">A telemedicina no Brasil tem regra clara. A operação WMedic segue essas regras e protege os dados de saúde de cada usuário.</p>
+    <div class="chips"><button class="chip" id="lawNext">Próximo ponto →</button><button class="chip" id="lawReset">Recomeçar</button></div>
+    <p class="note" style="margin-top:auto;font-size:13px">Referências legais resumidas. Cláusulas contratuais são tratadas na proposta formal.</p>
+  </div>
+  <div class="bench"><div class="law" id="law"></div></div>
+</section>
+
+<!-- 10 · IMPLANTAÇÃO -->
+<section class="slide" id="s10" data-name="Implantação">
+  <div class="copy">
+    <div class="eyebrow">Implantação</div>
+    <h2>Do primeiro contato à <em>primeira consulta</em></h2>
+    <p class="lead" style="font-size:17px">Cinco etapas, com o que cabe a cada lado em cada uma. Clique nas etapas ou avance com o botão.</p>
+    <div class="chips"><button class="chip" id="tlNext">Próxima etapa →</button></div>
+  </div>
+  <div class="bench"><div class="tl" id="tl"></div></div>
+</section>
+
+<!-- 11 · PRÓXIMOS PASSOS -->
+<section class="slide full" id="s11" data-name="Perguntas antes de fechar" data-obj>
+  <div class="endgrid">
+    <div class="copy">
+      <div class="eyebrow">Antes de fechar</div>
+      <h2>As perguntas que <em>todo cliente faz</em></h2>
+      <p class="lead" style="font-size:17px">Escolha o perfil de quem está na sala. Leia a pergunta, ouça a dúvida e clique no cartão para revelar a resposta.</p>
+      <div class="chips obj-chips" role="group" aria-label="Perfil do cliente"></div>
+      <p class="note obj-sub"></p>
+      <dl class="contact" style="margin-top:auto">
+        <dt>Comercial</dt><dd>WhatsApp (11) 97026-7810</dd>
+        <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
+        <dt>Site</dt><dd>wmedic.com.br</dd>
+        <dt>Endereço</dt><dd>Av. Santo Antonio, 1453</dd>
+      </dl>
+      <p class="credit">Simulações com valores de exemplo. Telas do aplicativo são ilustrativas.</p>
+    </div>
+    <div class="bench"><div class="quiz obj-cards"></div></div>
+  </div>
+</section>
+
+<nav id="nav" aria-label="Navegação dos slides">
+  <img class="mark" src="img/symbol.png" alt="WMedic">
+  <span class="title">Telemedicina WMedic</span>
+  <button class="iconbtn" id="prev" aria-label="Slide anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+  <div id="ticks"></div>
+  <button class="iconbtn" id="next" aria-label="Próximo slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <span id="counter">01 / 11</span>
+  <button class="iconbtn" id="themeBtn" aria-label="Alternar tema claro/escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
+  <button class="iconbtn" id="fsBtn" aria-label="Tela cheia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</nav>
+</div>
+</div>
+
+<script src="objecoes.js"></script>
+<script src="deck.js"></script>
+
+<!-- modalidades (compartilhado entre slides 2, 5 e 6) -->
+<script>
+window.MODES=[
+ {k:'wl',n:'Plataforma whitelabel',short:'Plataforma',t:'Sua marca, nossa tecnologia. Você leva teleconsulta ao seu público com o seu nome, usando seu próprio corpo clínico.',ideal:'quem já tem médicos ou rede própria: clínicas, hospitais, operadoras com rede.'},
+ {k:'sv',n:'Consultas online',short:'Consultas',t:'Nosso corpo clínico atende o seu público por vídeo. Você oferece consulta médica online sem montar equipe médica.',ideal:'empresas, administradoras de benefícios, sindicatos e associações.'},
+ {k:'cb',n:'Plataforma + consultas',short:'Combinado',t:'Tudo com a sua marca e operado pela WMedic: a tecnologia, os médicos e a gestão clínica.',ideal:'cartões de benefício, saúde por assinatura e varejo. É o modelo que a WMedic opera no grupo Wow+.'}
+];
+window.MODE_SEL=2;
+</script>
+
+<!-- 2 · quem faz o quê -->
+<script>
+(function(){
+const L=[
+ {ic:'brand',n:'Marca e relacionamento',s:'o que o usuário vê',v:{wl:['you','Sua marca'],sv:['you','Você oferece ao seu público'],cb:['you','Sua marca']}},
+ {ic:'phone',n:'Plataforma de teleconsulta',s:'app e web',v:{wl:['wm','Tecnologia WMedic com a sua marca'],sv:['wm','Plataforma WMedic'],cb:['wm','Tecnologia WMedic com a sua marca']}},
+ {ic:'steth',n:'Médicos que atendem',s:'clínico 24h e especialidades',v:{wl:['you','Seu corpo clínico'],sv:['wm','Corpo clínico WMedic'],cb:['wm','Corpo clínico WMedic']}},
+ {ic:'shield',n:'Protocolos, escalas e qualidade',s:'gestão clínica',v:{wl:['you','Seu time, com as ferramentas da plataforma'],sv:['wm','Gestão assistencial WMedic'],cb:['wm','Gestão assistencial WMedic']}},
+ {ic:'chart',n:'Suporte e indicadores',s:'relatórios da operação',v:{wl:['wm','Suporte técnico e painel de indicadores'],sv:['wm','Suporte clínico e relatórios'],cb:['wm','Suporte clínico e relatórios']}}
+];
+const chips=document.getElementById('modeChips'),st=document.getElementById('stack'),det=document.getElementById('modeDetail');
+MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.n;b.onclick=()=>{MODE_SEL=i;draw()};chips.appendChild(b)});
+st.innerHTML=L.map((l,i)=>`<div class="lay"><div class="ln"><span class="ico">${icon(l.ic)}</span><div>${l.n}<small>${l.s}</small></div></div><div class="own" id="own${i}"><span class="who-l"><span></span></span><span class="txt"></span></div></div>`).join('');
+function draw(){const m=MODES[MODE_SEL];[...chips.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===MODE_SEL));
+  L.forEach((l,i)=>{const[w,t]=l.v[m.k];const o=document.getElementById('own'+i);o.className='own '+w;o.querySelector('.who-l span').textContent=w==='you'?'Sua empresa':'WMedic';o.querySelector('.txt').textContent=t});
+  det.innerHTML=`<b>${m.n}</b><p>${m.t}</p><p style="font-size:15px;color:var(--muted)">Ideal para ${m.ideal}</p>`}
+DECK.onChange(k=>{if(k==='slide'&&DECK.index===1)draw()});
+draw();
+})();
+</script>
+
+<!-- 3 · whitelabel -->
+<script>
+(function(){
+const cols=['#8C52FF','#1F6FD1','#16825D','#E2601B','#C4314B','#1E1B2E'];
+let color='#1F6FD1';
+const sw=document.getElementById('wlSw');
+cols.forEach(c=>{const b=document.createElement('button');b.className='sw';b.style.background=c;b.setAttribute('aria-label','Cor '+c);b.onclick=()=>{color=c;draw()};sw.appendChild(b)});
+const ci=document.createElement('input');ci.type='color';ci.id='wlColor';ci.value=color;ci.setAttribute('aria-label','Outra cor');ci.oninput=()=>{color=ci.value;draw()};sw.appendChild(ci);
+const S=[['clock','Pronto atendimento 24h','clínico por vídeo, sem agendar',true],['steth','Especialistas','agende uma consulta',true],['brain','Psicologia','sessões online',true],['apple','Nutrição','orientação nutricional',false],['baby','Pediatria','para os pequenos',false],['doc','Receitas e atestados','seus documentos digitais',true]];
+const svc=document.getElementById('wlSvc');
+S.forEach((s,i)=>{const l=document.createElement('label');l.innerHTML=`<input type="checkbox" id="wlS${i}" ${s[3]?'checked':''}> ${s[1]}`;l.querySelector('input').onchange=draw;svc.appendChild(l)});
+function lum(h){const n=parseInt(h.slice(1),16),r=[(n>>16)&255,(n>>8)&255,n&255].map(v=>{v/=255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4});return .2126*r[0]+.7152*r[1]+.0722*r[2]}
+function mix(h,a){const n=parseInt(h.slice(1),16);const r=(n>>16)&255,g=(n>>8)&255,b=n&255;return `rgba(${r},${g},${b},${a})`}
+function draw(){
+  const name=(document.getElementById('wlName').value||'Sua marca').trim();
+  const L=lum(color),fg=(1.05/(L+.05))>=(L+.05)/.05?'#ffffff':'#1e1b2e';
+  const bench=document.getElementById('wlBench');bench.style.setProperty('--brand',color);bench.style.setProperty('--bfg',fg);
+  bench.style.setProperty('--brand-soft',mix(color,.12));bench.style.setProperty('--brand-ink',L>.35?'#1e1b2e':color);
+  document.getElementById('wlBrand').textContent=name;document.getElementById('wlInit').textContent=name[0].toUpperCase();
+  document.getElementById('wlTag').textContent=name+' · consulta em andamento';
+  [...sw.querySelectorAll('.sw')].forEach((b,k)=>b.setAttribute('aria-pressed',cols[k]===color));
+  const on=S.filter((s,i)=>document.getElementById('wlS'+i).checked);
+  const first=on.find(s=>s[0]==='clock');
+  document.getElementById('wlBody').innerHTML=(first?`<div class="ph-cta"><b>Consultar agora</b><span>Clínico disponível 24h · por vídeo</span></div>`:'')+
+    on.filter(s=>s[0]!=='clock').slice(0,5).map(s=>`<div class="ph-item"><i>${icon(s[0])}</i><div>${s[1]}<small>${s[2]}</small></div></div>`).join('');
+}
+document.getElementById('wlName').addEventListener('input',draw);
+document.querySelector('.vid .bar').innerHTML=`<span>${icon('video')}</span><span class="end">${icon('phone')}</span><span>${icon('users')}</span>`;
+draw();
+})();
+</script>
+
+<!-- 4 · perfis -->
+<script>
+(function(){
+const SEG=[
+ {ic:'shield',n:'Operadoras e administradoras de benefícios',m:'Consultas online ou combinado',d:'Custo com pronto-socorro e com consultas de baixa complexidade.',a:'Primeiro atendimento por vídeo, 24h, com protocolos e encaminhamento para a rede só quando é preciso.'},
+ {ic:'heart',n:'Cartões de benefício e saúde por assinatura',m:'Plataforma + consultas',d:'Precisa de um produto de saúde com a própria marca para vender e reter clientes.',a:'Produto pronto, com a sua marca, operado por quem já faz isso no grupo Wow+.'},
+ {ic:'building',n:'Empresas (RH e benefícios)',m:'Consultas online',d:'Afastamentos, horas perdidas em deslocamento e saúde mental das equipes.',a:'Clínico 24h, psicologia e nutrição para colaboradores e dependentes, com relatórios para o RH.'},
+ {ic:'pin',n:'Redes de farmácia e varejo',m:'Plataforma + consultas',d:'Ampliar serviços de saúde e aproximar o cliente da marca.',a:'Um serviço de saúde com a marca da rede, sem montar equipe médica nem tecnologia.'},
+ {ic:'steth',n:'Clínicas, hospitais e redes de saúde',m:'Plataforma whitelabel',d:'Quer atender a distância sem desenvolver tecnologia própria.',a:'Seus médicos atendendo por vídeo, com a sua marca, sem projeto de TI do zero.'},
+ {ic:'handshake',n:'Sindicatos, associações e cooperativas',m:'Consultas online',d:'Oferecer um benefício de saúde acessível e de alto valor percebido.',a:'Consulta médica online simples de contratar e de explicar para o associado.'}
+];
+const el=document.getElementById('segs'),det=document.getElementById('segDetail');
+SEG.forEach((s,i)=>{const b=document.createElement('button');b.className='card';b.innerHTML=`<span class="ico">${icon(s.ic)}</span><h3>${s.n}</h3><span class="pill">${s.m}</span>`;b.onclick=()=>show(i);el.appendChild(b)});
+function show(i){el.querySelectorAll('.card').forEach((c,k)=>c.classList.toggle('focus',k===i));const s=SEG[i];
+  det.innerHTML=`<b>${s.n}</b><p><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">DOR</span><br>${s.d}</p><p><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">ARGUMENTO</span><br>${s.a}</p><p style="color:var(--accent-ink);font-weight:600">Modelo indicado: ${s.m}</p>`}
+show(2);
+})();
+</script>
+
+<!-- 5 · simulação da jornada da consulta -->
+<script>
+(function(){
+const cv=document.getElementById('journey'),ctx=cv.getContext('2d');
+const VW=1060,VH=836;
+const N={A:[100,440],B:[270,440],C:[450,440],D:[660,270],E:[660,620],F:[930,440]};
+const ST=[
+ {k:'A',n:'Acesso pelo app ou site',w:{wl:['you','Sua marca'],sv:['wm','Canal WMedic'],cb:['you','Sua marca']}},
+ {k:'B',n:'Triagem e fila',w:{wl:['wm','Plataforma WMedic'],sv:['wm','WMedic'],cb:['wm','WMedic']}},
+ {k:'C',n:'Consulta por vídeo',w:{wl:['you','Seus médicos'],sv:['wm','Clínico WMedic 24h'],cb:['wm','Clínico WMedic 24h']}},
+ {k:'D',n:'Receita, atestado e pedido de exame',w:{wl:['you','Seus médicos, na plataforma'],sv:['wm','Médicos WMedic'],cb:['wm','Médicos WMedic']}},
+ {k:'E',n:'Especialista, psicologia, nutrição ou rede',w:{wl:['you','Sua rede'],sv:['wm','WMedic e rede credenciada'],cb:['wm','WMedic e rede credenciada']}},
+ {k:'F',n:'Retorno e acompanhamento',w:{wl:['you','Seu time'],sv:['wm','WMedic'],cb:['wm','WMedic']}}
+];
+const routes=[{p:'ABCDF',w:.55},{p:'ABCDEF',w:.3},{p:'ABEF',w:.15}].map(r=>{const pts=[...r.p].map(k=>N[k]);let L=[0];for(let i=1;i<pts.length;i++)L.push(L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));return{...r,pts,L,len:L[L.length-1]}});
+function at(r,d){for(let i=1;i<r.pts.length;i++){if(d<=r.L[i]){const t=(d-r.L[i-1])/(r.L[i]-r.L[i-1]);const a=r.pts[i-1],b=r.pts[i];return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]}}return r.pts[r.pts.length-1]}
+let seed=11;const rnd=()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646};
+function pick(){let x=rnd(),acc=0;for(const r of routes){acc+=r.w;if(x<=acc)return r}return routes[0]}
+const parts=[];for(let i=0;i<44;i++){const r=pick();parts.push({r,d:rnd()*r.len,j:(rnd()-.5)*14})}
+let running=true,sel=2,speed=1,last=performance.now(),col={},geo={k:1,ox:0,oy:0};
+const mc=document.getElementById('jMode');
+MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.short;b.onclick=()=>{MODE_SEL=i;upd()};mc.appendChild(b)});
+function upd(){[...mc.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===MODE_SEL));const s=ST[sel],w=s.w[MODES[MODE_SEL].k];
+  document.getElementById('jStage').textContent=s.n;const wh=document.getElementById('jWho');wh.textContent=w[1];wh.style.color=w[0]==='you'?'var(--mint)':'var(--accent-ink)';draw()}
+function readCols(){['--ink','--ink2','--muted','--line','--line2','--accent','--accent-ink','--bg','--surface','--mint'].forEach(k=>col[k]=cssVar(k))}
+readCols();DECK.onChange(k=>{if(k==='theme'){readCols();draw()}if(k==='scale')size();if(k==='slide'&&DECK.index===4)upd()});
+function size(){const r=cv.getBoundingClientRect();const sc=DECK.printing?1:(DECK.scale||1);const dpr=window.devicePixelRatio||1;const w=Math.max(1,Math.round(r.width/sc*dpr)),h=Math.max(1,Math.round(r.height/sc*dpr));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}draw()}
+new ResizeObserver(size).observe(cv);
+cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect();const fx=cv.width/r.width;const x=((e.clientX-r.left)*fx-geo.ox)/geo.k,y=((e.clientY-r.top)*fx-geo.oy)/geo.k;
+  ST.forEach((s,i)=>{const[nx,ny]=N[s.k];if(Math.hypot(nx-x,ny-y)<55){sel=i;upd()}})});
+function rr(x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function wrap(t,max){const w=t.split(' ');const out=[];let cur='';ctx.font='500 17px Poppins,sans-serif';w.forEach(x=>{const n=cur?cur+' '+x:x;if(ctx.measureText(n).width>max&&cur){out.push(cur);cur=x}else cur=n});out.push(cur);return out}
+function draw(){
+  const w=cv.width,h=cv.height,k=Math.min(w/VW,h/VH),ox=(w-VW*k)/2,oy=(h-VH*k)/2;geo={k,ox,oy};
+  ctx.setTransform(1,0,0,1,0,0);ctx.clearRect(0,0,w,h);ctx.setTransform(k,0,0,k,ox,oy);
+  ctx.lineCap='round';ctx.lineJoin='round';
+  routes.forEach(r=>{ctx.beginPath();r.pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=col['--line'];ctx.lineWidth=26;ctx.stroke()});
+  routes.forEach(r=>{ctx.beginPath();r.pts.forEach((p,i)=>i?ctx.lineTo(p[0],p[1]):ctx.moveTo(p[0],p[1]));ctx.strokeStyle=col['--line2'];ctx.lineWidth=1.5;ctx.setLineDash([4,8]);ctx.stroke();ctx.setLineDash([])});
+  parts.forEach(p=>{const[x,y]=at(p.r,p.d);const[x2,y2]=at(p.r,Math.max(0,p.d-26));
+    const g=ctx.createLinearGradient(x2,y2,x,y);g.addColorStop(0,'rgba(140,82,255,0)');g.addColorStop(1,col['--accent']);
+    ctx.strokeStyle=g;ctx.lineWidth=5;ctx.beginPath();ctx.moveTo(x2,y2+p.j*.3);ctx.lineTo(x,y+p.j*.3);ctx.stroke();
+    ctx.fillStyle=col['--accent-ink'];ctx.beginPath();ctx.arc(x,y+p.j*.3,5.5,0,7);ctx.fill()});
+  const mk=MODES[MODE_SEL].k;
+  ST.forEach((s,i)=>{const[x,y]=N[s.k];const on=i===sel;const[who,wt]=s.w[mk];const wc=who==='you'?col['--mint']:col['--accent-ink'];
+    ctx.fillStyle=col['--surface'];ctx.strokeStyle=on?col['--accent']:col['--line2'];ctx.lineWidth=on?5:2;
+    ctx.beginPath();ctx.arc(x,y,on?40:34,0,7);ctx.fill();ctx.stroke();
+    ctx.fillStyle=on?col['--accent-ink']:col['--ink2'];ctx.font='500 17px "IBM Plex Mono",monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(i+1),x,y+1);
+    const lines=wrap(s.n,s.k==='D'||s.k==='E'?230:140);
+    ctx.font=(on?'600 ':'500 ')+'17px Poppins,sans-serif';ctx.fillStyle=on?col['--ink']:col['--ink2'];
+    const top=s.k!=='E';const ly=top?y-60-(lines.length-1)*21:y+64;
+    lines.forEach((t,j)=>ctx.fillText(t,x,ly+j*21));
+    const ty=top?y+62:y+64+lines.length*21+10;
+    ctx.font='400 13.5px "IBM Plex Mono",monospace';const tw=ctx.measureText(wt).width+20;
+    ctx.fillStyle=col['--bg'];ctx.strokeStyle=wc;ctx.lineWidth=1.3;rr(x-tw/2,ty-13,tw,26,6);ctx.fill();ctx.stroke();
+    ctx.fillStyle=wc;ctx.fillText(wt,x,ty+1)});
+  ctx.textAlign='left';ctx.font='400 14px "IBM Plex Mono",monospace';
+  ctx.fillStyle=col['--mint'];ctx.fillText('■ sua empresa',60,792);ctx.fillStyle=col['--accent-ink'];ctx.fillText('■ WMedic',230,792);
+}
+function loop(t){const dt=Math.min(.05,(t-last)/1000);last=t;
+  if(running&&!DECK.printing&&document.getElementById('s5').classList.contains('active')){
+    parts.forEach(p=>{p.d+=dt*110*speed;if(p.d>p.r.len){const r=pick();p.r=r;p.d=rnd()*20;p.j=(rnd()-.5)*14}});draw()}
+  requestAnimationFrame(loop)}
+requestAnimationFrame(loop);
+const sp=document.getElementById('jSpeed');sp.addEventListener('input',()=>{speed=sp.value/100;document.getElementById('jSpeedOut').textContent=speed.toFixed(1).replace('.',',')+'×'});
+const pl=document.getElementById('jPlay');pl.onclick=()=>{running=!running;pl.textContent=running?'Pausar':'Continuar';pl.setAttribute('aria-pressed',!running)};
+window.__sim={set:p=>{parts.forEach((q,i)=>q.d=((i*97+p*q.r.len)%q.r.len));draw()}};
+upd();
+})();
+</script>
+
+<!-- 6 · monte o pacote -->
+<script>
+(function(){
+const SV=[
+ ['clock','Clínico geral 24h','Pronto atendimento por vídeo, a qualquer hora.',true,true],
+ ['steth','Especialidades médicas','Consultas com especialistas, com agendamento.',true],
+ ['brain','Psicologia','Sessões online de cuidado com a saúde mental.',true],
+ ['apple','Nutrição','Orientação nutricional para prevenção e tratamento.',false],
+ ['baby','Pediatria','Atendimento às crianças do grupo familiar.',false],
+ ['heart','Programas de saúde','Acompanhamento de grupos e promoção da saúde.',false]
+];
+let mode=2;
+const mc=document.getElementById('pkMode'),sv=document.getElementById('pkSvc'),prop=document.getElementById('prop');
+MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.short;b.onclick=()=>{mode=i;draw()};mc.appendChild(b)});
+SV.forEach((s,i)=>{const l=document.createElement('label');l.innerHTML=`<input type="checkbox" id="pkS${i}" ${s[3]?'checked':''} ${s[4]?'disabled':''}> ${s[1]}`;l.querySelector('input').onchange=draw;sv.appendChild(l)});
+const fmt=n=>Math.round(n).toLocaleString('pt-BR');
+function draw(){[...mc.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===mode));
+  const name=document.getElementById('pkName').value.trim()||'Cliente';const lives=+document.getElementById('pkLives').value||0;const pub=document.getElementById('pkPub').value;
+  const on=SV.filter((s,i)=>document.getElementById('pkS'+i).checked);const m=MODES[mode];
+  const always=m.k==='wl'?['Plataforma com a sua marca','Painel de indicadores','Suporte técnico']:m.k==='sv'?['Gestão clínica e protocolos','Gestão de escalas','Suporte clínico','Relatórios de atendimento']:['Plataforma com a sua marca','Gestão clínica e protocolos','Gestão de escalas','Suporte clínico','Relatórios e indicadores'];
+  prop.innerHTML=`<header><div><span class="eyebrow" style="font-size:12px">Rascunho de proposta</span><h3>${name.replace(/</g,'&lt;')}</h3><p>Para conversa. Valores e condições seguem na proposta formal.</p></div><img class="logo-d" src="img/logo-white.png" alt="WMedic" style="height:34px;width:auto"><img class="logo-l" src="img/logo-full.png" alt="WMedic" style="height:34px;width:auto"></header>
+  <div class="meta"><div><span>Modalidade</span><b>${m.n}</b></div><div><span>Vidas</span><b class="tabnum">${fmt(lives)}</b></div><div><span>Público</span><b>${pub}</b></div></div>
+  <div><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">SERVIÇOS ${m.k==='wl'?'NA PLATAFORMA (SEU CORPO CLÍNICO)':'MÉDICOS INCLUÍDOS'}</span></div>
+  <div class="svc">${on.map(s=>`<div><span class="ico">${icon(s[0])}</span><span><b>${s[1]}</b>${s[2]}</span></div>`).join('')}</div>
+  <div class="always"><span class="mono" style="background:none;padding-left:0;color:var(--muted);font-size:12px;letter-spacing:.1em">SEMPRE INCLUÍDO</span>${always.map(a=>`<span>${a}</span>`).join('')}</div>`;
+}
+['pkName','pkLives','pkPub'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+draw();
+})();
+</script>
+
+<!-- 7 · simulador -->
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString('pt-BR');
+const brl=n=>'R$ '+fmt(n);
+const svg=$('funnel');
+function calc(){
+  const lives=+$('vLives').value,use=+$('vUse').value/100,res=+$('vRes').value/100,ps=+$('vPS').value/100,cost=+$('vCost').value;
+  $('vLivesOut').textContent=fmt(lives);$('vUseOut').textContent=String(+$('vUse').value).replace('.',',')+'%';$('vResOut').textContent=$('vRes').value+'%';$('vPSOut').textContent=$('vPS').value+'%';$('vCostOut').textContent=brl(cost);
+  const cons=lives*use,resolved=cons*res,avoided=resolved*ps,month=avoided*cost;
+  $('rCons').textContent=fmt(cons);$('rPS').textContent=fmt(avoided);$('rYear').innerHTML=brl(month*12);
+  const rows=[['Teleconsultas no mês',cons,'var(--line2)','var(--ink)'],['Resolvidas sem encaminhamento',resolved,'var(--accent-deep)','#fff'],['Idas ao PS evitadas',avoided,'var(--accent)','#fff']];
+  const W=900,x0=0,max=cons||1;let s='';
+  rows.forEach(([n,v,f,tc],i)=>{const w=Math.max(6,W*v/max),x=(W-w)/2,y=i*118+8;
+    s+=`<rect x="${x}" y="${y}" width="${w}" height="84" rx="12" fill="${f}"/>`;
+    const inside=w>360;
+    if(inside){s+=`<text x="${W/2}" y="${y+36}" text-anchor="middle" style="font:600 26px var(--f-mono);fill:${tc}">${fmt(v)}</text><text x="${W/2}" y="${y+64}" text-anchor="middle" style="font:500 15px var(--f-body);fill:${tc}">${n}</text>`}
+    else{const tx=x+w+18;s+=`<text x="${tx}" y="${y+36}" style="font:600 26px var(--f-mono);fill:var(--ink)">${fmt(v)}</text><text x="${tx}" y="${y+64}" style="font:500 15px var(--f-body);fill:var(--ink2)">${n}</text>`}
+  });
+  s+=`<text x="${W/2}" y="${3*118+40}" text-anchor="middle" style="font:500 17px var(--f-body);fill:var(--ink2)">Custo evitado estimado no mês: <tspan style="font:600 22px var(--f-mono);fill:var(--accent-ink)">${brl(month)}</tspan></text>`;
+  svg.innerHTML=s;
+}
+['vLives','vUse','vRes','vPS','vCost'].forEach(id=>$(id).addEventListener('input',calc));
+calc();
+})();
+</script>
+
+<!-- 8 · comparativo -->
+<script>
+(function(){
+const R=[
+ ['Quem atende','Médicos avulsos, sem acompanhamento','Corpo clínico selecionado e avaliado continuamente'],
+ ['Conduta','Varia de médico para médico','Protocolos clínicos padronizados'],
+ ['Disponibilidade','Escalas descoordenadas e fila longa','Gestão de escalas com cobertura 24h'],
+ ['Depois da consulta','Consulta isolada, sem continuidade','Encaminhamento a especialistas e à rede, com retorno'],
+ ['Gestão','Sem indicadores','Dados, relatórios e governança assistencial'],
+ ['Suporte','Usuário sozinho quando algo falha','Suporte clínico contínuo a pacientes e médicos']
+];
+const el=document.getElementById('cmp');
+el.innerHTML=`<div class="row head"><div>Critério</div><div>Telemedicina sem gestão</div><div>Com a gestão WMedic</div></div>`+R.map(r=>`<div class="row${DECK.printing?' open':''}" tabindex="0" role="button"><div class="crit">${r[0]}</div><div class="bad"><span class="x">✕</span>${r[1]}</div><div class="good"><span class="v">✓</span>${r[2]}</div></div>`).join('');
+el.querySelectorAll('.row:not(.head)').forEach(r=>{r.onclick=()=>r.classList.toggle('open');r.onkeydown=e=>{if(e.key==='Enter')r.classList.toggle('open')}});
+document.getElementById('cmpAll').onclick=()=>el.querySelectorAll('.row').forEach(r=>r.classList.add('open'));
+document.getElementById('cmpReset').onclick=()=>el.querySelectorAll('.row').forEach(r=>r.classList.remove('open'));
+})();
+</script>
+
+<!-- 9 · conformidade -->
+<script>
+(function(){
+const L=[
+ ['doc','Lei nº 14.510/2022','Telessaúde autorizada','Autoriza e disciplina a prática da telessaúde em todo o território nacional, com o consentimento livre e informado do paciente.'],
+ ['steth','Resolução CFM nº 2.314/2022','Regras da telemedicina','Define e regulamenta a telemedicina como forma de serviço médico mediado por tecnologia, com registro em prontuário de cada atendimento.'],
+ ['lock','LGPD · Lei nº 13.709/2018','Dados de saúde protegidos','Dados de saúde são dados pessoais sensíveis: uso com base legal, acesso restrito, sigilo e segurança da informação.'],
+ ['shield','Documentos digitais','Validade e rastreabilidade','Receitas, atestados e pedidos de exame emitidos com assinatura digital e registrados no prontuário.']
+];
+const el=document.getElementById('law');let cur=DECK.printing?3:0;
+el.innerHTML=L.map(([ic,ref,t,p],i)=>`<button class="card" data-i="${i}"><span class="ico">${icon(ic)}</span><span class="ref">${ref}</span><h3>${t}</h3><p>${p}</p></button>`).join('');
+function set(i){cur=i;el.querySelectorAll('.card').forEach((c,k)=>{c.classList.toggle('on',k<=i);c.classList.toggle('cur',k===i&&!DECK.printing)})}
+el.querySelectorAll('.card').forEach(c=>c.onclick=()=>set(+c.dataset.i));
+document.getElementById('lawNext').onclick=()=>set(Math.min(L.length-1,cur+1));
+document.getElementById('lawReset').onclick=()=>set(0);
+set(cur);
+})();
+</script>
+
+<!-- 10 · implantação -->
+<script>
+(function(){
+const S=[
+ ['Diagnóstico',['Contar quem é o público e quantas vidas','Dizer o objetivo: custo, benefício, novo produto'],['Entender a operação do cliente','Indicar a modalidade e os serviços']],
+ ['Proposta e contrato',['Validar escopo e serviços','Aprovar a proposta'],['Enviar proposta formal','Definir níveis de serviço e relatórios']],
+ ['Configuração',['Enviar logo, cores e textos (whitelabel)','Indicar responsáveis do projeto'],['Configurar a plataforma e os fluxos','Testar a jornada de ponta a ponta']],
+ ['Lançamento',['Enviar a base de usuários','Divulgar ao seu público'],['Cadastrar as vidas','Apoiar a comunicação de lançamento']],
+ ['Operação',['Acompanhar os relatórios','Trazer feedback do público'],['Atender, dar suporte e medir','Revisar indicadores e melhorar']]
+];
+const el=document.getElementById('tl');let cur=0;
+el.innerHTML=`<div class="tl-track"><div class="tl-fill" id="tlFill"></div>${S.map((s,i)=>`<button class="tl-step" data-i="${i}"><span class="dot">${i+1}</span><b>${s[0]}</b></button>`).join('')}</div><div class="tl-card" id="tlCard"></div>`;
+function set(i){cur=i;el.querySelectorAll('.tl-step').forEach((b,k)=>{b.classList.toggle('done',k<i);b.classList.toggle('cur',k===i)});
+  document.getElementById('tlFill').style.width=(i/(S.length-1)*80)+'%';
+  const s=S[i];document.getElementById('tlCard').innerHTML=`<div class="you"><span class="tag">Sua empresa</span><b style="font-size:20px">${s[0]}</b><ul>${s[1].map(x=>`<li>${x}</li>`).join('')}</ul></div><div class="wm"><span class="tag">WMedic</span><b style="font-size:20px">${s[0]}</b><ul>${s[2].map(x=>`<li>${x}</li>`).join('')}</ul></div>`}
+el.querySelectorAll('.tl-step').forEach(b=>b.onclick=()=>set(+b.dataset.i));
+document.getElementById('tlNext').onclick=()=>set((cur+1)%S.length);
+set(0);
+})();
+</script>
+
+</body></html><!--local-->

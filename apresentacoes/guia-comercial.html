@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Guia Comercial WMedic Telemedicina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Poppins:wght@400;500;600;700&display=swap">
+<style>
+/* Documento de impressão A4 (retrato). Paleta oficial WMedic; roxo #8C52FF só em barras e superfícies, texto em roxo escuro #6C47C2. */
+:root{
+  --ink:#1E1B2E; --ink2:#4A4560; --muted:#6E6A7C; --paper:#FFFFFF; --lilac:#F6F3FB; --line:#E2DAF0;
+  --accent:#8C52FF; --accent-ink:#6C47C2; --accent-soft:#EFE7FF; --mint:#1F7A73; --mint-soft:#E3F3F1; --warn:#9A6A0E; --warn-soft:#FBF1DC;
+  --f:"Poppins","Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box}
+html,body{margin:0;background:#d9d4e4;color:var(--ink);font-family:var(--f);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:210mm;height:297mm;margin:0 auto 8mm;background:var(--paper);position:relative;overflow:hidden;padding:18mm 17mm 20mm;display:flex;flex-direction:column;gap:5mm;break-after:page;page-break-after:always}
+@media print{html,body{background:var(--paper)}.page{margin:0}}
+.pf{position:absolute;left:17mm;right:17mm;bottom:9mm;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:8pt;color:var(--muted);letter-spacing:.04em}
+.pf img{height:13px;width:auto}
+.pf span:last-child{margin-left:auto}
+.eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);display:flex;gap:10px;align-items:center}
+.eyebrow::before{content:"";width:18px;height:3px;border-radius:2px;background:var(--accent)}
+h1{font-size:30pt;line-height:1.08;margin:0;font-weight:600;letter-spacing:-.015em;text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--accent-ink)}
+h2{font-size:19pt;line-height:1.15;margin:0;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+h3{font-size:11.5pt;margin:0;font-weight:600}
+p{margin:0;font-size:9.6pt;line-height:1.55;color:var(--ink2)}
+p strong,li strong{color:var(--ink);font-weight:600}
+ul,ol{margin:0;padding-left:15px;font-size:9.6pt;line-height:1.55;color:var(--ink2)}
+li+li{margin-top:1.5mm}
+.lead{font-size:11pt;line-height:1.55;color:var(--ink2)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.box{border:1px solid var(--line);border-radius:10px;padding:4.5mm 5mm;display:flex;flex-direction:column;gap:2.2mm;background:var(--paper)}
+.box.lil{background:var(--lilac);border-color:var(--lilac)}
+.box.acc{background:var(--accent-soft);border-color:var(--accent-soft)}
+.box.warn{background:var(--warn-soft);border-color:var(--warn-soft)}
+.tag{font-family:var(--mono);font-size:7.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+.tag.mint{color:var(--mint)} .tag.warn{color:var(--warn)}
+.pill{display:inline-block;font-family:var(--mono);font-size:7.5pt;padding:1.2mm 2.6mm;border-radius:99px;background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:9pt}
+th{font-family:var(--mono);font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-align:left;font-weight:500;padding:2mm 2.5mm;border-bottom:1.5px solid var(--ink)}
+td{padding:2.6mm 2.5mm;border-bottom:1px solid var(--line);vertical-align:top;color:var(--ink2);line-height:1.45}
+td:first-child{color:var(--ink);font-weight:600}
+.you{color:var(--mint);font-weight:600}
+.wm{color:var(--accent-ink);font-weight:600}
+.quote{border-left:3px solid var(--accent);padding:1mm 0 1mm 4mm;font-size:12pt;line-height:1.5;color:var(--ink);font-weight:500}
+.qa{display:grid;grid-template-columns:62mm 1fr;gap:3mm 6mm;align-items:start}
+.qa .q{font-size:9.8pt;font-weight:600;color:var(--ink);line-height:1.45}
+.qa .a{font-size:9.4pt;color:var(--ink2);line-height:1.55}
+.qa hr{grid-column:1/-1;border:0;border-top:1px solid var(--line);margin:0}
+.num{font-family:var(--mono);color:var(--accent-ink);font-weight:500;margin-right:2mm}
+.cover{padding:0;background:var(--ink);color:#fff}
+.cover .top{padding:20mm 17mm 0;display:flex;flex-direction:column;gap:7mm;flex:1}
+.cover h1{font-size:38pt;color:#fff}
+.cover h1 em{color:#A98CF0}
+.cover p{color:#CFC8E0;font-size:12pt}
+.cover .eyebrow{color:#A98CF0}
+.cover .ph{height:118mm;position:relative;overflow:hidden}
+.cover .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.cover .meta{display:flex;gap:10mm;font-family:var(--mono);font-size:8.5pt;color:#CFC8E0;letter-spacing:.06em}
+.cover .meta b{display:block;color:#fff;font-family:var(--f);font-size:11pt;letter-spacing:0;font-weight:500}
+.formula{font-family:var(--mono);font-size:9.5pt;background:var(--lilac);border-radius:8px;padding:3.5mm 4mm;color:var(--ink);line-height:1.7}
+.toc{display:grid;grid-template-columns:auto 1fr auto;gap:1.6mm 4mm;font-size:10pt;align-items:baseline}
+.toc span:nth-child(3n+1){font-family:var(--mono);color:var(--accent-ink);font-size:9pt}
+.toc span:nth-child(3n){font-family:var(--mono);color:var(--muted);font-size:9pt}
+.do li::marker{color:var(--mint)} .dont li::marker{color:#C2382B}
+.check{list-style:none;padding:0}
+.check li{padding-left:6mm;position:relative}
+.check li::before{content:"";position:absolute;left:0;top:1.3mm;width:3mm;height:3mm;border:1.4px solid var(--accent-ink);border-radius:2px}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section class="page cover">
+  <div class="top">
+    <img src="img/logo-white.png" alt="WMedic" style="height:13mm;width:auto;align-self:flex-start">
+    <div class="eyebrow">Guia do time comercial · uso interno</div>
+    <h1>Telemedicina com a sua marca. <em>Médicos da WMedic.</em></h1>
+    <p>Como apresentar, qualificar e vender a plataforma whitelabel de telemedicina e o atendimento médico por consultas online.</p>
+    <div class="meta"><div>Versão<b>1.0 · novembro de 2026</b></div><div>Público<b>Time comercial WMedic</b></div><div>Acompanha<b>Apresentação comercial interativa</b></div></div>
+  </div>
+  <div class="ph"><img src="img/paciente-fone.jpg" alt=""></div>
+</section>
+
+<!-- 1 · SUMÁRIO + PITCH -->
+<section class="page">
+  <div class="eyebrow">Como usar este guia</div>
+  <h2>O que você encontra aqui</h2>
+  <div class="toc">
+    <span>01</span><span>O pitch em 10 segundos, 30 segundos e 2 minutos</span><span>p. 2</span>
+    <span>02</span><span>As duas ofertas e o modelo combinado</span><span>p. 3</span>
+    <span>03</span><span>Perfis de cliente e como abordar cada um</span><span>p. 4</span>
+    <span>04</span><span>Perguntas de descoberta</span><span>p. 5</span>
+    <span>05</span><span>Objeções e respostas</span><span>p. 6</span>
+    <span>06</span><span>Simulador de valor, regras legais e o que não prometer</span><span>p. 7</span>
+    <span>07</span><span>Processo de venda e implantação</span><span>p. 8</span>
+    <span>08</span><span>Marca, materiais e contatos</span><span>p. 9</span>
+  </div>
+  <div class="eyebrow" style="margin-top:2mm">01 · Pitch</div>
+  <h2>Diga em uma frase, <em>depois aprofunde</em></h2>
+  <div class="box acc">
+    <span class="tag">10 segundos</span>
+    <p class="quote" style="border:0;padding:0">A WMedic coloca consulta médica online, 24 horas, com a sua marca e com médicos que nós gerimos.</p>
+  </div>
+  <div class="box">
+    <span class="tag">30 segundos</span>
+    <p>A WMedic é a gestora médica do grupo Wow+. Oferecemos telemedicina de duas formas: <strong>a plataforma whitelabel</strong>, para quem quer atender com a própria marca e os próprios médicos, e <strong>as consultas online</strong>, em que o nosso corpo clínico atende o seu público por vídeo, com clínico 24 horas, especialidades, psicologia e nutrição. Dá para contratar as duas juntas. O diferencial é a gestão médica por trás: protocolos, escalas, indicadores e encaminhamento quando o caso pede.</p>
+  </div>
+  <div class="box">
+    <span class="tag">2 minutos · roteiro</span>
+    <ol>
+      <li><strong>Contexto do cliente.</strong> “Vocês querem reduzir custo, oferecer um benefício ou lançar um produto de saúde?” Use a resposta para escolher a modalidade.</li>
+      <li><strong>As duas formas de contratar.</strong> Plataforma com a marca do cliente, consultas com os nossos médicos, ou as duas juntas.</li>
+      <li><strong>A jornada.</strong> Acesso pelo app, triagem, consulta por vídeo, receita e atestado digitais, encaminhamento quando necessário, retorno.</li>
+      <li><strong>Por que a WMedic.</strong> Somos gestão médica, não só tecnologia: corpo clínico avaliado, protocolos, escalas 24h e indicadores.</li>
+      <li><strong>Próximo passo.</strong> Combine um diagnóstico com números do cliente (vidas, uso esperado) e a proposta formal.</li>
+    </ol>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>02</span></div>
+</section>
+
+<!-- 2 · OFERTAS -->
+<section class="page">
+  <div class="eyebrow">02 · Ofertas</div>
+  <h2>Duas formas de contratar, <em>ou as duas juntas</em></h2>
+  <div class="grid3">
+    <div class="box lil"><span class="tag">A · Plataforma whitelabel</span><h3>Sua marca, nossa tecnologia</h3><p>O cliente leva teleconsulta ao público dele com o próprio nome e o próprio corpo clínico.</p><p><strong>Indique para:</strong> clínicas, hospitais, redes de saúde e operadoras com médicos próprios.</p></div>
+    <div class="box lil"><span class="tag">B · Consultas online</span><h3>Nossos médicos atendem</h3><p>O corpo clínico WMedic atende o público do cliente por vídeo. O cliente não precisa montar equipe médica.</p><p><strong>Indique para:</strong> empresas, administradoras de benefícios, sindicatos e associações.</p></div>
+    <div class="box acc"><span class="tag">A + B · Combinado</span><h3>Tudo com a marca do cliente</h3><p>Plataforma com a marca do cliente e operação médica WMedic. É o modelo que operamos no grupo Wow+.</p><p><strong>Indique para:</strong> cartões de benefício, saúde por assinatura e varejo.</p></div>
+  </div>
+  <h3 style="margin-top:2mm">Quem faz o quê (arranjo de referência)</h3>
+  <table>
+    <tr><th style="width:30%">Camada</th><th>A · Plataforma</th><th>B · Consultas</th><th>A + B · Combinado</th></tr>
+    <tr><td>Marca e relacionamento</td><td class="you">Sua marca</td><td class="you">Cliente oferece ao público</td><td class="you">Sua marca</td></tr>
+    <tr><td>Plataforma (app e web)</td><td class="wm">WMedic, com a marca do cliente</td><td class="wm">Plataforma WMedic</td><td class="wm">WMedic, com a marca do cliente</td></tr>
+    <tr><td>Médicos que atendem</td><td class="you">Corpo clínico do cliente</td><td class="wm">Corpo clínico WMedic</td><td class="wm">Corpo clínico WMedic</td></tr>
+    <tr><td>Protocolos, escalas e qualidade</td><td class="you">Time do cliente, com as ferramentas</td><td class="wm">Gestão assistencial WMedic</td><td class="wm">Gestão assistencial WMedic</td></tr>
+    <tr><td>Suporte e indicadores</td><td class="wm">Suporte técnico e painel</td><td class="wm">Suporte clínico e relatórios</td><td class="wm">Suporte clínico e relatórios</td></tr>
+  </table>
+  <p style="font-size:8.5pt"><span class="you">Verde</span> = cliente · <span class="wm">roxo</span> = WMedic. Cada proposta é ajustada; confirme o arranjo final com a operação antes de enviar.</p>
+  <div class="box lil">
+    <span class="tag">Serviços médicos disponíveis</span>
+    <div class="grid2" style="gap:2mm 6mm">
+      <p><strong>Clínico geral 24h.</strong> Pronto atendimento por vídeo, a qualquer hora. Base de todo pacote.</p>
+      <p><strong>Especialidades médicas.</strong> Consultas com especialistas, por agendamento.</p>
+      <p><strong>Psicologia.</strong> Sessões online. Argumento forte para RH e saúde mental.</p>
+      <p><strong>Nutrição.</strong> Orientação nutricional para prevenção e acompanhamento.</p>
+      <p><strong>Pediatria.</strong> Atendimento às crianças, quando dependentes entram.</p>
+      <p><strong>Programas de saúde.</strong> Acompanhamento de grupos e promoção da saúde.</p>
+    </div>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>03</span></div>
+</section>
+
+<!-- 3 · PERFIS -->
+<section class="page">
+  <div class="eyebrow">03 · Perfis de cliente</div>
+  <h2>Para quem faz sentido <em>e como abordar</em></h2>
+  <table>
+    <tr><th style="width:24%">Perfil</th><th style="width:25%">Dor típica</th><th style="width:16%">Oferta</th><th>Argumento principal</th></tr>
+    <tr><td>Operadoras e administradoras de benefícios</td><td>Custo com pronto-socorro e consultas de baixa complexidade.</td><td><span class="pill">B ou A+B</span></td><td>Primeiro atendimento por vídeo, 24h, com protocolos e encaminhamento para a rede só quando é preciso.</td></tr>
+    <tr><td>Cartões de benefício e saúde por assinatura</td><td>Precisa de um produto de saúde com marca própria para vender e reter clientes.</td><td><span class="pill">A+B</span></td><td>Produto pronto, com a sua marca, operado por quem já faz isso no grupo Wow+.</td></tr>
+    <tr><td>Empresas (RH e benefícios)</td><td>Afastamentos, horas perdidas em deslocamento, saúde mental das equipes.</td><td><span class="pill">B</span></td><td>Clínico 24h, psicologia e nutrição para colaboradores e dependentes, com relatórios para o RH.</td></tr>
+    <tr><td>Redes de farmácia e varejo</td><td>Ampliar serviços de saúde e aproximar o cliente da marca.</td><td><span class="pill">A+B</span></td><td>Um serviço de saúde com a marca da rede, sem montar equipe médica nem tecnologia.</td></tr>
+    <tr><td>Clínicas, hospitais e redes de saúde</td><td>Quer atender a distância sem desenvolver tecnologia própria.</td><td><span class="pill">A</span></td><td>Seus médicos atendendo por vídeo, com a sua marca, sem projeto de TI do zero.</td></tr>
+    <tr><td>Sindicatos, associações e cooperativas</td><td>Oferecer benefício de saúde acessível e de alto valor percebido.</td><td><span class="pill">B</span></td><td>Consulta médica online simples de contratar e de explicar para o associado.</td></tr>
+  </table>
+  <div class="grid2">
+    <div class="box lil"><span class="tag">Sinais de compra</span><ul>
+      <li>Já fala em “produto de saúde próprio” ou “benefício com a nossa marca”.</li>
+      <li>Tem base de vidas ativa e quer aumentar uso ou retenção.</li>
+      <li>Reclama de fila, de custo com pronto-socorro ou de afastamentos.</li>
+      <li>Tem médicos ociosos ou atendimento só presencial.</li>
+    </ul></div>
+    <div class="box warn"><span class="tag warn">Atenção na abordagem</span><ul>
+      <li>Para redes de farmácia, nunca vincule a consulta a compra de medicamento: a prescrição é decisão do médico.</li>
+      <li>Para empresas, fale de saúde e bem-estar; não prometa redução de afastamentos.</li>
+      <li>Não cite parceiros ou clientes sem autorização do time de comunicação.</li>
+    </ul></div>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>04</span></div>
+</section>
+
+<!-- 4 · DESCOBERTA -->
+<section class="page">
+  <div class="eyebrow">04 · Descoberta</div>
+  <h2>Perguntas que decidem <em>a modalidade e a proposta</em></h2>
+  <p class="lead">Faça antes de apresentar preço. As respostas vão direto para o slide “Monte o pacote” e para o simulador.</p>
+  <div class="qa">
+    <div class="q"><span class="num">01</span>Quem vai usar e quantas vidas são?</div><div class="a">Dimensiona o corpo clínico e define se dependentes entram. Anote titulares e dependentes separados.</div><hr>
+    <div class="q"><span class="num">02</span>Vocês já têm médicos ou rede própria?</div><div class="a">Sim: plataforma whitelabel aproveita a equipe atual. Não: consultas online ou combinado.</div><hr>
+    <div class="q"><span class="num">03</span>O serviço deve levar a marca de vocês?</div><div class="a">Se saúde é parte do produto do cliente, o combinado é o caminho natural.</div><hr>
+    <div class="q"><span class="num">04</span>Qual o objetivo principal?</div><div class="a">Reduzir custo, oferecer benefício, reter clientes ou lançar produto. Cada objetivo pede argumentos e indicadores diferentes.</div><hr>
+    <div class="q"><span class="num">05</span>Que serviços o público mais procura hoje?</div><div class="a">Ajuda a escolher entre especialidades, psicologia, nutrição e pediatria além do clínico 24h.</div><hr>
+    <div class="q"><span class="num">06</span>Como o público acessa vocês hoje?</div><div class="a">App próprio, site, WhatsApp ou nada. Indica o esforço de lançamento e se cabe uma conversa técnica.</div><hr>
+    <div class="q"><span class="num">07</span>Quanto custa hoje uma ida ao pronto-socorro para vocês?</div><div class="a">É o número que alimenta o simulador. Use o valor do cliente, nunca o exemplo.</div><hr>
+    <div class="q"><span class="num">08</span>Como vocês vão medir o sucesso?</div><div class="a">Uso, resolutividade, encaminhamentos, satisfação. Combine indicadores e frequência de relatório desde o início.</div><hr>
+    <div class="q"><span class="num">09</span>Quem decide e quem mais participa?</div><div class="a">Mapeie decisor, usuário interno (RH, produto, médico) e jurídico ou compras.</div><hr>
+    <div class="q"><span class="num">10</span>Para quando vocês precisam do serviço no ar?</div><div class="a">Registre a data desejada e valide com a implantação antes de confirmar qualquer prazo.</div>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>05</span></div>
+</section>
+
+<!-- 5 · OBJEÇÕES -->
+<section class="page">
+  <div class="eyebrow">05 · Objeções</div>
+  <h2>Respostas para <em>o que você vai ouvir</em></h2>
+  <div class="qa">
+    <div class="q">“Já temos telemedicina.”</div><div class="a">Pergunte como medem resolutividade e o que acontece depois da consulta. O diferencial WMedic é a gestão médica: protocolos, escalas 24h, encaminhamento e indicadores. Proponha comparar os números.</div><hr>
+    <div class="q">“Consulta online tem qualidade inferior.”</div><div class="a">A teleconsulta resolve boa parte dos casos de baixa complexidade e encaminha o resto. Nosso corpo clínico é selecionado e avaliado continuamente, com protocolos padronizados.</div><hr>
+    <div class="q">“Nosso público não vai usar.”</div><div class="a">Uso depende de comunicação e de facilidade de acesso. Com a marca do cliente no app, o serviço vira parte do produto. Combine metas de uso e uma ação de lançamento.</div><hr>
+    <div class="q">“É caro.”</div><div class="a">Leve a conversa para o custo evitado com o simulador, usando os números do cliente. Ajuste escopo (serviços, público) antes de falar em desconto.</div><hr>
+    <div class="q">“E a segurança dos dados?”</div><div class="a">Dados de saúde são sensíveis pela LGPD. A operação segue sigilo, acesso restrito e registro em prontuário. Para detalhes técnicos, leve a pergunta ao time responsável.</div><hr>
+    <div class="q">“O médico pode dar receita e atestado?”</div><div class="a">Sim. A Resolução CFM 2.314/2022 regulamenta a telemedicina; os documentos são emitidos digitalmente, com assinatura digital, e registrados no prontuário.</div><hr>
+    <div class="q">“Precisamos integrar com o nosso sistema.”</div><div class="a">Entenda qual sistema e qual dado precisa passar. Não confirme integração na reunião: registre e leve ao time técnico.</div><hr>
+    <div class="q">“Quanto tempo para colocar no ar?”</div><div class="a">Depende da modalidade e da configuração da marca. Anote a data desejada e confirme com a implantação antes de responder.</div>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>06</span></div>
+</section>
+
+<!-- 6 · SIMULADOR + LEGAL -->
+<section class="page">
+  <div class="eyebrow">06 · Simulador, regras e limites</div>
+  <h2>Mostre o valor <em>sem prometer resultado</em></h2>
+  <div class="box lil">
+    <span class="tag">Como o simulador calcula</span>
+    <div class="formula">idas ao PS evitadas / mês = vidas × uso mensal × resolvidas na teleconsulta × teriam ido ao PS<br>custo evitado / mês = idas evitadas × custo médio de uma ida ao PS</div>
+    <p><strong>Exemplo da apresentação:</strong> 10.000 vidas × 3% × 80% × 30% = 72 idas evitadas por mês. Com R$ 400 por ida, R$ 28.800 por mês ou R$ 345.600 por ano. São valores de exemplo: troque sempre pelos números do cliente e diga que é uma estimativa.</p>
+  </div>
+  <h3 style="margin-top:1mm">Telemedicina no Brasil: quatro pontos para citar</h3>
+  <div class="grid2">
+    <div class="box"><span class="tag">Lei nº 14.510/2022</span><p>Autoriza e disciplina a telessaúde em todo o território nacional, com consentimento livre e informado do paciente.</p></div>
+    <div class="box"><span class="tag">Resolução CFM nº 2.314/2022</span><p>Define e regulamenta a telemedicina como serviço médico mediado por tecnologia, com registro em prontuário.</p></div>
+    <div class="box"><span class="tag">LGPD · Lei nº 13.709/2018</span><p>Dados de saúde são dados pessoais sensíveis: uso com base legal, acesso restrito, sigilo e segurança.</p></div>
+    <div class="box"><span class="tag">Documentos digitais</span><p>Receitas, atestados e pedidos de exame emitidos com assinatura digital e registrados no prontuário.</p></div>
+  </div>
+  <div class="grid2">
+    <div class="box"><span class="tag mint">Pode dizer</span><ul class="do">
+      <li>“Clínico disponível 24 horas por vídeo.”</li>
+      <li>“O caso é encaminhado a especialista ou à rede quando precisa.”</li>
+      <li>“Esta é uma estimativa com os números de vocês.”</li>
+      <li>“Combinamos os indicadores e os relatórios no contrato.”</li>
+    </ul></div>
+    <div class="box warn"><span class="tag warn">Não diga</span><ul class="dont">
+      <li>Percentuais de economia ou de resolutividade como garantia.</li>
+      <li>Tempo de espera, prazo de implantação ou preço sem validar.</li>
+      <li>Que a consulta online substitui toda consulta presencial.</li>
+      <li>Nomes de clientes ou parceiros sem autorização.</li>
+    </ul></div>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>07</span></div>
+</section>
+
+<!-- 7 · PROCESSO -->
+<section class="page">
+  <div class="eyebrow">07 · Processo</div>
+  <h2>Do primeiro contato <em>à primeira consulta</em></h2>
+  <table>
+    <tr><th style="width:20%">Etapa</th><th>O cliente faz</th><th>A WMedic faz</th></tr>
+    <tr><td><span class="num">1</span>Diagnóstico</td><td>Conta quem é o público, quantas vidas e o objetivo.</td><td>Entende a operação e indica modalidade e serviços.</td></tr>
+    <tr><td><span class="num">2</span>Proposta e contrato</td><td>Valida escopo e aprova a proposta.</td><td>Envia proposta formal e define níveis de serviço e relatórios.</td></tr>
+    <tr><td><span class="num">3</span>Configuração</td><td>Envia logo, cores e textos (whitelabel) e indica responsáveis.</td><td>Configura a plataforma e os fluxos e testa a jornada inteira.</td></tr>
+    <tr><td><span class="num">4</span>Lançamento</td><td>Envia a base de usuários e divulga ao público.</td><td>Cadastra as vidas e apoia a comunicação de lançamento.</td></tr>
+    <tr><td><span class="num">5</span>Operação</td><td>Acompanha os relatórios e traz feedback.</td><td>Atende, dá suporte, mede e revisa indicadores.</td></tr>
+  </table>
+  <div class="grid2">
+    <div class="box lil"><span class="tag">Checklist para sair da 1ª reunião</span><ul class="check">
+      <li>Número de vidas (titulares e dependentes)</li>
+      <li>Modalidade provável: A, B ou A+B</li>
+      <li>Serviços desejados além do clínico 24h</li>
+      <li>Custo médio de uma ida ao PS (para o simulador)</li>
+      <li>Decisor, participantes e data desejada</li>
+      <li>Necessidades técnicas a levar ao time</li>
+    </ul></div>
+    <div class="box warn"><span class="tag warn">Validar com produto e operação antes de prometer</span><ul>
+      <li>Funcionalidades exatas da plataforma e do app</li>
+      <li>Grade de especialidades e horários de atendimento</li>
+      <li>Tempo de espera e níveis de serviço</li>
+      <li>Integrações, prazos de implantação e preços</li>
+      <li>Personalização disponível no whitelabel (domínio, lojas de app)</li>
+    </ul></div>
+  </div>
+  <div class="box acc">
+    <span class="tag">Use a apresentação interativa na reunião</span>
+    <p>Slides que ajudam a fechar: <strong>Whitelabel na prática</strong> (digite a marca do cliente e escolha a cor), <strong>Monte o pacote</strong> (rascunho de proposta ao vivo), <strong>Simulador de valor</strong> (números do cliente) e <strong>Antes de fechar</strong> (as dúvidas de maior dor, com respostas, para investidor que vai começar ou empresa B2B que quer crescer). Teclas: ← → para navegar, F para tela cheia.</p>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>08</span></div>
+</section>
+
+<!-- 8 · MARCA E CONTATOS -->
+<section class="page">
+  <div class="eyebrow">08 · Marca e contatos</div>
+  <h2>Use a marca <em>do jeito certo</em></h2>
+  <div class="grid2">
+    <div class="box" style="align-items:center;justify-content:center;min-height:38mm"><img src="img/logo-full.png" alt="WMedic, logo colorido" style="height:14mm;width:auto"><p style="font-size:8pt">Logo colorido · fundos claros</p></div>
+    <div class="box" style="align-items:center;justify-content:center;min-height:38mm;background:var(--ink);border-color:var(--ink)"><img src="img/logo-white.png" alt="WMedic, logo negativo" style="height:14mm;width:auto"><p style="font-size:8pt;color:#CFC8E0">Logo negativo · fundos escuros ou coloridos</p></div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:3mm">
+    <div class="box" style="padding:0;overflow:hidden;gap:0"><div style="height:13mm;background:#8C52FF"></div><p style="padding:2mm 2.5mm;font-size:7.5pt"><strong>Roxo principal</strong><br>#8C52FF</p></div>
+    <div class="box" style="padding:0;overflow:hidden;gap:0"><div style="height:13mm;background:#6C47C2"></div><p style="padding:2mm 2.5mm;font-size:7.5pt"><strong>Roxo escuro</strong><br>#6C47C2</p></div>
+    <div class="box" style="padding:0;overflow:hidden;gap:0"><div style="height:13mm;background:#A98CF0"></div><p style="padding:2mm 2.5mm;font-size:7.5pt"><strong>Roxo claro</strong><br>#A98CF0</p></div>
+    <div class="box" style="padding:0;overflow:hidden;gap:0"><div style="height:13mm;background:#1E1B2E"></div><p style="padding:2mm 2.5mm;font-size:7.5pt"><strong>Grafite</strong><br>#1E1B2E</p></div>
+    <div class="box" style="padding:0;overflow:hidden;gap:0"><div style="height:13mm;background:#6E6A7C"></div><p style="padding:2mm 2.5mm;font-size:7.5pt"><strong>Cinza neutro</strong><br>#6E6A7C</p></div>
+    <div class="box" style="padding:0;overflow:hidden;gap:0"><div style="height:13mm;background:#F6F3FB;border-bottom:1px solid var(--line)"></div><p style="padding:2mm 2.5mm;font-size:7.5pt"><strong>Lilás claro</strong><br>#F6F3FB</p></div>
+  </div>
+  <div class="grid2">
+    <div class="box"><span class="tag mint">Faça</span><ul class="do">
+      <li>Mantenha a proporção do logo e a área de respiro (1x = diâmetro do círculo do W).</li>
+      <li>Use o logo negativo sobre fundos escuros.</li>
+      <li>Tamanho mínimo: logo 120 px ou 30 mm; símbolo 24 px ou 8 mm.</li>
+      <li>Títulos em Poppins SemiBold (substituta web da Aristotélica Pro).</li>
+    </ul></div>
+    <div class="box"><span class="tag warn">Não faça</span><ul class="dont">
+      <li>Distorcer, esticar ou girar a marca.</li>
+      <li>Trocar as cores ou aplicar gradientes não previstos.</li>
+      <li>Usar o roxo principal #8C52FF como cor de texto pequeno: use o roxo escuro.</li>
+      <li>Adicionar sombras, contornos ou efeitos ao símbolo.</li>
+    </ul></div>
+  </div>
+  <div class="box lil">
+    <span class="tag">Contatos</span>
+    <table style="font-size:9.5pt">
+      <tr><td style="width:32%">Atendimento comercial</td><td>WhatsApp (11) 97026-7810</td></tr>
+      <tr><td>E-mail geral</td><td>contato@wmedic.com.br</td></tr>
+      <tr><td>Marca e materiais</td><td>comunicacao@wmedic.com.br</td></tr>
+      <tr><td>Site</td><td>wmedic.com.br</td></tr>
+      <tr><td>Endereço</td><td>Av. Santo Antonio, 1453</td></tr>
+    </table>
+  </div>
+  <div class="pf"><img src="img/symbol.png" alt=""><span>Guia do time comercial · Telemedicina WMedic</span><span>09</span></div>
+</section>
+
+</body>
+</html>
