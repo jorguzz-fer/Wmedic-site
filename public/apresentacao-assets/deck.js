@@ -22,7 +22,7 @@ function go(i){i=Math.max(0,Math.min(slides.length-1,i));DECK.index=i;
   slides.forEach((s,k)=>s.classList.toggle('active',k===i));
   [...ticks.children].forEach((b,k)=>{b.classList.toggle('on',k===i);b.classList.toggle('done',k<i)});
   document.getElementById('counter').textContent=String(i+1).padStart(2,'0')+' / '+String(slides.length).padStart(2,'0');
-  if(!printing){try{history.replaceState(null,'','#s'+(i+1))}catch(e){}}
+  if(!printing){try{history.replaceState(null,'',location.pathname+location.search+'#s'+(i+1))}catch(e){}}
   emit('slide');}
 DECK.go=go;
 

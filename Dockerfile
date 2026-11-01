@@ -11,13 +11,15 @@ FROM nginx:alpine
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # SPA support: redirect all routes to index.html
+# $uri/index.html serve as páginas estáticas em public/ (ex.: /apresentacao-comercial) sem redirecionar.
 RUN echo 'server { \
     listen 80; \
     server_name _; \
     root /usr/share/nginx/html; \
     index index.html; \
+    absolute_redirect off; \
     location / { \
-        try_files $uri $uri/ /index.html; \
+        try_files $uri $uri/index.html $uri/ /index.html; \
     } \
 }' > /etc/nginx/conf.d/default.conf
 
