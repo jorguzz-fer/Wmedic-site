@@ -18,10 +18,27 @@
 .eco .flow.sel{opacity:1}
 @keyframes dash{to{stroke-dashoffset:-28}}
 @media (prefers-reduced-motion: reduce){.eco .flow{animation:none}}
-.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:72px 56px 56px 48px;height:100%;align-content:center}
-.mvv .card{min-height:430px;justify-content:flex-start}
-.mvv .card .big{font-size:21px;line-height:1.5;color:var(--ink);font-weight:500;margin:0}
+.mvv{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:48px 56px 44px 44px;height:100%}
+.mvv .card{padding:0;overflow:hidden;gap:0;justify-content:flex-start}
+.mvv .card .ph{height:300px;flex:none;overflow:hidden;background:var(--bg2)}
+.mvv .card .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.mvv .card.focus .ph img{transform:scale(1.04)}
+.mvv .card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.mvv .card .hd{display:flex;align-items:center;gap:12px}
+.mvv .card .big{font-size:18px;line-height:1.5;color:var(--ink);font-weight:500;margin:0}
 .mvv .card:not(.focus) .big{color:var(--ink2)}
+.mvv .card .prat{margin-top:auto;border-top:1px dashed var(--line2);padding-top:12px;display:flex;flex-direction:column;gap:4px}
+.mvv .card .prat span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+.mvv .card .prat p{font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.slogan{border-left:3px solid var(--accent);padding:8px 0 8px 20px;display:flex;flex-direction:column;gap:6px}
+.slogan b{font-size:30px;line-height:1.3;font-weight:600;color:var(--ink)}
+.slogan span{font-size:14.5px;color:var(--muted)}
+.vstrip{display:flex;flex-direction:column;gap:10px}
+.vstrip .eyebrow{font-size:12px}
+.vstrip ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vstrip li{border:1px solid var(--line);border-radius:12px;padding:18px 18px;background:var(--surface);display:flex;flex-direction:column;gap:2px}
+.vstrip li b{font-size:19px;font-weight:600;color:var(--ink)}
+.vstrip li span{font-size:14.5px;color:var(--ink2)}
 .layers{position:absolute;inset:0}
 .layers img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s ease}
 .layers img.off{opacity:0}
@@ -116,12 +133,20 @@
 
 <!-- 3 · MISSÃO, VISÃO, PROPÓSITO -->
 <section class="slide" id="s3" data-name="Missão, visão e propósito">
-  <div class="copy">
+  <div class="copy" style="gap:30px">
     <div class="eyebrow">Nossa missão</div>
     <h2>Por que existimos</h2>
-    <p class="lead">Existimos para cuidar de pessoas e transformar a gestão em saúde em <strong>cuidado real, seguro e humano</strong> dentro do grupo Wow+.</p>
-    <p class="lead" style="margin-top:auto;font-weight:600;color:var(--ink);font-size:22px">“Gestão que cuida. Cuidado que transforma.”</p>
-    <p class="note" style="margin-top:-12px">O compromisso que orienta cada decisão da WMedic.</p>
+    <p class="lead">Existimos para cuidar de pessoas e transformar a gestão em saúde em <strong>cuidado real, seguro e humano</strong>, no Wow+ e em cada parceiro White Label.</p>
+    <div class="slogan"><b>“Gestão que cuida. Cuidado que transforma.”</b><span>O compromisso que orienta cada decisão da WMedic.</span></div>
+    <div class="vstrip">
+      <div class="eyebrow">Guiados por quatro valores</div>
+      <ul>
+        <li><b>Excelência</b><span>em cada detalhe</span></li>
+        <li><b>Segurança</b><span>em cada processo</span></li>
+        <li><b>Humanização</b><span>em cada atendimento</span></li>
+        <li><b>Resultados</b><span>que geram valor</span></li>
+      </ul>
+    </div>
   </div>
   <div class="bench"><div class="mvv" id="mvv"></div></div>
 </section>
@@ -296,12 +321,12 @@ draw();
 (function(){
 const el=document.getElementById('mvv');
 const d=[
- ['target','Missão','Gerir a operação assistencial do grupo Wow+ com excelência, garantindo acesso à saúde de forma humanizada, segura e eficiente.'],
- ['eye','Visão','Ser referência em gestão médica no Brasil, reconhecida pela qualidade do cuidado, pela governança clínica e pelos resultados que gera.'],
- ['compass','Propósito','Cuidar de pessoas e transformar vidas, colocando o paciente no centro de cada decisão e de cada processo.']
+ ['target','Missão','Gerir a operação assistencial do grupo Wow+ com excelência, garantindo acesso à saúde de forma humanizada, segura e eficiente.','medicos-2.jpg','50% 20%','O mesmo padrão de cuidado do Wow+ em cada atendimento feito com a marca de um parceiro.'],
+ ['eye','Visão','Ser referência em gestão médica no Brasil, reconhecida pela qualidade do cuidado, pela governança clínica e pelos resultados que gera.','equipe-2.jpg','50% 25%','Crescer com parceiros White Label, medindo qualidade e resultado em toda a operação.'],
+ ['compass','Propósito','Cuidar de pessoas e transformar vidas, colocando o paciente no centro de cada decisão e de cada processo.','paciente-fone.jpg','50% 22%','Protocolos, escalas e tecnologia começam pela pergunta: o que é melhor para o paciente?']
 ];
-d.forEach(([ic,t,p],i)=>{const b=document.createElement('button');b.className='card'+(i===0?' focus':'');
-  b.innerHTML=`<span class="ico">${icon(ic)}</span><span class="tag">0${i+1}</span><h3>${t}</h3><p class="big">${p}</p>`;
+d.forEach(([ic,t,p,img,pos,pr],i)=>{const b=document.createElement('button');b.className='card'+(i===0?' focus':'');
+  b.innerHTML=`<div class="ph"><img src="img/${img}" alt="" style="object-position:${pos}"></div><div class="body"><div class="hd"><span class="ico">${icon(ic)}</span><span class="tag">0${i+1}</span></div><h3>${t}</h3><p class="big">${p}</p><div class="prat"><span>Na prática</span><p>${pr}</p></div></div>`;
   b.onclick=()=>{el.querySelectorAll('.card').forEach(c=>c.classList.remove('focus'));b.classList.add('focus')};el.appendChild(b)});
 })();
 </script>
