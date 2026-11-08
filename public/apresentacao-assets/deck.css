@@ -161,6 +161,17 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .q.open .qa{filter:none;opacity:1;user-select:auto}
 .q .qh{font-size:13px;color:var(--muted);font-family:var(--f-mono)}
 .q.open .qh{visibility:hidden}
+.quiz.obj-cards{gap:16px;padding:40px 56px 32px 44px}
+.quiz.obj-cards .q{padding:16px 22px;gap:7px}
+.quiz.obj-cards .qn{font-size:12px}
+.quiz.obj-cards .qt{font-size:17.5px;line-height:1.35}
+.quiz.obj-cards .qa{font-size:14.5px;line-height:1.5;padding-top:8px}
+.quiz.obj-cards .qa strong{color:var(--ink);font-weight:600}
+.quiz.obj-cards .qh{font-size:12px}
+.nextstep{border:1px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-card);padding:14px 18px;display:flex;flex-direction:column;gap:4px}
+.nextstep b{font-size:16px;font-weight:600;color:var(--ink)}
+.nextstep span{font-size:14.5px;line-height:1.5;color:var(--ink2)}
+.nextstep .tag{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
 
 .svgchart text{font-family:var(--f-mono);fill:var(--muted);font-size:13px}
 .svgchart .ax{stroke:var(--line2);stroke-width:1}
