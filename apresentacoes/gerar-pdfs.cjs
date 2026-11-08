@@ -31,7 +31,8 @@ const JOBS = [
   fs.mkdirSync(OUT, { recursive: true });
   await new Promise(r => server.listen(0, r));
   const base = `http://localhost:${server.address().port}/`;
-  const browser = await chromium.launch();
+  // CHROMIUM_PATH: use quando a versão do Playwright não acha o próprio navegador.
+  const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
   for (const j of JOBS) {
     const page = await browser.newPage({ viewport: j.deck ? { width: 1600, height: 900 } : { width: 900, height: 1200 }, colorScheme: 'light' });
     await page.goto(base + j.page, { waitUntil: 'networkidle' });
