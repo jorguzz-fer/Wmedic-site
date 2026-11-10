@@ -7,7 +7,7 @@ Material institucional e comercial com a marca oficial (paleta de `/aplicacao-ma
 | Endereço | Arquivo |
 |---|---|
 | wmedic.com.br/apresentacao-institucional | `public/apresentacao-institucional/index.html` (12 slides: operadora de saúde digital B2B, sem detalhar White Label) |
-| wmedic.com.br/apresentacao-comercial | `public/apresentacao-comercial/index.html` (11 slides: plataforma whitelabel de telemedicina e consultas online) |
+| wmedic.com.br/apresentacao-comercial | `public/apresentacao-comercial/index.html` (13 slides: base de proposta com as três opções, serviço gerenciado, White Label e API) |
 
 As duas páginas são HTML estático copiado pelo Vite para `dist/`. Elas compartilham `public/apresentacao-assets/`:
 
@@ -45,4 +45,4 @@ Precisa do Playwright com Chromium. Os PDFs saem em `apresentacoes/pdf/`. A vers
 
 ## Antes de usar com cliente
 
-Os valores do simulador e as telas do aplicativo são exemplos. O guia lista, na página 8, o que o time deve confirmar com produto e operação antes de prometer (funcionalidades, grade de especialidades, prazos, preços).
+Na comercial, o slide 3 (diagnóstico) e o slide 11 (faixas e investimento) são preenchidos para cada cliente; o que é digitado fica salvo só no navegador de quem apresenta. A tabela de faixas sai sem preços: os valores entram na proposta. Os valores do simulador e as telas do aplicativo são exemplos. O guia lista, na página 8, o que o time deve confirmar com produto e operação antes de prometer (funcionalidades, grade de especialidades, prazos, preços).
