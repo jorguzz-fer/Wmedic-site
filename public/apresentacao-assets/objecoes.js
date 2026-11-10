@@ -6,11 +6,11 @@
 (function(){
 const PERFIS=[
  {k:'inv',n:'Investidor começando',sub:'Quem quer lançar um negócio de telemedicina com marca própria, sem estrutura médica.',qs:[
-  ['Preciso ter médicos ou uma clínica para começar?','Não.','No modelo plataforma + consultas, a WMedic entrega tecnologia, corpo clínico, escalas 24h e gestão clínica. Você cuida da marca, das vendas e do relacionamento.'],
+  ['Preciso ter médicos ou uma clínica para começar?','Não.','Na opção White Label, a WMedic entrega tecnologia, corpo clínico, escalas 24h e gestão clínica. Você cuida da marca, das vendas e do relacionamento.'],
   ['A WMedic vai concorrer comigo pelo consumidor final?','Não.','A operação da WMedic é voltada a parceiros White Label: não vendemos nem atendemos diretamente o consumidor final. O seu cliente é só seu.'],
   ['Quanto tempo e investimento até a primeira consulta?','Bem menos do que construir do zero.','Você parte de uma plataforma pronta e de um corpo clínico em operação. Prazo e investimento saem do diagnóstico, conforme a personalização.'],
   ['Como eu ganho dinheiro com isso?','Você define o produto e o preço.','Assinatura, benefício para empresas ou parcerias: a operação WMedic é o custo da entrega, e a margem e a base de clientes ficam com você.'],
-  ['Posso começar pequeno e crescer depois?','Sim.','O pacote é montado pelos serviços e pelo número de vidas, e é revisto à medida que os indicadores de uso mostram a demanda.'],
+  ['Posso começar pequeno e crescer depois?','Sim.','O valor por vida segue faixas: você começa na faixa da sua base e muda de faixa conforme ela cresce, sem trocar de estrutura.'],
   ['Qual é o risco regulatório?','A telemedicina tem regra clara.','É autorizada pela Lei 14.510/2022 e regulamentada pela Resolução CFM 2.314/2022. A operação WMedic segue essas regras, a LGPD e o registro em prontuário.']
  ]},
  {k:'b2b',n:'Empresa B2B crescendo',sub:'Quem já tem clientes e quer adicionar ou melhorar a telemedicina no próprio negócio.',qs:[
@@ -18,7 +18,7 @@ const PERFIS=[
   ['Vocês vão vender direto para os meus clientes?','Não.','A WMedic só atende por meio de parceiros White Label e não tem venda ao consumidor final. O usuário vê apenas a sua marca.'],
   ['Vou perder o relacionamento com o meu cliente?','Não.','A base, a venda e o relacionamento continuam seus. A WMedic opera nos bastidores, com a sua identidade no app e no site.'],
   ['Como provo o retorno para a diretoria?','Com dados da sua própria operação.','Relatórios de uso, resolutividade, encaminhamentos e satisfação, combinados desde o contrato, mais o simulador de custo evitado com os seus números.'],
-  ['Consigo integrar com o meu app ou sistema?','Avaliamos no diagnóstico.','O padrão é app e site com a sua marca. Integrações específicas são estudadas caso a caso com o time técnico, antes da proposta.'],
+  ['Consigo integrar com o meu app ou sistema?','Sim, pela opção API.','O seu time consome o atendimento, as regras de negócio e o prontuário da WMedic dentro da sua plataforma. Detalhes técnicos são alinhados no diagnóstico.'],
   ['Se o atendimento falhar, é a minha marca que sofre. Quem garante a qualidade?','A gestão médica WMedic.','Corpo clínico avaliado continuamente, protocolos padronizados, escalas 24h e suporte clínico. Os indicadores de qualidade entram no contrato.']
  ]}
 ];

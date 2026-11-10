@@ -1,5 +1,5 @@
 <!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><base href="/apresentacao-assets/"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><!--local-->
-<title>WMedic Telemedicina</title>
+<title>WMedic Proposta Comercial</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -7,21 +7,8 @@
 <link rel="stylesheet" href="deck.css">
 <style>
 /* peças desta apresentação */
-.who{--you:var(--mint);--wm:var(--accent-ink)}
-.stack{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:40px 64px 40px 56px}
-.lay{display:grid;grid-template-columns:300px 1fr;align-items:center;gap:20px;border:1px solid var(--line);border-radius:var(--r-card);padding:18px 22px;background:var(--surface)}
-.lay .ln{display:flex;gap:14px;align-items:center;font-size:17px;font-weight:600;color:var(--ink)}
-.lay .ln small{display:block;font-weight:400;font-size:13px;color:var(--muted)}
-.own{display:flex;align-items:center;gap:12px;border-radius:12px;padding:12px 16px;border:1.5px solid currentColor;transition:color .35s,background .35s;font-size:16px;font-weight:500}
-.own .who-l{font-family:var(--f-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:5px;background:currentColor;flex:none}
-.own .who-l span{color:var(--bg)}
-.own.you{color:var(--mint);background:var(--mint-soft)}
-.own.wm{color:var(--accent-ink);background:var(--accent-soft)}
-.own .txt{color:var(--ink)}
-.legend2{display:flex;gap:18px;font-size:14px;color:var(--ink2);align-items:center}
-.legend2 i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 /* celular */
-.phones{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:56px}
+.phones{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:40px}
 .phone{width:330px;height:680px;border-radius:44px;background:#0d0b14;padding:12px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5);border:1px solid var(--line2);flex:none}
 .scr{width:100%;height:100%;border-radius:34px;overflow:hidden;background:#f7f6fb;display:flex;flex-direction:column;color:#1e1b2e;font-family:var(--f-body)}
 .ph-top{padding:34px 20px 22px;color:var(--bfg);background:var(--brand);display:flex;flex-direction:column;gap:12px;transition:background .3s}
@@ -37,6 +24,7 @@
 .ph-item i svg{width:18px;height:18px}
 .ph-item small{display:block;font-weight:400;color:#6e6a7c;font-size:12px}
 .ph-foot{font-size:10.5px;color:#6e6a7c;text-align:center;padding:8px 0 14px}
+.pill{display:inline-flex;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;padding:4px 10px;border-radius:999px;border:1px solid var(--accent-ink);color:var(--accent-ink);align-self:flex-start}
 .vid{flex:1;background:linear-gradient(160deg,#3a3550,#16131f);position:relative;display:flex;flex-direction:column;justify-content:flex-end}
 .vid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
 .vid .self{position:absolute;right:14px;top:44px;width:86px;height:120px;border-radius:12px;overflow:hidden;border:2px solid #fff}
@@ -52,11 +40,6 @@
 .field{display:flex;flex-direction:column;gap:6px;font-size:14px;color:var(--ink2)}
 .field input[type=text],.field input[type=number],.field select{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:10px 12px;font-size:16px;color:var(--ink)}
 .field input[type=color]{width:34px;height:34px;border:0;padding:0;background:none;cursor:pointer}
-/* segmentos */
-.segs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:56px 56px 48px 48px;height:100%;align-content:center}
-.segs .card{min-height:200px}
-.segs .card h3{font-size:20px}
-.pill{display:inline-flex;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;padding:4px 10px;border-radius:999px;border:1px solid var(--accent-ink);color:var(--accent-ink);align-self:flex-start}
 /* proposta */
 .prop{position:absolute;inset:36px 56px 32px 48px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:34px 40px;display:flex;flex-direction:column;gap:18px;overflow:hidden}
 .prop header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px}
@@ -77,23 +60,6 @@
 .chk label{display:flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:999px;padding:6px 14px 6px 10px;font-size:14px;color:var(--ink2);cursor:pointer}
 .chk input{accent-color:var(--accent);width:16px;height:16px}
 .chk label:has(input:checked){border-color:var(--accent-deep);background:var(--accent-soft);color:var(--ink)}
-/* comparativo */
-.cmp{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:40px 56px 40px 48px;gap:8px}
-.cmp .row{display:grid;grid-template-columns:200px 1fr 1fr;gap:14px;align-items:stretch;cursor:pointer}
-.cmp .row>div{padding:15px 18px;border-radius:12px;font-size:16px;line-height:1.4;display:flex;align-items:center;gap:10px}
-.cmp .head>div{font-family:var(--f-mono);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-block:6px}
-.cmp .crit{font-weight:600;color:var(--ink)}
-.cmp .bad{background:var(--surface);color:var(--ink2);border:1px solid var(--line)}
-.cmp .good{background:var(--accent-soft);color:var(--ink);border:1px solid var(--accent);transition:filter .4s,opacity .4s}
-.cmp .row:not(.open) .good{filter:blur(6px);opacity:.45}
-.cmp .x{color:var(--crit);font-family:var(--f-mono);font-weight:500}
-.cmp .v{color:var(--ok);font-family:var(--f-mono);font-weight:500}
-/* conformidade */
-.law{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:64px 56px 56px 48px;align-content:center}
-.law .card{min-height:250px;opacity:.35;transition:opacity .4s,border-color .4s}
-.law .card.on{opacity:1}
-.law .card.cur{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
-.law .ref{font-family:var(--f-mono);font-size:13px;color:var(--accent-ink);letter-spacing:.04em}
 /* implantação */
 .tl{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:28px;padding:40px 64px 40px 56px}
 .tl-track{display:grid;grid-template-columns:repeat(5,1fr);gap:0;position:relative}
@@ -110,96 +76,225 @@
 .tl-card ul{margin:0;padding-left:18px;font-size:16px;line-height:1.6;color:var(--ink2)}
 .tl-card .you .tag{color:var(--mint)}
 .tl-card .wm .tag{color:var(--accent-ink)}
-/* funil */
-.funnel text{font-family:var(--f-body)}
+/* comuns */
+.detail .sub,.dg-card .sub{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+.gain{display:flex;gap:10px;align-items:flex-start;background:var(--accent-soft);border-radius:12px;padding:12px 14px;font-size:15px;line-height:1.5;color:var(--ink)}
+.gain b{font-size:15px;color:var(--accent-ink);white-space:nowrap}
+.b2b{display:flex;gap:12px;align-items:center;border:1px solid var(--line2);border-radius:12px;padding:12px 14px;font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.b2b strong{color:var(--ink)}
+/* quem somos */
+.pillars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:56px 56px 56px 48px;align-content:center}
+.pl{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);padding:28px 24px;display:flex;flex-direction:column;gap:12px;min-height:420px}
+.pl b{font-size:22px;font-weight:600}
+.pl p{margin:0;font-size:16px;line-height:1.55;color:var(--ink2)}
+.pl ul{margin:auto 0 0;padding:14px 0 0;list-style:none;display:flex;flex-direction:column;gap:8px;border-top:1px dashed var(--line2);font-size:15px;color:var(--ink)}
+.pl li{display:flex;gap:8px}.pl li::before{content:"✓";color:var(--ok);font-weight:600}
+/* diagnóstico */
+.diag{position:absolute;inset:36px 56px 32px 44px;display:flex}
+.dg-card{flex:1;border:1px solid var(--line);border-radius:20px;background:var(--surface);padding:30px 36px;display:flex;flex-direction:column;gap:20px}
+.dg-h{display:flex;flex-direction:column;gap:4px;border-bottom:1px solid var(--line);padding-bottom:16px}
+.dg-h b{font-size:30px;font-weight:600}
+.dg-meta{font-size:15px;color:var(--muted)}
+.dg-sec{display:flex;flex-direction:column;gap:8px}
+.dg-sec p{margin:0;font-size:17px;line-height:1.55;color:var(--ink)}
+.dg-sec ol{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:17px;line-height:1.45;color:var(--ink)}
+.dg-sec li{outline:none;border-radius:6px;padding:2px 6px;margin-left:-6px}
+.dg-sec li:hover,.dg-sec li:focus{background:var(--accent-soft)}
+.dg-rec{margin-top:auto;border:1px solid var(--accent);background:var(--accent-soft);border-radius:var(--r-card);padding:18px 20px;display:flex;flex-direction:column;gap:6px}
+.dg-rec b{font-size:22px;font-weight:600;color:var(--ink)}
+.dg-rec span:last-child{font-size:15px;line-height:1.5;color:var(--ink2)}
+/* mercados */
+.mkts{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:56px 56px 56px 44px;align-content:center}
+.mk{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);padding:22px 18px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;text-align:left;cursor:pointer;color:var(--ink);min-height:200px;transition:border-color .25s,transform .25s}
+.mk:hover{border-color:var(--line2);transform:translateY(-2px)}
+.mk.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.mk b{font-size:17px;font-weight:600;line-height:1.3}
+.mk .pill{margin-top:auto}
+/* opções (matriz) */
+.mx{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:32px 48px 32px 40px}
+.mx-row{display:grid;grid-template-columns:230px repeat(3,1fr);border-bottom:1px solid var(--line)}
+.mx-row>div{padding:13px 12px;font-size:15px;line-height:1.35;color:var(--ink2);display:flex;align-items:center}
+.mx-row .mx-l{color:var(--ink);font-weight:500}
+.mx-row .sel{background:var(--accent-soft);color:var(--ink)}
+.mx-head{border-bottom:0}
+.mx-col{border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;background:var(--surface);padding:16px 14px;text-align:left;cursor:pointer;color:var(--ink);display:flex;flex-direction:column;gap:3px}
+.mx-col span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+.mx-col b{font-size:19px;font-weight:600}
+.mx-col em{font-style:normal;font-size:13.5px;color:var(--ink2)}
+.mx-col.sel{background:var(--accent-deep);border-color:var(--accent-deep);color:#fff}
+.mx-col.sel span,.mx-col.sel em{color:#fff}
+.mx .yes{color:var(--ok);font-weight:700;font-size:18px}
+.mx .no{color:var(--muted)}
+/* painel de administração */
+.panel{width:470px;height:560px;border-radius:18px;background:#f7f6fb;border:1px solid var(--line2);box-shadow:0 30px 60px -20px rgba(0,0,0,.5);overflow:hidden;display:flex;flex-direction:column;color:#1e1b2e;flex:none}
+.pn-top{background:var(--brand);color:var(--bfg);padding:16px 20px;display:flex;align-items:center;gap:12px;transition:background .3s}
+.pn-logo{width:32px;height:32px;border-radius:9px;background:var(--bfg);color:var(--brand);display:grid;place-items:center;font-weight:700}
+.pn-top b{font-size:17px}
+.pn-sub{margin-left:auto;font-size:12.5px;opacity:.85}
+.pn-body{padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.pn-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pn-kpis div{background:#fff;border:1px solid #e6e1f0;border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:2px}
+.pn-kpis span{font-size:11.5px;color:#6e6a7c}
+.pn-kpis b{font-size:22px;font-family:var(--f-mono);font-weight:500}
+.pn-h{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#6e6a7c;margin-top:6px}
+.pn-row{display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e6e1f0;border-radius:10px;padding:10px 12px;font-size:13.5px}
+.pn-row i{width:34px;height:20px;border-radius:10px;background:#d6d1e2;position:relative;flex:none}
+.pn-row i::after{content:"";position:absolute;left:3px;top:3px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .2s}
+.pn-row i.on{background:var(--brand)}
+.pn-row i.on::after{left:17px}
+.pn-row em{font-style:normal;font-size:12.5px;color:#6e6a7c}
+/* vantagens */
+.crit{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:36px 56px 36px 48px}
+.crit .row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;border:1px solid var(--line);border-radius:var(--r-card);padding:14px 20px;background:var(--surface);cursor:pointer;text-align:left;color:var(--ink);transition:border-color .25s}
+.crit .row:hover{border-color:var(--line2)}
+.crit .row.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.crit .row b{display:block;font-size:19px;font-weight:600}
+.crit .row span.t{font-size:14.5px;color:var(--ink2)}
+.crit .chk{width:32px;height:32px;border-radius:50%;border:2px solid var(--line2);display:grid;place-items:center;color:transparent;transition:all .3s}
+.crit .chk svg{width:18px;height:18px}
+.crit .row.on .chk{background:var(--ok);border-color:var(--ok);color:#fff}
+.crit .score{display:flex;align-items:center;gap:14px;font-family:var(--f-mono);font-size:14px;color:var(--muted);letter-spacing:.06em;padding:0 4px 4px}
+.crit .score b{font-size:28px;font-weight:500;color:var(--ink)}
+.crit .bar{flex:1;height:6px;border-radius:3px;background:var(--line2);overflow:hidden}
+.crit .bar i{display:block;height:100%;background:var(--ok);transition:width .4s}
+/* faixas */
+.price{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:40px 52px 40px 44px}
+.pr-row{display:grid;grid-template-columns:220px repeat(3,1fr);gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.pr-row>div{font-size:15px;color:var(--ink2)}
+.pr-row .sel{background:var(--accent-soft);border-radius:10px;padding:4px}
+.pr-head{border-bottom:0}
+.pr-head>div{display:flex;flex-direction:column;gap:2px;padding:10px 12px!important}
+.pr-head span{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
+.pr-head b{font-size:18px;color:var(--ink);font-weight:600}
+.pr-l{font-weight:500;color:var(--ink)!important;display:flex;flex-direction:column}
+.pr-l small{font-weight:400;font-size:12.5px;color:var(--muted)}
+.pr-setup{border-bottom:2px solid var(--line2)}
+.pr-row input{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:12px 12px;font-size:18px;font-family:var(--f-mono);color:var(--ink);text-align:center}
+.pr-row input::placeholder{color:var(--muted)}
 .endgrid{display:grid;grid-template-columns:540px 1fr;height:100%}
 </style>
-</head><body><!--local-->
 
 <div id="viewport">
-<div id="deck" role="application" aria-label="Apresentação comercial WMedic: telemedicina">
+<div id="deck" role="application" aria-label="Proposta comercial WMedic: telemedicina">
 
 <!-- 1 · CAPA -->
 <section class="slide cover" id="s1" data-name="Capa">
   <div class="copy">
     <img class="brandlogo logo-d" src="img/logo-white.png" alt="WMedic">
     <img class="brandlogo logo-l" src="img/logo-full.png" alt="WMedic">
-    <div class="eyebrow">Apresentação comercial</div>
-    <h1>Telemedicina com a sua marca. <em>Médicos da WMedic.</em></h1>
-    <p class="lead">Duas formas de levar consulta médica online ao seu público: a <strong>plataforma whitelabel</strong> e o <strong>atendimento médico por consultas online</strong>. Ou as duas juntas.</p>
-    <p class="note noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia.</p>
+    <div class="eyebrow" id="coverEyebrow">Proposta comercial</div>
+    <h1>Telemedicina para a sua base. <em>Operada pela WMedic.</em></h1>
+    <p class="lead">Três formas de oferecer atendimento médico online ao seu público: <strong>serviço gerenciado, White Label ou API</strong>. Você escolhe o quanto quer operar; a medicina fica com a gente.</p>
+    <p class="note noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia. Preencha o slide 3 com o que o cliente contou na reunião anterior.</p>
   </div>
   <div class="bench" style="border:0">
     <div class="photo"><img src="img/paciente-fone.jpg" alt="Paciente em consulta online pelo celular" style="object-position:50% 30%"></div>
     <div class="badges">
+      <div class="badge"><b>3 opções</b><span>serviço, White Label ou API</span></div>
       <div class="badge"><b>24h</b><span>clínico por vídeo</span></div>
-      <div class="badge"><b>Sua marca</b><span>no app e no site</span></div>
-      <div class="badge"><b>Gestão médica</b><span>do grupo Wow+</span></div>
+      <div class="badge"><b>100% B2B</b><span>a marca é sua</span></div>
     </div>
   </div>
 </section>
 
-<!-- 2 · DUAS OFERTAS -->
-<section class="slide" id="s2" data-name="Duas formas de contratar">
+<!-- 2 · QUEM SOMOS (resumo) -->
+<section class="slide" id="s2" data-name="Quem somos">
   <div class="copy">
-    <div class="eyebrow">O que oferecemos</div>
-    <h2>Duas formas de <em>contratar</em></h2>
-    <div class="chips" id="modeChips" role="group" aria-label="Modalidade"></div>
-    <div class="detail" id="modeDetail"></div>
-    <div class="legend2"><span><i style="background:var(--mint)"></i>Sua empresa</span><span><i style="background:var(--accent-ink)"></i>WMedic</span></div>
-    <p class="note" style="margin-top:auto">Arranjo de referência. Cada proposta é ajustada ao cliente.</p>
+    <div class="eyebrow">Quem somos</div>
+    <h2>Operadora de saúde digital, <em>100% B2B</em></h2>
+    <p class="lead">Corpo clínico, licenças e tecnologia próprios, para empresas e parceiros que querem oferecer atendimento médico online <strong>sem montar essa estrutura</strong>.</p>
+    <p class="note">O resumo da apresentação institucional, para entrar no que interessa: como a WMedic atende a sua demanda.</p>
+    <div class="b2b" style="margin-top:auto"><span class="ico" id="b2bIco" style="width:38px;height:38px"></span><span><strong>Não vendemos para pessoa física.</strong> A marca WMedic opera nos bastidores; quem aparece para o usuário é você.</span></div>
   </div>
-  <div class="bench who"><div class="stack" id="stack"></div></div>
+  <div class="bench"><div class="pillars" id="pillars"></div></div>
 </section>
 
-<!-- 3 · WHITELABEL NA PRÁTICA -->
-<section class="slide" id="s3" data-name="Whitelabel na prática">
+<!-- 3 · DIAGNÓSTICO (dor do cliente) -->
+<section class="slide" id="s3" data-name="Diagnóstico do cliente">
+  <div class="copy" style="gap:14px">
+    <div class="eyebrow">Sua necessidade</div>
+    <h2 id="dgTitle">O que a sua empresa <em>precisa</em></h2>
+    <label class="field" for="dgName">Cliente<input type="text" id="dgName" placeholder="Nome do cliente" maxlength="40" autocomplete="off"></label>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:12px">
+      <label class="field" for="dgMkt">Mercado<select id="dgMkt"></select></label>
+      <label class="field" for="dgLives">Vidas na base<input type="number" id="dgLives" min="0" step="100"></label>
+    </div>
+    <div class="field"><span>O que o cliente quer</span><div class="chips" id="dgGoal" role="group" aria-label="Objetivo"></div></div>
+    <p class="note" style="font-size:13px;margin-top:auto">Preencha com o que o cliente contou na reunião anterior. As dores são editáveis: clique no texto para ajustar. Fica salvo só neste navegador.</p>
+  </div>
+  <div class="bench"><div class="diag" id="diag"></div></div>
+</section>
+
+<!-- 4 · MERCADOS -->
+<section class="slide" id="s4" data-name="Mercados que atendemos">
+  <div class="copy">
+    <div class="eyebrow">Mercados</div>
+    <h2>Mercados em que <em>somos parceiros</em></h2>
+    <p class="lead" style="font-size:17px">Quem está nesta reunião é de um destes mercados ou vende para ele. Clique para ver a dor típica e a opção mais indicada.</p>
+    <div class="detail" id="mktDetail"></div>
+  </div>
+  <div class="bench"><div class="mkts" id="mkts"></div></div>
+</section>
+
+<!-- 5 · TRÊS OPÇÕES -->
+<section class="slide" id="s5" data-name="Três formas de contratar">
+  <div class="copy">
+    <div class="eyebrow">Formas de contratar</div>
+    <h2>Três opções, <em>conforme o quanto você quer operar</em></h2>
+    <div class="chips" id="optChips" role="group" aria-label="Opção"></div>
+    <div class="detail" id="optDetail"></div>
+    <p class="note" style="margin-top:auto">Todas as opções têm setup na contratação e valor mensal por vida, conforme a faixa.</p>
+  </div>
+  <div class="bench"><div class="mx" id="mx"></div></div>
+</section>
+
+<!-- 6 · SUA MARCA NA PRÁTICA -->
+<section class="slide" id="s6" data-name="Sua marca na prática">
   <div class="copy" style="gap:16px">
-    <div class="eyebrow">Plataforma whitelabel</div>
-    <h2>Sua marca, <em>nossa tecnologia</em></h2>
-    <p class="lead" style="font-size:17px">O usuário vê o seu nome e as suas cores. Digite a marca do cliente e escolha a cor para mostrar ao vivo.</p>
+    <div class="eyebrow">Sua marca na prática</div>
+    <h2>Como fica <em>com a sua cara</em></h2>
+    <p class="lead" style="font-size:17px">O usuário vê o seu nome e as suas cores. No White Label, você também tem o painel de administração.</p>
     <label class="field" for="wlName">Nome da marca<input type="text" id="wlName" value="Viva Saúde" maxlength="22" autocomplete="off"></label>
     <div class="field"><span>Cor principal</span><div class="swatches" id="wlSw"></div></div>
     <div class="chk" id="wlSvc"></div>
-    <p class="note" style="font-size:13px;margin-top:auto">Ilustração. As telas reais seguem a plataforma e a identidade de cada cliente.</p>
+    <p class="note" style="font-size:13px;margin-top:auto">Ilustração com dados fictícios. As telas reais seguem a plataforma e a identidade de cada cliente.</p>
   </div>
   <div class="bench" id="wlBench">
     <div class="phones">
       <div class="phone"><div class="scr">
         <div class="ph-top"><div class="ph-brand"><i id="wlInit">V</i><span id="wlBrand">Viva Saúde</span></div><div class="ph-hi">Olá, Ana. Como podemos ajudar hoje?</div></div>
         <div class="ph-body" id="wlBody"></div>
-        <div class="ph-foot">tecnologia e atendimento médico WMedic</div>
+        <div class="ph-foot">atendimento médico online</div>
       </div></div>
-      <div class="phone"><div class="scr">
-        <div class="vid">
-          <img src="img/medicos-2.jpg" alt="" style="object-position:70% 20%">
-          <div class="tagv" id="wlTag">Viva Saúde · consulta em andamento</div>
-          <div class="self"><img src="img/paciente-fone.jpg" alt="" style="object-position:50% 25%"></div>
-          <div class="bar"><span>${''}</span><span class="end"></span><span></span></div>
+      <div class="panel">
+        <div class="pn-top"><span class="pn-logo" id="pnInit">V</span><b id="pnBrand">Viva Saúde</b><span class="pn-sub">Painel de administração</span></div>
+        <div class="pn-body">
+          <div class="pn-kpis">
+            <div><span>Vidas ativas</span><b id="pnLives">15.000</b></div>
+            <div><span>Consultas no mês</span><b>1.240</b></div>
+            <div><span>Satisfação</span><b>4,8</b></div>
+          </div>
+          <div class="pn-h">Notificações aos usuários</div>
+          <div class="pn-row"><span>Lembrete de consulta agendada</span><i class="on"></i></div>
+          <div class="pn-row"><span>Receita e atestado disponíveis</span><i class="on"></i></div>
+          <div class="pn-row"><span>Campanha de saúde do mês</span><i class="on"></i></div>
+          <div class="pn-row"><span>Pesquisa de satisfação</span><i></i></div>
+          <div class="pn-h">Usuários</div>
+          <div class="pn-row"><span>Importar base de clientes</span><em>CSV ou API</em></div>
+          <div class="pn-row"><span>Planos e preços</span><em>definidos por você</em></div>
         </div>
-      </div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4 · PARA QUEM -->
-<section class="slide" id="s4" data-name="Para quem">
-  <div class="copy">
-    <div class="eyebrow">Perfis de cliente</div>
-    <h2>Para quem <em>faz sentido</em></h2>
-    <p class="lead" style="font-size:17px">Clique no perfil do cliente à sua frente para ver a dor, o modelo indicado e o argumento principal.</p>
-    <div class="detail" id="segDetail"></div>
-  </div>
-  <div class="bench"><div class="segs" id="segs"></div></div>
-</section>
-
-<!-- 5 · JORNADA DA CONSULTA (simulação) -->
-<section class="slide" id="s5" data-name="Jornada da consulta online">
+<!-- 7 · JORNADA DA CONSULTA (simulação) -->
+<section class="slide" id="sJor" data-name="Jornada da consulta online">
   <div class="copy" style="gap:15px">
     <div class="eyebrow">Como funciona</div>
     <h2>A jornada da <em>consulta online</em></h2>
-    <p class="lead" style="font-size:16.5px">Cada ponto é um usuário. A maioria resolve na teleconsulta; quem precisa segue para especialista ou rede presencial.</p>
-    <div class="chips" id="jMode" role="group" aria-label="Modalidade"></div>
+    <p class="lead" style="font-size:16.5px">Cada ponto é um usuário. A maioria resolve na teleconsulta; quem precisa segue para especialista ou rede presencial. Troque a opção para ver quem faz cada etapa.</p>
+    <div class="chips" id="jMode" role="group" aria-label="Opção"></div>
     <div class="ctrl">
       <div class="ctrl-row"><label for="jSpeed">Velocidade da animação <output id="jSpeedOut">1,0×</output></label><input type="range" id="jSpeed" min="20" max="200" value="100"></div>
       <button class="chip" id="jPlay" aria-pressed="false" style="align-self:flex-start">Pausar</button>
@@ -213,73 +308,71 @@
   <div class="bench"><canvas id="journey" style="position:absolute;inset:0;width:100%;height:100%;cursor:pointer"></canvas></div>
 </section>
 
-<!-- 6 · MONTE O PACOTE -->
-<section class="slide" id="s6" data-name="Monte o pacote">
-  <div class="copy" style="gap:15px">
-    <div class="eyebrow">Cobertura clínica</div>
-    <h2>Monte o pacote <em>com o cliente</em></h2>
-    <label class="field" for="pkName">Cliente<input type="text" id="pkName" value="Empresa exemplo" maxlength="40" autocomplete="off"></label>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-      <label class="field" for="pkLives">Vidas<input type="number" id="pkLives" value="5000" min="100" step="100"></label>
-      <label class="field" for="pkPub">Público<select id="pkPub"><option value="Só titulares">Só titulares</option><option value="Titulares e dependentes" selected>Com dependentes</option></select></label>
+<!-- 8 · VANTAGENS -->
+<section class="slide" id="s8" data-name="Vantagens de fazer com a WMedic">
+  <div class="copy">
+    <div class="eyebrow">Por que com a WMedic</div>
+    <h2>As vantagens de <em>fazer com a gente</em></h2>
+    <p class="lead" style="font-size:17px">Os critérios que um CTO avalia num fornecedor de saúde digital, mais o que importa para o seu negócio. Clique em cada um.</p>
+    <div class="detail" id="vtDetail"></div>
+  </div>
+  <div class="bench"><div class="crit" id="crit"></div></div>
+</section>
+
+<!-- 9 · COMO SUA EMPRESA GANHA -->
+<section class="slide" id="s9" data-name="Como sua empresa ganha">
+  <div class="copy" style="gap:12px;padding-top:48px">
+    <div class="eyebrow">Simulador</div>
+    <h2 style="font-size:42px">Como a sua empresa <em>ganha com isso</em></h2>
+    <span class="tag-ex" style="align-self:flex-start">Valores de exemplo · troque pelos da proposta</span>
+    <div class="ctrl">
+      <div class="ctrl-row"><label for="gBase">Clientes na sua base <output id="gBaseOut"></output></label><input type="range" id="gBase" min="500" max="100000" step="500" value="15000"></div>
+      <div class="ctrl-row"><label for="gAd">Adesão ao serviço <output id="gAdOut"></output></label><input type="range" id="gAd" min="5" max="100" step="1" value="30"></div>
+      <div class="ctrl-row"><label for="gPrice">Preço que você cobra por vida/mês <output id="gPriceOut"></output></label><input type="range" id="gPrice" min="5" max="60" step="0.5" value="19.5"></div>
+      <div class="ctrl-row"><label for="gCost">Valor WMedic por vida/mês (sua faixa) <output id="gCostOut"></output></label><input type="range" id="gCost" min="1" max="30" step="0.5" value="6"></div>
+      <div class="ctrl-row"><label for="gSetup">Setup (pagamento único) <output id="gSetupOut"></output></label><input type="range" id="gSetup" min="0" max="30000" step="500" value="10000"></div>
     </div>
-    <div class="chips" id="pkMode" role="group" aria-label="Modalidade"></div>
+    <p class="note" style="font-size:12.5px">Margem = vidas ativas × (preço − valor WMedic). Estimativa ilustrativa, não é promessa de resultado.</p>
+  </div>
+  <div class="bench" style="display:flex;flex-direction:column;justify-content:center;padding:40px 64px 32px 56px;gap:22px">
+    <div class="eyebrow">Resultado acumulado em 12 meses</div>
+    <svg class="svgchart" id="gChart" viewBox="0 0 900 420" style="width:100%;height:auto"></svg>
+    <div class="readout" style="grid-template-columns:repeat(4,1fr)">
+      <div><span>Vidas ativas</span><b id="gLives">—</b></div>
+      <div><span>Receita / mês</span><b id="gRev">—</b></div>
+      <div><span>Margem / mês</span><b id="gMargin">—</b></div>
+      <div><span>Setup pago em</span><b id="gPay">—</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · MONTE O PACOTE -->
+<section class="slide" id="s10" data-name="Monte o pacote">
+  <div class="copy" style="gap:15px">
+    <div class="eyebrow">Serviços do pacote</div>
+    <h2>Monte o pacote <em>com o cliente</em></h2>
+    <label class="field" for="pkPub">Público<select id="pkPub"><option value="Só titulares">Só titulares</option><option value="Titulares e dependentes" selected>Com dependentes</option></select></label>
+    <div class="chips" id="pkMode" role="group" aria-label="Opção"></div>
     <div class="chk" id="pkSvc"></div>
+    <p class="note" style="font-size:13px;margin-top:auto">Cliente e vidas vêm do slide de diagnóstico.</p>
   </div>
   <div class="bench"><div class="prop" id="prop"></div></div>
 </section>
 
-<!-- 7 · SIMULADOR DE VALOR -->
-<section class="slide" id="s7" data-name="Simulador de valor">
-  <div class="copy" style="gap:12px;padding-top:48px">
-    <div class="eyebrow">Simulador</div>
-    <h2 style="font-size:42px">Quanto a teleconsulta <em>pode evitar</em></h2>
-    <span class="tag-ex" style="align-self:flex-start">Valores de exemplo · troque pelos do cliente</span>
-    <div class="ctrl">
-      <div class="ctrl-row"><label for="vLives">Vidas na carteira <output id="vLivesOut"></output></label><input type="range" id="vLives" min="1000" max="100000" step="1000" value="10000"></div>
-      <div class="ctrl-row"><label for="vUse">Uso mensal (vidas que consultam) <output id="vUseOut"></output></label><input type="range" id="vUse" min="1" max="10" step="0.5" value="3"></div>
-      <div class="ctrl-row"><label for="vRes">Resolvidas na teleconsulta <output id="vResOut"></output></label><input type="range" id="vRes" min="50" max="95" step="1" value="80"></div>
-      <div class="ctrl-row"><label for="vPS">Teriam ido ao pronto-socorro <output id="vPSOut"></output></label><input type="range" id="vPS" min="5" max="60" step="1" value="30"></div>
-      <div class="ctrl-row"><label for="vCost">Custo médio de uma ida ao PS <output id="vCostOut"></output></label><input type="range" id="vCost" min="150" max="1200" step="10" value="400"></div>
-    </div>
-    <p class="note" style="font-size:12.5px">Estimativa ilustrativa: consultas × resolvidas × teriam ido ao PS × custo. Não é promessa de resultado.</p>
+<!-- 11 · FAIXAS E INVESTIMENTO -->
+<section class="slide" id="s11" data-name="Faixas e investimento">
+  <div class="copy" style="gap:16px">
+    <div class="eyebrow">Investimento</div>
+    <h2>Faixas de vidas <em>e pagamento</em></h2>
+    <p class="lead" style="font-size:16.5px">Setup na contratação e valor mensal por vida, conforme a faixa. Os valores desta proposta são preenchidos na tabela.</p>
+    <div class="chain" id="payChain"></div>
+    <p class="note" style="font-size:13px;margin-top:auto">Os valores digitados ficam salvos só neste navegador.</p>
   </div>
-  <div class="bench" style="display:flex;flex-direction:column;justify-content:center;padding:40px 64px 32px 56px;gap:24px">
-    <svg class="funnel" id="funnel" viewBox="0 0 900 430" style="width:100%;height:auto"></svg>
-    <div class="readout" style="grid-template-columns:repeat(3,1fr)">
-      <div><span>Teleconsultas / mês</span><b id="rCons">—</b></div>
-      <div><span>Idas ao PS evitadas / mês</span><b id="rPS">—</b></div>
-      <div><span>Custo evitado / ano</span><b id="rYear">—</b></div>
-    </div>
-  </div>
+  <div class="bench"><div class="price" id="price"></div></div>
 </section>
 
-<!-- 8 · DIFERENCIAL -->
-<section class="slide" id="s8" data-name="Diferencial WMedic">
-  <div class="copy">
-    <div class="eyebrow">Diferencial</div>
-    <h2>Teleconsulta com <em>gestão médica</em> por trás</h2>
-    <p class="lead">Vídeo qualquer plataforma tem. O que muda o resultado é <strong>quem atende, como atende e o que acontece depois</strong>.</p>
-    <div class="chips"><button class="chip" id="cmpAll">Revelar tudo</button><button class="chip" id="cmpReset">Esconder</button></div>
-    <p class="note">Clique em cada linha para revelar o lado WMedic.</p>
-  </div>
-  <div class="bench"><div class="cmp" id="cmp"></div></div>
-</section>
-
-<!-- 9 · SEGURANÇA E CONFORMIDADE -->
-<section class="slide" id="s9" data-name="Segurança e conformidade">
-  <div class="copy">
-    <div class="eyebrow">Segurança e conformidade</div>
-    <h2>Dentro da lei, <em>do primeiro ao último clique</em></h2>
-    <p class="lead" style="font-size:17px">A telemedicina no Brasil tem regra clara. A operação WMedic segue essas regras e protege os dados de saúde de cada usuário.</p>
-    <div class="chips"><button class="chip" id="lawNext">Próximo ponto →</button><button class="chip" id="lawReset">Recomeçar</button></div>
-    <p class="note" style="margin-top:auto;font-size:13px">Referências legais resumidas. Cláusulas contratuais são tratadas na proposta formal.</p>
-  </div>
-  <div class="bench"><div class="law" id="law"></div></div>
-</section>
-
-<!-- 10 · IMPLANTAÇÃO -->
-<section class="slide" id="s10" data-name="Implantação">
+<!-- 12 · IMPLANTAÇÃO -->
+<section class="slide" id="s12" data-name="Implantação">
   <div class="copy">
     <div class="eyebrow">Implantação</div>
     <h2>Do primeiro contato à <em>primeira consulta</em></h2>
@@ -289,8 +382,8 @@
   <div class="bench"><div class="tl" id="tl"></div></div>
 </section>
 
-<!-- 11 · PRÓXIMOS PASSOS -->
-<section class="slide full" id="s11" data-name="Perguntas antes de fechar" data-obj>
+<!-- 13 · OBJEÇÕES -->
+<section class="slide full" id="s13" data-name="Perguntas antes de fechar" data-obj>
   <div class="endgrid">
     <div class="copy">
       <div class="eyebrow">Antes de fechar</div>
@@ -298,14 +391,13 @@
       <p class="lead" style="font-size:16px">Escolha o perfil de quem está na sala. Leia a pergunta, ouça a dúvida e clique no cartão para revelar a resposta.</p>
       <div class="chips obj-chips" role="group" aria-label="Perfil do cliente"></div>
       <p class="note obj-sub"></p>
-      <div class="nextstep"><span class="tag">Próximo passo</span><b>Agendar um diagnóstico</b><span>Em uma conversa definimos modalidade, serviços e número de vidas, e enviamos a proposta formal.</span></div>
+      <div class="nextstep"><span class="tag">Próximo passo</span><b>Fechar a proposta</b><span>Confirmamos opção, serviços e faixa de vidas, e enviamos o contrato com o setup e os valores.</span></div>
       <dl class="contact" style="margin-top:auto">
         <dt>Comercial</dt><dd>WhatsApp (11) 97026-7810</dd>
         <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
         <dt>Site</dt><dd>wmedic.com.br</dd>
-        <dt>Endereço</dt><dd>Av. Santo Antonio, 1453</dd>
       </dl>
-      <p class="credit">Simulações com valores de exemplo. Telas do aplicativo são ilustrativas.</p>
+      <p class="credit">Simulações com valores de exemplo. Telas e painel são ilustrativos.</p>
     </div>
     <div class="bench"><div class="quiz obj-cards"></div></div>
   </div>
@@ -313,11 +405,11 @@
 
 <nav id="nav" aria-label="Navegação dos slides">
   <img class="mark" src="img/symbol.png" alt="WMedic">
-  <span class="title">Telemedicina WMedic</span>
+  <span class="title">Proposta comercial WMedic</span>
   <button class="iconbtn" id="prev" aria-label="Slide anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
   <div id="ticks"></div>
   <button class="iconbtn" id="next" aria-label="Próximo slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
-  <span id="counter">01 / 11</span>
+  <span id="counter">01 / 13</span>
   <button class="iconbtn" id="themeBtn" aria-label="Alternar tema claro/escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
   <button class="iconbtn" id="fsBtn" aria-label="Tela cheia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </nav>
@@ -327,42 +419,135 @@
 <script src="objecoes.js"></script>
 <script src="deck.js"></script>
 
-<!-- modalidades (compartilhado entre slides 2, 5 e 6) -->
+<!-- dados compartilhados: opções, mercados e a proposta em andamento -->
 <script>
 window.MODES=[
- {k:'wl',n:'Plataforma whitelabel',short:'Plataforma',t:'Sua marca, nossa tecnologia. Você leva teleconsulta ao seu público com o seu nome, usando seu próprio corpo clínico.',ideal:'quem já tem médicos ou rede própria: clínicas, hospitais, operadoras com rede.'},
- {k:'sv',n:'Consultas online',short:'Consultas',t:'Nosso corpo clínico atende o seu público por vídeo. Você oferece consulta médica online sem montar equipe médica.',ideal:'empresas, administradoras de benefícios, sindicatos e associações.'},
- {k:'cb',n:'Plataforma + consultas',short:'Combinado',t:'Tudo com a sua marca e operado pela WMedic: a tecnologia, os médicos e a gestão clínica.',ideal:'cartões de benefício, saúde por assinatura e varejo. É o modelo que a WMedic opera no grupo Wow+.'}
+ {k:'o1',n:'Serviço gerenciado',short:'Gerenciado',tag:'Opção 1',lead:'Você oferece, a WMedic faz tudo',t:'Você disponibiliza telemedicina para a sua base, com a sua marca, sem mexer com tecnologia nem com operação. A WMedic cuida do atendimento, dos usuários e da cobrança.',para:'quem já tem uma base de clientes e quer um serviço a mais, mantendo o foco no próprio negócio.'},
+ {k:'o2',n:'White Label',short:'White Label',tag:'Opção 2',lead:'Um novo negócio com a sua marca',t:'Plataforma completa com a sua marca: site funcional, painel de administração e notificações. Você define o preço, cobra e faz o marketing; a operação médica é nossa.',para:'quem quer criar o próprio negócio de telemedicina e crescer com ele.'},
+ {k:'o3',n:'API',short:'API',tag:'Opção 3',lead:'Sua tecnologia, nossa operação médica',t:'O seu time de tecnologia consome por API o atendimento, as regras de negócio e o prontuário da WMedic, dentro da sua própria plataforma.',para:'empresas com time de tecnologia e plataforma própria.'}
 ];
-window.MODE_SEL=2;
+window.MKTS=[
+ {ic:'steth',n:'Clínicas e hospitais',dor:['Querem atender online, mas não têm médicos de plantão para isso','Desenvolver plataforma própria custa caro e demora','Licenças e regras da telemedicina tomam tempo da equipe'],sol:'Consultas online com o corpo clínico WMedic, integradas ao sistema da clínica ou pela plataforma pronta.',opt:2},
+ {ic:'heart',n:'Funerárias e assistência familiar',dor:['Carteira grande de clientes, com pouco contato entre um serviço e outro','Precisam de um benefício que o cliente use no dia a dia','Não querem mexer com tecnologia nem com operação médica'],sol:'Telemedicina como serviço adicional para a carteira, operada de ponta a ponta pela WMedic.',opt:0},
+ {ic:'users',n:'Associações, conselhos e sindicatos',dor:['Associados pagam mensalidade e esperam benefícios concretos','Muitos não têm plano de saúde nem acesso rápido a médico','O benefício precisa ser simples de explicar e de usar'],sol:'Consulta médica online 24h como benefício da carteirinha, com a marca da entidade.',opt:0},
+ {ic:'shield',n:'Operadoras e administradoras de benefícios',dor:['Custo alto com pronto-socorro e consultas simples','Beneficiários querem atendimento rápido','Precisam de dados para gerir a carteira'],sol:'Primeiro atendimento por vídeo, 24h, com protocolos e relatórios, integrado ao sistema quando preciso.',opt:2},
+ {ic:'brand',n:'Cartões, clubes e saúde por assinatura',dor:['Precisam de um produto de saúde próprio para vender','A retenção depende de o cliente usar o serviço','Montar operação médica do zero é caro e arriscado'],sol:'Plataforma White Label completa, com a sua marca, preço e marketing; a operação médica é nossa.',opt:1},
+ {ic:'building',n:'Empresas (benefício para colaboradores)',dor:['Afastamentos e horas perdidas em deslocamento','Saúde mental das equipes','Plano de saúde caro ou inexistente para parte do time'],sol:'Clínico 24h, psicologia e especialidades para colaboradores e dependentes, com relatórios para o RH.',opt:0},
+ {ic:'pin',n:'Varejo e farmácias',dor:['Querem ampliar os serviços de saúde','Precisam aproximar o cliente da marca','Não têm estrutura médica própria'],sol:'Um serviço de saúde com a marca da rede, sem montar equipe médica nem tecnologia.',opt:1},
+ {ic:'rocket',n:'Empreendedores de saúde digital',dor:['Querem ter a própria empresa de telemedicina','Licenças, médicos e tecnologia travam o começo','Precisam escalar sem multiplicar o custo'],sol:'Um negócio de telemedicina com a sua marca, operado por quem já tem licenças, médicos e tecnologia.',opt:1}
+];
+// proposta em andamento (salva só neste navegador)
+(function(){
+  const KEY='wmedic-proposta';let saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){}
+  window.PROP=Object.assign({cliente:'',mkt:1,vidas:15000,goal:0,dores:null,precos:{}},saved);
+  window.PROP_L=[];
+  window.propSet=(patch)=>{Object.assign(PROP,patch);try{localStorage.setItem(KEY,JSON.stringify(PROP))}catch(e){};PROP_L.forEach(f=>{try{f()}catch(e){console.error(e)}})};
+  window.MODE_SEL=PROP.goal;
+  window.clientName=()=>(PROP.cliente||'').trim();
+})();
 </script>
 
-<!-- 2 · quem faz o quê -->
+<!-- 1 · capa -->
 <script>
 (function(){
-const L=[
- {ic:'brand',n:'Marca e relacionamento',s:'o que o usuário vê',v:{wl:['you','Sua marca'],sv:['you','Você oferece ao seu público'],cb:['you','Sua marca']}},
- {ic:'phone',n:'Plataforma de teleconsulta',s:'app e web',v:{wl:['wm','Tecnologia WMedic com a sua marca'],sv:['wm','Plataforma WMedic'],cb:['wm','Tecnologia WMedic com a sua marca']}},
- {ic:'steth',n:'Médicos que atendem',s:'clínico 24h e especialidades',v:{wl:['you','Seu corpo clínico'],sv:['wm','Corpo clínico WMedic'],cb:['wm','Corpo clínico WMedic']}},
- {ic:'shield',n:'Protocolos, escalas e qualidade',s:'gestão clínica',v:{wl:['you','Seu time, com as ferramentas da plataforma'],sv:['wm','Gestão assistencial WMedic'],cb:['wm','Gestão assistencial WMedic']}},
- {ic:'chart',n:'Suporte e indicadores',s:'relatórios da operação',v:{wl:['wm','Suporte técnico e painel de indicadores'],sv:['wm','Suporte clínico e relatórios'],cb:['wm','Suporte clínico e relatórios']}}
+  const e=document.getElementById('coverEyebrow');
+  const f=()=>{const c=clientName();e.textContent=c?'Proposta comercial · '+c:'Proposta comercial'};
+  PROP_L.push(f);f();
+})();
+</script>
+
+<!-- 2 · quem somos -->
+<script>
+(function(){
+const P=[
+ ['steth','Corpo clínico próprio','Médicos contratados, avaliados e coordenados pela WMedic.',['Clínico geral 24h por vídeo','Especialidades, psicologia e nutrição','Escalas que mantêm a cobertura']],
+ ['shield','Licenças e regulação','Licenças em dia e conexão direta com os órgãos reguladores.',['CFM, CRM e LGPD','Prontuário e documentos digitais','Atualizações aplicadas na operação']],
+ ['cpu','Tecnologia e API','Plataforma própria, pronta para a sua marca ou para o seu sistema.',['Site, app e painel','Notificações e prontuário integrado','API para integração']]
 ];
-const chips=document.getElementById('modeChips'),st=document.getElementById('stack'),det=document.getElementById('modeDetail');
-MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.n;b.onclick=()=>{MODE_SEL=i;draw()};chips.appendChild(b)});
-st.innerHTML=L.map((l,i)=>`<div class="lay"><div class="ln"><span class="ico">${icon(l.ic)}</span><div>${l.n}<small>${l.s}</small></div></div><div class="own" id="own${i}"><span class="who-l"><span></span></span><span class="txt"></span></div></div>`).join('');
-function draw(){const m=MODES[MODE_SEL];[...chips.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===MODE_SEL));
-  L.forEach((l,i)=>{const[w,t]=l.v[m.k];const o=document.getElementById('own'+i);o.className='own '+w;o.querySelector('.who-l span').textContent=w==='you'?'Sua empresa':'WMedic';o.querySelector('.txt').textContent=t});
-  det.innerHTML=`<b>${m.n}</b><p>${m.t}</p><p style="font-size:15px;color:var(--muted)">Ideal para ${m.ideal}</p>`}
-DECK.onChange(k=>{if(k==='slide'&&DECK.index===1)draw()});
+document.getElementById('pillars').innerHTML=P.map(p=>`<div class="pl"><span class="ico">${icon(p[0])}</span><b>${p[1]}</b><p>${p[2]}</p><ul>${p[3].map(x=>`<li>${x}</li>`).join('')}</ul></div>`).join('');
+document.getElementById('b2bIco').innerHTML=icon('shield');
+})();
+</script>
+
+<!-- 3 · diagnóstico -->
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const sel=$('dgMkt');MKTS.forEach((m,i)=>{const o=document.createElement('option');o.value=i;o.textContent=m.n;sel.appendChild(o)});
+const goals=['Oferecer à minha base','Criar meu negócio de telemedicina','Integrar à minha plataforma'];
+const gc=$('dgGoal');goals.forEach((g,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=g;b.onclick=()=>{propSet({goal:i});window.MODE_SEL=i;sync()};gc.appendChild(b)});
+$('dgName').value=PROP.cliente;sel.value=PROP.mkt;$('dgLives').value=PROP.vidas;
+$('dgName').addEventListener('input',e=>propSet({cliente:e.target.value}));
+$('dgLives').addEventListener('input',e=>propSet({vidas:+e.target.value||0}));
+sel.addEventListener('change',e=>{propSet({mkt:+e.target.value,dores:null,goal:MKTS[+e.target.value].opt});window.MODE_SEL=PROP.goal;sync()});
+const fmt=n=>Math.round(n).toLocaleString('pt-BR');
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function sync(){
+  [...gc.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===PROP.goal));
+  const m=MKTS[PROP.mkt]||MKTS[0],o=MODES[PROP.goal],c=clientName();
+  $('dgTitle').innerHTML=c?`O que <em>${esc(c)}</em> precisa`:'O que a sua empresa <em>precisa</em>';
+  const dores=PROP.dores||m.dor;
+  $('diag').innerHTML=`<div class="dg-card">
+    <div class="dg-h"><span class="eyebrow" style="font-size:12px">Diagnóstico</span><b>${esc(c||'Cliente')}</b><span class="dg-meta">${esc(m.n)} · ${fmt(PROP.vidas)} vidas na base</span></div>
+    <div class="dg-sec"><span class="sub">Dores levantadas</span><ol id="dgDores">${dores.map(d=>`<li contenteditable="true" spellcheck="false">${esc(d)}</li>`).join('')}</ol></div>
+    <div class="dg-sec"><span class="sub">Como a WMedic resolve</span><p>${esc(m.sol)}</p></div>
+    <div class="dg-rec"><span class="sub">Opção recomendada</span><b>${o.tag} · ${o.n}</b><span>${o.lead}. Indicada para ${o.para}</span></div>
+  </div>`;
+  $('dgDores').addEventListener('input',()=>{PROP.dores=[...$('dgDores').children].map(li=>li.textContent.trim());try{localStorage.setItem('wmedic-proposta',JSON.stringify(PROP))}catch(e){}});
+}
+PROP_L.push(()=>{if(!document.activeElement||!document.activeElement.closest('#diag'))sync()});
+sync();
+})();
+</script>
+
+<!-- 4 · mercados -->
+<script>
+(function(){
+const el=document.getElementById('mkts'),det=document.getElementById('mktDetail');let sel=PROP.mkt||0;
+function draw(){
+  el.innerHTML=MKTS.map((m,i)=>`<button class="mk${i===sel?' sel':''}" data-i="${i}"><span class="ico">${icon(m.ic)}</span><b>${m.n}</b><span class="pill">${MODES[m.opt].short}</span></button>`).join('');
+  el.querySelectorAll('.mk').forEach(b=>b.onclick=()=>{sel=+b.dataset.i;draw()});
+  const m=MKTS[sel],o=MODES[m.opt];
+  det.innerHTML=`<b>${m.n}</b><span class="sub">Dor típica</span><ul>${m.dor.map(x=>`<li>${x}</li>`).join('')}</ul><span class="sub">Como a WMedic resolve</span><p>${m.sol}</p><div class="gain"><b>${o.tag}</b><span>${o.n}: ${o.lead.toLowerCase()}.</span></div>`;
+}
 draw();
 })();
 </script>
 
-<!-- 3 · whitelabel -->
+<!-- 5 · três opções -->
+<script>
+(function(){
+const R=[
+ ['Corpo clínico 24h e especialidades',['✓','✓','✓']],
+ ['Licenças, conformidade e prontuário',['✓','✓','✓']],
+ ['O que o usuário vê',['Página de acesso com a sua marca','Site e app com a sua marca','A sua plataforma']],
+ ['Painel de administração',['—','✓','Via API']],
+ ['Notificações e engajamento',['Padrão WMedic','Personalizáveis','Via API']],
+ ['Gestão de usuários e cobrança',['WMedic','Você','Você']],
+ ['Integração com os seus sistemas',['—','Sob consulta','✓']],
+ ['Investimento',['Setup + valor por vida','Setup + valor por vida','Setup + valor por vida']]
+];
+const chips=document.getElementById('optChips'),mx=document.getElementById('mx'),det=document.getElementById('optDetail');
+MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.tag+' · '+m.short;b.onclick=()=>{MODE_SEL=i;draw()};chips.appendChild(b)});
+const cell=v=>v==='✓'?'<span class="yes">✓</span>':v==='—'?'<span class="no">—</span>':v;
+function draw(){
+  [...chips.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===MODE_SEL));
+  mx.innerHTML=`<div class="mx-row mx-head"><div></div>${MODES.map((m,i)=>`<button class="mx-col${i===MODE_SEL?' sel':''}" data-i="${i}"><span>${m.tag}</span><b>${m.n}</b><em>${m.lead}</em></button>`).join('')}</div>`+
+    R.map(r=>`<div class="mx-row"><div class="mx-l">${r[0]}</div>${r[1].map((v,i)=>`<div class="mx-c${i===MODE_SEL?' sel':''}">${cell(v)}</div>`).join('')}</div>`).join('');
+  mx.querySelectorAll('.mx-col').forEach(b=>b.onclick=()=>{MODE_SEL=+b.dataset.i;draw()});
+  const m=MODES[MODE_SEL];det.innerHTML=`<b>${m.tag} · ${m.n}</b><p>${m.t}</p><div class="gain"><b>Ideal para</b><span>${m.para}</span></div>`;
+}
+DECK.onChange(k=>{if(k==='slide'&&document.getElementById('s5').classList.contains('active'))draw()});
+draw();
+})();
+</script>
+
+<!-- 6 · sua marca na prática -->
 <script>
 (function(){
 const cols=['#8C52FF','#1F6FD1','#16825D','#E2601B','#C4314B','#1E1B2E'];
-let color='#1F6FD1';
+let color='#1F6FD1',touched=false;
 const sw=document.getElementById('wlSw');
 cols.forEach(c=>{const b=document.createElement('button');b.className='sw';b.style.background=c;b.setAttribute('aria-label','Cor '+c);b.onclick=()=>{color=c;draw()};sw.appendChild(b)});
 const ci=document.createElement('input');ci.type='color';ci.id='wlColor';ci.value=color;ci.setAttribute('aria-label','Outra cor');ci.oninput=()=>{color=ci.value;draw()};sw.appendChild(ci);
@@ -371,57 +556,41 @@ const svc=document.getElementById('wlSvc');
 S.forEach((s,i)=>{const l=document.createElement('label');l.innerHTML=`<input type="checkbox" id="wlS${i}" ${s[3]?'checked':''}> ${s[1]}`;l.querySelector('input').onchange=draw;svc.appendChild(l)});
 function lum(h){const n=parseInt(h.slice(1),16),r=[(n>>16)&255,(n>>8)&255,n&255].map(v=>{v/=255;return v<=.03928?v/12.92:((v+.055)/1.055)**2.4});return .2126*r[0]+.7152*r[1]+.0722*r[2]}
 function mix(h,a){const n=parseInt(h.slice(1),16);const r=(n>>16)&255,g=(n>>8)&255,b=n&255;return `rgba(${r},${g},${b},${a})`}
+const inp=document.getElementById('wlName');
+if(clientName())inp.value=clientName().slice(0,22);
+inp.addEventListener('input',()=>{touched=true;draw()});
+PROP_L.push(()=>{if(!touched&&clientName()){inp.value=clientName().slice(0,22)}draw()});
 function draw(){
-  const name=(document.getElementById('wlName').value||'Sua marca').trim();
+  const name=(inp.value||'Sua marca').trim();
   const L=lum(color),fg=(1.05/(L+.05))>=(L+.05)/.05?'#ffffff':'#1e1b2e';
   const bench=document.getElementById('wlBench');bench.style.setProperty('--brand',color);bench.style.setProperty('--bfg',fg);
   bench.style.setProperty('--brand-soft',mix(color,.12));bench.style.setProperty('--brand-ink',L>.35?'#1e1b2e':color);
-  document.getElementById('wlBrand').textContent=name;document.getElementById('wlInit').textContent=name[0].toUpperCase();
-  document.getElementById('wlTag').textContent=name+' · consulta em andamento';
+  ['wlBrand','pnBrand'].forEach(id=>document.getElementById(id).textContent=name);
+  ['wlInit','pnInit'].forEach(id=>document.getElementById(id).textContent=name[0].toUpperCase());
+  document.getElementById('pnLives').textContent=Math.round(PROP.vidas*0.3||4500).toLocaleString('pt-BR');
   [...sw.querySelectorAll('.sw')].forEach((b,k)=>b.setAttribute('aria-pressed',cols[k]===color));
   const on=S.filter((s,i)=>document.getElementById('wlS'+i).checked);
   const first=on.find(s=>s[0]==='clock');
   document.getElementById('wlBody').innerHTML=(first?`<div class="ph-cta"><b>Consultar agora</b><span>Clínico disponível 24h · por vídeo</span></div>`:'')+
     on.filter(s=>s[0]!=='clock').slice(0,5).map(s=>`<div class="ph-item"><i>${icon(s[0])}</i><div>${s[1]}<small>${s[2]}</small></div></div>`).join('');
 }
-document.getElementById('wlName').addEventListener('input',draw);
-document.querySelector('.vid .bar').innerHTML=`<span>${icon('video')}</span><span class="end">${icon('phone')}</span><span>${icon('users')}</span>`;
 draw();
 })();
 </script>
 
-<!-- 4 · perfis -->
-<script>
-(function(){
-const SEG=[
- {ic:'shield',n:'Operadoras e administradoras de benefícios',m:'Consultas online ou combinado',d:'Custo com pronto-socorro e com consultas de baixa complexidade.',a:'Primeiro atendimento por vídeo, 24h, com protocolos e encaminhamento para a rede só quando é preciso.'},
- {ic:'heart',n:'Cartões de benefício e saúde por assinatura',m:'Plataforma + consultas',d:'Precisa de um produto de saúde com a própria marca para vender e reter clientes.',a:'Produto pronto, com a sua marca, operado por quem já faz isso no grupo Wow+.'},
- {ic:'building',n:'Empresas (RH e benefícios)',m:'Consultas online',d:'Afastamentos, horas perdidas em deslocamento e saúde mental das equipes.',a:'Clínico 24h, psicologia e nutrição para colaboradores e dependentes, com relatórios para o RH.'},
- {ic:'pin',n:'Redes de farmácia e varejo',m:'Plataforma + consultas',d:'Ampliar serviços de saúde e aproximar o cliente da marca.',a:'Um serviço de saúde com a marca da rede, sem montar equipe médica nem tecnologia.'},
- {ic:'steth',n:'Clínicas, hospitais e redes de saúde',m:'Plataforma whitelabel',d:'Quer atender a distância sem desenvolver tecnologia própria.',a:'Seus médicos atendendo por vídeo, com a sua marca, sem projeto de TI do zero.'},
- {ic:'handshake',n:'Sindicatos, associações e cooperativas',m:'Consultas online',d:'Oferecer um benefício de saúde acessível e de alto valor percebido.',a:'Consulta médica online simples de contratar e de explicar para o associado.'}
-];
-const el=document.getElementById('segs'),det=document.getElementById('segDetail');
-SEG.forEach((s,i)=>{const b=document.createElement('button');b.className='card';b.innerHTML=`<span class="ico">${icon(s.ic)}</span><h3>${s.n}</h3><span class="pill">${s.m}</span>`;b.onclick=()=>show(i);el.appendChild(b)});
-function show(i){el.querySelectorAll('.card').forEach((c,k)=>c.classList.toggle('focus',k===i));const s=SEG[i];
-  det.innerHTML=`<b>${s.n}</b><p><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">DOR</span><br>${s.d}</p><p><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">ARGUMENTO</span><br>${s.a}</p><p style="color:var(--accent-ink);font-weight:600">Modelo indicado: ${s.m}</p>`}
-show(2);
-})();
-</script>
-
-<!-- 5 · simulação da jornada da consulta -->
+<!-- 7 · jornada da consulta -->
 <script>
 (function(){
 const cv=document.getElementById('journey'),ctx=cv.getContext('2d');
 const VW=1060,VH=836;
 const N={A:[100,440],B:[270,440],C:[450,440],D:[660,270],E:[660,620],F:[930,440]};
 const ST=[
- {k:'A',n:'Acesso pelo app ou site',w:{wl:['you','Sua marca'],sv:['wm','Canal WMedic'],cb:['you','Sua marca']}},
- {k:'B',n:'Triagem e fila',w:{wl:['wm','Plataforma WMedic'],sv:['wm','WMedic'],cb:['wm','WMedic']}},
- {k:'C',n:'Consulta por vídeo',w:{wl:['you','Seus médicos'],sv:['wm','Clínico WMedic 24h'],cb:['wm','Clínico WMedic 24h']}},
- {k:'D',n:'Receita, atestado e pedido de exame',w:{wl:['you','Seus médicos, na plataforma'],sv:['wm','Médicos WMedic'],cb:['wm','Médicos WMedic']}},
- {k:'E',n:'Especialista, psicologia, nutrição ou rede',w:{wl:['you','Sua rede'],sv:['wm','WMedic e rede credenciada'],cb:['wm','WMedic e rede credenciada']}},
- {k:'F',n:'Retorno e acompanhamento',w:{wl:['you','Seu time'],sv:['wm','WMedic'],cb:['wm','WMedic']}}
+ {k:'A',n:'Acesso do usuário',w:{o1:['you','Página com a sua marca'],o2:['you','Seu site e app'],o3:['you','Sua plataforma']}},
+ {k:'B',n:'Triagem e fila',w:{o1:['wm','WMedic'],o2:['wm','Plataforma WMedic'],o3:['you','Sua plataforma + API']}},
+ {k:'C',n:'Consulta por vídeo',w:{o1:['wm','Clínico WMedic 24h'],o2:['wm','Clínico WMedic 24h'],o3:['wm','Clínico WMedic via API']}},
+ {k:'D',n:'Receita, atestado e pedido de exame',w:{o1:['wm','Médicos WMedic'],o2:['wm','Médicos WMedic'],o3:['wm','Médicos WMedic, no seu sistema']}},
+ {k:'E',n:'Especialista, psicologia, nutrição ou rede',w:{o1:['wm','WMedic e rede credenciada'],o2:['wm','WMedic e rede credenciada'],o3:['wm','WMedic e rede credenciada']}},
+ {k:'F',n:'Retorno e relacionamento',w:{o1:['wm','WMedic'],o2:['you','Você, com o painel'],o3:['you','Seu time, com dados da API']}}
 ];
 const routes=[{p:'ABCDF',w:.55},{p:'ABCDEF',w:.3},{p:'ABEF',w:.15}].map(r=>{const pts=[...r.p].map(k=>N[k]);let L=[0];for(let i=1;i<pts.length;i++)L.push(L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));return{...r,pts,L,len:L[L.length-1]}});
 function at(r,d){for(let i=1;i<r.pts.length;i++){if(d<=r.L[i]){const t=(d-r.L[i-1])/(r.L[i]-r.L[i-1]);const a=r.pts[i-1],b=r.pts[i];return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]}}return r.pts[r.pts.length-1]}
@@ -429,12 +598,13 @@ let seed=11;const rnd=()=>{seed=(seed*16807)%2147483647;return(seed-1)/214748364
 function pick(){let x=rnd(),acc=0;for(const r of routes){acc+=r.w;if(x<=acc)return r}return routes[0]}
 const parts=[];for(let i=0;i<44;i++){const r=pick();parts.push({r,d:rnd()*r.len,j:(rnd()-.5)*14})}
 let running=true,sel=2,speed=1,last=performance.now(),col={},geo={k:1,ox:0,oy:0};
+const slideEl=document.getElementById('sJor');
 const mc=document.getElementById('jMode');
 MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.short;b.onclick=()=>{MODE_SEL=i;upd()};mc.appendChild(b)});
 function upd(){[...mc.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===MODE_SEL));const s=ST[sel],w=s.w[MODES[MODE_SEL].k];
   document.getElementById('jStage').textContent=s.n;const wh=document.getElementById('jWho');wh.textContent=w[1];wh.style.color=w[0]==='you'?'var(--mint)':'var(--accent-ink)';draw()}
 function readCols(){['--ink','--ink2','--muted','--line','--line2','--accent','--accent-ink','--bg','--surface','--mint'].forEach(k=>col[k]=cssVar(k))}
-readCols();DECK.onChange(k=>{if(k==='theme'){readCols();draw()}if(k==='scale')size();if(k==='slide'&&DECK.index===4)upd()});
+readCols();DECK.onChange(k=>{if(k==='theme'){readCols();draw()}if(k==='scale')size();if(k==='slide'&&slideEl.classList.contains('active'))upd()});
 function size(){const r=cv.getBoundingClientRect();const sc=DECK.printing?1:(DECK.scale||1);const dpr=window.devicePixelRatio||1;const w=Math.max(1,Math.round(r.width/sc*dpr)),h=Math.max(1,Math.round(r.height/sc*dpr));if(cv.width!==w||cv.height!==h){cv.width=w;cv.height=h}draw()}
 new ResizeObserver(size).observe(cv);
 cv.addEventListener('click',e=>{const r=cv.getBoundingClientRect();const fx=cv.width/r.width;const x=((e.clientX-r.left)*fx-geo.ox)/geo.k,y=((e.clientY-r.top)*fx-geo.oy)/geo.k;
@@ -468,7 +638,7 @@ function draw(){
   ctx.fillStyle=col['--mint'];ctx.fillText('■ sua empresa',60,792);ctx.fillStyle=col['--accent-ink'];ctx.fillText('■ WMedic',230,792);
 }
 function loop(t){const dt=Math.min(.05,(t-last)/1000);last=t;
-  if(running&&!DECK.printing&&document.getElementById('s5').classList.contains('active')){
+  if(running&&!DECK.printing&&slideEl.classList.contains('active')){
     parts.forEach(p=>{p.d+=dt*110*speed;if(p.d>p.r.len){const r=pick();p.r=r;p.d=rnd()*20;p.j=(rnd()-.5)*14}});draw()}
   requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
@@ -479,7 +649,64 @@ upd();
 })();
 </script>
 
-<!-- 6 · monte o pacote -->
+<!-- 8 · vantagens -->
+<script>
+(function(){
+const C=[
+ ['clock','Velocidade','Atendimento online rápido, 24 horas','Fila virtual e clínico 24h por vídeo: o usuário é atendido rápido, a qualquer hora, sem deslocamento.',['Clínico geral 24h por vídeo','Fila virtual','Notificações em cada etapa']],
+ ['lock','Segurança','Dados de saúde protegidos','Dados de saúde são sensíveis pela LGPD. Acesso restrito, sigilo e prontuário eletrônico em cada atendimento.',['Conformidade com a LGPD','Prontuário eletrônico','Documentos com assinatura digital']],
+ ['plug','Integração via API','Conecta com o seu sistema','Quem já tem portal, app ou sistema consome o atendimento WMedic por API, sem trocar de plataforma.',['API de consultas','Prontuário integrado','Eventos e notificações para o seu sistema']],
+ ['trend','Escalabilidade instantânea','De dezenas a milhares de vidas','A operação cresce com a sua base: você muda de faixa de vidas sem mudar a estrutura.',['Corpo clínico dimensionado pela demanda','A mesma plataforma para qualquer porte','Novas vidas entram sem projeto novo']],
+ ['shield','Legislação e licenças','Conformidade em dia','Licenças em dia e conexão direta com os órgãos reguladores. A telemedicina segue a Lei 14.510/2022, a Resolução CFM 2.314/2022 e a LGPD.',['Licenças e registros em dia','Corpo clínico treinado nas regras','Atualizações aplicadas na operação']],
+ ['target','Foco no seu negócio','A operação médica fica com a gente','Você cuida do seu negócio e da sua base. Médicos, escalas, licenças, suporte e tecnologia ficam com a WMedic.',['Sem contratar médicos','Sem projeto de tecnologia do zero','Setup enxuto para começar']]
+];
+const el=document.getElementById('crit'),det=document.getElementById('vtDetail');
+const seen=new Set(DECK.printing?[0,1,2,3,4,5]:[0]);let sel=0;
+const check='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>';
+function draw(){
+  el.innerHTML=`<div class="score"><span>VANTAGENS</span><b>${seen.size}/${C.length}</b><div class="bar"><i style="width:${seen.size/C.length*100}%"></i></div></div>`+
+   C.map((c,i)=>`<button class="row${i===sel?' sel':''}${seen.has(i)?' on':''}" data-i="${i}"><span class="ico">${icon(c[0])}</span><span><b>${c[1]}</b><span class="t">${c[2]}</span></span><span class="chk">${check}</span></button>`).join('');
+  el.querySelectorAll('.row').forEach(b=>b.onclick=()=>{sel=+b.dataset.i;seen.add(sel);draw()});
+  const c=C[sel];det.innerHTML=`<b>${c[1]}</b><p>${c[3]}</p><span class="sub">Na prática</span><ul>${c[4].map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+draw();
+})();
+</script>
+
+<!-- 9 · como sua empresa ganha -->
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const fmt=n=>Math.round(n).toLocaleString('pt-BR');
+const brl=n=>(n<0?'− ':'')+'R$ '+fmt(Math.abs(n));
+const brl2=n=>'R$ '+n.toFixed(2).replace('.',',');
+const svg=$('gChart');
+if(PROP.vidas){$('gBase').value=Math.min(100000,Math.max(500,PROP.vidas));fillRange($('gBase'))}
+function calc(){
+  const base=+$('gBase').value,ad=+$('gAd').value/100,price=+$('gPrice').value,cost=+$('gCost').value,setup=+$('gSetup').value;
+  $('gBaseOut').textContent=fmt(base);$('gAdOut').textContent=$('gAd').value+'%';$('gPriceOut').textContent=brl2(price);$('gCostOut').textContent=brl2(cost);$('gSetupOut').textContent=brl(setup);
+  const lives=base*ad,rev=lives*price,margin=lives*(price-cost);
+  $('gLives').textContent=fmt(lives);$('gRev').textContent=brl(rev);$('gMargin').textContent=brl(margin);
+  $('gPay').textContent=margin>0?(setup===0?'na hora':Math.ceil(setup/margin)+(Math.ceil(setup/margin)===1?' mês':' meses')):'não paga';
+  const W=900,H=420,L=86,R=16,T=20,B=46,vals=[];for(let m=1;m<=12;m++)vals.push(margin*m-setup);
+  const mx=Math.max(0,...vals),mn=Math.min(0,...vals,-setup),span=(mx-mn)||1;
+  const Y=v=>T+(mx-v)/span*(H-T-B),bw=(W-L-R)/12;
+  let s='';
+  const ticks=4;for(let i=0;i<=ticks;i++){const v=mn+span*i/ticks;s+=`<line class="grid" x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L-10}" y="${Y(v)+4}" text-anchor="end">${Math.abs(v)>=1000?(v/1000).toFixed(0)+' mil':fmt(v)}</text>`}
+  s+=`<line class="ax" x1="${L}" x2="${W-R}" y1="${Y(0)}" y2="${Y(0)}"/>`;
+  vals.forEach((v,i)=>{const x=L+i*bw+bw*.18,w=bw*.64,y=Math.min(Y(v),Y(0)),h=Math.max(2,Math.abs(Y(v)-Y(0)));
+    s+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="4" fill="${v>=0?'var(--ok)':'var(--crit)'}" opacity="${v>=0?.85:.75}"/><text x="${x+w/2}" y="${H-B+22}" text-anchor="middle">${i+1}</text>`});
+  s+=`<text class="lab" x="${(L+W-R)/2}" y="${H-4}" text-anchor="middle">mês</text>`;
+  s+=`<text x="${L+8}" y="${T+14}" style="fill:var(--ink2);font-size:14px">12 meses: ${brl(vals[11])}</text>`;
+  svg.innerHTML=s;
+}
+['gBase','gAd','gPrice','gCost','gSetup'].forEach(id=>$(id).addEventListener('input',calc));
+DECK.onChange(k=>{if(k==='theme')calc()});
+calc();
+})();
+</script>
+
+<!-- 10 · monte o pacote -->
 <script>
 (function(){
 const SV=[
@@ -490,99 +717,61 @@ const SV=[
  ['baby','Pediatria','Atendimento às crianças do grupo familiar.',false],
  ['heart','Programas de saúde','Acompanhamento de grupos e promoção da saúde.',false]
 ];
-let mode=2;
+const ALWAYS={o1:['Corpo clínico e gestão clínica WMedic','Página de acesso com a sua marca','Gestão de usuários e cobrança','Suporte clínico','Relatórios'],
+ o2:['Site e app com a sua marca','Painel de administração','Notificações','Corpo clínico e gestão clínica WMedic','Suporte e relatórios'],
+ o3:['API de consultas e prontuário','Corpo clínico e gestão clínica WMedic','Documentação e suporte técnico','Relatórios']};
 const mc=document.getElementById('pkMode'),sv=document.getElementById('pkSvc'),prop=document.getElementById('prop');
-MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.short;b.onclick=()=>{mode=i;draw()};mc.appendChild(b)});
+MODES.forEach((m,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=m.short;b.onclick=()=>{MODE_SEL=i;draw()};mc.appendChild(b)});
 SV.forEach((s,i)=>{const l=document.createElement('label');l.innerHTML=`<input type="checkbox" id="pkS${i}" ${s[3]?'checked':''} ${s[4]?'disabled':''}> ${s[1]}`;l.querySelector('input').onchange=draw;sv.appendChild(l)});
 const fmt=n=>Math.round(n).toLocaleString('pt-BR');
-function draw(){[...mc.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===mode));
-  const name=document.getElementById('pkName').value.trim()||'Cliente';const lives=+document.getElementById('pkLives').value||0;const pub=document.getElementById('pkPub').value;
-  const on=SV.filter((s,i)=>document.getElementById('pkS'+i).checked);const m=MODES[mode];
-  const always=m.k==='wl'?['Plataforma com a sua marca','Painel de indicadores','Suporte técnico']:m.k==='sv'?['Gestão clínica e protocolos','Gestão de escalas','Suporte clínico','Relatórios de atendimento']:['Plataforma com a sua marca','Gestão clínica e protocolos','Gestão de escalas','Suporte clínico','Relatórios e indicadores'];
-  prop.innerHTML=`<header><div><span class="eyebrow" style="font-size:12px">Rascunho de proposta</span><h3>${name.replace(/</g,'&lt;')}</h3><p>Para conversa. Valores e condições seguem na proposta formal.</p></div><img class="logo-d" src="img/logo-white.png" alt="WMedic" style="height:34px;width:auto"><img class="logo-l" src="img/logo-full.png" alt="WMedic" style="height:34px;width:auto"></header>
-  <div class="meta"><div><span>Modalidade</span><b>${m.n}</b></div><div><span>Vidas</span><b class="tabnum">${fmt(lives)}</b></div><div><span>Público</span><b>${pub}</b></div></div>
-  <div><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">SERVIÇOS ${m.k==='wl'?'NA PLATAFORMA (SEU CORPO CLÍNICO)':'MÉDICOS INCLUÍDOS'}</span></div>
+const esc=s=>String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+function draw(){[...mc.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===MODE_SEL));
+  const name=clientName()||'Cliente',pub=document.getElementById('pkPub').value;
+  const on=SV.filter((s,i)=>document.getElementById('pkS'+i).checked);const m=MODES[MODE_SEL];
+  prop.innerHTML=`<header><div><span class="eyebrow" style="font-size:12px">Rascunho de proposta</span><h3>${esc(name)}</h3><p>Valores na tabela de faixas e na proposta formal.</p></div><img class="logo-d" src="img/logo-white.png" alt="WMedic" style="height:34px;width:auto"><img class="logo-l" src="img/logo-full.png" alt="WMedic" style="height:34px;width:auto"></header>
+  <div class="meta"><div><span>Opção</span><b>${m.tag} · ${m.n}</b></div><div><span>Vidas</span><b class="tabnum">${fmt(PROP.vidas)}</b></div><div><span>Público</span><b>${pub}</b></div></div>
+  <div><span class="mono" style="font-size:12px;letter-spacing:.1em;color:var(--muted)">SERVIÇOS MÉDICOS INCLUÍDOS</span></div>
   <div class="svc">${on.map(s=>`<div><span class="ico">${icon(s[0])}</span><span><b>${s[1]}</b>${s[2]}</span></div>`).join('')}</div>
-  <div class="always"><span class="mono" style="background:none;padding-left:0;color:var(--muted);font-size:12px;letter-spacing:.1em">SEMPRE INCLUÍDO</span>${always.map(a=>`<span>${a}</span>`).join('')}</div>`;
+  <div class="always"><span class="mono" style="background:none;padding-left:0;color:var(--muted);font-size:12px;letter-spacing:.1em">SEMPRE INCLUÍDO</span>${ALWAYS[m.k].map(a=>`<span>${a}</span>`).join('')}</div>`;
 }
-['pkName','pkLives','pkPub'].forEach(id=>document.getElementById(id).addEventListener('input',draw));
+document.getElementById('pkPub').addEventListener('input',draw);
+PROP_L.push(draw);
+DECK.onChange(k=>{if(k==='slide'&&document.getElementById('s10').classList.contains('active'))draw()});
 draw();
 })();
 </script>
 
-<!-- 7 · simulador -->
+<!-- 11 · faixas e investimento -->
 <script>
 (function(){
-const $=id=>document.getElementById(id);
-const fmt=n=>Math.round(n).toLocaleString('pt-BR');
-const brl=n=>'R$ '+fmt(n);
-const svg=$('funnel');
-function calc(){
-  const lives=+$('vLives').value,use=+$('vUse').value/100,res=+$('vRes').value/100,ps=+$('vPS').value/100,cost=+$('vCost').value;
-  $('vLivesOut').textContent=fmt(lives);$('vUseOut').textContent=String(+$('vUse').value).replace('.',',')+'%';$('vResOut').textContent=$('vRes').value+'%';$('vPSOut').textContent=$('vPS').value+'%';$('vCostOut').textContent=brl(cost);
-  const cons=lives*use,resolved=cons*res,avoided=resolved*ps,month=avoided*cost;
-  $('rCons').textContent=fmt(cons);$('rPS').textContent=fmt(avoided);$('rYear').innerHTML=brl(month*12);
-  const rows=[['Teleconsultas no mês',cons,'var(--line2)','var(--ink)'],['Resolvidas sem encaminhamento',resolved,'var(--accent-deep)','#fff'],['Idas ao PS evitadas',avoided,'var(--accent)','#fff']];
-  const W=900,x0=0,max=cons||1;let s='';
-  rows.forEach(([n,v,f,tc],i)=>{const w=Math.max(6,W*v/max),x=(W-w)/2,y=i*118+8;
-    s+=`<rect x="${x}" y="${y}" width="${w}" height="84" rx="12" fill="${f}"/>`;
-    const inside=w>360;
-    if(inside){s+=`<text x="${W/2}" y="${y+36}" text-anchor="middle" style="font:600 26px var(--f-mono);fill:${tc}">${fmt(v)}</text><text x="${W/2}" y="${y+64}" text-anchor="middle" style="font:500 15px var(--f-body);fill:${tc}">${n}</text>`}
-    else{const tx=x+w+18;s+=`<text x="${tx}" y="${y+36}" style="font:600 26px var(--f-mono);fill:var(--ink)">${fmt(v)}</text><text x="${tx}" y="${y+64}" style="font:500 15px var(--f-body);fill:var(--ink2)">${n}</text>`}
-  });
-  s+=`<text x="${W/2}" y="${3*118+40}" text-anchor="middle" style="font:500 17px var(--f-body);fill:var(--ink2)">Custo evitado estimado no mês: <tspan style="font:600 22px var(--f-mono);fill:var(--accent-ink)">${brl(month)}</tspan></text>`;
-  svg.innerHTML=s;
+const P=[
+ ['1','Setup na contratação','Pagamento único na assinatura. Cobre a implantação e a tecnologia.'],
+ ['2','Mensalidade por vida ativa','Valor por vida conforme a faixa da sua base.'],
+ ['3','Faixa revista com o crescimento','Quando a base muda de faixa, o valor por vida acompanha.']
+];
+document.getElementById('payChain').innerHTML=P.map((p,i)=>`${i?'<div class="join"></div>':''}<div class="step on"><span class="ar">${p[0]}</span><span><b style="display:block;font-weight:600">${p[1]}</b><span style="font-size:14.5px;color:var(--ink2)">${p[2]}</span></span></div>`).join('');
+const ROWS=[['setup','Setup (pagamento único)'],['f1','1 a 500 vidas'],['f2','501 a 1.500 vidas'],['f3','1.501 a 10.000 vidas'],['f4','Acima de 10.000 vidas']];
+const el=document.getElementById('price');
+const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function draw(){
+  const pr=PROP.precos||{};
+  el.innerHTML=`<div class="pr-row pr-head"><div>Faixa</div>${MODES.map((m,i)=>`<div class="${i===MODE_SEL?'sel':''}"><span>${m.tag}</span><b>${m.n}</b></div>`).join('')}</div>`+
+   ROWS.map(([k,l])=>`<div class="pr-row${k==='setup'?' pr-setup':''}"><div class="pr-l">${l}${k==='setup'?'':'<small>por vida / mês</small>'}</div>${MODES.map((m,i)=>`<div class="${i===MODE_SEL?'sel':''}"><input type="text" id="pr_${k}_${m.k}" aria-label="${l}, ${m.n}" value="${esc(pr[k+'_'+m.k])}" placeholder="${k==='f4'?'sob consulta':'R$ —'}" autocomplete="off"></div>`).join('')}</div>`).join('')+
+   `<p class="note" style="font-size:13px;padding:6px 4px 0">Valores da proposta${clientName()?' para '+esc(clientName()):''}. Faixas definidas pela WMedic; preencha na reunião ou antes de enviar.</p>`;
+  el.querySelectorAll('input').forEach(inp=>inp.addEventListener('input',()=>{const k=inp.id.slice(3);const p=Object.assign({},PROP.precos||{});p[k]=inp.value;PROP.precos=p;try{localStorage.setItem('wmedic-proposta',JSON.stringify(PROP))}catch(e){}}));
 }
-['vLives','vUse','vRes','vPS','vCost'].forEach(id=>$(id).addEventListener('input',calc));
-calc();
+DECK.onChange(k=>{if(k==='slide'&&document.getElementById('s11').classList.contains('active'))draw()});
+draw();
 })();
 </script>
 
-<!-- 8 · comparativo -->
-<script>
-(function(){
-const R=[
- ['Quem atende','Médicos avulsos, sem acompanhamento','Corpo clínico selecionado e avaliado continuamente'],
- ['Conduta','Varia de médico para médico','Protocolos clínicos padronizados'],
- ['Disponibilidade','Escalas descoordenadas e fila longa','Gestão de escalas com cobertura 24h'],
- ['Depois da consulta','Consulta isolada, sem continuidade','Encaminhamento a especialistas e à rede, com retorno'],
- ['Gestão','Sem indicadores','Dados, relatórios e governança assistencial'],
- ['Suporte','Usuário sozinho quando algo falha','Suporte clínico contínuo a pacientes e médicos']
-];
-const el=document.getElementById('cmp');
-el.innerHTML=`<div class="row head"><div>Critério</div><div>Telemedicina sem gestão</div><div>Com a gestão WMedic</div></div>`+R.map(r=>`<div class="row${DECK.printing?' open':''}" tabindex="0" role="button"><div class="crit">${r[0]}</div><div class="bad"><span class="x">✕</span>${r[1]}</div><div class="good"><span class="v">✓</span>${r[2]}</div></div>`).join('');
-el.querySelectorAll('.row:not(.head)').forEach(r=>{r.onclick=()=>r.classList.toggle('open');r.onkeydown=e=>{if(e.key==='Enter')r.classList.toggle('open')}});
-document.getElementById('cmpAll').onclick=()=>el.querySelectorAll('.row').forEach(r=>r.classList.add('open'));
-document.getElementById('cmpReset').onclick=()=>el.querySelectorAll('.row').forEach(r=>r.classList.remove('open'));
-})();
-</script>
-
-<!-- 9 · conformidade -->
-<script>
-(function(){
-const L=[
- ['doc','Lei nº 14.510/2022','Telessaúde autorizada','Autoriza e disciplina a prática da telessaúde em todo o território nacional, com o consentimento livre e informado do paciente.'],
- ['steth','Resolução CFM nº 2.314/2022','Regras da telemedicina','Define e regulamenta a telemedicina como forma de serviço médico mediado por tecnologia, com registro em prontuário de cada atendimento.'],
- ['lock','LGPD · Lei nº 13.709/2018','Dados de saúde protegidos','Dados de saúde são dados pessoais sensíveis: uso com base legal, acesso restrito, sigilo e segurança da informação.'],
- ['shield','Documentos digitais','Validade e rastreabilidade','Receitas, atestados e pedidos de exame emitidos com assinatura digital e registrados no prontuário.']
-];
-const el=document.getElementById('law');let cur=DECK.printing?3:0;
-el.innerHTML=L.map(([ic,ref,t,p],i)=>`<button class="card" data-i="${i}"><span class="ico">${icon(ic)}</span><span class="ref">${ref}</span><h3>${t}</h3><p>${p}</p></button>`).join('');
-function set(i){cur=i;el.querySelectorAll('.card').forEach((c,k)=>{c.classList.toggle('on',k<=i);c.classList.toggle('cur',k===i&&!DECK.printing)})}
-el.querySelectorAll('.card').forEach(c=>c.onclick=()=>set(+c.dataset.i));
-document.getElementById('lawNext').onclick=()=>set(Math.min(L.length-1,cur+1));
-document.getElementById('lawReset').onclick=()=>set(0);
-set(cur);
-})();
-</script>
-
-<!-- 10 · implantação -->
+<!-- 12 · implantação -->
 <script>
 (function(){
 const S=[
- ['Diagnóstico',['Contar quem é o público e quantas vidas','Dizer o objetivo: custo, benefício, novo produto'],['Entender a operação do cliente','Indicar a modalidade e os serviços']],
- ['Proposta e contrato',['Validar escopo e serviços','Aprovar a proposta'],['Enviar proposta formal','Definir níveis de serviço e relatórios']],
- ['Configuração',['Enviar logo, cores e textos (whitelabel)','Indicar responsáveis do projeto'],['Configurar a plataforma e os fluxos','Testar a jornada de ponta a ponta']],
+ ['Diagnóstico',['Contar quem é o público e quantas vidas','Dizer o objetivo: oferecer à base, criar um negócio ou integrar'],['Entender a operação do cliente','Indicar a opção: serviço gerenciado, White Label ou API']],
+ ['Proposta e contrato',['Validar opção, serviços e faixa','Assinar e pagar o setup'],['Enviar a proposta formal','Definir níveis de serviço e relatórios']],
+ ['Configuração',['Enviar logo, cores e textos','Indicar responsáveis (e o time técnico, na API)'],['Configurar a plataforma ou liberar a API','Testar a jornada de ponta a ponta']],
  ['Lançamento',['Enviar a base de usuários','Divulgar ao seu público'],['Cadastrar as vidas','Apoiar a comunicação de lançamento']],
  ['Operação',['Acompanhar os relatórios','Trazer feedback do público'],['Atender, dar suporte e medir','Revisar indicadores e melhorar']]
 ];
