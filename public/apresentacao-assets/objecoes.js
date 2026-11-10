@@ -22,15 +22,35 @@ const PERFIS=[
   ['Se o atendimento falhar, é a minha marca que sofre. Quem garante a qualidade?','A gestão médica WMedic.','Corpo clínico avaliado continuamente, protocolos padronizados, escalas 24h e suporte clínico. Os indicadores de qualidade entram no contrato.']
  ]}
 ];
+// Versão institucional (data-obj="inst"): fala de operadora B2B, sem detalhar White Label.
+const INST=[
+ {k:'emp',n:'Empresa',sub:'Quem quer oferecer atendimento médico online aos colaboradores e dependentes.',qs:[
+  ['Vocês têm as licenças para operar telemedicina?','Sim.','A WMedic já tem as licenças e mantém conexão direta com os órgãos reguladores. A burocracia de CFM e CRM fica com a gente.'],
+  ['Os colaboradores conseguem atendimento rápido?','Sim, 24 horas.','Clínico geral por vídeo a qualquer hora, com fila virtual e notificações em cada etapa.'],
+  ['Integra com o nosso RH ou portal interno?','Sim, via API.','O atendimento pode ser oferecido pelo canal que a empresa já usa. Integrações específicas são avaliadas no diagnóstico.'],
+  ['Os dados dos colaboradores ficam seguros?','Sim.','Dados de saúde são sensíveis pela LGPD: acesso restrito, sigilo e prontuário eletrônico. A empresa recebe indicadores, não prontuários.'],
+  ['Funciona para o tamanho da nossa empresa?','Sim.','A operação escala de dezenas a milhares de vidas sem mudar a estrutura. O pacote é dimensionado no diagnóstico.'],
+  ['Como medimos o resultado?','Com relatórios periódicos.','Uso, resolutividade, encaminhamentos e satisfação, combinados desde o contrato.']
+ ]},
+ {k:'par',n:'Parceiro',sub:'Clínicas, operadoras e plataformas que querem oferecer consulta online ao seu público.',qs:[
+  ['A WMedic vai vender direto para os meus clientes?','Não.','A WMedic é 100% B2B e não vende para pessoa física. A marca que aparece é sempre a sua.'],
+  ['Já tenho minha plataforma. Preciso trocar?','Não.','Você consome o atendimento WMedic por API e mantém o seu portal, app ou sistema.'],
+  ['E se eu não tiver plataforma?','Entregamos um canal pronto.','Você oferece consultas online ao seu público com a sua identidade, sem desenvolver tecnologia.'],
+  ['Quem cuida das licenças e da regulação?','A WMedic.','Licenças em dia, corpo clínico treinado nas regras e conexão direta com os órgãos reguladores.'],
+  ['A operação aguenta se eu crescer rápido?','Sim.','Escalabilidade instantânea: o corpo clínico e a plataforma acompanham a sua base, de dezenas a milhares de vidas.'],
+  ['Se o atendimento falhar, é a minha marca que sofre. Quem garante a qualidade?','A gestão médica WMedic.','Corpo clínico avaliado, protocolos padronizados, escalas 24h e indicadores de qualidade no contrato.']
+ ]}
+];
 const printing=/[?&]print\b/.test(location.search);
 const base=document.querySelector('section[data-obj]');
 if(!base)return;
+const LIST=base.dataset.obj==='inst'?INST:PERFIS;
 
 function render(sec,idx,fixed){
   const chips=sec.querySelector('.obj-chips'),cards=sec.querySelector('.obj-cards'),sub=sec.querySelector('.obj-sub');
-  const p=PERFIS[idx];
+  const p=LIST[idx];
   if(fixed){chips.innerHTML=`<span class="chip" aria-pressed="true">${p.n}</span>`}
-  else{chips.innerHTML='';PERFIS.forEach((q,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=q.n;b.setAttribute('aria-pressed',i===idx);b.onclick=()=>render(sec,i,false);chips.appendChild(b)})}
+  else{chips.innerHTML='';LIST.forEach((q,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=q.n;b.setAttribute('aria-pressed',i===idx);b.onclick=()=>render(sec,i,false);chips.appendChild(b)})}
   sub.textContent=p.sub;
   cards.innerHTML='';
   p.qs.forEach(([t,short,rest],i)=>{const b=document.createElement('button');b.className='q'+(printing?' open':'');
