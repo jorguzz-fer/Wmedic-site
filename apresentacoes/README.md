@@ -6,7 +6,7 @@ Material institucional e comercial com a marca oficial (paleta de `/aplicacao-ma
 
 | Endereço | Arquivo |
 |---|---|
-| wmedic.com.br/apresentacao-institucional | `public/apresentacao-institucional/index.html` (10 slides) |
+| wmedic.com.br/apresentacao-institucional | `public/apresentacao-institucional/index.html` (12 slides: operadora de saúde digital B2B, sem detalhar White Label) |
 | wmedic.com.br/apresentacao-comercial | `public/apresentacao-comercial/index.html` (11 slides: plataforma whitelabel de telemedicina e consultas online) |
 
 As duas páginas são HTML estático copiado pelo Vite para `dist/`. Elas compartilham `public/apresentacao-assets/`:
@@ -14,7 +14,7 @@ As duas páginas são HTML estático copiado pelo Vite para `dist/`. Elas compar
 | Arquivo | O que é |
 |---|---|
 | `deck.css`, `deck.js` | Estilo e navegação das apresentações |
-| `objecoes.js` | Último slide: perguntas de objeção e respostas por perfil (investidor ou empresa B2B) |
+| `objecoes.js` | Último slide: perguntas de objeção por perfil. Institucional (`data-obj="inst"`): empresa ou parceiro. Comercial: investidor ou empresa B2B |
 | `img/` | Fotos, logos e parceiros |
 
 Cada página tem `<base href="/apresentacao-assets/">`, por isso os caminhos funcionam com ou sem barra no final do endereço.

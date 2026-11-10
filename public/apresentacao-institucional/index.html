@@ -93,6 +93,33 @@
 .net2 b{display:block;font-size:17px;font-weight:600;color:var(--ink)}
 .net2 span.t{font-size:15px;line-height:1.5;color:var(--ink2)}
 .tiles.nine .tile{min-height:132px}
+.crit{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:12px;padding:40px 56px 40px 48px}
+.crit .row{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;border:1px solid var(--line);border-radius:var(--r-card);padding:16px 20px;background:var(--surface);cursor:pointer;text-align:left;color:var(--ink);transition:border-color .25s,background .25s}
+.crit .row:hover{border-color:var(--line2)}
+.crit .row.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.crit .row b{display:block;font-size:20px;font-weight:600}
+.crit .row span.t{font-size:15px;color:var(--ink2)}
+.crit .chk{width:34px;height:34px;border-radius:50%;border:2px solid var(--line2);display:grid;place-items:center;color:transparent;transition:all .3s}
+.crit .chk svg{width:18px;height:18px}
+.crit .row.on .chk{background:var(--ok);border-color:var(--ok);color:#fff}
+.crit .score{display:flex;align-items:center;gap:14px;font-family:var(--f-mono);font-size:14px;color:var(--muted);letter-spacing:.06em;padding:0 4px 4px}
+.crit .score b{font-size:28px;font-weight:500;color:var(--ink);font-family:var(--f-mono)}
+.crit .bar{flex:1;height:6px;border-radius:3px;background:var(--line2);overflow:hidden}
+.crit .bar i{display:block;height:100%;background:var(--ok);transition:width .4s}
+.atua{position:absolute;inset:0;display:grid;grid-template-columns:210px 44px 1fr 44px 200px;align-items:center;padding:40px 48px 40px 44px;gap:0}
+.atua .box{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);padding:30px 20px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+.atua .box b{font-size:21px;font-weight:600}
+.atua .box span{font-size:14.5px;color:var(--ink2);line-height:1.45}
+.atua .box.wm{border-color:var(--accent);background:var(--accent-soft)}
+.atua .box img{height:46px;width:auto}
+.atua .arr{text-align:center;color:var(--accent-ink);font-family:var(--f-mono);font-size:30px}
+.atua .mid{display:flex;flex-direction:column;gap:18px}
+.atua .ty{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);padding:26px 22px;display:flex;gap:14px;align-items:flex-start;cursor:pointer;text-align:left;color:var(--ink);transition:border-color .25s}
+.atua .ty.sel{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.atua .ty b{display:block;font-size:20px;margin-bottom:4px;font-weight:600}
+.atua .ty span.t{font-size:15.5px;line-height:1.45;color:var(--ink2)}
+.b2b{display:flex;gap:10px;align-items:center;border:1px solid var(--line2);border-radius:12px;padding:12px 14px;font-size:14.5px;line-height:1.45;color:var(--ink2)}
+.b2b strong{color:var(--ink)}
 </style>
 </head><body><!--local-->
 
@@ -106,15 +133,15 @@
     <img class="brandlogo logo-l" src="img/logo-full.png" alt="WMedic">
     <div class="eyebrow">Apresentação institucional</div>
     <h1>Gestão que cuida. <em>Cuidado que transforma.</em></h1>
-    <p class="lead">A WMedic é responsável pela gestão da operação assistencial do grupo Wow+, garantindo excelência, qualidade e acesso à saúde de forma <strong>humanizada, segura e eficiente</strong>.</p>
+    <p class="lead">A WMedic é uma <strong>operadora de saúde digital</strong> com estrutura própria: corpo clínico, licenças e tecnologia. Levamos atendimento médico online a empresas e parceiros, de forma <strong>humanizada, segura e eficiente</strong>.</p>
     <p class="note noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia. Em cada slide há algo para clicar.</p>
   </div>
   <div class="bench" style="border:0">
     <div class="photo"><img src="img/equipe.jpg" alt="Equipe médica WMedic"></div>
     <div class="badges">
-      <div class="badge"><b>24h</b><span>clínicos disponíveis</span></div>
-      <div class="badge"><b>Nacional</b><span>rede credenciada</span></div>
-      <div class="badge"><b>Wow+</b><span>grupo integrado</span></div>
+      <div class="badge"><b>24h</b><span>atendimento online</span></div>
+      <div class="badge"><b>100% B2B</b><span>empresas e parceiros</span></div>
+      <div class="badge"><b>API</b><span>integra com seu sistema</span></div>
     </div>
   </div>
 </section>
@@ -124,7 +151,7 @@
   <div class="copy">
     <div class="eyebrow">Quem somos</div>
     <h2>A área que estrutura e <em>opera o cuidado</em></h2>
-    <p class="lead" style="font-size:17px">A WMedic opera a saúde digital dos seus <strong>parceiros White Label</strong>: tecnologia, corpo clínico e gestão assistencial, sempre com a marca do parceiro. <strong>Não atendemos o consumidor final diretamente.</strong></p>
+    <p class="lead" style="font-size:17px">Somos uma <strong>operadora de saúde digital</strong> com estrutura própria: médicos, licenças e tecnologia. Atendemos empresas e parceiros que querem oferecer atendimento médico online sem montar essa estrutura.</p>
     <p class="note">Clique em cada ponto para ver o papel de cada um.</p>
     <div class="detail" id="ecoDetail"></div>
   </div>
@@ -136,7 +163,7 @@
   <div class="copy" style="gap:30px">
     <div class="eyebrow">Nossa missão</div>
     <h2>Por que existimos</h2>
-    <p class="lead">Existimos para cuidar de pessoas e transformar a gestão em saúde em <strong>cuidado real, seguro e humano</strong>, no Wow+ e em cada parceiro White Label.</p>
+    <p class="lead">Existimos para cuidar de pessoas e transformar a gestão em saúde em <strong>cuidado real, seguro e humano</strong>, para cada empresa e parceiro que confia na nossa operação.</p>
     <div class="slogan"><b>“Gestão que cuida. Cuidado que transforma.”</b><span>O compromisso que orienta cada decisão da WMedic.</span></div>
     <div class="vstrip">
       <div class="eyebrow">Guiados por quatro valores</div>
@@ -170,11 +197,34 @@
 <section class="slide" id="s5" data-name="O que fazemos">
   <div class="copy">
     <div class="eyebrow">O que fazemos</div>
-    <h2>Saúde digital completa, <em>com a marca do parceiro</em></h2>
-    <p class="lead" style="font-size:16.5px">Seis frentes formam o produto que o parceiro White Label leva ao seu público. <strong>A tecnologia e a operação são nossas; a marca e o cliente são dele.</strong> Clique em cada frente.</p>
+    <h2>A operação médica <em>completa</em></h2>
+    <p class="lead" style="font-size:16.5px">Seis frentes formam a operação que empresas e parceiros contratam. <strong>A estrutura é nossa; o cliente é de quem contrata.</strong> Clique em cada frente.</p>
     <div class="detail" id="wheelDetail"></div>
   </div>
   <div class="bench"><svg class="wheel" id="wheel" viewBox="0 0 1060 836" style="position:absolute;inset:0;width:100%;height:100%"></svg></div>
+</section>
+
+<!-- 6 · DIFERENCIAIS -->
+<section class="slide" id="sDif" data-name="Diferenciais">
+  <div class="copy">
+    <div class="eyebrow">Diferenciais</div>
+    <h2>Os critérios que <em>decidem a escolha</em></h2>
+    <p class="lead" style="font-size:17px">Velocidade, segurança, integração, escala e conformidade. É o que um CTO avalia num fornecedor de saúde digital, e a WMedic entrega <strong>tudo junto</strong>. Clique em cada critério.</p>
+    <div class="detail" id="difDetail"></div>
+  </div>
+  <div class="bench"><div class="crit" id="crit"></div></div>
+</section>
+
+<!-- 7 · COMO ATUAMOS -->
+<section class="slide" id="sAtua" data-name="Como atuamos">
+  <div class="copy">
+    <div class="eyebrow">Como atuamos</div>
+    <h2>Chegamos às pessoas <em>por quem as atende</em></h2>
+    <p class="lead" style="font-size:17px">A WMedic atua só com empresas e parceiros. O atendimento chega ao usuário pelos canais de quem contrata, <strong>sempre com a marca dele</strong>.</p>
+    <div class="detail" id="atuaDetail"></div>
+    <div class="b2b" style="margin-top:auto"><span class="ico" style="width:38px;height:38px"></span><span><strong>100% B2B.</strong> Não vendemos para pessoa física, e a marca WMedic opera nos bastidores.</span></div>
+  </div>
+  <div class="bench"><div class="atua" id="atua"></div></div>
 </section>
 
 <!-- 6 · JORNADA DO CUIDADO (simulação) -->
@@ -182,7 +232,7 @@
   <div class="copy" style="gap:16px">
     <div class="eyebrow">Experiência do paciente</div>
     <h2>A jornada <em>do cuidado</em></h2>
-    <p class="lead" style="font-size:16px">Cada ponto é um usuário de um parceiro. A maioria resolve na teleconsulta; quem precisa segue para especialistas ou para a rede. Todos são acompanhados.</p>
+    <p class="lead" style="font-size:16px">Cada ponto é um usuário de uma empresa ou parceiro. A maioria resolve na teleconsulta; quem precisa segue para especialistas ou para a rede. Todos são acompanhados.</p>
     <div class="chips" id="jStages" role="group" aria-label="Etapa"></div>
     <div class="ctrl">
       <div class="ctrl-row"><label for="jSpeed">Velocidade da animação <output id="jSpeedOut">1,0×</output></label><input type="range" id="jSpeed" min="20" max="200" value="100"></div>
@@ -205,8 +255,8 @@
 <section class="slide" id="s7" data-name="Frentes de atuação">
   <div class="copy">
     <div class="eyebrow">Frentes de atuação</div>
-    <h2>Serviços que o parceiro oferece <em>com a própria marca</em></h2>
-    <p class="lead" style="font-size:17px">O parceiro escolhe os serviços do pacote. Todos chegam ao usuário pelo app da marca dele e são operados pela WMedic, sob uma <strong>gestão assistencial única</strong>.</p>
+    <h2>Serviços médicos <em>disponíveis</em></h2>
+    <p class="lead" style="font-size:17px">Quem contrata escolhe os serviços do pacote. Todos chegam ao usuário pelo canal da empresa ou do parceiro e são operados pela WMedic, sob uma <strong>gestão assistencial única</strong>.</p>
     <div class="detail" id="tileDetail"></div>
   </div>
   <div class="bench"><div class="tiles nine" id="tiles"></div></div>
@@ -217,7 +267,7 @@
   <div class="copy">
     <div class="eyebrow">Rede e parceiros</div>
     <h2>O cuidado continua <em>fora da tela</em></h2>
-    <p class="lead" style="font-size:17px">Quando a teleconsulta indica exame, consulta presencial ou tratamento, o usuário do parceiro conta com uma rede em todo o Brasil.</p>
+    <p class="lead" style="font-size:17px">Quando a teleconsulta indica exame, consulta presencial ou tratamento, o usuário conta com uma rede em todo o Brasil.</p>
     <ul class="net2" id="net"></ul>
     <p class="lead" style="font-size:17px;margin-top:auto">Mais acesso. Mais qualidade. <strong>Mais cuidado para cada paciente.</strong></p>
   </div>
@@ -241,7 +291,7 @@
 </section>
 
 <!-- 10 · REVISÃO -->
-<section class="slide full" id="s10" data-name="Perguntas antes de fechar" data-obj>
+<section class="slide full" id="s10" data-name="Perguntas antes de fechar" data-obj="inst">
   <div class="endgrid">
     <div class="copy">
       <div class="eyebrow">Antes de fechar</div>
@@ -284,14 +334,14 @@
 const svg=document.getElementById('eco'),det=document.getElementById('ecoDetail');
 const C=[530,418];
 const nodes=[
- {k:'wow',n:'Wow+',s:'Saúde por assinatura',a:-90,ic:'heart',t:'A WMedic faz a gestão da operação assistencial do Wow+ Saúde por assinatura. É o modelo em funcionamento que levamos aos parceiros.',l:['Operação assistencial do Wow+ no dia a dia','O mesmo modelo, oferecido aos parceiros White Label','Todas as frentes sob uma gestão única']},
- {k:'wl',n:'Parceiros White Label',s:'nossos clientes',a:-30,ic:'building',t:'Empresas que oferecem saúde digital ao próprio público, com a própria marca: operadoras, administradoras de benefícios, cartões, varejo, empresas e associações. A WMedic opera tudo nos bastidores.',l:['Plataforma de teleconsulta com a marca do parceiro','Corpo clínico e gestão assistencial WMedic','Indicadores, relatórios e suporte dedicado','A base de clientes e a venda continuam do parceiro']},
- {k:'pac',n:'Pacientes',s:'usuários dos parceiros',a:30,ic:'users',t:'Os usuários finais de cada parceiro. São atendidos pelos médicos WMedic e veem sempre a marca do parceiro. A WMedic não vende nem atende diretamente o consumidor final.',l:['Atendimento humanizado e resolutivo','Jornada de cuidado acompanhada','Suporte clínico contínuo']},
+ {k:'cli',n:'Corpo clínico',s:'médicos próprios',a:-90,ic:'steth',t:'Médicos clínicos e especialistas contratados, avaliados e coordenados pela WMedic, já treinados nas regras da telemedicina.',l:['Seleção e avaliação contínua','Escalas e cobertura 24h','Especialidades, psicologia e nutrição']},
+ {k:'lic',n:'Licenças e regulação',s:'CFM, CRM e órgãos',a:-30,ic:'shield',t:'Licenças em dia e conexão direta com os órgãos reguladores. Quando a regra muda, somos os primeiros a saber.',l:['Burocracia resolvida para quem contrata','Atualizações aplicadas na operação','Conformidade com a LGPD']},
+ {k:'tec',n:'Tecnologia',s:'plataforma e API',a:30,ic:'cpu',t:'Plataforma própria de atendimento online, com prontuário integrado, notificações e API para conectar ao sistema de quem contrata.',l:['Prontuário integrado','API e integrações','Segurança da informação']},
  {k:'rede',n:'Rede credenciada',s:'clínicas e laboratórios',a:90,ic:'pin',t:'Prestadores de saúde para o que a teleconsulta não resolve: exames, consultas presenciais e especialistas, em todo o Brasil.',l:['Curadoria e acompanhamento de prestadores','Cobertura nacional','Encaminhamento a partir da teleconsulta']},
- {k:'farm',n:'Farmácias parceiras',s:'redes de farmácia',a:150,ic:'handshake',t:'Redes de farmácia em todo o país que fazem parte da rede de parceiros. Aproximam o paciente do tratamento prescrito, perto de casa, depois da consulta.',l:['Presença nacional','Continuidade do tratamento prescrito','Benefícios definidos em cada parceria']},
- {k:'cli',n:'Corpo clínico',s:'médicos e especialistas',a:210,ic:'steth',t:'Médicos clínicos e especialistas selecionados, avaliados e coordenados pela WMedic.',l:['Seleção e avaliação contínua','Coordenação de equipes','Escalas e cobertura 24h']}
+ {k:'par',n:'Parceiros',s:'clínicas, operadoras, plataformas',a:150,ic:'handshake',t:'Empresas que oferecem consulta online ao próprio público, pelos seus canais e com a sua marca. A WMedic opera nos bastidores.',l:['Atendimento pelo portal, app ou sistema do parceiro','A marca que aparece é a do parceiro','A base de clientes continua do parceiro']},
+ {k:'emp',n:'Empresas',s:'saúde para os colaboradores',a:210,ic:'building',t:'Empresas que oferecem atendimento médico online aos colaboradores e dependentes, como benefício.',l:['Clínico 24h, especialidades e psicologia','Relatórios de uso e resultado','Suporte dedicado']}
 ];
-const R=300;let sel=1;
+const R=300;let sel=0;
 function pos(a){const r=a*Math.PI/180;return[C[0]+Math.cos(r)*R*1.18,C[1]+Math.sin(r)*R]}
 function draw(){
   let s='';
@@ -299,7 +349,7 @@ function draw(){
   s+=`<circle cx="${C[0]}" cy="${C[1]}" r="104" fill="var(--surface)" stroke="var(--accent)" stroke-width="3"/>
   <image href="img/symbol.png" x="${C[0]-62}" y="${C[1]-70}" width="124" height="77"/>
   <text x="${C[0]}" y="${C[1]+44}" text-anchor="middle" style="font:600 22px var(--f-body);fill:var(--ink)">WMedic</text>
-  <text x="${C[0]}" y="${C[1]+66}" text-anchor="middle" style="font:400 13px var(--f-mono);fill:var(--muted);letter-spacing:.08em">GESTÃO MÉDICA</text>`;
+  <text x="${C[0]}" y="${C[1]+66}" text-anchor="middle" style="font:400 13px var(--f-mono);fill:var(--muted);letter-spacing:.08em">SAÚDE DIGITAL</text>`;
   nodes.forEach((d,i)=>{const[x,y]=pos(d.a);const below=y>C[1]+40,above=y<C[1]-40;
     const tx=above||below?x:(x>C[0]?x+60:x-60),anchor=above||below?'middle':(x>C[0]?'start':'end');
     const ty=above?y-78:below?y+90:y-6;
@@ -321,8 +371,8 @@ draw();
 (function(){
 const el=document.getElementById('mvv');
 const d=[
- ['target','Missão','Gerir a operação assistencial do grupo Wow+ com excelência, garantindo acesso à saúde de forma humanizada, segura e eficiente.','medicos-2.jpg','50% 20%','O mesmo padrão de cuidado do Wow+ em cada atendimento feito com a marca de um parceiro.'],
- ['eye','Visão','Ser referência em gestão médica no Brasil, reconhecida pela qualidade do cuidado, pela governança clínica e pelos resultados que gera.','equipe-2.jpg','50% 25%','Crescer com parceiros White Label, medindo qualidade e resultado em toda a operação.'],
+ ['target','Missão','Gerir a operação assistencial do grupo Wow+ com excelência, garantindo acesso à saúde de forma humanizada, segura e eficiente.','medicos-2.jpg','50% 20%','O mesmo padrão de cuidado em cada atendimento, seja qual for a empresa ou o parceiro.'],
+ ['eye','Visão','Ser referência em gestão médica no Brasil, reconhecida pela qualidade do cuidado, pela governança clínica e pelos resultados que gera.','equipe-2.jpg','50% 25%','Crescer com empresas e parceiros, medindo qualidade e resultado em toda a operação.'],
  ['compass','Propósito','Cuidar de pessoas e transformar vidas, colocando o paciente no centro de cada decisão e de cada processo.','paciente-fone.jpg','50% 22%','Protocolos, escalas e tecnologia começam pela pergunta: o que é melhor para o paciente?']
 ];
 d.forEach(([ic,t,p,img,pos,pr],i)=>{const b=document.createElement('button');b.className='card'+(i===0?' focus':'');
@@ -354,12 +404,12 @@ show(0);
 (function(){
 const svg=document.getElementById('wheel'),det=document.getElementById('wheelDetail');
 const F=[
- ['users','Corpo clínico','Médicos clínicos e especialistas selecionados, avaliados e coordenados pela WMedic para atender o público do parceiro.',['Clínico geral 24h por vídeo','Especialidades, psicologia, nutrição e pediatria','Seleção e avaliação contínua dos médicos','Escalas que mantêm a cobertura'],'Atendimento médico pronto, sem contratar nem gerir médicos.'],
+ ['users','Corpo clínico','Médicos clínicos e especialistas selecionados, avaliados e coordenados pela WMedic para atender o público de quem contrata.',['Clínico geral 24h por vídeo','Especialidades, psicologia, nutrição e pediatria','Seleção e avaliação contínua dos médicos','Escalas que mantêm a cobertura'],'Atendimento médico pronto, sem contratar nem gerir médicos.'],
  ['shield','Credenciamento e rede','Rede credenciada para o que a teleconsulta não resolve: exames, consultas presenciais e especialistas.',['Curadoria de clínicas e laboratórios','Cobertura nacional','Encaminhamento a partir da teleconsulta'],'Cuidado completo para o usuário, dentro e fora da tela.'],
- ['pulse','Qualidade assistencial','Protocolos clínicos, segurança do paciente e melhoria contínua em cada atendimento.',['Protocolos clínicos padronizados','Monitoramento de eventos adversos','Auditorias e ciclos de melhoria'],'Qualidade constante, que protege a reputação da marca do parceiro.'],
- ['heart','Experiência do paciente','Jornada digital humanizada, do acesso pelo app à alta, sempre com a marca do parceiro.',['App e site com a marca do parceiro','Atendimento acolhedor e resolutivo','Receitas, atestados e pedidos de exame digitais'],'Usuário satisfeito, que usa mais e continua cliente.'],
- ['chart','Gestão e inteligência','Dados de toda a operação transformados em indicadores e relatórios para o parceiro decidir.',['Uso, resolutividade e encaminhamentos','Relatórios periódicos','Governança assistencial'],'Prova de valor para a diretoria e para os clientes do parceiro.'],
- ['headset','Suporte clínico','Apoio contínuo ao usuário, à equipe médica e ao time do parceiro.',['Suporte ao paciente','Apoio à equipe médica','Atendimento dedicado ao parceiro'],'Um time inteiro por trás do produto, sem estrutura própria.']
+ ['pulse','Qualidade assistencial','Protocolos clínicos, segurança do paciente e melhoria contínua em cada atendimento.',['Protocolos clínicos padronizados','Monitoramento de eventos adversos','Auditorias e ciclos de melhoria'],'Qualidade constante, que protege a reputação de quem contrata.'],
+ ['heart','Experiência do paciente','Jornada digital humanizada, do acesso à alta, pelo canal de quem contrata.',['Atendimento pelo app, portal ou sistema do cliente','Atendimento acolhedor e resolutivo','Receitas, atestados e pedidos de exame digitais'],'Usuário satisfeito, que usa mais e continua cliente.'],
+ ['chart','Gestão e inteligência','Dados de toda a operação transformados em indicadores e relatórios para quem contrata decidir.',['Uso, resolutividade e encaminhamentos','Relatórios periódicos','Governança assistencial'],'Prova de valor para a diretoria e para os clientes de quem contrata.'],
+ ['headset','Suporte clínico','Apoio contínuo ao usuário, à equipe médica e ao time de quem contrata.',['Suporte ao paciente','Apoio à equipe médica','Atendimento dedicado a empresas e parceiros'],'Um time inteiro por trás do produto, sem estrutura própria.']
 ];
 const cx=530,cy=418,R1=165,R2=360;let sel=0;
 const P=(a,r)=>[cx+Math.cos(a)*r,cy+Math.sin(a)*r];
@@ -377,8 +427,54 @@ function draw(){
   <text x="${cx}" y="${cy+22}" text-anchor="middle" style="font:600 24px var(--f-body);fill:var(--accent-ink)">no centro</text>`;
   svg.innerHTML=s;
   svg.querySelectorAll('.seg').forEach(g=>{const f=()=>{sel=+g.dataset.i;draw()};g.onclick=f;g.onkeydown=e=>{if(e.key==='Enter')f()}});
-  const f=F[sel];det.innerHTML=`<b>${f[1]}</b><p>${f[2]}</p><span class="sub">O que inclui</span><ul>${f[3].map(x=>`<li>${x}</li>`).join('')}</ul><div class="gain"><b>Para o parceiro</b><span>${f[4]}</span></div>`;
+  const f=F[sel];det.innerHTML=`<b>${f[1]}</b><p>${f[2]}</p><span class="sub">O que inclui</span><ul>${f[3].map(x=>`<li>${x}</li>`).join('')}</ul><div class="gain"><b>Para quem contrata</b><span>${f[4]}</span></div>`;
 }
+draw();
+})();
+</script>
+
+<!-- 6 · diferenciais -->
+<script>
+(function(){
+const C=[
+ ['clock','Velocidade','Atendimento online rápido, 24 horas','Fila virtual e clínico 24h por vídeo: o usuário é atendido rápido, a qualquer hora, sem deslocamento.',['Clínico geral 24h por vídeo','Fila virtual','Notificações ao usuário em cada etapa']],
+ ['lock','Segurança','Dados de saúde protegidos','Dados de saúde são sensíveis pela LGPD. Acesso restrito, sigilo e prontuário eletrônico em cada atendimento.',['Conformidade com a LGPD','Prontuário eletrônico','Documentos com assinatura digital']],
+ ['plug','Integração via API','Conecta com o sistema de quem contrata','Empresas e parceiros que já têm portal, app ou sistema consomem o atendimento WMedic por API, sem trocar de plataforma.',['API para consultas online','Prontuário integrado','Notificações e eventos para o sistema do cliente']],
+ ['trend','Escalabilidade instantânea','De dezenas a milhares de vidas','A operação cresce com o cliente: de uma empresa pequena a uma base de milhares de vidas, sem mudar a estrutura.',['Corpo clínico dimensionado pela demanda','A mesma plataforma para qualquer porte','Novas vidas entram sem projeto novo']],
+ ['shield','Legislação e licenças','Conformidade em dia','A WMedic já tem as licenças e mantém conexão direta com os órgãos reguladores. Quando a regra muda, somos os primeiros a saber.',['Licenças e registros em dia','Corpo clínico treinado nas regras','Atualizações regulatórias aplicadas na operação']]
+];
+const el=document.getElementById('crit'),det=document.getElementById('difDetail');
+const seen=new Set(DECK.printing?[0,1,2,3,4]:[0]);let sel=0;
+const check='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>';
+function draw(){
+  el.innerHTML=`<div class="score"><span>CRITÉRIOS</span><b>${seen.size}/5</b><div class="bar"><i style="width:${seen.size*20}%"></i></div></div>`+
+   C.map((c,i)=>`<button class="row${i===sel?' sel':''}${seen.has(i)?' on':''}" data-i="${i}"><span class="ico">${icon(c[0])}</span><span><b>${c[1]}</b><span class="t">${c[2]}</span></span><span class="chk">${check}</span></button>`).join('');
+  el.querySelectorAll('.row').forEach(b=>b.onclick=()=>{sel=+b.dataset.i;seen.add(sel);draw()});
+  const c=C[sel];det.innerHTML=`<b>${c[1]}</b><p>${c[3]}</p><span class="sub">Na operação</span><ul>${c[4].map(x=>`<li>${x}</li>`).join('')}</ul>`;
+}
+draw();
+})();
+</script>
+
+<!-- 7 · como atuamos -->
+<script>
+(function(){
+const T=[
+ ['building','Empresas','Saúde para os próprios colaboradores e dependentes, como benefício.','A empresa oferece clínico 24h, especialidades e psicologia aos colaboradores, pelo canal que já usa, e recebe relatórios de uso e resultado.'],
+ ['plug','Parceiros com plataforma própria','Clínicas, operadoras e plataformas que consomem o atendimento por API.','O parceiro mantém o próprio portal, app ou sistema e conecta o atendimento WMedic por API. Os médicos, as escalas e a conformidade ficam com a WMedic.'],
+ ['phone','Parceiros sem plataforma','Recebem um canal pronto para oferecer consultas online.','O parceiro oferece consultas online ao seu público com a própria identidade, sem desenvolver tecnologia. A operação médica é toda da WMedic.']
+];
+const el=document.getElementById('atua'),det=document.getElementById('atuaDetail');let sel=0;
+function draw(){
+  el.innerHTML=`<div class="box wm"><img class="logo-d" src="img/logo-white.png" alt="WMedic" style="height:30px"><img class="logo-l" src="img/logo-full.png" alt="WMedic" style="height:30px"><b>Operadora</b><span>médicos, licenças e tecnologia</span></div>
+  <div class="arr">→</div>
+  <div class="mid">${T.map((t,i)=>`<button class="ty${i===sel?' sel':''}" data-i="${i}"><span class="ico">${icon(t[0])}</span><span><b>${t[1]}</b><span class="t">${t[2]}</span></span></button>`).join('')}</div>
+  <div class="arr">→</div>
+  <div class="box"><span class="ico">${icon('users')}</span><b>Pessoas</b><span>colaboradores, clientes e pacientes de quem contrata</span></div>`;
+  el.querySelectorAll('.ty').forEach(b=>b.onclick=()=>{sel=+b.dataset.i;draw()});
+  det.innerHTML=`<b>${T[sel][1]}</b><p>${T[sel][3]}</p>`;
+}
+document.querySelector('#sAtua .b2b .ico').innerHTML=icon('shield');
 draw();
 })();
 </script>
@@ -390,12 +486,12 @@ const cv=document.getElementById('journey'),ctx=cv.getContext('2d');
 const VW=1060,VH=836;
 const N={A:[115,430],B:[330,430],C:[560,270],D:[560,600],E:[780,430],F:[960,430]};
 const ST=[
- {k:'A',c:'Acesso',l:['Acesso pelo app','do parceiro'],n:'Acesso pelo app do parceiro',f:'Experiência do paciente · Suporte clínico',ind:'tempo de espera',w:'O usuário entra pelo app ou site com a marca do parceiro e é acolhido.'},
+ {k:'A',c:'Acesso',l:['Acesso pelo canal','do cliente'],n:'Acesso pelo canal do cliente',f:'Experiência do paciente · Suporte clínico',ind:'tempo de espera',w:'O usuário entra pelo app, portal ou sistema da empresa ou do parceiro, já integrado à WMedic.'},
  {k:'B',c:'Clínico 24h',l:['Clínico 24h','por vídeo'],n:'Clínico 24h por vídeo',f:'Corpo clínico · Qualidade assistencial',ind:'resolutividade',w:'Teleconsulta com clínico geral a qualquer hora. A maioria dos casos resolve aqui, com receita ou atestado digital.'},
  {k:'C',c:'Especialistas',l:['Especialistas, psicologia','e nutrição online'],n:'Especialistas, psicologia e nutrição',f:'Corpo clínico',ind:'encaminhamentos',w:'Quando o caso pede, o cuidado segue para especialista, psicólogo ou nutricionista, também online.'},
  {k:'D',c:'Rede presencial',l:['Exames e consultas','presenciais na rede'],n:'Exames e consultas presenciais',f:'Credenciamento e rede',ind:'prazo de exames',w:'O que exige presença vai para clínicas e laboratórios da rede credenciada.'},
  {k:'E',c:'Acompanhamento',l:['Acompanhamento'],n:'Acompanhamento',f:'Qualidade assistencial · Experiência do paciente',ind:'adesão aos programas',w:'Retornos e programas de saúde acompanham o paciente depois da consulta.'},
- {k:'F',c:'Relatórios',l:['Relatórios','ao parceiro'],n:'Relatórios ao parceiro',f:'Gestão e inteligência',ind:'satisfação',w:'Os indicadores de cada etapa viram relatórios periódicos para o parceiro.'}
+ {k:'F',c:'Relatórios',l:['Relatórios','a quem contrata'],n:'Relatórios a quem contrata',f:'Gestão e inteligência',ind:'satisfação',w:'Os indicadores de cada etapa viram relatórios periódicos para a empresa ou o parceiro.'}
 ];
 const routes=[{p:'ABEF',w:.45},{p:'ABCEF',w:.25},{p:'ABDEF',w:.2},{p:'ABCDEF',w:.1}].map(r=>{const pts=[...r.p].map(k=>N[k]);let L=[0];for(let i=1;i<pts.length;i++)L.push(L[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));return{...r,pts,L,len:L[L.length-1]}});
 function at(r,d){for(let i=1;i<r.pts.length;i++){if(d<=r.L[i]){const t=(d-r.L[i-1])/(r.L[i]-r.L[i-1]);const a=r.pts[i-1],b=r.pts[i];return[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t]}}return r.pts[r.pts.length-1]}
@@ -458,7 +554,7 @@ upd();
 (function(){
 const T=[
  ['clock','Pronto atendimento 24h','Clínico geral por vídeo, a qualquer hora, sem agendamento. O usuário entra na fila virtual e é atendido por um médico da escala WMedic.','É a base de todo pacote e o serviço mais usado.'],
- ['steth','Especialidades médicas','Consultas online com especialistas, por agendamento ou a partir de um encaminhamento da teleconsulta.','Continuidade do cuidado sem sair da marca do parceiro.'],
+ ['steth','Especialidades médicas','Consultas online com especialistas, por agendamento ou a partir de um encaminhamento da teleconsulta.','Continuidade do cuidado sem sair do canal de quem contrata.'],
  ['brain','Psicologia','Sessões online de cuidado com a saúde mental, integradas à jornada do paciente.','Forte apelo para empresas, RH e saúde mental das equipes.'],
  ['apple','Nutrição','Orientação nutricional online para prevenção e acompanhamento.','Complementa programas de prevenção e bem-estar.'],
  ['baby','Pediatria','Atendimento online às crianças do grupo familiar.','Valoriza os pacotes que incluem dependentes.'],
@@ -467,9 +563,9 @@ const T=[
  ['pin','Encaminhamento à rede','Exames e consultas presenciais na rede credenciada, quando o caso pede.','Cuidado completo, dentro e fora da tela.']
 ];
 const el=document.getElementById('tiles'),det=document.getElementById('tileDetail');
-function show(i){el.querySelectorAll('.tile:not(.more)').forEach((t,k)=>t.classList.toggle('focus',k===i));det.innerHTML=`<b>${T[i][1]}</b><p>${T[i][2]}</p><div class="gain"><b>Para o parceiro</b><span>${T[i][3]}</span></div>`}
+function show(i){el.querySelectorAll('.tile:not(.more)').forEach((t,k)=>t.classList.toggle('focus',k===i));det.innerHTML=`<b>${T[i][1]}</b><p>${T[i][2]}</p><div class="gain"><b>Para quem contrata</b><span>${T[i][3]}</span></div>`}
 T.forEach(([ic,n,p],i)=>{const b=document.createElement('button');b.className='tile';b.innerHTML=`<span class="ico">${icon(ic)}</span><b>${n}</b>`;b.onclick=()=>show(i);el.appendChild(b)});
-const m=document.createElement('div');m.className='tile more';m.innerHTML='<b>Pacote sob medida</b><p>O parceiro escolhe os serviços conforme o público e o objetivo.</p>';el.appendChild(m);
+const m=document.createElement('div');m.className='tile more';m.innerHTML='<b>Pacote sob medida</b><p>Quem contrata escolhe os serviços conforme o público e o objetivo.</p>';el.appendChild(m);
 show(0);
 })();
 </script>
@@ -480,9 +576,9 @@ show(0);
 document.getElementById('net').innerHTML=[
  ['pin','Rede credenciada','Clínicas, laboratórios e especialistas para exames e consultas presenciais, com curadoria e acompanhamento contínuo de cada prestador.'],
  ['handshake','Farmácias parceiras','Redes de farmácia em todo o país que fazem parte da rede de parceiros e aproximam o paciente do tratamento prescrito, perto de casa.'],
- ['globe','Cobertura nacional','Rede distribuída em todo o Brasil, para atender o público do parceiro onde ele estiver.']
+ ['globe','Cobertura nacional','Rede distribuída em todo o Brasil, para atender o público de quem contrata onde ele estiver.']
 ].map(([i,t,d])=>`<li><span class="ico">${icon(i)}</span><span><b>${t}</b><span class="t">${d}</span></span></li>`).join('');
-const S=[['WMedic','Teleconsulta','Clínico 24h, especialistas e documentos digitais, no app do parceiro.'],['Rede credenciada','Exames e consultas','Clínicas e laboratórios para o que precisa ser presencial.'],['Farmácias parceiras','Tratamento','Acesso ao tratamento prescrito, perto de casa.']];
+const S=[['WMedic','Teleconsulta','Clínico 24h, especialistas e documentos digitais, no canal do cliente.'],['Rede credenciada','Exames e consultas','Clínicas e laboratórios para o que precisa ser presencial.'],['Farmácias parceiras','Tratamento','Acesso ao tratamento prescrito, perto de casa.']];
 const fl=document.getElementById('flow3');
 fl.innerHTML=S.map((x,i)=>`<button class="st${i===0?' focus':''}" data-i="${i}"><span class="who">${x[0]}</span><b>${x[1]}</b><span>${x[2]}</span></button>`).join('<span class="arr">→</span>');
 fl.querySelectorAll('.st').forEach(b=>b.onclick=()=>fl.querySelectorAll('.st').forEach(c=>c.classList.toggle('focus',c===b)));
