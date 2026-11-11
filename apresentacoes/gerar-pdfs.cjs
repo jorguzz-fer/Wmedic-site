@@ -10,7 +10,7 @@ const { chromium } = require('playwright');
 const DIR = __dirname;
 const PUBLIC = path.join(DIR, '..', 'public');
 const OUT = path.join(DIR, 'pdf');
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg' };
 
 const server = http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0]);
@@ -25,6 +25,7 @@ const JOBS = [
   { page: 'apresentacao-institucional/index.html?print', out: 'WMedic-Apresentacao-Institucional.pdf', deck: true },
   { page: 'apresentacao-comercial/index.html?print', out: 'WMedic-Apresentacao-Comercial-Telemedicina.pdf', deck: true },
   { page: 'apresentacoes/guia-comercial.html', out: 'WMedic-Guia-Time-Comercial.pdf', deck: false },
+  { page: 'apresentacoes/wowmais-instituicoes/index.html?print', out: 'WOWMAIS-Apresentacao-Instituicoes.pdf', deck: true },
 ];
 
 (async () => {
