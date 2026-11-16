@@ -1,0 +1,74 @@
+/* WOW+ Empresas: estilos dos slides que não existem na apresentação de Instituições.
+   Carregado depois de deck.css e wow.css, que são os mesmos arquivos de Instituições. */
+
+/* slide 4: NR-1, dois grupos de três cards */
+.overcards.c3{grid-template-columns:repeat(3,1fr)}
+.obwrap .overcards.c3 .oc{min-height:150px}
+.obwrap .overcards.c3 .oc b{font-size:19px;line-height:1.25}
+
+/* slide 8: lista à esquerda e painel ilustrativo do RH */
+.nrlist{display:flex;flex-direction:column;gap:10px}
+.nrlist .li{padding:14px 16px}
+.dashwrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding:40px 64px}
+.dash{width:100%;max-width:880px;border:1px solid var(--line);border-radius:28px;background:var(--surface);padding:36px 38px;display:flex;flex-direction:column;gap:28px;box-shadow:0 40px 80px -50px rgba(0,0,0,.7)}
+.dash-h{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.dash-h b{font-size:24px;font-weight:700}
+.dash-top{display:grid;grid-template-columns:190px 1fr 1fr;gap:24px;align-items:stretch}
+.gauge{width:190px;height:190px}
+.gauge .g-bg{fill:none;stroke:var(--line2);stroke-width:11;opacity:.45}
+.gauge .g-fg{fill:none;stroke:var(--accent);stroke-width:11;stroke-linecap:round;stroke-dasharray:314.16;stroke-dashoffset:314.16;transition:stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1) .2s}
+.slide.active .gauge .g-fg,:root.printing .gauge .g-fg{stroke-dashoffset:56.55}
+:root.printing .gauge .g-fg{transition:none}
+@media (prefers-reduced-motion:reduce){.gauge .g-fg{transition:none}}
+.gauge .g-n{font:800 28px var(--f-body);fill:var(--ink)}
+.gauge .g-l{font:400 11px var(--f-mono);fill:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.dash-kpi{display:flex;flex-direction:column;justify-content:center;gap:6px;border-radius:18px;background:var(--bg2);padding:20px 22px}
+.dash-kpi .vl{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink)}
+.dash-kpi b{font-size:50px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+.dash-kpi small{font-size:14px;line-height:1.4;color:var(--ink2)}
+.dash-rows{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}
+.dash-r{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:15px 0;border-bottom:1px solid var(--line);font-size:18px}
+.dash-r b{font-weight:700;color:var(--accent-ink)}
+
+/* slide 9: sem controle × com controle */
+.cmp{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:36px 56px 36px 48px}
+.cmp-h,.cmp-r{display:grid;grid-template-columns:1fr 44px 1fr;gap:14px;align-items:stretch}
+.cmp-h span{font-family:var(--f-mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.cmp-h .a{color:var(--muted)}
+.cmp-h .b{color:var(--accent-ink)}
+.cmp-r{background:none;border:0;padding:0;cursor:pointer;font-family:inherit;color:var(--ink);text-align:left}
+.cmp-c{display:flex;gap:14px;align-items:center;border-radius:18px;padding:20px 22px;font-size:18px;font-weight:600;line-height:1.3;min-height:92px;transition:border-color .3s,background .3s,box-shadow .3s,opacity .3s}
+.cmp-c.no{border:1px dashed var(--line2);background:color-mix(in srgb,var(--ink) 4%,transparent);color:var(--ink)}
+.cmp-c.yes{border:1px solid var(--line);background:var(--surface)}
+.cmp-c i{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-style:normal}
+.cmp-c.no i{background:color-mix(in srgb,var(--ink) 12%,transparent);color:var(--ink2)}
+.cmp-c.yes i{background:var(--accent-soft);color:var(--accent-ink)}
+.cmp-r .ar{align-self:center;justify-self:center;display:grid;color:var(--line2);transition:color .3s,transform .3s}
+.cmp-r.sel .cmp-c.yes{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset;background:var(--accent-soft)}
+.cmp-r.sel .cmp-c.no{opacity:.75;text-decoration:line-through;text-decoration-color:var(--line2)}
+.cmp-r.sel .ar{color:var(--accent);transform:translateX(4px)}
+
+/* slide 11: planos */
+.plans2{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:36px 56px 36px 48px}
+.prow{display:flex;gap:16px;align-items:stretch}
+.plan{flex:1 1 0;min-width:0;min-height:540px;border:1px solid var(--line);border-radius:26px;background:var(--surface);padding:34px 30px 30px;display:flex;flex-direction:column;gap:14px;text-align:left;cursor:pointer;color:var(--ink);font-family:inherit;transition:flex-grow .45s cubic-bezier(.2,.8,.2,1),box-shadow .3s,transform .3s,border-color .3s}
+.plan:hover{border-color:var(--line2)}
+.plan.sel{flex-grow:1.2;background:var(--grad);border-color:transparent;color:#141414;box-shadow:0 30px 60px -30px rgba(255,122,0,.8);transform:translateY(-4px)}
+.plan .pt{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.plan .nm{font-family:var(--f-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-ink)}
+.plan .bdg{font-family:var(--f-mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 11px;border-radius:999px;background:var(--accent);color:#141414;white-space:nowrap}
+.plan .pp{display:flex;flex-direction:column;gap:8px;font-size:66px;font-weight:800;line-height:1;letter-spacing:-.02em;white-space:nowrap;margin-top:6px}
+.plan .pp small{font-size:16px;font-weight:500;letter-spacing:0;color:var(--ink2)}
+.plan ul{margin:8px 0 0;padding:20px 0 0;list-style:none;display:flex;flex-direction:column;gap:13px;border-top:1px dashed var(--line2);font-size:18px;line-height:1.35}
+.plan li{display:flex;gap:10px;align-items:flex-start}
+.plan li::before{content:"";flex:none;width:20px;height:20px;margin-top:2px;border-radius:50%;background:var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FF7A00' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12l4 4 8-8'/%3E%3C/svg%3E") center/12px no-repeat}
+.plan .tot{margin-top:auto;padding-top:18px;font-size:15.5px;line-height:1.45;color:var(--ink2)}
+.plan .tot b{display:block;font-size:28px;line-height:1.15;font-weight:800;color:var(--ink);white-space:nowrap}
+.plan.sel .nm,.plan.sel .pp small,.plan.sel .tot,.plan.sel .tot b{color:#141414}
+.plan.sel .bdg{background:#141414;color:#FFB258}
+.plan.sel ul{border-top-color:rgba(20,20,20,.45)}
+.plan.sel li::before{background-color:#141414}
+
+/* slide 12: jornada com um texto por passo */
+.road-card.one{grid-template-columns:1fr}
+.ra.two{grid-template-columns:28px 220px 1fr}
