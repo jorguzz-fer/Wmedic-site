@@ -25,7 +25,8 @@ O nginx do `Dockerfile` serve `$uri/index.html` antes de cair no `index.html` do
 | Arquivo | O que é |
 |---|---|
 | `guia-comercial.html` | Guia do time comercial (A4, 9 páginas, uso interno) |
-| `wowmais-instituicoes/` | Apresentação WOW+ para instituições (13 slides, marca WOW+, com `deck.css`/`deck.js` próprios e `wow.css`). Não faz parte do site WMedic |
+| `wowmais-instituicoes/` | Apresentação WOW+ para instituições (14 slides, marca WOW+, com `deck.css`/`deck.js` próprios e `wow.css`). Não faz parte do site WMedic |
+| `wowmais-empresas/` | Apresentação WOW+ para empresas (12 slides, com os três pacotes sem e com NR-1). Usa os mesmos `deck.css`, `deck.js` e `wow.css` de instituições, mais `empresas.css`. Não faz parte do site WMedic |
 | `pdf/` | PDFs das apresentações e do guia |
 | `gerar-pdfs.cjs` | Gera os PDFs de novo |
 
