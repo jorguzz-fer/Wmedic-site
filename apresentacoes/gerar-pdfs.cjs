@@ -26,6 +26,7 @@ const JOBS = [
   { page: 'apresentacao-comercial/index.html?print', out: 'WMedic-Apresentacao-Comercial-Telemedicina.pdf', deck: true },
   { page: 'apresentacoes/guia-comercial.html', out: 'WMedic-Guia-Time-Comercial.pdf', deck: false },
   { page: 'apresentacoes/wowmais-instituicoes/index.html?print', out: 'WOWMAIS-Apresentacao-Instituicoes.pdf', deck: true },
+  { page: 'apresentacoes/wowmais-empresas/index.html?print', out: 'WOWMAIS-Apresentacao-Empresas.pdf', deck: true },
 ];
 
 (async () => {

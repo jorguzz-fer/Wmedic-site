@@ -4,11 +4,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Poppins:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="deck.css?v=1">
-<link rel="stylesheet" href="wow.css?v=1">
-<link rel="stylesheet" href="empresas.css?v=1">
+<link rel="stylesheet" href="deck.css?v=2">
+<link rel="stylesheet" href="wow.css?v=2">
+<link rel="stylesheet" href="empresas.css?v=2">
 </head><body><!--local-->
 
+<!-- "NR-1" leva um word joiner depois do hífen, para não quebrar a linha: NR-&#8288;1 no HTML e NR-⁠1 nos scripts. -->
 <div id="viewport">
 <div id="deck" role="application" aria-label="WOW+ para Empresas: apresentação comercial">
 
@@ -17,7 +18,7 @@
   <div class="copy">
     <img class="brandlogo logo-d" src="img/logo-tag-dark.png" alt="WOW+ saúde por assinatura">
     <img class="brandlogo logo-l" src="img/logo-tag-light.png" alt="WOW+ saúde por assinatura">
-    <div class="eyebrow">WOW+ Empresas · Saúde 360°</div>
+    <div class="eyebrow">WOW+ Empresas · Saúde digital</div>
     <h1>Mais saúde. <em>Mais empresa.</em></h1>
     <p class="lead">Cuidar da saúde da sua equipe <strong>não deveria ser complicado.</strong> Mas hoje, ainda é.</p>
   </div>
@@ -25,9 +26,9 @@
   <div class="bench" style="border:0">
     <div class="photo"><img src="img/capa.jpg" alt="Gestora sorrindo com um tablet nas mãos, no escritório" style="object-position:50% 25%"></div>
     <div class="badges">
-      <div class="badge"><b>menos de R$ 1</b><span>por dia, por colaborador</span></div>
-      <div class="badge"><b>24h</b><span>médico online</span></div>
-      <div class="badge"><b>NR-&#8288;1</b><span>saúde mental e prevenção</span></div>
+      <div class="badge"><b>a partir de R$ 14,90</b><span>por vida, por mês</span></div>
+      <div class="badge"><b>24/7</b><span>clínico geral online</span></div>
+      <div class="badge"><b>3 pacotes</b><span>com ou sem NR-&#8288;1</span></div>
     </div>
   </div>
 </section>
@@ -67,7 +68,7 @@
       <div><span>Custo / mês</span><b id="cMon">—</b></div>
       <div><span>Custo / ano</span><b id="cYr">—</b></div>
     </div>
-    <div class="callout"><img src="img/symbol.png" alt="" style="width:40px;height:auto"><span><b>Com a WOW+: menos de R$ 1 por dia por colaborador.</b><br>Menos custo, mais saúde, mais resultado.</span></div>
+    <div class="callout"><img src="img/symbol.png" alt="" style="width:40px;height:auto"><span><b>Com a WOW+: a partir de R$ 14,90 por vida, por mês.</b><br>Menos de R$ 1 por dia.</span></div>
   </div>
 </section>
 
@@ -91,9 +92,9 @@
 <!-- 5 · A SOLUÇÃO -->
 <section class="slide" id="s5" data-name="A solução">
   <div class="copy">
-    <div class="eyebrow">A solução</div>
+    <div class="eyebrow">A solução · Saúde digital</div>
     <h2>E se isso fosse <em>simples de verdade?</em></h2>
-    <p class="lead">Atendimento rápido quando o colaborador precisa: cuidado imediato, 100% digital, <strong>sem sair do trabalho e sem complicação</strong>.</p>
+    <p class="lead">A WOW+ é uma solução de saúde digital: atendimento rápido quando o colaborador precisa, <strong>sem sair do trabalho e sem complicação</strong>.</p>
     <div class="callout" style="margin-top:auto"><img src="img/symbol.png" alt="" style="width:44px;height:auto"><span><b>Sem fila. Sem saída. Sem complicação.</b><br>Menos tempo fora, mais produtividade para a empresa.</span></div>
   </div>
   <div class="bench"><div class="appwrap">
@@ -117,53 +118,49 @@
   </div></div>
 </section>
 
-<!-- 7 · O QUE A EMPRESA GARANTE -->
-<section class="slide" id="s7" data-name="O que a empresa garante">
+<!-- 7 · O QUE O TIME PASSA A TER -->
+<section class="slide" id="s7" data-name="O que o time passa a ter">
   <div class="copy">
-    <div class="eyebrow">Na prática</div>
-    <h2>O que a sua empresa <em>garante com a WOW+</em></h2>
-    <p class="lead" style="font-size:17px">O que muda no dia a dia do seu time.</p>
-    <div class="eyebrow" style="margin-top:auto">Sem complicação</div>
-    <div class="mini4" id="mini4"></div>
+    <div class="eyebrow">Para os colaboradores</div>
+    <h2>O que o seu time <em>passa a ter</em></h2>
+    <p class="lead" style="font-size:17px">Saúde digital no celular. O que entra depende do pacote que a empresa escolhe.</p>
+    <div class="callout" style="margin-top:auto"><span class="ico" id="svIco"></span><span><b>Tudo 100% online.</b><br>Sem sair do trabalho e sem complicação.</span></div>
   </div>
   <div class="bench"><div class="benef2">
     <div class="pcards" id="pcards"></div>
-    <div class="esp"><div class="esp-h"><b>+15</b><span style="font-size:17px;color:var(--ink2)">especialidades disponíveis</span></div><div class="esp-list" id="espList"></div></div>
+    <div class="extras" id="extras"></div>
   </div></div>
 </section>
 
-<!-- 8 · NR-1 NA PRÁTICA -->
-<section class="slide" id="s8" data-name="NR-1 na prática">
-  <div class="copy">
-    <div class="eyebrow">NR-&#8288;1 na prática</div>
-    <h2>Cuidar antes do <em>problema acontecer</em></h2>
-    <p class="lead" style="font-size:17px">É o que a NR-&#8288;1 pede, e é o que a WOW+ ajuda a sua empresa a fazer.</p>
-    <div class="nrlist" id="nrList"></div>
-    <div class="callout" style="margin-top:auto"><span class="ico" id="dsIco"></span><span><b>Menos afastamentos. Mais produtividade.</b><br>Conformidade que protege, saúde que transforma.</span></div>
-  </div>
-  <div class="bench"><div class="dashwrap">
-    <div class="dash" role="img" aria-label="Painel ilustrativo do RH com índice de bem-estar, indicadores e afastamentos">
-      <div class="dash-h"><b>Dashboard RH</b><span class="tag-ex">Tela ilustrativa, dados de exemplo</span></div>
-      <div class="dash-top">
-        <svg class="gauge" viewBox="0 0 120 120" aria-hidden="true"><circle class="g-bg" cx="60" cy="60" r="50"/><circle class="g-fg" cx="60" cy="60" r="50" transform="rotate(-90 60 60)"/><text class="g-n" x="60" y="62" text-anchor="middle">82%</text><text class="g-l" x="60" y="80" text-anchor="middle">positivo</text></svg>
-        <div class="dash-kpi"><span class="vl">Índice de bem-estar</span><b>↑ 23%</b><small>em relação ao mês anterior</small></div>
-        <div class="dash-kpi"><span class="vl">Afastamentos</span><b>↓ 32%</b><small>em relação ao mesmo período anterior</small></div>
+<!-- 8 · PACOTES -->
+<section class="slide full" id="s8" data-name="Pacotes">
+  <div class="pk8">
+    <header class="pk-head">
+      <div>
+        <div class="eyebrow">Pacotes</div>
+        <h2>Três pacotes. <em>Com ou sem NR-&#8288;1.</em></h2>
       </div>
-      <div class="dash-rows" id="dashRows"></div>
-    </div>
-  </div></div>
+      <div class="pk-side">
+        <div class="seg noprint" id="pkSeg" role="group" aria-label="Versão dos pacotes"></div>
+        <p class="pk-note">Incluir a NR-&#8288;1 soma <b>R$ 5,00</b> por vida, por mês, em qualquer pacote.</p>
+      </div>
+    </header>
+    <div class="pk-cols" id="pkCols"></div>
+  </div>
 </section>
 
-<!-- 9 · GESTÃO PARA O RH -->
-<section class="slide" id="s9" data-name="Gestão para o RH">
-  <div class="copy">
-    <div class="eyebrow">Gestão para o RH</div>
-    <h2>De reativo <em>para estratégico</em></h2>
-    <p class="lead" style="font-size:17px">De operação no escuro para gestão com dados. Clique em cada ponto ou avance com o botão.</p>
-    <div class="chips noprint"><button class="chip" id="cmpNext">Próximo ponto →</button></div>
-    <div class="callout" style="margin-top:auto"><span class="ico" id="cmpIco"></span><span><b>Sem controle × com controle.</b><br>O RH passa a decidir com base em dados.</span></div>
+<!-- 9 · SIMULADOR -->
+<section class="slide" id="s9" data-name="Simule para a sua equipe">
+  <div class="copy" style="gap:16px">
+    <div class="eyebrow">Simule para a sua equipe</div>
+    <h2 style="font-size:42px">Quanto fica <em>para a sua equipe?</em></h2>
+    <span class="tag-ex" style="align-self:flex-start">Simulação: valor por vida × número de vidas</span>
+    <div class="ask"><span class="bsec">Versão</span><div class="chips" id="smNr" role="group" aria-label="Versão do pacote"></div></div>
+    <div class="ctrl"><div class="ctrl-row"><label for="smN">Vidas <output id="smNO"></output></label><input type="range" id="smN" min="5" max="500" step="5" value="50"></div></div>
+    <div class="detail" id="smDetail"></div>
+    <div class="callout" style="margin-top:auto"><span class="ico" id="smIco"></span><span><b>Incluir a NR-&#8288;1 soma R$ 5,00.</b><br>Por vida, por mês, em qualquer pacote.</span></div>
   </div>
-  <div class="bench"><div class="cmp" id="cmp"></div></div>
+  <div class="bench"><div class="sim" id="sim"></div></div>
 </section>
 
 <!-- 10 · OPERAÇÃO -->
@@ -186,43 +183,30 @@
   </div></div>
 </section>
 
-<!-- 11 · PLANOS -->
-<section class="slide" id="s11" data-name="Planos">
-  <div class="copy">
-    <div class="eyebrow">Planos</div>
-    <h2>Para empresas<br><em>de todos os portes</em></h2>
-    <p class="lead" style="font-size:17px">Reduza custos e aumente a produtividade por menos de R$&nbsp;1 por dia por colaborador.</p>
-    <div class="ctrl"><div class="ctrl-row"><label for="pN">Colaboradores na empresa <output id="pNO"></output></label><input type="range" id="pN" min="5" max="500" step="5" value="50"></div></div>
-    <div class="detail" id="pDetail"></div>
-    <div class="callout" style="margin-top:auto"><span class="ico" id="plIco"></span><span><b>Menor custo. Maior impacto na empresa.</b><br>Sem carência: adesão fácil e rápida.</span></div>
-  </div>
-  <div class="bench"><div class="plans2" id="plans"></div></div>
-</section>
-
-<!-- 12 · COMO COMEÇAR -->
-<section class="slide" id="s12" data-name="Como começar">
+<!-- 11 · COMO COMEÇAR -->
+<section class="slide" id="s11" data-name="Como começar">
   <div class="copy">
     <div class="eyebrow">Como começar</div>
-    <h2>Simples, rápida<br><em>e sem burocracia</em></h2>
-    <p class="lead" style="font-size:17px">Seis passos entre a primeira conversa e o time usando. Clique nas etapas ou avance com o botão.</p>
+    <h2>Simples de começar,<br><em>do pacote ao app</em></h2>
+    <p class="lead" style="font-size:17px">Cinco passos entre a primeira conversa e o time usando. Clique nas etapas ou avance com o botão.</p>
     <div class="chips noprint"><button class="chip" id="rdNext">Próxima etapa →</button></div>
   </div>
   <div class="bench"><div class="road" id="road"></div></div>
 </section>
 
-<!-- 13 · FECHAMENTO -->
-<section class="slide full" id="s13" data-name="A decisão é sua">
+<!-- 12 · FECHAMENTO -->
+<section class="slide full" id="s12" data-name="A decisão é sua">
   <div class="endgrid">
     <div class="copy">
       <div class="eyebrow">Próximo passo</div>
       <h2>A decisão <em>é sua.</em></h2>
-      <p class="lead" style="font-size:16px">Sua empresa pode transformar a saúde dos colaboradores ainda hoje. Clique nas perguntas para ver as respostas.</p>
-      <div class="callout"><img src="img/symbol.png" alt="" style="width:40px;height:auto"><span><b>Vamos construir essa mudança juntos?</b><br>Implementação rápida, sem burocracia e com suporte dedicado.</span></div>
+      <p class="lead" style="font-size:16px">Sua empresa pode transformar a saúde dos colaboradores. Clique nas perguntas para ver as respostas.</p>
+      <div class="callout"><img src="img/symbol.png" alt="" style="width:40px;height:auto"><span><b>Vamos construir essa mudança juntos?</b><br>Escolha o pacote, com ou sem NR-&#8288;1, e começamos.</span></div>
       <dl class="contact" style="margin-top:auto">
         <dt>Site</dt><dd>wowmais.com.br</dd>
         <dt>Cadastro</dt><dd>app.wowmais.com.br</dd>
       </dl>
-      <p class="credit">Valores e simulações de exemplo. Telas do aplicativo e painéis ilustrativos.</p>
+      <p class="credit">Preços por vida, por mês. Simulações com valores de exemplo. Telas do aplicativo ilustrativas.</p>
     </div>
     <div class="bench"><div class="quiz obj-cards" id="faq"></div></div>
   </div>
@@ -235,14 +219,14 @@
   <button class="iconbtn" id="prev" aria-label="Slide anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
   <div id="ticks"></div>
   <button class="iconbtn" id="next" aria-label="Próximo slide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
-  <span id="counter">01 / 13</span>
+  <span id="counter">01 / 12</span>
   <button class="iconbtn" id="themeBtn" aria-label="Alternar tema claro/escuro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></button>
   <button class="iconbtn" id="fsBtn" aria-label="Tela cheia"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </nav>
 </div>
 </div>
 
-<script src="deck.js?v=1"></script>
+<script src="deck.js?v=2"></script>
 
 <!-- ícones extras e helpers -->
 <script>
@@ -262,8 +246,14 @@ window.brl=brl;
 window.fmtN=n=>Math.round(n).toLocaleString('pt-BR');
 </script>
 
+<!-- ícones dos destaques e dados dos pacotes (briefing: preços por vida, por mês) -->
 <script>
-['dorIco:alert','nrIco:shield','stIco:shield','dsIco:shield','cmpIco:chart','plIco:dollar'].forEach(x=>{const[i,k]=x.split(':');document.getElementById(i).innerHTML=icon(k)});
+['dorIco:alert','nrIco:shield','stIco:shield','svIco:shield','smIco:shield'].forEach(x=>{const[i,k]=x.split(':');document.getElementById(i).innerHTML=icon(k)});
+window.PACOTES={nr:5,list:[
+ {n:'Pacote 1',t:'Clínico geral e pediatria',s:'Clínico geral e pediatria',inc:[1,1,0,0],add:-1,v:14.90},
+ {n:'Pacote 2',t:'Pacote 1 + opção de cuidado',s:'Pacote 1 + opção de cuidado',inc:[1,1,1,0],add:2,v:16.90},
+ {n:'Pacote 3',t:'Pacote 2 + consulta eletiva',s:'Pacote 2 + consulta eletiva',inc:[1,1,1,1],add:3,v:19.90}
+]};
 </script>
 
 <!-- 2 · ciclo da ausência -->
@@ -344,14 +334,13 @@ const card=(i,t,s,hl)=>`<div class="ap-card${hl?' hl':''}"><i>${ic(i)}</i><span>
 const top=`<div class="ap-top"><img src="img/logo-dark.png" alt="WOW+"><span style="color:#A8A49D">${ic('bell')}</span></div>`;
 const nav=(on)=>`<div class="ap-nav">${['Início','Consultas','Mensagens','Perfil'].map((n,i)=>`<span class="${i===on?'on':''}">${n}</span>`).join('')}</div>`;
 window.APP={
- home:(hl)=>top+`<div class="ap-hi">Olá! Como podemos <em>cuidar da sua saúde</em> hoje?</div><div class="ap-body">${card('clock','Clínico geral 24h','Atendimento online imediato',hl===1)}${card('baby','Pediatria 24h','Para os pequenos, a qualquer hora',hl===2)}${card('brain','Psicologia online','Cuidado com a saúde mental',hl===3)}${card('apple','Nutrição online','Alimentação saudável',hl===4)}${card('steth','+15 especialidades','Consultas e exames',hl===5)}</div>`+nav(0),
+ home:(hl)=>top+`<div class="ap-hi">Olá! Como podemos <em>cuidar da sua saúde</em> hoje?</div><div class="ap-body">${card('clock','Clínico geral 24/7','Atendimento online',hl===1)}${card('baby','Pediatria','Atendimento online',hl===2)}${card('apple','Nutrição','Opção de cuidado',hl===3)}${card('brain','Psicologia','Opção de cuidado',hl===4)}${card('heart','Veterinário','Opção de cuidado',hl===5)}</div>`+nav(0),
  queue:()=>top+`<div class="ap-hi">Clínico geral <em>24h</em></div><div class="ap-body"><div class="ap-cta">Você é o próximo<span>Tempo estimado: poucos minutos</span></div>${card('video','Consulta por vídeo','Câmera e microfone prontos',true)}${card('doc','Seus dados','Já preenchidos no cadastro')}${card('shield','Atendimento seguro','Prontuário e LGPD')}</div>`+nav(1),
- call:()=>`<div style="flex:1;position:relative;background:#000"><img src="img/consulta.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:.9"><div style="position:absolute;left:14px;top:40px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:6px 10px;border-radius:8px">Em consulta · 04:12</div><div style="position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:14px;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.7))"><span style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff">${ic('video')}</span><span style="width:48px;height:48px;border-radius:50%;background:#E23B2E;display:grid;place-items:center;color:#fff">${ic('phone')}</span><span style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff">${ic('msg')}</span></div></div>`,
- after:()=>top+`<div class="ap-hi">Depois da consulta, <em>a gente continua com você</em></div><div class="ap-body">${card('doc','Receita digital','Disponível no app',true)}${card('calendar','Retorno agendado','Lembrete no dia')}${card('heart','Programa de cuidado','Acompanhamento contínuo')}${card('msg','Mensagens','Dúvidas com a equipe')}</div>`+nav(2)
+ call:()=>`<div style="flex:1;position:relative;background:#000"><img src="img/consulta.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:.9"><div style="position:absolute;left:14px;top:40px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:6px 10px;border-radius:8px">Em consulta · 04:12</div><div style="position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:14px;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.7))"><span style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff">${ic('video')}</span><span style="width:48px;height:48px;border-radius:50%;background:#E23B2E;display:grid;place-items:center;color:#fff">${ic('phone')}</span><span style="width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;color:#fff">${ic('msg')}</span></div></div>`
 };
 document.getElementById('app1').innerHTML=APP.home(1);
-document.getElementById('appSide').innerHTML=[['clock','Atendimento em minutos','Não é amanhã. É agora.'],['phone','100% online','No celular ou no computador.'],['shield','Sem filas','Sem espera e sem deslocamento.'],['steth','Diversas especialidades','Clínico geral, psicólogo e mais.']].map(x=>`<div class="li"><span class="ico">${icon(x[0])}</span><span><b>${x[1]}</b><span class="t">${x[2]}</span></span></div>`).join('');
-const S=[['Acessa pelo celular','O colaborador entra no app quando precisa.','home'],['Escolhe o atendimento','Médico ou psicólogo, com clínicos e especialistas.','queue'],['É atendido em minutos','Atendimento rápido, seguro e humanizado, online.','call']];
+document.getElementById('appSide').innerHTML=[['clock','Atendimento em minutos','Não é amanhã. É agora.'],['phone','100% online','No celular ou no computador.'],['shield','Sem filas','Sem espera e sem deslocamento.'],['steth','Clínico geral 24/7','Médico online a qualquer hora.']].map(x=>`<div class="li"><span class="ico">${icon(x[0])}</span><span><b>${x[1]}</b><span class="t">${x[2]}</span></span></div>`).join('');
+const S=[['Acessa pelo celular','O colaborador entra no app quando precisa.','home'],['Escolhe o atendimento','Clínico geral, pediatria ou a opção de cuidado do pacote.','queue'],['É atendido em minutos','Atendimento rápido, seguro e humanizado, online.','call']];
 const st=document.getElementById('steps'),app=document.getElementById('app2');let cur=0;
 function set(i){cur=i;st.innerHTML=S.map((s,k)=>`<button class="stp${k<=i?' on':''}${k===i?' cur':''}" data-i="${k}"><span class="n">${k+1}</span><span><b>${s[0]}</b><span class="t">${s[1]}</span></span></button>`).join('');
   st.querySelectorAll('.stp').forEach(b=>b.onclick=()=>set(+b.dataset.i));app.innerHTML=APP[S[i][2]](0)}
@@ -360,47 +349,66 @@ set(DECK.printing?2:0);
 })();
 </script>
 
-<!-- 7 · o que a empresa garante -->
+<!-- 7 · o que o time passa a ter -->
 <script>
 (function(){
 const C=[
- ['medica.jpg','Médica sorrindo com uma prancheta','clock','Atendimento imediato','Clínico geral 24h, receituário na hora e atendimento em minutos.','Quando precisa, está resolvido.'],
- ['nutricao.jpg','Nutricionista segurando uma laranja','heart','Saúde contínua','Psicologia, nutrição e mais de 15 especialidades disponíveis.','Cuidado completo para o seu time.'],
- ['equipe.jpg','Duas colegas de trabalho sorrindo diante de um notebook','trend','Impacto na empresa','Menos afastamentos, mais produtividade e apoio à conformidade com a NR-\u20601.','Seu colaborador resolve rápido. Sua empresa não para.']
+ ['medica.jpg','Médica sorrindo com uma prancheta','clock','Clínico geral 24/7','Médico online, a qualquer hora do dia ou da noite.','Em todos os pacotes'],
+ ['pediatra.jpg','Pediatra examinando uma criança sorridente','baby','Pediatria','Atendimento pediátrico online.','Em todos os pacotes'],
+ ['nutricao.jpg','Nutricionista segurando uma laranja','heart','Opção de cuidado','1 opção entre nutrição, psicologia ou veterinário.','Nos pacotes 2 e 3']
 ];
-document.getElementById('pcards').innerHTML=C.map((c,i)=>`<div class="pc"><div class="ph"><img src="img/${c[0]}" alt="${c[1]}"></div><div class="pb"><div class="pn"><span class="ico">${icon(c[2])}</span><span>0${i+1}</span></div><h3>${c[3]}</h3><p>${c[4]}</p><div class="pf"><span>Na prática</span><p>${c[5]}</p></div></div></div>`).join('');
-document.getElementById('mini4').innerHTML=[['Sem carência','adesão fácil e rápida'],['Cobertura nacional','online em todo o Brasil'],['Receituário na hora','direto no app'],['100% online','sem deslocamento']].map(x=>`<div><b>${x[0]}</b><span>${x[1]}</span></div>`).join('');
-document.getElementById('espList').innerHTML=['Pediatria','Ginecologia','Cardiologia','Clínico geral','Endocrinologia','Dermatologia','Geriatria','Nutrologia','Ortopedia','Oftalmologia','Neurologia','Neurocirurgia','Psicologia','Psiquiatria','Nutrição','Gastroenterologia','Oncologia','Urologia','Angiologia','e muito mais'].map(x=>`<span>${x}</span>`).join('');
+document.getElementById('pcards').innerHTML=C.map((c,i)=>`<div class="pc"><div class="ph"><img src="img/${c[0]}" alt="${c[1]}"></div><div class="pb"><div class="pn"><span class="ico">${icon(c[2])}</span><span>0${i+1}</span></div><h3>${c[3]}</h3><p>${c[4]}</p><div class="pf"><span>Onde entra</span><p>${c[5]}</p></div></div></div>`).join('');
+document.getElementById('extras').innerHTML=[['calendar','1 consulta eletiva','Com hora marcada.','No pacote 3'],['shield','NR-\u20601','Opcional em qualquer pacote.','+ R$ 5,00 por vida/mês']].map(x=>`<div class="ex"><span class="ico">${icon(x[0])}</span><span class="tx"><b>${x[1]}</b><small>${x[2]}</small></span><em>${x[3]}</em></div>`).join('');
 })();
 </script>
 
-<!-- 8 · NR-1 na prática (painel ilustrativo) -->
+<!-- 8 · pacotes, sem e com NR-1 -->
 <script>
 (function(){
-document.getElementById('nrList').innerHTML=[['brain','Saúde mental acompanhada','Apoio contínuo para mais equilíbrio e bem-estar.'],['shield','Redução de riscos psicossociais','Identificação, prevenção e gestão conforme a NR-\u20601.'],['chart','Mais controle para o RH','Dados, indicadores e relatórios para decisões seguras.']].map(x=>`<div class="li"><span class="ico">${icon(x[0])}</span><span><b>${x[1]}</b><span class="t">${x[2]}</span></span></div>`).join('');
-document.getElementById('dashRows').innerHTML=[['Estresse','Baixo'],['Ansiedade','Baixa'],['Sono','Bom'],['Qualidade de vida','Boa']].map(x=>`<div class="dash-r"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('');
-})();
-</script>
-
-<!-- 9 · sem controle × com controle -->
-<script>
-(function(){
-const P=[['Falta de visibilidade','Gestão de colaboradores em tempo real'],['Afastamentos sem controle','Controle de uso por funcionário'],['Informações espalhadas','Dados organizados em um só lugar'],['Custos imprevisíveis','Decisão com base em dados']];
-const X='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>',OK='<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>',AR='<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>';
-const el=document.getElementById('cmp');let sel=DECK.printing?-1:0;
-el.innerHTML=`<div class="cmp-h"><span class="a">Sem a WOW+</span><span></span><span class="b">Com a WOW+</span></div>${P.map((p,i)=>`<button class="cmp-r" data-i="${i}"><span class="cmp-c no"><i>${X}</i>${p[0]}</span><span class="ar">${AR}</span><span class="cmp-c yes"><i>${OK}</i>${p[1]}</span></button>`).join('')}`;
-const rows=[...el.querySelectorAll('.cmp-r')];
-function upd(){rows.forEach((r,k)=>{r.classList.toggle('sel',k===sel);r.setAttribute('aria-pressed',k===sel)})}
-rows.forEach(r=>r.onclick=()=>{sel=+r.dataset.i;upd()});
-document.getElementById('cmpNext').onclick=()=>{sel=(sel+1)%P.length;upd()};
+const $=id=>document.getElementById(id),PK=window.PACOTES;
+const OK='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>',NO='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M6 12h12"/></svg>';
+const ROWS=[['clock','Clínico geral 24/7',''],['baby','Pediatria',''],['heart','1 opção de cuidado','nutrição, psicologia ou veterinário'],['calendar','1 consulta eletiva','com hora marcada']];
+const el=$('pkCols'),seg=$('pkSeg');let nr=0;
+el.innerHTML=PK.list.map(p=>`<div class="pkc"><span class="pk-n">${p.n}</span><b class="pk-t">${p.t}</b>
+<div class="pk-rows">${ROWS.map((r,k)=>`<div class="pk-r${p.inc[k]?'':' off'}${p.add===k?' add':''}"><span class="ico">${icon(r[0])}</span><span class="tx">${r[1]}${r[2]?`<small>${r[2]}</small>`:''}</span><i>${p.inc[k]?OK:NO}</i></div>`).join('')}<div class="pk-r nr"><span class="ico">${icon('shield')}</span><span class="tx">NR-\u20601<small>opcional</small></span><em>+ ${brl(PK.nr)}</em></div></div>
+<div class="pk-prices"><button class="pk-p" data-v="0"><span class="lb">Sem NR-\u20601</span><b>${brl(p.v)}</b></button><button class="pk-p" data-v="1"><span class="lb">Com NR-\u20601</span><b>${brl(p.v+PK.nr)}</b></button></div>
+<span class="pk-u">por vida, por mês</span></div>`).join('');
+['Sem NR-\u20601','Com NR-\u20601'].forEach((t,i)=>{const b=document.createElement('button');b.textContent=t;b.onclick=()=>{nr=i;upd()};seg.appendChild(b)});
+el.querySelectorAll('.pk-p').forEach(b=>b.onclick=()=>{nr=+b.dataset.v;upd()});
+function upd(){el.classList.toggle('nr1',nr===1);el.classList.toggle('nr0',nr===0);
+  [...seg.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===nr));
+  el.querySelectorAll('.pk-p').forEach(b=>b.setAttribute('aria-pressed',+b.dataset.v===nr));
+  el.querySelectorAll('.pk-r.nr small').forEach(x=>x.textContent=nr?'incluso':'opcional')}
 upd();
 })();
 </script>
 
-<!-- 5 · operação (rede animada) -->
+<!-- 9 · simulador: pacote × versão × vidas -->
 <script>
 (function(){
-const C=[['steth','Corpo clínico próprio','Médicos que fazem parte do time WOW+.'],['clock','Médico online 24/7','Atendimento a qualquer hora, todos os dias.'],['award','+15 especialidades','Do clínico geral aos especialistas.'],['shield','Segurança e LGPD','Dados de saúde protegidos e sigilo.'],['headset','Equipe própria','Atendimento e tecnologia feitos em casa.'],['msg','Atendimento no WhatsApp','Suporte ao membro de segunda a sábado.']];
+const $=id=>document.getElementById(id),PK=window.PACOTES;
+const el=$('sim'),nrC=$('smNr');let sel=0,nr=0;
+el.innerHTML=`<span class="bsec">Total por mês em cada pacote</span>
+<div class="fams">${PK.list.map((p,i)=>`<button class="fam" data-i="${i}"><b class="nm">${p.n}</b><span class="ds">${p.s}</span><span class="tt"></span><span class="pm"></span><span class="pp"></span></button>`).join('')}</div>
+<div class="readout" style="grid-template-columns:repeat(3,1fr)"><div><span>Por vida, por mês</span><b id="smV">—</b></div><div><span>Total por mês</span><b id="smT">—</b></div><div><span>Por dia, por vida</span><b id="smD">—</b></div></div>`;
+['Sem NR-\u20601','Com NR-\u20601'].forEach((t,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=t;b.onclick=()=>{nr=i;upd()};nrC.appendChild(b)});
+const cards=[...el.querySelectorAll('.fam')];
+cards.forEach(c=>c.onclick=()=>{sel=+c.dataset.i;upd()});
+function upd(){const n=+$('smN').value,add=nr?PK.nr:0;$('smNO').textContent=fmtN(n);
+  [...nrC.children].forEach((b,k)=>b.setAttribute('aria-pressed',k===nr));
+  cards.forEach((c,k)=>{const v=PK.list[k].v+add,on=k===sel;c.classList.toggle('sel',on);c.setAttribute('aria-pressed',on);c.querySelector('.tt').textContent=brl(v*n);c.querySelector('.pm').textContent=`por mês para ${fmtN(n)} vidas`;c.querySelector('.pp').textContent=`${brl(v)} por vida`});
+  const p=PK.list[sel],v=p.v+add;
+  $('smV').textContent=brl(v);$('smT').textContent=brl(v*n);$('smD').textContent=brl(v/30);
+  $('smDetail').innerHTML=`<b>${fmtN(n)} vidas no ${p.n}, ${nr?'com':'sem'} NR-\u20601</b><p>${fmtN(n)} × ${brl(v)} = ${brl(v*n)} por mês. ${nr?`Sem a NR-\u20601, seriam ${brl(p.v*n)}.`:`Com a NR-\u20601, seriam ${brl((p.v+PK.nr)*n)}.`}</p>`}
+$('smN').addEventListener('input',upd);
+upd();
+})();
+</script>
+
+<!-- 10 · operação (rede animada) -->
+<script>
+(function(){
+const C=[['steth','Corpo clínico próprio','Médicos que fazem parte do time WOW+.'],['clock','Médico online 24/7','Atendimento a qualquer hora, todos os dias.'],['award','+15 especialidades','Do clínico geral aos especialistas.'],['shield','Segurança e LGPD','Dados de saúde protegidos e sigilo.'],['headset','Equipe própria','Atendimento e tecnologia feitos em casa.'],['msg','Atendimento no WhatsApp','Suporte ao colaborador de segunda a sábado.']];
 const caps=document.getElementById('caps'),svg=document.getElementById('hub'),det=document.getElementById('hubDetail');
 if(DECK.printing){svg.remove();det.remove();caps.innerHTML=C.map(c=>`<div class="cap"><span class="ico">${icon(c[0])}</span><span><b>${c[1]}</b><span class="t">${c[2]}</span></span></div>`).join('');return}
 caps.remove();
@@ -417,43 +425,22 @@ draw();
 </script>
 
 
-<!-- 11 · planos -->
-<script>
-(function(){
-const $=id=>document.getElementById(id);
-const P=[
- {n:'WOW Empresas Smart',tag:'Entrada para empresas',v:19.90,items:['Médico 24h','Psicologia + nutrição','Dashboard RH','Consultas avulsas com até 50% de desconto']},
- {n:'WOW Empresas NR1',tag:'Mais vendido',v:24.90,items:['Tudo do WOW Empresas Smart','Especialidades incluídas','Gestão ocupacional','NR-\u20601 incluso']}
-];
-const el=$('plans');let sel=1;
-el.innerHTML=`<div class="prow">${P.map((p,i)=>`<button class="plan" data-i="${i}"><span class="pt"><span class="nm">${p.n}</span><span class="bdg">${p.tag}</span></span><span class="pp">${brl(p.v)}<small>por vida, por mês</small></span><ul>${p.items.map(x=>`<li>${x}</li>`).join('')}</ul><span class="tot"></span></button>`).join('')}</div>`;
-const cards=[...el.querySelectorAll('.plan')];
-cards.forEach(c=>c.onclick=()=>{sel=+c.dataset.i;upd()});
-function upd(){const n=+$('pN').value;$('pNO').textContent=fmtN(n);
-  cards.forEach((c,k)=>{c.classList.toggle('sel',k===sel);c.setAttribute('aria-pressed',k===sel);c.querySelector('.tot').innerHTML=`<b>${brl(P[k].v*n)}</b> por mês para ${fmtN(n)} vidas`});
-  const p=P[sel];$('pDetail').innerHTML=`<b>${fmtN(n)} vidas no ${p.n}</b><p>${brl(p.v*n)} por mês. Dá ${brl(p.v/30)} por dia por colaborador.</p>`}
-$('pN').addEventListener('input',upd);
-upd();
-})();
-</script>
-
-<!-- 12 · como começar (jornada) -->
+<!-- 11 · como começar (jornada) -->
 <script>
 (function(){
 const S=[
- ['Fale com um consultor','Entendemos o tamanho do time e indicamos o plano.'],
+ ['Fale com um consultor','Entendemos o tamanho do time e a necessidade da empresa.'],
+ ['Escolha o pacote','Pacote 1, 2 ou 3, com ou sem NR-\u20601.'],
  ['Registro no app','Cadastre a empresa em app.wowmais.com.br.'],
- ['Área administrativa','O RH passa a gerenciar tudo num só lugar.'],
- ['Inclua os funcionários','Adicione os colaboradores à assinatura.'],
- ['Convide as famílias','Incentive os colaboradores a adicionar os familiares.'],
- ['Acesso imediato','Sem carência: o time já pode usar.']
+ ['Inclua os funcionários','Na área administrativa, adicione os colaboradores.'],
+ ['Time atendido','Os colaboradores acessam o app e são atendidos online.']
 ];
-const el=document.getElementById('road'),X=i=>95+i*152,Y=i=>i%2?196:112;let cur=0;
+const el=document.getElementById('road'),X=i=>110+i*182,Y=i=>i%2?196:112;let cur=0;
 const P=DECK.printing;
-el.innerHTML=`<svg class="jr" id="jr" viewBox="0 0 950 300" role="group" aria-label="Etapas para começar"></svg>`+(P?`<div class="road-all">${S.map((s,i)=>`<div class="ra two"><span class="d">${i+1}</span><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>`:`<div class="road-card one" id="rdCard"></div><div class="road-badges"><span>${ic('rocket')} Sem carência: usa hoje</span><span>${ic('doc')} Zero burocracia</span><span>${ic('headset')} Suporte dedicado</span></div>`);
+el.innerHTML=`<svg class="jr" id="jr" viewBox="0 0 950 300" role="group" aria-label="Etapas para começar"></svg>`+(P?`<div class="road-all">${S.map((s,i)=>`<div class="ra two"><span class="d">${i+1}</span><b>${s[0]}</b><span>${s[1]}</span></div>`).join('')}</div>`:`<div class="road-card one" id="rdCard"></div><div class="road-badges"><span>${ic('phone')} 100% online</span><span>${ic('doc')} Sem burocracia</span><span>${ic('shield')} Com ou sem NR-\u20601</span></div>`);
 const svg=document.getElementById('jr');
 function set(i){cur=i;let s='';
-  for(let k=0;k<S.length-1;k++){const d=`M${X(k)} ${Y(k)}C${X(k)+76} ${Y(k)},${X(k+1)-76} ${Y(k+1)},${X(k+1)} ${Y(k+1)}`;s+=`<path class="base${k<i?' on':''}" d="${d}"/><path class="fl${k<i?' on':''}" d="${d}"/>`}
+  for(let k=0;k<S.length-1;k++){const d=`M${X(k)} ${Y(k)}C${X(k)+91} ${Y(k)},${X(k+1)-91} ${Y(k+1)},${X(k+1)} ${Y(k+1)}`;s+=`<path class="base${k<i?' on':''}" d="${d}"/><path class="fl${k<i?' on':''}" d="${d}"/>`}
   S.forEach((st,k)=>{s+=`<g class="nd${k<i?' done':''}${k===i?' cur':''}" data-i="${k}" tabindex="0" role="button" aria-label="${st[0]}"><circle cx="${X(k)}" cy="${Y(k)}" r="${k===i?34:28}"/><text class="n" x="${X(k)}" y="${Y(k)+6}" text-anchor="middle">${k+1}</text><text class="l" x="${X(k)}" y="${k%2?Y(k)+64:Y(k)-52}" text-anchor="middle">${st[0]}</text></g>`});
   svg.innerHTML=s;
   svg.querySelectorAll('.nd').forEach(g=>{const f=()=>set(+g.dataset.i);g.onclick=f;g.onkeydown=e=>{if(e.key==='Enter')f()}});
@@ -463,16 +450,16 @@ set(P?S.length:0);
 })();
 </script>
 
-<!-- 13 · perguntas -->
+<!-- 12 · perguntas -->
 <script>
 (function(){
 const Q=[
- ['Quanto custa por colaborador?','Menos de R$ 1 por dia.','Planos a partir de R$ 19,90 por vida, por mês.'],
- ['Tem carência?','Não.','A adesão é rápida e o colaborador já pode usar.'],
- ['O colaborador precisa sair do trabalho?','Não.','O atendimento é 100% online, pelo celular ou computador, em minutos.'],
- ['Isso ajuda com a NR-\u20601?','Sim.','O plano WOW Empresas NR1 inclui apoio à saúde mental, gestão de riscos psicossociais e indicadores para o RH.'],
- ['Como o RH acompanha?','Pelo Dashboard RH.','Gestão de colaboradores, uso por funcionário e dados organizados num só lugar.'],
- ['A família do colaborador pode usar?','Sim.','O colaborador pode adicionar os familiares à assinatura.']
+ ['Quanto custa?','A partir de R$ 14,90.','Por vida, por mês, no Pacote 1 sem NR-\u20601. O Pacote 3 com NR-\u20601 sai por R$ 24,90.'],
+ ['Qual a diferença entre os pacotes?','A cobertura.','Todos têm clínico geral 24/7 e pediatria. O Pacote 2 soma 1 opção de cuidado, e o Pacote 3 soma também 1 consulta eletiva.'],
+ ['Quanto custa incluir a NR-\u20601?','R$ 5,00 a mais.','Por vida, por mês, em qualquer pacote.'],
+ ['O que é a opção de cuidado?','Uma entre três.','Nutrição, psicologia ou veterinário, nos Pacotes 2 e 3.'],
+ ['O colaborador precisa sair do trabalho?','Não.','O atendimento é online, pelo celular ou pelo computador.'],
+ ['Como a empresa começa?','Com uma conversa.','Escolhemos juntos o pacote e a empresa faz o registro em app.wowmais.com.br.']
 ];
 document.getElementById('faq').innerHTML=Q.map(([t,s,r],i)=>`<button class="q${DECK.printing?' open':''}"><span class="qn">PERGUNTA ${i+1}</span><span class="qt">${t}</span><span class="qa"><strong>${s}</strong> ${r}</span><span class="qh">clique para revelar a resposta</span></button>`).join('');
 document.querySelectorAll('#faq .q').forEach(b=>b.onclick=()=>b.classList.toggle('open'));
