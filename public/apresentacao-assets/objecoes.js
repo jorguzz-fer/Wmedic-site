@@ -5,21 +5,21 @@
    Precisa rodar antes do deck.js, para a contagem de slides já incluir a cópia. */
 (function(){
 const PERFIS=[
- {k:'inv',n:'Investidor começando',sub:'Quem quer lançar um negócio de telemedicina com marca própria, sem estrutura médica.',qs:[
-  ['Preciso ter médicos ou uma clínica para começar?','Não.','Na opção White Label, a WMedic entrega tecnologia, corpo clínico, escalas 24h e gestão clínica. Você cuida da marca, das vendas e do relacionamento.'],
-  ['A WMedic vai concorrer comigo pelo consumidor final?','Não.','A operação da WMedic é voltada a parceiros White Label: não vendemos nem atendemos diretamente o consumidor final. O seu cliente é só seu.'],
-  ['Quanto tempo e investimento até a primeira consulta?','Bem menos do que construir do zero.','Você parte de uma plataforma pronta e de um corpo clínico em operação. Prazo e investimento saem do diagnóstico, conforme a personalização.'],
-  ['Como eu ganho dinheiro com isso?','Você define o produto e o preço.','Assinatura, benefício para empresas ou parcerias: a operação WMedic é o custo da entrega, e a margem e a base de clientes ficam com você.'],
-  ['Posso começar pequeno e crescer depois?','Sim.','O valor por vida segue faixas: você começa na faixa da sua base e muda de faixa conforme ela cresce, sem trocar de estrutura.'],
-  ['Qual é o risco regulatório?','A telemedicina tem regra clara.','É autorizada pela Lei 14.510/2022 e regulamentada pela Resolução CFM 2.314/2022. A operação WMedic segue essas regras, a LGPD e o registro em prontuário.']
+ {k:'inv',n:'Investidor começando',sub:'Quem quer lançar um negócio de saúde digital com marca própria, sem montar estrutura médica.',qs:[
+  ['Preciso ter médicos ou uma clínica para começar?','Não precisa.','Você não contrata nenhum médico. Os médicos, as escalas 24h e a gestão clínica da WMedic já estão funcionando; você cuida da marca, das vendas e de quem compra de você.'],
+  ['A WMedic vai concorrer comigo pelo consumidor final?','Não.','A gente não vende para pessoa física. Quem compra de você continua sendo seu cliente, e é a sua marca que ele vê.'],
+  ['Quanto tempo e investimento até a primeira consulta?','Bem menos do que começar do zero.','Você já começa com a plataforma pronta e médicos atendendo. Prazo e investimento a gente fecha junto no diagnóstico, conforme o quanto você quer personalizar.'],
+  ['Como eu ganho dinheiro com isso?','Você decide o produto e o preço.','Assinatura, benefício para empresas ou parcerias: o valor WMedic é o custo da entrega. A margem e a carteira de clientes ficam com você.'],
+  ['Posso começar pequeno e crescer depois?','Pode.','Você entra na faixa de vidas que tem hoje e muda de faixa conforme a sua base de clientes cresce, sem trocar de estrutura.'],
+  ['Qual é o risco regulatório?','A telemedicina tem regra clara.','Ela é autorizada pela Lei 14.510/2022 e regulamentada pela Resolução CFM 2.314/2022. A gente segue essas regras, a LGPD e o registro em prontuário, e você não precisa virar especialista nisso.']
  ]},
- {k:'b2b',n:'Empresa B2B crescendo',sub:'Quem já tem clientes e quer adicionar ou melhorar a telemedicina no próprio negócio.',qs:[
-  ['Por que não desenvolver a minha própria plataforma?','Porque tecnologia é só uma parte.','Teleconsulta exige equipe técnica, segurança de dados, conformidade com o CFM e médicos 24h. Com o White Label você lança com a sua marca e foca no seu cliente.'],
-  ['Vocês vão vender direto para os meus clientes?','Não.','A WMedic só atende por meio de parceiros White Label e não tem venda ao consumidor final. O usuário vê apenas a sua marca.'],
-  ['Vou perder o relacionamento com o meu cliente?','Não.','A base, a venda e o relacionamento continuam seus. A WMedic opera nos bastidores, com a sua identidade no app e no site.'],
-  ['Como provo o retorno para a diretoria?','Com dados da sua própria operação.','Relatórios de uso, resolutividade, encaminhamentos e satisfação, combinados desde o contrato, mais o simulador de custo evitado com os seus números.'],
-  ['Consigo integrar com o meu app ou sistema?','Sim, pela opção API.','O seu time consome o atendimento, as regras de negócio e o prontuário da WMedic dentro da sua plataforma. Detalhes técnicos são alinhados no diagnóstico.'],
-  ['Se o atendimento falhar, é a minha marca que sofre. Quem garante a qualidade?','A gestão médica WMedic.','Corpo clínico avaliado continuamente, protocolos padronizados, escalas 24h e suporte clínico. Os indicadores de qualidade entram no contrato.']
+ {k:'b2b',n:'Empresa B2B crescendo',sub:'Quem já tem uma base de clientes e quer oferecer ou melhorar a telemedicina no próprio negócio.',qs:[
+  ['Por que não desenvolver a minha própria plataforma?','Porque a tecnologia é só uma parte.','Além do app, a teleconsulta pede médicos 24h, segurança de dados e conformidade com o CFM. Com a gente você lança com a sua marca e continua olhando para o seu cliente.'],
+  ['Vocês vão vender direto para os meus clientes?','Não.','A WMedic só atende por meio de parceiros. O seu cliente vê a sua marca, do começo ao fim.'],
+  ['Vou perder o relacionamento com o meu cliente?','Não. Ele continua sendo seu.','A carteira, a venda e o relacionamento seguem com você. A gente trabalha nos bastidores, com a sua identidade no app e no site.'],
+  ['Como provo o retorno para a diretoria?','Com os números da sua própria operação.','Relatórios de uso, resolutividade, encaminhamentos e satisfação, combinados desde o contrato. E o simulador ajuda a mostrar o custo evitado com os seus dados.'],
+  ['Consigo integrar com o meu app ou sistema?','Sim, pela API.','O seu time usa o atendimento, as regras de negócio e o prontuário da WMedic dentro da sua plataforma. Os detalhes técnicos a gente alinha junto no diagnóstico.'],
+  ['Se o atendimento falhar, é a minha marca que sofre. Quem garante a qualidade?','A gestão médica WMedic.','A gente sabe que é o seu nome em jogo. Por isso o corpo clínico é avaliado continuamente, os protocolos são padronizados, há escalas 24h e suporte clínico, e os indicadores de qualidade entram no contrato.']
  ]}
 ];
 // Versão institucional (data-obj="inst"): fala de operadora B2B, sem detalhar White Label.
