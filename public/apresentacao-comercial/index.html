@@ -172,10 +172,23 @@
 .pr-row input{width:100%;min-width:0;background:var(--bg);border:1px solid var(--line2);border-radius:10px;padding:12px 12px;font-size:18px;font-family:var(--f-mono);color:var(--ink);text-align:center}
 .pr-row input::placeholder{color:var(--muted)}
 .endgrid{display:grid;grid-template-columns:540px 1fr;height:100%}
+#s1 h1{font-size:54px;line-height:1.08}
+.hint{position:absolute;left:96px;bottom:78px;margin:0;font-size:12px;color:var(--muted);z-index:3}
+.hint .kbd{font-size:10.5px}
+#s2 .pillars{padding-top:356px}
+.s2ph{position:absolute;left:48px;right:56px;top:56px;height:276px;margin:0;border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line)}
+.s2ph img{width:100%;height:100%;object-fit:cover;display:block}
+.s2ph figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 20px 14px;font-size:14px;font-weight:600;color:#fff;background:linear-gradient(0deg,rgba(10,6,24,.82),transparent)}
+.s8ph{margin:auto 0 0;height:210px;border-radius:var(--r-card);overflow:hidden;border:1px solid var(--line)}
+.s8ph img{width:100%;height:100%;object-fit:cover;display:block}
+.talk{display:flex;gap:14px;align-items:center}
+.talk img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;border:2px solid var(--accent);background:#fff}
+.talk b{display:block;font-size:15.5px;font-weight:600;color:var(--ink)}
+.talk span{font-size:13.5px;line-height:1.45;color:var(--ink2)}
 </style>
 
 <div id="viewport">
-<div id="deck" role="application" aria-label="Proposta comercial WMedic: telemedicina">
+<div id="deck" role="application" aria-label="Proposta comercial WMedic: saúde digital e telemedicina">
 
 <!-- 1 · CAPA -->
 <section class="slide cover" id="s1" data-name="Capa">
@@ -183,10 +196,10 @@
     <img class="brandlogo logo-d" src="img/logo-white.png" alt="WMedic">
     <img class="brandlogo logo-l" src="img/logo-full.png" alt="WMedic">
     <div class="eyebrow" id="coverEyebrow">Proposta comercial</div>
-    <h1>Telemedicina para a sua base. <em>Operada pela WMedic.</em></h1>
-    <p class="lead">Três formas de oferecer atendimento médico online ao seu público: <strong>serviço gerenciado, White Label ou API</strong>. Você escolhe o quanto quer operar; a medicina fica com a gente.</p>
-    <p class="note noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia. Preencha o slide 3 com o que o cliente contou na reunião anterior.</p>
-  </div>
+    <h1>Saúde digital para a sua base de clientes. <em>Telemedicina operada pela WMedic.</em></h1>
+    <p class="lead">Três formas de oferecer atendimento médico online aos seus clientes: <strong>serviço gerenciado, White Label ou API</strong>. Você escolhe o quanto quer operar; a medicina fica com a gente.</p>
+    </div>
+  <p class="hint noprint">Use <span class="kbd">←</span> <span class="kbd">→</span> ou <span class="kbd">espaço</span> para avançar e <span class="kbd">F</span> para tela cheia. Antes da reunião, preencha o slide 3.</p>
   <div class="bench" style="border:0">
     <div class="photo"><img src="img/paciente-fone.jpg" alt="Paciente em consulta online pelo celular" style="object-position:50% 30%"></div>
     <div class="badges">
@@ -206,7 +219,7 @@
     <p class="note">O resumo da apresentação institucional, para entrar no que interessa: como a WMedic atende a sua demanda.</p>
     <div class="b2b" style="margin-top:auto"><span class="ico" id="b2bIco" style="width:38px;height:38px"></span><span><strong>Não vendemos para pessoa física.</strong> A marca WMedic opera nos bastidores; quem aparece para o usuário é você.</span></div>
   </div>
-  <div class="bench"><div class="pillars" id="pillars"></div></div>
+  <div class="bench"><figure class="s2ph"><img src="img/equipe-2.jpg" alt="Equipe médica WMedic" style="object-position:50% 25%"><figcaption>Quem atende os seus clientes: o corpo clínico WMedic</figcaption></figure><div class="pillars" id="pillars"></div></div>
 </section>
 
 <!-- 3 · DIAGNÓSTICO (dor do cliente) -->
@@ -315,6 +328,7 @@
     <h2>As vantagens de <em>fazer com a gente</em></h2>
     <p class="lead" style="font-size:17px">Os critérios que um CTO avalia num fornecedor de saúde digital, mais o que importa para o seu negócio. Clique em cada um.</p>
     <div class="detail" id="vtDetail"></div>
+    <figure class="s8ph"><img src="img/corredor.jpg" alt="Médicos da WMedic" style="object-position:50% 22%"></figure>
   </div>
   <div class="bench"><div class="crit" id="crit"></div></div>
 </section>
@@ -391,8 +405,9 @@
       <p class="lead" style="font-size:16px">Escolha o perfil de quem está na sala. Leia a pergunta, ouça a dúvida e clique no cartão para revelar a resposta.</p>
       <div class="chips obj-chips" role="group" aria-label="Perfil do cliente"></div>
       <p class="note obj-sub"></p>
-      <div class="nextstep"><span class="tag">Próximo passo</span><b>Fechar a proposta</b><span>Confirmamos opção, serviços e faixa de vidas, e enviamos o contrato com o setup e os valores.</span></div>
-      <dl class="contact" style="margin-top:auto">
+      <div class="nextstep"><span class="tag">Próximo passo</span><b>Fechar a proposta juntos</b><span>Confirmamos com você a opção, os serviços e a faixa de vidas, e enviamos o contrato com o setup e os valores.</span></div>
+      <div class="talk" style="margin-top:auto"><img src="img/medicos-2.jpg" alt="Médicos da WMedic" style="object-position:50% 12%"><div><b>Fale com a gente</b><span>Do diagnóstico à primeira consulta, você tem um time ao seu lado.</span></div></div>
+      <dl class="contact">
         <dt>Comercial</dt><dd>WhatsApp (11) 97026-7810</dd>
         <dt>E-mail</dt><dd>contato@wmedic.com.br</dd>
         <dt>Site</dt><dd>wmedic.com.br</dd>
@@ -416,13 +431,13 @@
 </div>
 </div>
 
-<script src="objecoes.js"></script>
+<script src="objecoes.js?v=2"></script>
 <script src="deck.js"></script>
 
 <!-- dados compartilhados: opções, mercados e a proposta em andamento -->
 <script>
 window.MODES=[
- {k:'o1',n:'Serviço gerenciado',short:'Gerenciado',tag:'Opção 1',lead:'Você oferece, a WMedic faz tudo',t:'Você disponibiliza telemedicina para a sua base, com a sua marca, sem mexer com tecnologia nem com operação. A WMedic cuida do atendimento, dos usuários e da cobrança.',para:'quem já tem uma base de clientes e quer um serviço a mais, mantendo o foco no próprio negócio.'},
+ {k:'o1',n:'Serviço gerenciado',short:'Gerenciado',tag:'Opção 1',lead:'Você oferece, a WMedic faz tudo',t:'Você oferece saúde digital à sua base de clientes, com a sua marca, sem mexer com tecnologia nem com operação. A WMedic cuida do atendimento, dos usuários e da cobrança.',para:'quem já tem uma base de clientes e quer um serviço a mais, mantendo o foco no próprio negócio.'},
  {k:'o2',n:'White Label',short:'White Label',tag:'Opção 2',lead:'Um novo negócio com a sua marca',t:'Plataforma completa com a sua marca: site funcional, painel de administração e notificações. Você define o preço, cobra e faz o marketing; a operação médica é nossa.',para:'quem quer criar o próprio negócio de telemedicina e crescer com ele.'},
  {k:'o3',n:'API',short:'API',tag:'Opção 3',lead:'Sua tecnologia, nossa operação médica',t:'O seu time de tecnologia consome por API o atendimento, as regras de negócio e o prontuário da WMedic, dentro da sua própria plataforma.',para:'empresas com time de tecnologia e plataforma própria.'}
 ];
@@ -475,7 +490,7 @@ document.getElementById('b2bIco').innerHTML=icon('shield');
 (function(){
 const $=id=>document.getElementById(id);
 const sel=$('dgMkt');MKTS.forEach((m,i)=>{const o=document.createElement('option');o.value=i;o.textContent=m.n;sel.appendChild(o)});
-const goals=['Oferecer à minha base','Criar meu negócio de telemedicina','Integrar à minha plataforma'];
+const goals=['Oferecer à minha base de clientes','Criar meu negócio de telemedicina','Integrar à minha plataforma'];
 const gc=$('dgGoal');goals.forEach((g,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=g;b.onclick=()=>{propSet({goal:i});window.MODE_SEL=i;sync()};gc.appendChild(b)});
 $('dgName').value=PROP.cliente;sel.value=PROP.mkt;$('dgLives').value=PROP.vidas;
 $('dgName').addEventListener('input',e=>propSet({cliente:e.target.value}));
