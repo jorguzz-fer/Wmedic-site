@@ -27,6 +27,7 @@ const JOBS = [
   { page: 'apresentacoes/guia-comercial.html', out: 'WMedic-Guia-Time-Comercial.pdf', deck: false },
   { page: 'apresentacoes/wowmais-instituicoes/index.html?print', out: 'WOWMAIS-Apresentacao-Instituicoes.pdf', deck: true },
   { page: 'apresentacoes/wowmais-empresas/index.html?print', out: 'WOWMAIS-Apresentacao-Empresas.pdf', deck: true },
+  { page: 'apresentacoes/wowmais-parceiros/index.html?print', out: 'WOWMAIS-Apresentacao-Parceria-Estrategica.pdf', deck: true },
 ];
 
 (async () => {
