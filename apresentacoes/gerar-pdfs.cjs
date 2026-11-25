@@ -28,6 +28,10 @@ const JOBS = [
   { page: 'apresentacoes/wowmais-instituicoes/index.html?print', out: 'WOWMAIS-Apresentacao-Instituicoes.pdf', deck: true },
   { page: 'apresentacoes/wowmais-empresas/index.html?print', out: 'WOWMAIS-Apresentacao-Empresas.pdf', deck: true },
   { page: 'apresentacoes/wowmais-parceiros/index.html?print', out: 'WOWMAIS-Apresentacao-Parceria-Estrategica.pdf', deck: true },
+  { page: 'apresentacoes/wowmais-institucional/index.html?print', out: 'WOWMAIS-Apresentacao-Institucional.pdf', deck: true },
+  { page: 'apresentacoes/wowmais-completa/index.html?print', out: 'WOWMAIS-Apresentacao-Parceria-Completa.pdf', deck: true },
+  { page: 'apresentacoes/wowmais-vendas/index.html?print', out: 'WOWMAIS-Apresentacao-Vendas.pdf', deck: true },
+  { page: 'apresentacoes/wowmais-influencers/index.html?print', out: 'WOWMAIS-Apresentacao-Influencers.pdf', deck: true },
 ];
 
 (async () => {
